@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8">
+<style>
+@font-face{font-family:Anton;src:url(fonts/anton-latin-400-normal.woff2) format('woff2');}
+@font-face{font-family:Poppins;font-weight:600;src:url(fonts/poppins-latin-600-normal.woff2) format('woff2');}
+@font-face{font-family:Poppins;font-weight:700;src:url(fonts/poppins-latin-700-normal.woff2) format('woff2');}
+@font-face{font-family:Poppins;font-weight:800;src:url(fonts/poppins-latin-800-normal.woff2) format('woff2');}
+@font-face{font-family:Poppins;font-weight:900;src:url(fonts/poppins-latin-900-normal.woff2) format('woff2');}
+html,body{margin:0;padding:0;background:#111013;}
+#stage{position:relative;width:1080px;height:1920px;overflow:hidden;background:#111013;font-family:Poppins,sans-serif;color:#fff;}
+#glow{position:absolute;width:1500px;height:1500px;border-radius:50%;
+  background:radial-gradient(circle, rgba(254,89,77,0.17) 0%, rgba(254,89,77,0.06) 38%, rgba(254,89,77,0) 68%);left:-210px;top:0;}
+#bar{position:absolute;left:0;top:0;height:10px;background:#FE594D;width:0}
+#barbg{position:absolute;left:0;top:0;height:10px;width:1080px;background:#26232a}
+#pill{position:absolute;left:50%;top:205px;transform:translateX(-50%);background:#FE594D;color:#fff;border-radius:40px;
+  padding:6px 30px 10px;font:800 44px Poppins;letter-spacing:-0.5px;line-height:1}
+#vis{position:absolute;left:0;top:330px;width:1080px;height:880px;}
+#sub{position:absolute;left:70px;right:70px;top:1235px;text-align:center;font:800 66px/1.18 Poppins;letter-spacing:-0.5px;
+  text-shadow:0 4px 18px rgba(0,0,0,.6)}
+#sub b{color:#FE594D;font-weight:800}
+.anton{font-family:Anton;font-weight:400;line-height:1.02;letter-spacing:0.5px;text-transform:uppercase}
+.card{position:absolute;background:#1c1a20;border:3px solid #2e2a33;border-radius:34px;box-shadow:0 18px 50px rgba(0,0,0,.45)}
+.lbl{font:700 40px Poppins;color:#a7a2ad;letter-spacing:3px;text-transform:uppercase}
+.coral{color:#FE594D}
+.abs{position:absolute}
+.center{left:50%;transform:translateX(-50%)}
+</style></head>
+<body><div id="stage"><div id="glow"></div><div id="barbg"></div><div id="bar"></div><div id="pill">repe.</div>
+<div id="vis"></div><div id="sub"></div></div>
+<script>
+const CORAL="#FE594D", WHITE="#ffffff", GREY="#5a5560", DARK="#111013";
+const $=s=>document.querySelector(s);
+const clamp=(x,a=0,b=1)=>Math.max(a,Math.min(b,x));
+const easeOut=x=>1-Math.pow(1-clamp(x),3);
+const easeInOut=x=>{x=clamp(x);return x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2};
+const back=x=>{x=clamp(x);const c1=1.9,c3=c1+1;return 1+c3*Math.pow(x-1,3)+c1*Math.pow(x-1,2)};
+const pop=(t,d=0,dur=.38)=>back((t-d)/dur);            // 0..~1.1..1
+const fade=(t,d=0,dur=.25)=>easeOut((t-d)/dur);
+function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;")}
+function md(s){return esc(s).replace(/\*([^*]+)\*/g,"<b>$1</b>")}
+
+/* ------------------------------------------------------------------ icons (200x200 viewBox) */
+const S=(inner,vb="0 0 200 200")=>`<svg viewBox="${vb}" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#fff" stroke-width="9" stroke-linecap="round" stroke-linejoin="round">${inner}</svg>`;
+const ICONS={
+ shaker:(p={})=>S(`<rect x="62" y="18" width="76" height="26" rx="6" fill="${CORAL}" stroke="${CORAL}"/>
+   <path d="M56 50 H144 L132 182 H68 Z"/><text x="100" y="${p.small?132:128}" text-anchor="middle" font-family="Anton" font-size="${p.small?40:46}" fill="${CORAL}" stroke="none">${esc(p.text||"")}</text>`),
+ drumstick:()=>S(`<path d="M104 104 L58 150" stroke-width="18"/><circle cx="46" cy="148" r="14" fill="#fff" stroke="none"/><circle cx="60" cy="164" r="14" fill="#fff" stroke="none"/>
+   <ellipse cx="132" cy="74" rx="56" ry="44" transform="rotate(-40 132 74)" fill="${CORAL}" stroke="${CORAL}"/><path d="M112 58 C122 44 140 40 152 46" stroke="#fff" stroke-width="7" opacity=".7"/>`),
+ toilet:()=>S(`<rect x="44" y="20" width="56" height="74" rx="8"/><path d="M40 98 H160 C160 140 132 160 100 160 C68 160 40 140 40 98 Z"/>
+   <path d="M76 160 L72 186 H128 L124 160"/><path d="M60 110 H140" stroke="${CORAL}"/>`),
+ paper:(p={})=>S(`<path d="M50 18 H126 L154 46 V182 H50 Z"/><path d="M126 18 V46 H154"/><path d="M70 80 H134 M70 104 H134 M70 128 H112" stroke="#8d8794"/>
+   <text x="102" y="168" text-anchor="middle" font-family="Anton" font-size="34" fill="${CORAL}" stroke="none">${esc(p.text||"2023")}</text>`),
+ plate:(p={})=>S(`<ellipse cx="100" cy="118" rx="84" ry="44"/><ellipse cx="100" cy="114" rx="56" ry="27" stroke="#8d8794" stroke-width="6"/>
+   <path d="M70 108 C76 86 96 84 102 100 C108 82 130 86 132 106" stroke="${CORAL}" stroke-width="10"/>`),
+ muscle:()=>S(`<path d="M34 150 C40 110 56 92 74 84 L70 52 C70 38 92 34 100 46 L112 76 C140 70 166 92 168 124 C170 152 150 168 122 168 H50 C40 168 32 160 34 150 Z"/>
+   <path d="M96 116 C110 104 132 106 140 122" stroke="${CORAL}"/>`),
+ crystals:()=>S(`<path d="M40 150 L62 60 L80 150 Z M86 150 L112 30 L134 150 Z M138 150 L156 80 L170 150 Z" fill="${CORAL}" stroke="${CORAL}" stroke-width="6"/>
+   <path d="M30 156 H178" />`),
+ stairs:()=>S(`<path d="M20 180 H64 V140 H104 V100 H144 V60 H184"/>`),
+ drop:(p={})=>S(`<path d="M100 22 C130 70 152 96 152 126 C152 156 128 178 100 178 C72 178 48 156 48 126 C48 96 70 70 100 22 Z"/>
+   <text x="100" y="146" text-anchor="middle" font-family="Anton" font-size="44" fill="${CORAL}" stroke="none">${esc(p.text||"")}</text>`),
+ flame:()=>S(`<path d="M100 18 C110 56 150 70 150 120 C150 154 128 180 100 180 C72 180 50 156 50 124 C50 96 70 84 74 60 C86 74 88 86 88 96 C100 80 104 50 100 18 Z" fill="${CORAL}" stroke="${CORAL}"/>
+   <path d="M100 112 C112 128 120 136 120 152 C120 164 110 172 100 172 C90 172 80 164 80 152 C80 138 92 128 100 112 Z" fill="#fff" stroke="#fff" stroke-width="4"/>`),
+ battery:()=>S(`<rect x="30" y="60" width="128" height="80" rx="14"/><rect x="160" y="84" width="12" height="32" rx="4" fill="#fff"/>
+   <path d="M104 72 L80 104 H100 L92 128 L120 94 H100 Z" fill="${CORAL}" stroke="${CORAL}" stroke-width="5"/>`),
+ fibers:(p={})=>{let s="";for(let i=0;i<5;i++){const y=50+i*25;const brk=p.broken&&(i%2==0);
+     if(p.repair&&i%2==0){s+=`<path d="M24 ${y} H176"/><path d="M${96+i*6} ${y-14} V${y+14} M${82+i*6} ${y} H${110+i*6}" stroke="${CORAL}" stroke-width="8"/>`;continue;}
+     s+=brk?`<path d="M24 ${y} H${88+i*6}"/><path d="M${102+i*6} ${y} H176"/><path d="M${90+i*6} ${y-9} L${100+i*6} ${y+9}" stroke="${CORAL}" stroke-width="7"/>`:`<path d="M24 ${y} H176"/>`;}
+   return S(s);},
+ dumbbell:()=>S(`<path d="M40 80 V120 M58 66 V134 M142 66 V134 M160 80 V120 M58 100 H142" stroke-width="12"/>
+   <path d="M100 140 V184 M84 168 L100 186 L116 168" stroke="${CORAL}" stroke-width="10"/>`),
+ glass:()=>S(`<path d="M54 40 H146 L134 182 H66 Z"/><path d="M60 92 H140" stroke="#8d8794" stroke-width="6"/>
+   <rect x="78" y="128" width="22" height="22" rx="3" fill="#fff" stroke="none"/><rect x="104" y="140" width="22" height="22" rx="3" fill="#fff" stroke="none"/><rect x="92" y="108" width="20" height="20" rx="3" fill="#fff" stroke="none" transform="rotate(14 102 118)"/>`),
+ clock:(p={})=>S(`<circle cx="100" cy="100" r="78"/><path d="M100 100 V54 M100 100 L132 118" stroke="${CORAL}" stroke-width="11"/>`),
+ sun:()=>S(`<path d="M30 150 H170"/><path d="M52 150 A48 48 0 0 1 148 150" fill="${CORAL}" stroke="${CORAL}"/>
+   <path d="M100 76 V52 M50 96 L36 82 M150 96 L164 82 M28 124 H12 M172 124 H188" stroke-width="8"/>`),
+ moon:()=>S(`<path d="M128 34 C92 40 66 70 66 106 C66 146 98 176 138 176 C150 176 160 174 170 168 C116 160 88 102 128 34 Z" fill="${CORAL}" stroke="${CORAL}"/>
+   <path d="M44 52 l6 14 l14 6 l-14 6 l-6 14 l-6 -14 l-14 -6 l14 -6 Z" fill="#fff" stroke="none"/>`),
+ coffee:()=>S(`<path d="M40 76 H140 V130 C140 156 120 174 90 174 C60 174 40 156 40 130 Z"/><path d="M140 92 H156 C170 92 172 124 156 124 H140"/>
+   <path d="M70 52 C62 40 78 32 70 18 M100 52 C92 40 108 32 100 18" stroke="${CORAL}"/>`),
+ tupper:()=>S(`<rect x="28" y="84" width="144" height="80" rx="16"/><rect x="22" y="66" width="156" height="22" rx="8" fill="${CORAL}" stroke="${CORAL}"/>
+   <path d="M60 124 C70 106 90 106 98 124 M110 120 H146 M110 140 H140" stroke="#8d8794" stroke-width="7"/>`),
+ crowd:()=>{let s="";[[46,1],[100,0],[154,1]].forEach(([x,b])=>{s+=`<circle cx="${x}" cy="${b?78:64}" r="${b?20:24}" ${b?"":`fill="${CORAL}" stroke="${CORAL}"`}/><path d="M${x-32} ${b?170:176} C${x-32} ${b?120:110} ${x+32} ${b?120:110} ${x+32} ${b?170:176}"/>`});return S(s);},
+ calendar:()=>S(`<rect x="30" y="44" width="140" height="130" rx="14"/><path d="M30 80 H170" /><path d="M64 28 V56 M136 28 V56"/>
+   <rect x="112" y="112" width="34" height="34" rx="6" fill="${CORAL}" stroke="${CORAL}"/>`),
+ check:()=>S(`<path d="M40 104 L82 146 L162 58" stroke="${CORAL}" stroke-width="20"/>`),
+ cross:()=>S(`<path d="M46 46 L154 154 M154 46 L46 154" stroke="${CORAL}" stroke-width="20"/>`),
+};
+function icon(name,p){return (ICONS[name]||ICONS.check)(p||{});}
+
+/* stick figure on stairs (for "escaleras") */
+function figureSVG(){return `<svg viewBox="0 0 200 200" width="100%" height="100%" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+ <circle cx="100" cy="40" r="15"/><path d="M100 56 L96 112"/><path d="M98 72 L72 96 M98 72 L128 88"/><path d="M96 112 L78 150 L88 186 M96 112 L120 146 L114 178"/></svg>`}
+
+/* ------------------------------------------------------------------ scene builders
+   each returns update(t) ; t = seconds since scene start, D = scene duration            */
+const KINDS={};
+function el(html,css){const d=document.createElement("div");d.className="abs";d.style.cssText=css||"";d.innerHTML=html;$("#vis").appendChild(d);return d;}
+function setT(e,{x=0,y=0,s=1,r=0,o=1}){e.style.transform=`translate(${x}px,${y}px) rotate(${r}deg) scale(${s})`;e.style.opacity=o;}
+
+KINDS.num=(p)=>{ // card with icon + label + big counting number
+  const card=el(`<div class="card" style="left:0;top:0;width:860px;height:${p.height||360}px"></div>
+    <div class="abs" style="left:40px;top:${((p.height||360)-260)/2}px;width:260px;height:260px">${icon(p.icon,p.iconp)}</div>
+    <div class="abs lbl" style="left:330px;top:66px;width:520px;font-size:34px;white-space:nowrap">${esc(p.label||"")}</div>
+    <div class="abs anton coral" id="nv" style="left:326px;top:118px;font-size:200px;white-space:nowrap">0</div>`,
+    "left:110px;top:270px;width:860px;height:360px;transform-origin:50% 50%");
+  const nv=card.querySelector("#nv");
+  return t=>{setT(card,{s:pop(t,0,.4),o:fade(t,0,.12)});
+    const v=p.count===false?p.value:Math.round(p.value*easeOut((t-.08)/.6));
+    nv.innerHTML=`${p.prefix||""}${v}<span style="font-size:96px;margin-left:12px">${esc(p.unit||"")}</span>`;}
+};
+KINDS.vs=(p)=>{ // two stacked cards + VS badge
+  const mk=(c,top)=>el(`<div class="card" style="left:0;top:0;width:860px;height:300px"></div>
+    <div class="abs" style="left:40px;top:30px;width:240px;height:240px">${icon(c.icon,c.iconp)}</div>
+    <div class="abs lbl" style="left:320px;top:52px;width:520px">${esc(c.label||"")}</div>
+    <div class="abs anton ${c.white?"":"coral"}" style="left:316px;top:96px;font-size:170px;white-space:nowrap">${esc(c.value)}<span style="font-size:80px;margin-left:10px">${esc(c.unit||"")}</span></div>`,
+    `left:110px;top:${top}px;width:860px;height:300px;transform-origin:50% 50%`);
+  const a=mk(p.a,90), b=mk(p.b,470);
+  const vs=el(`<div style="width:130px;height:130px;border-radius:50%;background:${CORAL};display:flex;align-items:center;justify-content:center" class="anton"><span style="font-size:62px">VS</span></div>`,
+    "left:475px;top:372px;width:130px;height:130px;transform-origin:50% 50%");
+  return t=>{setT(a,{x:-60*(1-easeOut(t/.3)),o:fade(t,0,.2)});setT(b,{x:60*(1-easeOut((t-p.bdelay)/.3)),o:fade(t,p.bdelay||.25,.2)});
+    setT(vs,{s:pop(t,(p.bdelay||.25)+.15,.35),r:-10*(1-fade(t,(p.bdelay||.25)+.15,.35))});}
+};
+KINDS.head=(p)=>{ // big Anton lines, optional number badge, optional icon, optional strike
+  const lines=p.lines||[]; const fs=p.size||150;
+  let html="";
+  const top=p.icon?60:Math.max(60,330-lines.length*fs*0.55);
+  if(p.badge) html+=`<div class="abs anton" id="bd" style="left:${540-70}px;top:${top-150}px;width:140px;height:140px;border-radius:50%;background:${CORAL};display:flex;align-items:center;justify-content:center;font-size:96px;transform-origin:50% 50%">${esc(p.badge)}</div>`;
+  lines.forEach((l,i)=>{html+=`<div class="abs anton ln" style="left:40px;right:40px;top:${top+i*fs*1.04}px;text-align:center;font-size:${fs}px;color:${(p.coral||[]).includes(i)?CORAL:WHITE};transform-origin:50% 60%">${esc(l)}</div>`;});
+  if(p.strike!==undefined){const y=top+p.strike*fs*1.04+fs*0.58;html+=`<div class="abs" id="st" style="left:140px;top:${y}px;height:18px;width:800px;background:${CORAL};border-radius:9px;transform-origin:0 50%"></div>`;}
+  if(p.icon) html+=`<div class="abs" id="ic" style="left:${540-(p.iconSize||300)/2}px;top:${top+lines.length*fs*1.04+30}px;width:${p.iconSize||300}px;height:${p.iconSize||300}px;transform-origin:50% 50%">${icon(p.icon,p.iconp)}</div>`;
+  if(p.mark) html+=`<div class="abs" id="mk" style="left:${540+(p.iconSize||300)/2-110}px;top:${top+lines.length*fs*1.04+(p.iconSize||300)-150}px;width:190px;height:190px;transform-origin:50% 50%">${icon(p.mark)}</div>`;
+  const box=el(html,"left:0;top:0;width:1080px;height:880px");
+  const lns=[...box.querySelectorAll(".ln")], bd=box.querySelector("#bd"), st=box.querySelector("#st"), ic=box.querySelector("#ic"), mk=box.querySelector("#mk");
+  return t=>{lns.forEach((e,i)=>setT(e,{s:pop(t,.06*i,.36),o:fade(t,.06*i,.12)}));
+    if(bd)setT(bd,{s:pop(t,0,.35)});
+    if(st)st.style.transform=`scaleX(${easeOut((t-(p.strikeAt||.45))/.3)})`;
+    if(ic)setT(ic,{s:pop(t,.12+.06*lines.length,.4),y:Math.sin(t*3)*6});
+    if(mk)setT(mk,{s:pop(t,p.markAt||.55,.3),r:-12});}
+};
+KINDS.stamp=(p)=>{ // icon behind + slamming stamp
+  const ic=p.icon?el(`<div style="width:420px;height:420px;opacity:.35">${icon(p.icon,p.iconp)}</div>`,"left:330px;top:150px;width:420px;height:420px;transform-origin:50% 50%"):null;
+  const sp=el(`<div class="anton" style="border:16px solid ${CORAL};color:${CORAL};border-radius:30px;padding:10px 60px 18px;font-size:${p.size||240}px;letter-spacing:8px;background:rgba(17,16,19,.55)">${esc(p.text||"MITO")}</div>`,
+    "left:50%;top:230px;transform-origin:50% 50%");
+  return t=>{ if(ic)setT(ic,{s:1+.03*Math.sin(t*2),o:fade(t,0,.2)});
+    const k=clamp((t-.05)/.16); const s=k<1?2.6-1.6*easeInOut(k):1; const sh=(t>.21&&t<.45)?Math.sin(t*90)*10*(1-(t-.21)/.24):0;
+    sp.style.transform=`translate(-50%,0) translate(${sh}px,${sh*.5}px) rotate(-9deg) scale(${s})`; sp.style.opacity=clamp(k*3);}
+};
+KINDS.bars=(p)=>{ // vertical bars
+  const n=p.items.length, W=220, gap=160, x0=540-(n*W+(n-1)*gap)/2, H=420, base=780;
+  const mx=Math.max(...p.items.map(i=>i.value));
+  const bars=p.items.map((it,i)=>el(`<div class="abs" style="left:0;bottom:0;width:${W}px;height:${H*it.value/mx}px;background:${it.coral?CORAL:"#4a4550"};border-radius:22px 22px 6px 6px;transform-origin:50% 100%"></div>
+    <div class="abs anton" style="left:0;width:${W}px;text-align:center;bottom:${H*it.value/mx+16}px;font-size:96px;color:${it.coral?CORAL:WHITE}">${esc(it.top||"")}</div>
+    <div class="abs lbl" style="left:-40px;width:${W+80}px;text-align:center;top:${H+20}px;color:#cfcad5">${esc(it.label||"")}</div>`,
+    `left:${x0+i*(W+gap)}px;top:${base-H}px;width:${W}px;height:${H}px`));
+  const cap=p.caption?el(`<div class="anton" style="font-size:96px;text-align:center;width:1000px">${md(p.caption).replace(/<b>/g,'<span class="coral">').replace(/<\/b>/g,'</span>')}</div>`,"left:40px;top:20px;width:1000px"):null;
+  return t=>{bars.forEach((b,i)=>{const k=easeOut((t-.1-.25*i)/.6);b.firstElementChild.style.transform=`scaleY(${Math.max(.02,k)})`;b.children[1].style.opacity=fade(t,.45+.25*i,.2);});
+    if(cap)setT(cap,{s:pop(t,0,.35),o:fade(t,0,.15)});}
+};
+KINDS.clock=(p)=>{ // ring that fills to hours/12, big label in centre
+  const R=250, C=2*Math.PI*R;
+  const box=el(`<svg width="640" height="640" viewBox="0 0 640 640"><circle cx="320" cy="320" r="${R}" stroke="#2e2a33" stroke-width="44" fill="none"/>
+    <circle id="arc" cx="320" cy="320" r="${R}" stroke="${CORAL}" stroke-width="44" fill="none" stroke-linecap="round" stroke-dasharray="${C}" stroke-dashoffset="${C}" transform="rotate(-90 320 320)"/></svg>
+    <div class="abs anton" id="cl" style="left:0;width:640px;top:200px;text-align:center;font-size:190px">0</div>
+    <div class="abs lbl" style="left:-100px;width:840px;top:612px;text-align:center;color:#cfcad5">${esc(p.label||"")}</div>`,"left:220px;top:60px;width:640px;height:640px;transform-origin:50% 50%");
+  const arc=box.querySelector("#arc"), cl=box.querySelector("#cl");
+  return t=>{setT(box,{s:pop(t,0,.4)}); const k=easeInOut((t-.2)/(p.fillDur||1.2)); arc.setAttribute("stroke-dashoffset",C*(1-k*Math.min(1,p.hours/(p.full||12))));
+    cl.textContent=p.text?p.text:(p.prefix||"")+Math.max(p.min||0,Math.round(p.hours*k))+(p.unit||" H"); if(p.text){cl.style.transform=`scale(${pop(t,.25,.35)})`;}}
+};
+KINDS.timeline=(p)=>{ // 0..max hours axis with marks
+  const X0=110,X1=970, Y=420, sx=h=>X0+(X1-X0)*h/p.max;
+  let html=`<div class="abs" style="left:${X0}px;top:${Y}px;width:${X1-X0}px;height:10px;background:#4a4550;border-radius:5px"></div>`;
+  (p.ticks||[]).forEach(h=>{html+=`<div class="abs lbl" style="left:${sx(h)-80}px;width:160px;text-align:center;top:${Y+40}px;color:#cfcad5">${h} h</div><div class="abs" style="left:${sx(h)-3}px;top:${Y-14}px;width:6px;height:38px;background:#8d8794"></div>`;});
+  html+=(p.marks||[]).map((m,i)=>`<div class="abs mk" style="left:${sx(m.from)}px;top:${Y-(m.up?150:-120)}px;width:${Math.max(40,sx(m.to)-sx(m.from))}px;height:${m.up?110:100}px;transform-origin:0 50%">
+     <div class="abs" style="left:0;right:0;top:${m.up?70:0}px;height:34px;border-radius:17px;background:${m.coral?CORAL:"#fff"}"></div>
+     <div class="abs anton" style="left:${m.labelLeft||0}px;top:${m.up?-40:50}px;white-space:nowrap;font-size:70px;color:${m.coral?CORAL:"#fff"}">${esc(m.label)}</div></div>`).join("");
+  const box=el(html,"left:0;top:0;width:1080px;height:880px");
+  const mks=[...box.querySelectorAll(".mk")];
+  return t=>{mks.forEach((m,i)=>{const d=(p.marks[i].at??(.2+.7*i));m.style.opacity=fade(t,d,.15);m.firstElementChild.style.transform=`scaleX(${easeOut((t-d)/.45)})`;m.firstElementChild.style.transformOrigin="0 50%";});}
+};
+KINDS.eyes=(p)=>{
+  const box=el(`<svg width="560" height="240" viewBox="0 0 560 240"><defs><clipPath id="e1"><ellipse cx="140" cy="120" rx="120" ry="80"/></clipPath><clipPath id="e2"><ellipse cx="420" cy="120" rx="120" ry="80"/></clipPath></defs>
+    <g clip-path="url(#e1)"><ellipse cx="140" cy="120" rx="120" ry="80" fill="#fff"/><circle id="p1" cx="140" cy="130" r="44" fill="${DARK}"/><rect id="l1" x="10" y="30" width="260" height="0" fill="#2a2630"/></g>
+    <g clip-path="url(#e2)"><ellipse cx="420" cy="120" rx="120" ry="80" fill="#fff"/><circle id="p2" cx="420" cy="130" r="44" fill="${DARK}"/><rect id="l2" x="290" y="30" width="260" height="0" fill="#2a2630"/></g></svg>`,"left:260px;top:120px;width:560px;height:240px");
+  const h=el(`<div class="anton" style="font-size:140px;text-align:center;width:1000px">${esc(p.title||"")}</div>`,"left:40px;top:430px;width:1000px;transform-origin:50% 50%");
+  const p1=box.querySelector("#p1"),p2=box.querySelector("#p2"),l1=box.querySelector("#l1"),l2=box.querySelector("#l2");
+  return t=>{const dx=70*easeInOut((t-.2)/.35); p1.setAttribute("cx",140+dx);p2.setAttribute("cx",420+dx);
+    const lid=10+62*easeInOut((t-.5)/.3); l1.setAttribute("height",lid);l2.setAttribute("height",lid); setT(h,{s:pop(t,.25,.35),o:fade(t,.25,.1)});}
+};
+KINDS.neq=(p)=>{
+  const a=el(`<div class="anton" style="font-size:${p.size||130}px;text-align:center;width:1000px">${esc(p.left)}</div>`,"left:40px;top:120px;width:1000px;transform-origin:50% 50%");
+  const n=el(`<div class="anton coral" style="font-size:220px;text-align:center;width:1000px">≠</div>`,"left:40px;top:250px;width:1000px;transform-origin:50% 50%");
+  const b=el(`<div class="anton coral" style="font-size:${p.size||130}px;text-align:center;width:1000px">${esc(p.right)}</div>`,"left:40px;top:520px;width:1000px;transform-origin:50% 50%");
+  return t=>{setT(a,{s:pop(t,0,.35),o:fade(t,0,.1)});setT(n,{s:pop(t,.3,.35),r:(1-fade(t,.3,.3))*-30,o:fade(t,.3,.1)});setT(b,{s:pop(t,.55,.35),o:fade(t,.55,.1)});}
+};
+KINDS.chips=(p)=>{ // icon + label rows
+  const rows=p.items.map((it,i)=>el(`<div class="card" style="left:0;top:0;width:860px;height:250px"></div>
+    <div class="abs" style="left:34px;top:25px;width:200px;height:200px">${icon(it.icon,it.iconp)}</div>
+    <div class="abs anton" style="left:270px;top:${it.small?50:(250-(p.fs||88)*1.02)/2}px;font-size:${it.small?62:(p.fs||88)}px;width:570px;white-space:nowrap">${esc(it.label)}</div>
+    ${it.small?`<div class="abs lbl" style="left:272px;top:140px;width:560px;font-size:34px">${esc(it.small)}</div>`:""}`,
+    `left:110px;top:${(p.top||110)+i*300}px;width:860px;height:250px`));
+  return t=>{rows.forEach((r,i)=>setT(r,{x:(i%2?1:-1)*80*(1-easeOut((t-.3*i)/.3)),o:fade(t,.3*i,.15)}));}
+};
+KINDS.stairs=(p)=>{
+  const st=el(`<div style="width:700px;height:700px">${icon("stairs")}</div>`,"left:190px;top:80px;width:700px;height:700px");
+  const fg=el(`<div style="width:260px;height:260px">${figureSVG()}</div>`,"left:430px;top:0px;width:260px;height:260px;transform-origin:50% 100%");
+  const sw=el(`<div class="anton coral" style="font-size:110px">¡AY!</div>`,"left:720px;top:30px;transform-origin:50% 50%");
+  return t=>{setT(st,{o:fade(t,0,.2)}); const w=Math.sin(t*9)*10; setT(fg,{x:0,y:110,r:w,s:1}); setT(sw,{s:pop(t,.6,.3),r:12});}
+};
+KINDS.cta=(p)=>{
+  const logo=el(`<svg width="300" height="300" viewBox="-150 -150 300 300">${repeLogo()}</svg>`,"left:390px;top:40px;width:300px;height:300px;transform-origin:50% 50%");
+  const l1=el(`<div class="anton" style="font-size:${p.size1||112}px;text-align:center;width:1000px;line-height:1.02">${esc(p.l1)}</div>`,"left:40px;top:390px;width:1000px;transform-origin:50% 50%");
+  const l2=el(`<div class="anton coral" style="font-size:${p.size2||92}px;text-align:center;width:1000px;line-height:1.04">${esc(p.l2||"")}</div>`,`left:40px;top:${400+(p.l1lines||1)*(p.size1||112)*1.06}px;width:1000px;transform-origin:50% 50%`);
+  const ar=el(`<svg width="120" height="120" viewBox="0 0 120 120"><path d="M60 14 V100 M24 66 L60 102 L96 66" stroke="#fff" stroke-width="12" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>`,`left:480px;top:${420+(p.l1lines||1)*(p.size1||112)*1.06+(p.l2lines||1)*(p.size2||92)*1.06+10}px;width:120px;height:120px`);
+  return t=>{setT(logo,{s:pop(t,0,.4),r:360*(1-easeOut(t/.7))});setT(l1,{s:pop(t,.15,.35),o:fade(t,.15,.1)});setT(l2,{s:pop(t,.3,.35),o:fade(t,.3,.1)});setT(ar,{y:Math.abs(Math.sin(t*4))*-24,o:fade(t,.5,.2)});}
+};
+function repeLogo(){
+  const R=92, arc=(a0,a1)=>{const p=a=>[Math.cos(a)*R,Math.sin(a)*R];const [x0,y0]=p(a0),[x1,y1]=p(a1);return `M ${x0} ${y0} A ${R} ${R} 0 0 1 ${x1} ${y1}`};
+  const d=x=>x*Math.PI/180;
+  const head=deg=>{const a=d(deg),x=Math.cos(a)*R,y=Math.sin(a)*R,tx=-Math.sin(a),ty=Math.cos(a),nx=Math.cos(a),ny=Math.sin(a),L=34,W=26;
+    return `M ${x+tx*L} ${y+ty*L} L ${x+nx*W} ${y+ny*W} L ${x-nx*W} ${y-ny*W} Z`};
+  return `<circle r="150" fill="${CORAL}"/><path d="${arc(d(200),d(340))}" stroke="#fff" stroke-width="26" fill="none" stroke-linecap="round"/>
+   <path d="${arc(d(20),d(160))}" stroke="#fff" stroke-width="26" fill="none" stroke-linecap="round"/><path d="${head(340)}" fill="#fff"/><path d="${head(160)}" fill="#fff"/>
+   <circle r="26" fill="#fff"/><circle r="11" fill="${CORAL}"/>`;
+}
+
+/* ------------------------------------------------------------------ driver */
+let CUR=null, SPEC=null, TOTAL=1, START=0;
+window.loadSpec=(spec,total)=>{SPEC=spec;TOTAL=total;};
+window.buildScene=(i,start)=>{ $("#vis").innerHTML=""; const sc=SPEC.scenes[i]; START=start;
+  CUR=(KINDS[sc.kind]||KINDS.head)(sc); $("#sub").innerHTML=md(sc.sub||""); return true;};
+window.frame=(t,D)=>{ const gt=START+t;
+  $("#bar").style.width=(1080*clamp(gt/TOTAL))+"px";
+  $("#glow").style.left=(-210+60*Math.sin(gt*.5))+"px"; $("#glow").style.top=(40+50*Math.cos(gt*.37))+"px";
+  const z=1+0.035*clamp(t/Math.max(D,.5)); $("#vis").style.transform=`scale(${z})`; $("#vis").style.transformOrigin="50% 40%";
+  const s=$("#sub"); s.style.transform=`scale(${.9+.1*back(t/.22)})`; s.style.opacity=fade(t,0,.08);
+  CUR&&CUR(t,D); return true;};
+</script></body></html>

@@ -1,0 +1,63 @@
+{
+ "id": "2026-11-04-carrusel-hora-entreno",
+ "publish": "2026-11-04T18:00:00",
+ "handle": "@munstergym",
+ "slides": [
+  {
+   "type": "cover",
+   "l1": "La hora a la que entrenas",
+   "l2": "te define",
+   "icon": "clock",
+   "sub": "Busca la tuya y *no te ofendas*."
+  },
+  {
+   "type": "item",
+   "time": "06:00",
+   "title": "El madrugador",
+   "icon": "sun",
+   "text": "Entrena antes de que salga el sol y te lo recuerda cada día. A las 8 ya ha hecho *más que tú en toda la semana*."
+  },
+  {
+   "type": "item",
+   "time": "10:00",
+   "title": "El misterioso",
+   "icon": "coffee",
+   "text": "Nadie sabe de qué trabaja. Tiene el gimnasio para él solo y nunca, *nunca* tiene prisa."
+  },
+  {
+   "type": "item",
+   "time": "14:00",
+   "title": "El de la hora de comer",
+   "titleSize": 104,
+   "icon": "tupper",
+   "text": "Entrena en 40 minutos, se come el táper en 5 y vuelve a la oficina oliendo a… *dedicación*."
+  },
+  {
+   "type": "item",
+   "time": "18:30",
+   "title": "El de hora punta",
+   "icon": "crowd",
+   "text": "Cola para el banco, turnos en la polea y tres personas preguntando *«¿te queda mucho?»*. Modo supervivencia."
+  },
+  {
+   "type": "item",
+   "time": "22:00",
+   "title": "El vampiro",
+   "icon": "moon",
+   "text": "Gimnasio vacío, música a tope y cero testigos. Sus récords personales *no los ha visto nadie*."
+  },
+  {
+   "type": "item",
+   "time": "SÁB.",
+   "title": "El del finde",
+   "icon": "calendar",
+   "text": "De lunes a viernes, imposible. El sábado: tres horas y *pecho, espalda, pierna y hombro*."
+  },
+  {
+   "type": "cta",
+   "l1": "¿Cuál eres",
+   "text": "Dímelo en comentarios y *etiqueta a tu compi de horario*. Guárdalo para mandárselo al madrugador.",
+   "l2": "*tú*?"
+  }
+ ]
+}

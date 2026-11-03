@@ -1,0 +1,194 @@
+{
+ "id": "2026-11-04-proteina-30g",
+ "publish": "2026-11-04T14:00:00",
+ "scenes": [
+  {
+   "say": "¿Tu cuerpo solo aprovecha treinta gramos de proteína por comida?",
+   "sub": "¿Tu cuerpo solo aprovecha *30 g* de proteína por comida?",
+   "kind": "num",
+   "icon": "drumstick",
+   "label": "El «tope» por comida",
+   "value": 30,
+   "unit": "G"
+  },
+  {
+   "say": "¿Y el resto qué? ¿Se va por el váter?",
+   "sub": "¿Y el resto qué? ¿Se va por el *váter*?",
+   "kind": "head",
+   "lines": [
+    "¿Y EL RESTO?"
+   ],
+   "size": 150,
+   "icon": "toilet",
+   "iconSize": 380
+  },
+  {
+   "say": "Spoiler: es un mito.",
+   "sub": "Spoiler: es un *mito*.",
+   "kind": "stamp",
+   "text": "MITO",
+   "icon": "shaker",
+   "iconp": {
+    "text": "30 G"
+   }
+  },
+  {
+   "say": "En un estudio de 2023, a un grupo le dieron veinticinco gramos después de entrenar...",
+   "sub": "Estudio de *2023*: a un grupo, 25 g después de entrenar…",
+   "kind": "num",
+   "icon": "paper",
+   "iconp": {
+    "text": "2023"
+   },
+   "label": "Grupo A · tras entrenar",
+   "value": 25,
+   "unit": "G"
+  },
+  {
+   "say": "y a otro, cien gramos de golpe.",
+   "sub": "…y a otro, *100 g* de golpe.",
+   "kind": "vs",
+   "bdelay": 0.15,
+   "a": {
+    "icon": "shaker",
+    "iconp": {
+     "text": "25 G",
+     "small": true
+    },
+    "label": "Grupo A",
+    "value": "25",
+    "unit": "G",
+    "white": true
+   },
+   "b": {
+    "icon": "shaker",
+    "iconp": {
+     "text": "100 G",
+     "small": true
+    },
+    "label": "Grupo B",
+    "value": "100",
+    "unit": "G"
+   }
+  },
+  {
+   "say": "¿Resultado? Con cien, el músculo fabricó más proteína...",
+   "sub": "¿Resultado? Con 100, el músculo fabricó *más proteína*…",
+   "kind": "bars",
+   "caption": "SÍNTESIS *MUSCULAR*",
+   "items": [
+    {
+     "label": "25 g",
+     "value": 1.0,
+     "top": ""
+    },
+    {
+     "label": "100 g",
+     "value": 1.35,
+     "top": "MÁS",
+     "coral": true
+    }
+   ]
+  },
+  {
+   "say": "y durante más tiempo: hasta doce horas.",
+   "sub": "…y durante más tiempo: *hasta 12 horas*.",
+   "kind": "clock",
+   "hours": 12,
+   "full": 12,
+   "label": "Seguía funcionando"
+  },
+  {
+   "say": "¿Y entonces, de dónde salen los treinta?",
+   "sub": "¿Y entonces, de dónde salen los *30*?",
+   "kind": "eyes",
+   "title": "¿Y LOS 30 G?"
+  },
+  {
+   "say": "De estudios que medían solo tres o cuatro horas, y con proteína rápida.",
+   "sub": "De estudios que medían solo *3-4 horas*… y con proteína rápida.",
+   "kind": "clock",
+   "hours": 4,
+   "full": 12,
+   "text": "3-4 H",
+   "label": "Lo que medían",
+   "fillDur": 0.8
+  },
+  {
+   "say": "Absorberla, la absorbes toda. Simplemente tarda más.",
+   "sub": "Absorberla, la *absorbes toda*. Solo tarda más.",
+   "kind": "head",
+   "lines": [
+    "SE ABSORBE",
+    "TODA"
+   ],
+   "coral": [
+    1
+   ],
+   "size": 150,
+   "icon": "check",
+   "iconSize": 240
+  },
+  {
+   "say": "Lo que de verdad importa es el total del día.",
+   "sub": "Lo que de verdad importa es el *total del día*.",
+   "kind": "head",
+   "lines": [
+    "TOTAL",
+    "DEL DÍA"
+   ],
+   "coral": [
+    1
+   ],
+   "size": 160,
+   "icon": "calendar",
+   "iconSize": 280
+  },
+  {
+   "say": "Repartirla en varias comidas sigue siendo buena idea...",
+   "sub": "Repartirla en varias comidas *sigue siendo buena idea*…",
+   "kind": "chips",
+   "top": 20,
+   "fs": 96,
+   "items": [
+    {
+     "icon": "plate",
+     "label": "DESAYUNO"
+    },
+    {
+     "icon": "plate",
+     "label": "COMIDA"
+    },
+    {
+     "icon": "plate",
+     "label": "CENA"
+    }
+   ]
+  },
+  {
+   "say": "pero ese plato gordo no se tira a la basura.",
+   "sub": "…pero ese *plato gordo* no se desperdicia.",
+   "kind": "head",
+   "lines": [
+    "NO SE",
+    "DESPERDICIA"
+   ],
+   "coral": [
+    1
+   ],
+   "size": 140,
+   "icon": "plate",
+   "iconSize": 320,
+   "mark": "check"
+  },
+  {
+   "say": "Guárdalo, y pásaselo al que pesa el pollo al gramo.",
+   "sub": "*Guárdalo* y pásaselo al que pesa el pollo al gramo.",
+   "kind": "cta",
+   "l1": "GUÁRDALO",
+   "size1": 130,
+   "l2": "Y PÁSASELO AL QUE PESA EL POLLO AL GRAMO",
+   "l2lines": 2
+  }
+ ]
+}

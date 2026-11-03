@@ -1,0 +1,179 @@
+{
+ "id": "2026-11-04-agujetas-acido-lactico",
+ "publish": "2026-11-04T20:30:00",
+ "scenes": [
+  {
+   "say": "¿Mañana no vas a poder bajar las escaleras?",
+   "sub": "¿Mañana no vas a poder bajar las *escaleras*?",
+   "kind": "stairs"
+  },
+  {
+   "say": "Tranquilo: no es culpa del ácido láctico.",
+   "sub": "Tranquilo: no es culpa del *ácido láctico*.",
+   "kind": "head",
+   "lines": [
+    "ÁCIDO LÁCTICO"
+   ],
+   "size": 140,
+   "strike": 0,
+   "strikeAt": 0.6
+  },
+  {
+   "say": "Eso de los cristalitos que se te clavan en el músculo...",
+   "sub": "Eso de los *cristalitos* que se te clavan en el músculo…",
+   "kind": "head",
+   "lines": [
+    "CRISTALITOS"
+   ],
+   "size": 140,
+   "icon": "crystals",
+   "iconSize": 420
+  },
+  {
+   "say": "es un mito.",
+   "sub": "…es un *mito*.",
+   "kind": "stamp",
+   "text": "MITO",
+   "icon": "crystals"
+  },
+  {
+   "say": "El lactato desaparece de la sangre en menos de una hora.",
+   "sub": "El lactato se va de la sangre en *menos de 1 hora*.",
+   "kind": "clock",
+   "hours": 1,
+   "full": 6,
+   "text": "<1 H",
+   "label": "Lactato en sangre",
+   "fillDur": 0.6
+  },
+  {
+   "say": "Y las agujetas aparecen entre doce y setenta y dos horas después.",
+   "sub": "Y las agujetas aparecen *entre 12 y 72 horas* después.",
+   "kind": "timeline",
+   "max": 72,
+   "ticks": [
+    0,
+    12,
+    24,
+    48,
+    72
+   ],
+   "marks": [
+    {
+     "from": 0,
+     "to": 1,
+     "label": "LACTATO",
+     "up": true,
+     "at": 0.1
+    },
+    {
+     "from": 12,
+     "to": 72,
+     "label": "AGUJETAS",
+     "coral": true,
+     "at": 0.8,
+     "labelLeft": 0
+    }
+   ]
+  },
+  {
+   "say": "No cuadra, ¿verdad?",
+   "sub": "No cuadra, ¿*verdad*?",
+   "kind": "eyes",
+   "title": "NO CUADRA"
+  },
+  {
+   "say": "Además, el lactato no es basura: es combustible.",
+   "sub": "Además, el lactato no es basura: es *combustible*.",
+   "kind": "head",
+   "lines": [
+    "ES",
+    "COMBUSTIBLE"
+   ],
+   "coral": [
+    1
+   ],
+   "size": 150,
+   "icon": "flame",
+   "iconSize": 300
+  },
+  {
+   "say": "Lo que te duele son microrroturas en las fibras...",
+   "sub": "Lo que duele son *microrroturas* en las fibras…",
+   "kind": "head",
+   "lines": [
+    "MICRORROTURAS"
+   ],
+   "size": 130,
+   "icon": "fibers",
+   "iconp": {
+    "broken": true
+   },
+   "iconSize": 440
+  },
+  {
+   "say": "y la inflamación mientras se reparan.",
+   "sub": "…y la *inflamación* mientras se reparan.",
+   "kind": "head",
+   "lines": [
+    "REPARACIÓN"
+   ],
+   "coral": [
+    0
+   ],
+   "size": 150,
+   "icon": "fibers",
+   "iconSize": 420,
+   "iconp": {
+    "repair": true
+   }
+  },
+  {
+   "say": "Sobre todo al bajar el peso, o con ejercicios nuevos.",
+   "sub": "Sobre todo al *bajar el peso* o con *ejercicios nuevos*.",
+   "kind": "chips",
+   "top": 150,
+   "fs": 80,
+   "items": [
+    {
+     "icon": "dumbbell",
+     "label": "BAJAR EL PESO"
+    },
+    {
+     "icon": "calendar",
+     "label": "EJERCICIO NUEVO"
+    }
+   ]
+  },
+  {
+   "say": "Y no: tener agujetas no significa que hayas entrenado mejor.",
+   "sub": "Y no: tener agujetas *no significa* que entrenaras mejor.",
+   "kind": "neq",
+   "left": "AGUJETAS",
+   "right": "MEJOR ENTRENO",
+   "size": 140
+  },
+  {
+   "say": "¿Y el vaso de agua con azúcar? Tampoco sirve.",
+   "sub": "¿Y el vaso de agua con azúcar? *Tampoco sirve*.",
+   "kind": "head",
+   "lines": [
+    "¿AGUA CON",
+    "AZÚCAR?"
+   ],
+   "size": 140,
+   "icon": "glass",
+   "iconSize": 300,
+   "mark": "cross"
+  },
+  {
+   "say": "Etiqueta al colega que mañana baja las escaleras de lado.",
+   "sub": "*Etiqueta* al colega que mañana baja las escaleras de lado.",
+   "kind": "cta",
+   "l1": "ETIQUETA AL COLEGA",
+   "size1": 104,
+   "l2": "QUE MAÑANA BAJA DE LADO",
+   "l2lines": 1
+  }
+ ]
+}
