@@ -15,6 +15,7 @@ import json, os, re, sys, base64, wave, subprocess, urllib.request, urllib.error
 import numpy as np
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+HINTS = None
 SR = 48000
 LEAD = 0.12   # s of silence before the voice starts
 TAIL = 1.4    # s the last scene holds after the voice ends
@@ -71,7 +72,7 @@ def tts(content, wd, model="gemini-3.8-flash-tts", voice="Achird"):
         w.setnchannels(1); w.setsampwidth(2); w.setframerate(rate); w.writeframes(pcm)
     # light clean-up: high-pass, gentle compression, resample to 48k
     sh(["ffmpeg", "-y", "-loglevel", "error", "-i", raw, "-af",
-        "highpass=f=70,acompressor=threshold=-20dB:ratio=3:attack=5:release=80,aresample=48000", "-ar", str(SR), "-ac", "1",
+        "aresample=48000", "-ar", str(SR), "-ac", "1",
         os.path.join(wd, "voz.wav")])
     json.dump({"model": model, "voice": voice, "ts": time.strftime("%Y-%m-%d %H:%M")}, open(os.path.join(wd, "voz_meta.json"), "w"))
     print(f"TTS ok: {model}/{voice}, {dur(os.path.join(wd, 'voz.wav')):.2f}s")
@@ -116,6 +117,11 @@ def align(content, wd):
             need -= b - a
         return s1
     exp = [at_frac(c) for c in cum[:-1]]
+    hints_used = False
+    if HINTS and os.path.exists(HINTS):
+        st = load(HINTS)["starts"]
+        if len(st) == N:
+            exp = [float(x) for x in st[1:]]; hints_used = True
     mids = [((a + b) / 2, b - a) for a, b in inner]
     M = len(mids)
     K = N - 1
@@ -126,7 +132,7 @@ def align(content, wd):
         span = (s1 - s0)
         def cost(k, j):
             m, ln = mids[j]
-            return ((m - exp[k]) / span) ** 2 * 250 - 0.35 * min(ln, 0.5)
+            return (((m - exp[k]) / span) ** 2 * (2500 if hints_used else 250)) - 0.35 * min(ln, 0.5)
         for j in range(M):
             dp[0][j] = cost(0, j)
         for k in range(1, K):
@@ -141,7 +147,7 @@ def align(content, wd):
             j = int(bk[k][j]); picks.append(j)
         picks.reverse()
         bounds = [mids[j][0] for j in picks]
-        method = "silence-dp"
+        method = "silence-dp" + ("+gemini-hints" if hints_used else "")
     else:
         bounds = exp
         method = "proportional"
@@ -284,6 +290,7 @@ if __name__ == "__main__":
     opt = lambda k, d=None: a[a.index(k) + 1] if k in a else d
     content = load(cpath)
     model = opt("--model", "gemini-3.8-flash-tts"); voice = opt("--voice", "Achird")
+    HINTS = opt("--hints")
     if cmd == "tts":
         tts(content, wd, model, voice)
     elif cmd == "ingest":   # voz_raw.wav already in wd (generated with tts_pc.py)
@@ -300,7 +307,7 @@ if __name__ == "__main__":
                 os.replace(raw + ".trim.wav", raw)
                 print(f"AVISO: la voz leyó las instrucciones; recortado en {cut:.2f}s (verifica el inicio)")
         sh(["ffmpeg", "-y", "-loglevel", "error", "-i", raw, "-af",
-            "highpass=f=70,acompressor=threshold=-20dB:ratio=3:attack=5:release=80,aresample=48000", "-ar", str(SR), "-ac", "1",
+            "aresample=48000", "-ar", str(SR), "-ac", "1",
             os.path.join(wd, "voz.wav")])
         print("ingest ok", dur(os.path.join(wd, "voz.wav")))
     elif cmd == "align":

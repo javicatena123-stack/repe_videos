@@ -45,12 +45,15 @@ Canal de gimnasio **repe.** (Instagram @munstergym + YouTube Shorts; TikTok más
 - Pasos por vídeo:
   1. Escribe el JSON en la nube y pásalo al PC con `device_commit_files` usando **siempre una carpeta nueva** en `/mnt/user-data/outputs/sync_<hora>/` (reutilizar una ruta puede dejar la versión vieja en el PC). Comprueba con `grep` en el PC que llegó.
   2. PC: `cd "$HOME/mnt/Videos/Munster Gym/repe" && python3 engine/tts_pc.py content/FECHA/X.json ../work/FECHA/X_voz_raw.wav gemini-3.8-flash-tts Achird` (exit 3 = cupo agotado → repetir con `gemini-3.8-flash-lite-tts`). Cupo gratis: 10 peticiones/día por modelo, se renueva a las 9:00. Una petición = un vídeo entero; no gastes peticiones en pruebas.
-  3. Opcional (QA): `python3 engine/transcribe_pc.py ../work/FECHA/X_voz_raw.wav gemini-3.5-transcribe`.
-  4. Pasa el motor a la nube: en el PC `tar czf ../work/engine.tgz -C . engine`, luego `device_stage_files` de `engine.tgz`, del JSON y de la voz; en la nube descomprime en `/home/claude/repe/`.
-  5. Nube: `python3 engine/build.py ingest X.json work/X` (copia antes la voz como `work/X/voz_raw.wav`; si la voz leyó las instrucciones, se recorta sola y avisa) → `align` → revisa que no haya `flags` y que cada escena tenga sentido → `render` → `mix ... salida.mp4` → `stills` y **mira `sheet.jpg`** antes de dar el vídeo por bueno.
-  6. Carrusel: `node engine/carousel.mjs carrusel.json work/carrusel` y mira las diapositivas.
-  7. Pasa los finales al PC (`device_commit_files`, carpeta `Videos/Munster Gym/FECHA/`) y súbelos: `python3 engine/push_pc.py "mensaje" "../FECHA/x.mp4" videos/FECHA-tema.mp4 ...` → devuelve las URLs raw (deben dar 200).
-  8. Envía a Javier los vídeos y el carrusel (SendUserFile) con el copy.
+     - Recetas fijas (no cambiarlas): modelo bueno = instrucciones en español + guion (la prueba que eligió Javier); modelo ligero = guion seguido + `speech_metadata.style` "Castilian Spanish accent from Spain, casual, witty and confident, fast upbeat social-media pace" (la del vídeo 1, aprobada). `tts_pc.py` ya aplica la que toca.
+  3. PC: pistas de tiempo con Gemini: `python3 engine/align_pc.py content/FECHA/X.json ../work/FECHA/X_voz_raw.wav ../work/FECHA/X_hints.json`.
+  4. Pasa a la nube (device_stage_files) la voz, las pistas y, si hace falta, el motor (`tar czf ../work/engine.tgz -C . engine`); descomprime en `/home/claude/repe/`.
+  5. Nube: copia la voz como `work/X/voz_raw.wav` → `python3 engine/build.py ingest X.json work/X` → `align X.json work/X --hints X_hints.json`.
+  6. **Comprobación obligatoria de subtítulos:** nube `python3 engine/segcheck.py X.json work/X X_seg.wav` → pásalo al PC → PC `python3 engine/verify_pc.py content/FECHA/X.json ../work/FECHA/X_seg.wav`. Todas las escenas deben salir OK (un "REVISAR" solo por números escritos con cifra es falso aviso). Si una frase se cuela en la escena vecina, busca el corte correcto (silencios con `build.silences(..., "-25dB", 0.04)` o el mínimo de energía), prueba cortes con un audio de pitidos y vuelve a verificar; corrige `tiempos.json` (start = corte + 0.12). Si la voz dice una palabra distinta al guion, ajusta `say` y `sub` a lo que dice.
+  7. Nube: `render` → `mix ... salida.mp4` → `stills` y **mira `sheet.jpg`** antes de dar el vídeo por bueno.
+  8. Carrusel: `node engine/carousel.mjs carrusel.json work/carrusel` y mira las diapositivas.
+  9. Pasa los finales al PC (`device_commit_files`, carpeta `Videos/Munster Gym/FECHA/`) y súbelos: `python3 engine/push_pc.py "mensaje" "../FECHA/x.mp4" videos/FECHA-tema.mp4 ...` → devuelve las URLs raw (deben dar 200).
+  10. Envía a Javier los vídeos y el carrusel (SendUserFile) con el copy.
 
 ## 6. Publicación (Metricool, blogId 7824439, Europe/Madrid)
 - Reel: providers instagram, `instagramData {type: REEL, showReelOnFeed: true, isAiGenerated: true}`, `videoCoverMilliseconds` en el gancho.

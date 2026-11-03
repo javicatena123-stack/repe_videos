@@ -19,8 +19,8 @@
    "strikeAt": 0.6
   },
   {
-   "say": "Eso de los cristalitos que se te clavan en el músculo...",
-   "sub": "Eso de los *cristalitos* que se te clavan en el músculo…",
+   "say": "Eso de los cristalitos que se te clavaban en el músculo...",
+   "sub": "Eso de los *cristalitos* que se te clavaban en el músculo…",
    "kind": "head",
    "lines": [
     "CRISTALITOS"

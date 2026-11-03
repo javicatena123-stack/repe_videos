@@ -8,6 +8,7 @@ Exit code 3 = quota exhausted (429), so the caller can fall back to the lite mod
 """
 import json, os, sys, base64, wave, re, urllib.request, urllib.error
 
+STYLE_LITE = "Castilian Spanish accent from Spain, casual, witty and confident, fast upbeat social-media pace"
 DIRECTION = ("Lee este guion como un creador de contenido de gimnasio español de unos treinta años, con acento de España "
              "(castellano peninsular, pronunciando la z y la c), ritmo rápido de Reel, tono cercano, seguro y con un punto de humor. "
              "Cada línea es una frase: haz una pausa corta y clara al final de cada línea. No leas estas instrucciones.\n\n")
@@ -29,10 +30,14 @@ def main():
     model = sys.argv[3] if len(sys.argv) > 3 else "gemini-3.8-flash-tts"
     voice = sys.argv[4] if len(sys.argv) > 4 else "Achird"
     content = json.load(open(cpath, encoding="utf-8"))
-    lines = "\n".join(s["say"] for s in content["scenes"])
-    # the lite model reads any direction aloud, so it only gets the script
-    text = lines if "lite" in model else DIRECTION + content.get("direction_extra", "") + lines
-    body = {"contents": [{"parts": [{"text": text}]}],
+    if "lite" in model:
+        # receta de la voz secundaria aprobada (vídeo 1, 3-nov): guion seguido + estilo como speech_metadata
+        text = " ".join(s["say"] for s in content["scenes"])
+        part = {"text": text, "speech_metadata": {"style": STYLE_LITE}}
+    else:
+        # receta de la voz buena elegida por Javier (prueba de voces): instrucciones en español + guion
+        part = {"text": DIRECTION + content.get("direction_extra", "") + "\n".join(s["say"] for s in content["scenes"])}
+    body = {"contents": [{"parts": [part]}],
             "generationConfig": {"responseModalities": ["AUDIO"],
                                  "speechConfig": {"voiceConfig": {"prebuiltVoiceConfig": {"voiceName": voice}}}}}
     req = urllib.request.Request(
@@ -45,12 +50,17 @@ def main():
         print(f"TTS HTTP {e.code} ({model}): {msg}")
         sys.exit(3 if e.code == 429 else 2)
     part = r["candidates"][0]["content"]["parts"][0]["inlineData"]
-    pcm = base64.b64decode(part["data"])
-    m = re.search(r"rate=(\d+)", part.get("mimeType", "") or ""); rate = int(m.group(1)) if m else 24000
-    with wave.open(out, "wb") as w:
-        w.setnchannels(1); w.setsampwidth(2); w.setframerate(rate); w.writeframes(pcm)
-    json.dump({"model": model, "voice": voice}, open(out + ".json", "w"))
-    print(f"OK {model}/{voice} {len(pcm) / 2 / rate:.2f}s -> {out}")
+    inl = r["candidates"][0]["content"]["parts"][0]["inlineData"]
+    data = base64.b64decode(inl["data"]); mime = inl.get("mimeType", "") or ""
+    if data[:4] == b"RIFF":
+        open(out, "wb").write(data); secs = (len(data) - 44) / 48000
+    else:
+        m = re.search(r"rate=(\d+)", mime); rate = int(m.group(1)) if m else 24000
+        with wave.open(out, "wb") as w:
+            w.setnchannels(1); w.setsampwidth(2); w.setframerate(rate); w.writeframes(data)
+        secs = len(data) / 2 / rate
+    json.dump({"model": model, "voice": voice, "mime": mime}, open(out + ".json", "w"))
+    print(f"OK {model}/{voice} {secs:.2f}s mime={mime!r} -> {out}")
 
 
 if __name__ == "__main__":
