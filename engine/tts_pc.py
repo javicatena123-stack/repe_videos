@@ -29,7 +29,9 @@ def main():
     model = sys.argv[3] if len(sys.argv) > 3 else "gemini-3.8-flash-tts"
     voice = sys.argv[4] if len(sys.argv) > 4 else "Achird"
     content = json.load(open(cpath, encoding="utf-8"))
-    text = DIRECTION + content.get("direction_extra", "") + "\n".join(s["say"] for s in content["scenes"])
+    lines = "\n".join(s["say"] for s in content["scenes"])
+    # the lite model reads any direction aloud, so it only gets the script
+    text = lines if "lite" in model else DIRECTION + content.get("direction_extra", "") + lines
     body = {"contents": [{"parts": [{"text": text}]}],
             "generationConfig": {"responseModalities": ["AUDIO"],
                                  "speechConfig": {"voiceConfig": {"prebuiltVoiceConfig": {"voiceName": voice}}}}}

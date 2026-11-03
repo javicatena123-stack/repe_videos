@@ -287,7 +287,19 @@ if __name__ == "__main__":
     if cmd == "tts":
         tts(content, wd, model, voice)
     elif cmd == "ingest":   # voz_raw.wav already in wd (generated with tts_pc.py)
-        sh(["ffmpeg", "-y", "-loglevel", "error", "-i", os.path.join(wd, "voz_raw.wav"), "-af",
+        raw = os.path.join(wd, "voz_raw.wav")
+        body = sum(len(clean(s["say"])) for s in content["scenes"])
+        D = dur(raw); dl = len(DIRECTION.strip())
+        if D > (body / 15.0) * 1.35:   # much longer than the script -> direction was probably read aloud
+            exp = D * dl / (dl + body)
+            c = sorted([x for x in silences(raw, "-38dB", 0.2) if exp * 0.6 < x[0] < exp * 1.4],
+                       key=lambda x: abs((x[0] + x[1]) / 2 - exp))
+            if c:
+                cut = c[0][1] - 0.08
+                sh(["ffmpeg", "-y", "-loglevel", "error", "-ss", f"{cut:.2f}", "-i", raw, "-c:a", "pcm_s16le", raw + ".trim.wav"])
+                os.replace(raw + ".trim.wav", raw)
+                print(f"AVISO: la voz leyó las instrucciones; recortado en {cut:.2f}s (verifica el inicio)")
+        sh(["ffmpeg", "-y", "-loglevel", "error", "-i", raw, "-af",
             "highpass=f=70,acompressor=threshold=-20dB:ratio=3:attack=5:release=80,aresample=48000", "-ar", str(SR), "-ac", "1",
             os.path.join(wd, "voz.wav")])
         print("ingest ok", dur(os.path.join(wd, "voz.wav")))
