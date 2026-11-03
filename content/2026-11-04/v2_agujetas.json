@@ -44,7 +44,8 @@
    "full": 6,
    "text": "<1 H",
    "label": "Lactato en sangre",
-   "fillDur": 0.6
+   "fillDur": 0.6,
+   "drain": true
   },
   {
    "say": "Y las agujetas aparecen entre doce y setenta y dos horas después.",

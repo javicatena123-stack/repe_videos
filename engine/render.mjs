@@ -25,7 +25,7 @@ async function renderScene(page, i) {
   const D = n / FPS;
   const out = path.join(outDir, `scene_${String(i).padStart(2, '0')}.mp4`);
   const tmp = out.replace(/\.mp4$/, '.tmp.mp4');
-  await page.evaluate(([i, st]) => window.buildScene(i, st), [i, fb[i] / FPS]);
+  await page.evaluate(([i, st, D]) => window.buildScene(i, st, D), [i, fb[i] / FPS, D]);
   const ff = spawn('ffmpeg', ['-y', '-loglevel', 'error', '-f', 'image2pipe', '-c:v', 'mjpeg', '-framerate', String(FPS), '-i', '-',
     '-c:v', 'libx264', '-crf', '18', '-preset', 'veryfast', '-pix_fmt', 'yuv420p', '-r', String(FPS), tmp]);
   const done = new Promise((res, rej) => ff.on('close', c => c === 0 ? res() : rej(new Error('ffmpeg ' + c))));
@@ -46,6 +46,7 @@ const CONC = Math.min(4, idx.length);
 let next = 0;
 async function worker() {
   const page = await browser.newPage({ viewport: { width: 1080, height: 1920 }, deviceScaleFactor: 1 });
+  page.on('pageerror', e => { console.error('PAGE ERROR', e.message); process.exitCode = 1; });
   await page.goto('file://' + path.join(__dir, 'scenes.html'));
   await page.evaluate(() => document.fonts.ready);
   await page.evaluate(([s, t]) => window.loadSpec(s, t), [spec, total]);

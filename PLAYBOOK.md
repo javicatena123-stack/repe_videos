@@ -37,6 +37,7 @@ Canal de gimnasio **repe.** (Instagram @munstergym + YouTube Shorts; TikTok más
   - `chips`: items[{icon,label}], top, fs — filas con icono.
   - `stairs` — figura en escaleras (humor). `cta`: l1, l2, size1, l2lines.
   - Iconos: shaker, drumstick, toilet, paper, plate, muscle, crystals, stairs, drop, flame, battery, fibers(broken|repair), dumbbell, glass, clock, sun, moon, coffee, tupper, crowd, calendar, check, cross. Si hace falta uno nuevo, añádelo a `ICONS` en `scenes.html` (SVG 200×200, trazo blanco 9 px, acentos coral).
+- Animación (motor v2): cada icono tiene su propia animación (váter que tira de la cadena, batido que se agita, fibras que se rompen y se reparan con `{"repair": true}`, cristales que pinchan y se rompen bajo el sello, llama, vaso con azúcar, mancuerna en excéntrica, calendario, plato con vapor...). Transiciones entre escenas, cámara en movimiento, partículas, sacudidas en los impactos y subtítulos palabra a palabra van solos. Parámetros extra: `trans` ("left"|"right"|"up"|"punch") para forzar la transición, `drain: true` en `clock` (el anillo se vacía), `tick: false` en `chips` (sin checks), `intense` en iconos de `vs`. Antes de renderizar, `node engine/preview.mjs X.json /tmp/p 0.12,0.4,0.9,1.8` y mira que ninguna escena se quede quieta; objetivo: movimiento continuo en toda la escena, no solo al entrar.
 - Carrusel (`carrusel_*.json`): slides `cover` (l1,l2,icon,sub), `item` (time,title,icon,text,titleSize), `cta` (l1,l2,text). 6-8 diapositivas, 1080×1350.
 
 ## 5. Producción (rutas)
