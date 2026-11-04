@@ -32,7 +32,8 @@
   "tema": "La hora a la que entrenas te define (humor)",
   "contenido": "content/2026-11-04/carrusel_hora.json",
   "redes": {
-   "instagram": 415607407
+   "instagram": 415607407,
+   "threads": 416753544
   },
   "estado": "programado"
  },
@@ -45,7 +46,8 @@
   "redes": {
    "instagram": 416338607,
    "youtube": 416338745,
-   "tiktok": 416651979
+   "tiktok": 416651979,
+   "threads": 416753629
   },
   "voz": "gemini-3.8-flash-tts/Achird",
   "estado": "programado",

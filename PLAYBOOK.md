@@ -1,6 +1,6 @@
 # repe. — Manual de producción automática
 
-Canal de gimnasio **repe.** (Instagram @byrepe, TikTok @by_repe y YouTube Shorts; marca «byrepe» en Metricool). Javier valida: cada pieza se le envía y queda programada en Metricool, donde puede editarla o cancelarla antes de la hora.
+Canal de gimnasio **repe.** (Instagram @byrepe, TikTok @by_repe, YouTube Shorts y Threads @byrepe; marca «byrepe» en Metricool). Javier valida: cada pieza se le envía y queda programada en Metricool, donde puede editarla o cancelarla antes de la hora.
 
 ## 1. Marca y tono
 - Fondo #111013, coral #FE594D, blanco. Titulares en Anton (mayúsculas), subtítulos en Poppins 800 con palabras clave en coral. Píldora "repe." arriba, barra de progreso coral.
@@ -11,9 +11,9 @@ Canal de gimnasio **repe.** (Instagram @byrepe, TikTok @by_repe y YouTube Shorts
 ## 2. Parrilla diaria
 | Hora | Pieza | Enfoque |
 |---|---|---|
-| 14:00 | Vídeo (Reel + TikTok + Short) | Nutrición / mitos / ciencia práctica (hora de comer) |
-| 18:00 | Carrusel (solo Instagram) | Humor identificable o guía para guardar (antes de la hora punta) |
-| 20:30 | Vídeo (Reel + TikTok + Short) | Entreno, técnica, recuperación, mitos o humor de gym |
+| 14:00 | Vídeo (Reel + TikTok + Short + Threads) | Nutrición / mitos / ciencia práctica (hora de comer) |
+| 18:00 | Carrusel (Instagram + Threads) | Humor identificable o guía para guardar (antes de la hora punta) |
+| 20:30 | Vídeo (Reel + TikTok + Short + Threads) | Entreno, técnica, recuperación, mitos o humor de gym |
 
 ## 3. Investigación de tendencias (cada mañana)
 1. Revisa qué se publicó (`historial.json`) y las métricas de lo de ayer (Metricool analytics) para repetir lo que funciona.
@@ -62,8 +62,9 @@ Canal de gimnasio **repe.** (Instagram @byrepe, TikTok @by_repe y YouTube Shorts
 - Carrusel: providers instagram, `instagramData {type: POST, isAiGenerated: false}`, media = lista de URLs de las diapositivas.
 - Para cambiar el vídeo de un post ya programado: `updateScheduledPost` con la nueva URL (Metricool guarda su propia copia; cambiar el archivo en GitHub no basta).
 - TikTok: providers tiktok, el mismo vídeo, `tiktokData {title (obligatorio: el gancho, corto), privacyOption: PUBLIC_TO_EVERYONE, autoAddMusic: false, isAigc: true}` y el mismo `videoCoverMilliseconds` que el Reel. Copy más corto: gancho, 2-3 líneas con el dato, CTA y 5-7 hashtags (incluye #gymtok).
-- Cada red va en su propio post (Reel, TikTok y Short por separado) para que lleve su copy.
-- **Metricool es de pago desde el 4 nov 2026: publicaciones ilimitadas.** Programa siempre todas las piezas en las tres redes; no hace falta contar publicaciones.
+- Threads: providers threads, `threadsData {allowedCountryCodes: []}`, el mismo vídeo (o las mismas diapositivas si es el carrusel). Texto de 500 caracteres como máximo: gancho, 2-3 líneas con el dato y una pregunta que invite a contestar. Sin hashtags (Threads solo admite una etiqueta de tema por post).
+- Cada red va en su propio post (Reel, TikTok, Short y Threads por separado) para que lleve su copy.
+- **Metricool es de pago desde el 4 nov 2026: publicaciones ilimitadas.** Programa siempre todas las piezas en todas sus redes; no hace falta contar publicaciones.
 - Copy: gancho en la primera línea, 3-4 líneas con emojis y el dato clave, CTA, 6-9 hashtags en español.
 
 ## 7. Registro
