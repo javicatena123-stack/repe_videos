@@ -1,6 +1,54 @@
 [
-  {"fecha": "2026-11-03", "hora": "18:15", "tipo": "video", "tema": "Prensa vs sentadilla: por qué mueves más kilos en prensa", "redes": {"instagram": 415507269, "youtube": 415507691}, "voz": "gemini-3.8-flash-lite-tts/Achird", "estado": "publicado"},
-  {"fecha": "2026-11-04", "hora": "14:00", "tipo": "video", "tema": "Mito de los 30 g de proteína por comida (Trommelen 2023)", "contenido": "content/2026-11-04/v1_proteina.json", "redes": {"instagram": 416338328, "youtube": 416338467}, "voz": "gemini-3.8-flash-tts/Achird", "estado": "programado", "video": "videos/2026-11-04-proteina-30g.mp4"},
-  {"fecha": "2026-11-04", "hora": "18:00", "tipo": "carrusel", "tema": "La hora a la que entrenas te define (humor)", "contenido": "content/2026-11-04/carrusel_hora.json", "redes": {"instagram": 415607407}, "estado": "programado"},
-  {"fecha": "2026-11-04", "hora": "20:30", "tipo": "video", "tema": "Las agujetas no son ácido láctico", "contenido": "content/2026-11-04/v2_agujetas.json", "redes": {"instagram": 416338607, "youtube": 416338745}, "voz": "gemini-3.8-flash-tts/Achird", "estado": "programado", "video": "videos/2026-11-04-agujetas.mp4"}
+ {
+  "fecha": "2026-11-03",
+  "hora": "18:15",
+  "tipo": "video",
+  "tema": "Prensa vs sentadilla: por qué mueves más kilos en prensa",
+  "redes": {
+   "instagram": 415507269,
+   "youtube": 415507691
+  },
+  "voz": "gemini-3.8-flash-lite-tts/Achird",
+  "estado": "publicado"
+ },
+ {
+  "fecha": "2026-11-04",
+  "hora": "14:00",
+  "tipo": "video",
+  "tema": "Mito de los 30 g de proteína por comida (Trommelen 2023)",
+  "contenido": "content/2026-11-04/v1_proteina.json",
+  "redes": {
+   "instagram": 416338328,
+   "youtube": 416338467
+  },
+  "voz": "gemini-3.8-flash-tts/Achird",
+  "estado": "publicado",
+  "video": "videos/2026-11-04-proteina-30g.mp4"
+ },
+ {
+  "fecha": "2026-11-04",
+  "hora": "18:00",
+  "tipo": "carrusel",
+  "tema": "La hora a la que entrenas te define (humor)",
+  "contenido": "content/2026-11-04/carrusel_hora.json",
+  "redes": {
+   "instagram": 415607407
+  },
+  "estado": "programado"
+ },
+ {
+  "fecha": "2026-11-04",
+  "hora": "20:30",
+  "tipo": "video",
+  "tema": "Las agujetas no son ácido láctico",
+  "contenido": "content/2026-11-04/v2_agujetas.json",
+  "redes": {
+   "instagram": 416338607,
+   "youtube": 416338745,
+   "tiktok": 416651979
+  },
+  "voz": "gemini-3.8-flash-tts/Achird",
+  "estado": "programado",
+  "video": "videos/2026-11-04-agujetas.mp4"
+ }
 ]
