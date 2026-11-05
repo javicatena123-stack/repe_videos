@@ -285,6 +285,64 @@ AN.head=p=>{const N=6;const hairs=[...Array(N)].map(()=>`<path data-k="hr" d="" 
       const tx=bx+Math.cos(a)*L+sw,ty=by+Math.sin(a)*L-6;const cx=bx+Math.cos(a)*L*.5-sw*.6,cy=by+Math.sin(a)*L*.5;
       at(h,{d:`M${bx.toFixed(1)} ${by.toFixed(1)} Q${cx.toFixed(1)} ${cy.toFixed(1)} ${tx.toFixed(1)} ${ty.toFixed(1)}`})})}}};
 
+
+AN.chest=p=>({html:SVG(`<g data-k="g"><path d="M22 46 C44 30 76 30 86 34 Q100 48 114 34 C124 30 156 30 178 46 L160 96 L146 178 H54 L40 96 Z" fill="#1c1a20"/>
+   <g data-k="l"><path d="M98 60 C78 52 54 58 48 78 C46 100 70 112 98 104 Z" fill="${CORAL}" stroke="${CORAL}"/></g>
+   <g data-k="r"><path d="M102 60 C122 52 146 58 152 78 C154 100 130 112 102 104 Z" fill="${CORAL}" stroke="${CORAL}"/></g>
+   <g opacity=".75"><rect x="78" y="116" width="20" height="13" rx="5" fill="#fff" stroke="none"/><rect x="102" y="116" width="20" height="13" rx="5" fill="#fff" stroke="none"/><rect x="78" y="134" width="20" height="13" rx="5" fill="#fff" stroke="none"/><rect x="102" y="134" width="20" height="13" rx="5" fill="#fff" stroke="none"/><rect x="78" y="152" width="20" height="13" rx="5" fill="#fff" stroke="none"/><rect x="102" y="152" width="20" height="13" rx="5" fill="#fff" stroke="none"/></g></g>
+   <g data-k="fx"><path d="M30 70 L16 64 M30 86 L14 88 M170 70 L184 64 M170 86 L186 88" stroke="${CORAL}" stroke-width="7"/></g>`),
+  init(r){this.g=q(r,"g");this.l=q(r,"l");this.r=q(r,"r");this.fx=q(r,"fx")},
+  upd(t){const s=pop(t,0,.4);tf(this.g,`translate(100 110) scale(${s}) translate(-100 -110)`);
+    const kl=Math.max(0,Math.sin(t*7)),kr=Math.max(0,Math.sin(t*7+Math.PI));
+    tf(this.l,`translate(74 82) scale(${1+.12*kl}) translate(-74 -82)`);tf(this.r,`translate(126 82) scale(${1+.12*kr}) translate(-126 -82)`);
+    this.fx.setAttribute("opacity",(Math.max(kl,kr)*s).toFixed(2))}});
+
+AN.back=p=>({html:SVG(`<g data-k="g"><path d="M62 38 H138 C160 42 170 58 162 82 L132 172 H68 L38 82 C30 58 40 42 62 38 Z" fill="#1c1a20"/>
+   <path d="M100 44 V166" stroke-width="7" opacity=".7"/>
+   <g data-k="l"><path d="M92 60 C64 66 50 88 62 112 C70 128 84 140 94 148" stroke="${CORAL}" stroke-width="14"/></g>
+   <g data-k="r"><path d="M108 60 C136 66 150 88 138 112 C130 128 116 140 106 148" stroke="${CORAL}" stroke-width="14"/></g></g>
+   <g data-k="al"><path d="M30 96 L14 106 L30 116" stroke="#fff" stroke-width="8"/></g><g data-k="ar"><path d="M170 96 L186 106 L170 116" stroke="#fff" stroke-width="8"/></g>`),
+  init(r){this.g=q(r,"g");this.l=q(r,"l");this.r=q(r,"r");this.al=q(r,"al");this.ar=q(r,"ar")},
+  upd(t){const s=pop(t,0,.4);tf(this.g,`translate(100 110) scale(${s}) translate(-100 -110)`);
+    const k=.5+.5*Math.sin(t*5);tf(this.l,`translate(${-10*k} 0)`);tf(this.r,`translate(${10*k} 0)`);
+    tf(this.al,`translate(${-8*k} 0)`);tf(this.ar,`translate(${8*k} 0)`);
+    this.al.setAttribute("opacity",(k*s).toFixed(2));this.ar.setAttribute("opacity",(k*s).toFixed(2))}});
+
+AN.shoulder=p=>({html:SVG(`<g data-k="g"><circle cx="100" cy="42" r="17"/><path d="M100 60 V146 M100 146 L82 186 M100 146 L118 186" stroke-width="9"/>
+   <circle data-k="dl" cx="84" cy="70" r="13" fill="${CORAL}" stroke="${CORAL}"/><circle data-k="dr" cx="116" cy="70" r="13" fill="${CORAL}" stroke="${CORAL}"/>
+   <g data-k="al"><path d="M84 70 L30 70" stroke-width="10"/><path d="M24 58 V82 M32 54 V86 M16 62 V78" stroke-width="7"/></g>
+   <g data-k="ar"><path d="M116 70 L170 70" stroke-width="10"/><path d="M176 58 V82 M168 54 V86 M184 62 V78" stroke-width="7"/></g></g>`),
+  init(r){this.g=q(r,"g");this.al=q(r,"al");this.ar=q(r,"ar");this.dl=q(r,"dl");this.dr=q(r,"dr")},
+  upd(t){const s=pop(t,0,.4);tf(this.g,`translate(100 110) scale(${s}) translate(-100 -110)`);
+    const ph=(t*.9)%1;const up=ph<.45?easeInOut(ph/.45):ph<.6?1:1-easeInOut((ph-.6)/.4);const a=70*(1-up);
+    tf(this.al,`rotate(${-a} 84 70)`);tf(this.ar,`rotate(${a} 116 70)`);
+    const d=1+.25*up;tf(this.dl,`translate(84 70) scale(${d}) translate(-84 -70)`);tf(this.dr,`translate(116 70) scale(${d}) translate(-116 -70)`)}});
+
+
+AN.chest=p=>({html:SVG(`<g data-k="g"><path d="M40 40 C60 30 80 34 100 34 C120 34 140 30 160 40 L172 120 C150 150 50 150 28 120 Z" fill="#1c1a20"/>
+   <g data-k="pl"><path d="M100 60 C86 56 60 58 50 70 C44 92 56 108 80 106 C92 104 100 96 100 84 Z" fill="${CORAL}" stroke="${CORAL}"/></g>
+   <g data-k="pr"><path d="M100 60 C114 56 140 58 150 70 C156 92 144 108 120 106 C108 104 100 96 100 84 Z" fill="${CORAL}" stroke="${CORAL}"/></g>
+   <path d="M100 40 V140" stroke="#8d8794" stroke-width="5"/><path d="M84 120 H116 M86 134 H114" stroke="#8d8794" stroke-width="5"/></g>`),
+  init(r){this.g=q(r,"g");this.pl=q(r,"pl");this.pr=q(r,"pr")},
+  upd(t){const s=pop(t,0,.4);tf(this.g,`translate(100 100) scale(${s}) translate(-100 -100)`);
+    const a=Math.max(0,Math.sin(t*9))*7,b=Math.max(0,Math.sin(t*9+Math.PI))*7;
+    tf(this.pl,`translate(0 ${-a})`);tf(this.pr,`translate(0 ${-b})`)}});
+
+AN.back=p=>({html:SVG(`<g data-k="g"><circle cx="100" cy="30" r="16"/><g data-k="lt"><path d="M52 56 C70 48 130 48 148 56 C160 90 132 120 118 170 H82 C68 120 40 90 52 56 Z" fill="#1c1a20"/>
+   <path d="M60 64 C64 96 80 118 92 150 M140 64 C136 96 120 118 108 150" stroke="${CORAL}" stroke-width="10"/></g>
+   <path d="M100 52 V168" stroke="#8d8794" stroke-width="5"/></g>`),
+  init(r){this.g=q(r,"g");this.lt=q(r,"lt")},
+  upd(t){const s=pop(t,0,.4);tf(this.g,`translate(100 100) scale(${s}) translate(-100 -100)`);
+    const f=1+.13*Math.max(0,Math.sin(t*3.2));tf(this.lt,`translate(100 100) scale(${f} 1) translate(-100 -100)`)}});
+
+AN.shoulder=p=>({html:SVG(`<g data-k="g"><circle cx="64" cy="38" r="16"/><path d="M64 56 V140 M64 140 L50 186 M64 140 L78 186" />
+   <circle cx="82" cy="70" r="20" fill="${CORAL}" stroke="${CORAL}"/>
+   <g data-k="ar"><path d="M82 72 L150 72" stroke-width="11"/><path d="M144 56 V88 M156 56 V88" stroke-width="10"/></g></g>`),
+  init(r){this.g=q(r,"g");this.ar=q(r,"ar")},
+  upd(t){const s=pop(t,0,.4);tf(this.g,`translate(100 100) scale(${s}) translate(-100 -100)`);
+    const ph=(t*.8)%1;const ang=ph<.5?70-70*easeInOut(ph/.5):70*easeInOut((ph-.5)/.5);
+    tf(this.ar,`rotate(${ang.toFixed(1)} 82 72)`)}});
+
 const STATIC={
  muscle:()=>`<path d="M34 150 C40 110 56 92 74 84 L70 52 C70 38 92 34 100 46 L112 76 C140 70 166 92 168 124 C170 152 150 168 122 168 H50 C40 168 32 160 34 150 Z"/><path d="M96 116 C110 104 132 106 140 122" stroke="${CORAL}"/>`,
  stairs:()=>`<path d="M20 180 H64 V140 H104 V100 H144 V60 H184"/>`,
