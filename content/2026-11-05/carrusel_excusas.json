@@ -1,0 +1,66 @@
+{
+ "id": "2026-11-05-carrusel-excusas",
+ "publish": "2026-11-05T18:00:00",
+ "handle": "@byrepe",
+ "slides": [
+  {
+   "type": "cover",
+   "l1": "Excusas para no ir al gym",
+   "l2": "valoradas",
+   "icon": "battery",
+   "sub": "Del 0 al 10 en *credibilidad*. Sin piedad."
+  },
+  {
+   "type": "item",
+   "time": "3/10",
+   "title": "“Estoy muy cansado”",
+   "titleSize": 96,
+   "icon": "battery",
+   "text": "Entrenar suele darte más energía de la que te quita. El sofá lo sabe y por eso *no te deja levantarte*."
+  },
+  {
+   "type": "item",
+   "time": "1/10",
+   "title": "“Empiezo el lunes”",
+   "titleSize": 96,
+   "icon": "calendar",
+   "text": "Llevas varios lunes empezando. Este sí que es el bueno… *como todos los anteriores*."
+  },
+  {
+   "type": "item",
+   "time": "6/10",
+   "title": "“Está lleno”",
+   "icon": "crowd",
+   "text": "Tiene su parte de verdad. Pero esperar cinco minutos por la polea *no ha matado a nadie todavía*."
+  },
+  {
+   "type": "item",
+   "time": "2/10",
+   "title": "“Tengo agujetas”",
+   "titleSize": 100,
+   "icon": "legs",
+   "text": "¿De pierna? Pues hoy toca otra cosa. Las agujetas *no son una baja médica*."
+  },
+  {
+   "type": "item",
+   "time": "0/10",
+   "title": "“No tengo ropa limpia”",
+   "titleSize": 84,
+   "icon": "shirt",
+   "text": "Nadie en el gym se fija en tu camiseta. *Están mirándose al espejo*."
+  },
+  {
+   "type": "item",
+   "time": "10/10",
+   "title": "“Tengo fiebre”",
+   "icon": "thermo",
+   "text": "Esta sí vale. Con fiebre, a casa: *descansar también cuenta*. El gym seguirá ahí."
+  },
+  {
+   "type": "cta",
+   "l1": "¿Cuál es",
+   "l2": "*la tuya*?",
+   "text": "Confiésalo en comentarios y *etiqueta al que siempre empieza el lunes*."
+  }
+ ]
+}

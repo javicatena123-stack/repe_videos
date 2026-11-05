@@ -1,0 +1,212 @@
+{
+ "id": "2026-11-05-creatina-mitos",
+ "publish": "2026-11-05T14:00:00",
+ "scenes": [
+  {
+   "say": "¿La creatina te hincha, te deja calvo y te destroza el riñón?",
+   "sub": "¿La creatina te *hincha*, te deja *calvo* y te destroza el *riñón*?",
+   "kind": "chips",
+   "tick": false,
+   "top": 20,
+   "fs": 72,
+   "items": [
+    {
+     "icon": "drop",
+     "label": "TE HINCHA"
+    },
+    {
+     "icon": "head",
+     "label": "TE DEJA CALVO"
+    },
+    {
+     "icon": "kidney",
+     "label": "ROMPE EL RIÑÓN"
+    }
+   ]
+  },
+  {
+   "say": "En 2021, un grupo de expertos repasó lo que dicen más de quinientos estudios.",
+   "sub": "En *2021*, un grupo de expertos repasó más de *500 estudios*.",
+   "kind": "num",
+   "icon": "paper",
+   "iconp": {
+    "text": "2021"
+   },
+   "label": "Estudios sobre creatina",
+   "value": 500,
+   "unit": "+"
+  },
+  {
+   "say": "Primero: ¿te hincha?",
+   "sub": "Primero: ¿te *hincha*?",
+   "kind": "head",
+   "lines": [
+    "¿TE",
+    "HINCHA?"
+   ],
+   "coral": [
+    1
+   ],
+   "size": 170,
+   "icon": "drop",
+   "iconp": {
+    "text": "H2O"
+   },
+   "iconSize": 300
+  },
+  {
+   "say": "Los primeros días puedes retener algo de agua...",
+   "sub": "Los *primeros días* puedes retener algo de agua…",
+   "kind": "timeline",
+   "max": 30,
+   "ticks": [
+    0,
+    7,
+    14,
+    21,
+    28
+   ],
+   "marks": [
+    {
+     "from": 0,
+     "to": 6,
+     "label": "AGUA",
+     "coral": true,
+     "up": true,
+     "at": 0.2
+    }
+   ],
+   "tlabels": [
+    "DÍA 1",
+    "SEM 1",
+    "SEM 2",
+    "SEM 3",
+    "SEM 4"
+   ]
+  },
+  {
+   "say": "pero va dentro del músculo, no debajo de la piel.",
+   "sub": "…pero va *dentro del músculo*, no debajo de la piel.",
+   "kind": "vs",
+   "bdelay": 0.2,
+   "a": {
+    "icon": "drop",
+    "label": "Debajo de la piel",
+    "value": "NO",
+    "white": true
+   },
+   "b": {
+    "icon": "muscle",
+    "label": "Dentro del músculo",
+    "value": "SÍ"
+   }
+  },
+  {
+   "say": "Y a la larga, no te quedas hinchado.",
+   "sub": "Y a la larga, *no te quedas hinchado*.",
+   "kind": "stamp",
+   "text": "MITO",
+   "icon": "drop",
+   "iconp": {
+    "text": "H2O"
+   }
+  },
+  {
+   "say": "¿Lo del riñón? Viene de un solo caso, de 1998.",
+   "sub": "¿Lo del *riñón*? Viene de *un solo caso*, de 1998.",
+   "kind": "num",
+   "icon": "paper",
+   "iconp": {
+    "text": "1998"
+   },
+   "label": "Origen del mito",
+   "value": 1,
+   "unit": "CASO"
+  },
+  {
+   "say": "En gente sana y con la dosis normal, no hay pruebas de daño.",
+   "sub": "En gente *sana* y con la dosis normal, *no hay pruebas de daño*.",
+   "kind": "head",
+   "lines": [
+    "SIN DAÑO",
+    "EN SANOS"
+   ],
+   "coral": [
+    0
+   ],
+   "size": 140,
+   "icon": "kidney",
+   "iconp": {
+    "ok": true
+   },
+   "iconSize": 300
+  },
+  {
+   "say": "Eso sí: si ya tienes un problema de riñón, pregúntale antes a tu médico.",
+   "sub": "Eso sí: si ya tienes un problema de riñón, *pregúntale antes a tu médico*.",
+   "kind": "head",
+   "lines": [
+    "¿YA TIENES ALGO?",
+    "AL MÉDICO"
+   ],
+   "coral": [
+    1
+   ],
+   "size": 110,
+   "icon": "kidney",
+   "iconSize": 260
+  },
+  {
+   "say": "¿Y la calvicie? Sale de un único estudio, con jugadores de rugby.",
+   "sub": "¿Y la *calvicie*? Sale de *un único estudio*, con jugadores de rugby.",
+   "kind": "num",
+   "icon": "head",
+   "label": "Con jugadores de rugby",
+   "value": 1,
+   "unit": "ESTUDIO"
+  },
+  {
+   "say": "Nadie lo ha repetido, y ningún estudio ha visto caída de pelo.",
+   "sub": "Nadie lo ha repetido, y *ningún estudio* ha visto caída de pelo.",
+   "kind": "stamp",
+   "text": "MITO",
+   "icon": "head"
+  },
+  {
+   "say": "La dosis: de tres a cinco gramos al día, y no hace falta hacer carga.",
+   "sub": "La dosis: *3-5 g al día*, y no hace falta hacer carga.",
+   "kind": "num",
+   "icon": "tub",
+   "label": "Cada día",
+   "value": "3-5",
+   "count": false,
+   "unit": "G"
+  },
+  {
+   "say": "Y no, no es un esteroide: también la comes en la carne y el pescado.",
+   "sub": "Y no, *no es un esteroide*: también la comes en la carne y el pescado.",
+   "kind": "head",
+   "lines": [
+    "NO ES UN",
+    "ESTEROIDE"
+   ],
+   "coral": [
+    1
+   ],
+   "size": 150,
+   "icon": "drumstick",
+   "iconSize": 260,
+   "mark": "check"
+  },
+  {
+   "say": "Guárdalo, y pásaselo al que dice que te vas a quedar calvo.",
+   "sub": "*Guárdalo* y pásaselo al que dice que te vas a quedar calvo.",
+   "kind": "cta",
+   "l1": "GUÁRDALO",
+   "size1": 130,
+   "l2": "Y PÁSASELO AL QUE TE LO DIJO",
+   "l2lines": 1,
+   "size2": 74
+  }
+ ]
+}

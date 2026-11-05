@@ -252,6 +252,39 @@ AN.muscle=p=>({html:SVG(`<g data-k="g">${STATIC.muscle()}</g>`),init(r){this.g=q
 
 /* static drawings reused by generic animator and carousel-style icons */
 const S0=(inner)=>inner;
+
+AN.tub=p=>{const puffs=[...Array(7)].map(()=>`<circle data-k="pf" r="7" fill="#fff" stroke="none" opacity="0"/>`).join("");
+  return {html:SVG(`<g data-k="pw">${puffs}</g><g data-k="g"><rect x="52" y="70" width="96" height="108" rx="12" fill="#1c1a20"/>
+   <rect x="62" y="104" width="76" height="42" rx="6" fill="${CORAL}" stroke="${CORAL}"/>
+   <text x="100" y="137" text-anchor="middle" font-family="Anton" font-size="28" fill="#111013" stroke="none">${esc(p.text||"CREA")}</text>
+   <g data-k="ld"><rect x="46" y="52" width="108" height="22" rx="8" fill="#fff" stroke="none"/></g></g>`),
+  init(r){this.g=q(r,"g");this.ld=q(r,"ld");this.pf=qa(r,"pf")},
+  upd(t){const s=pop(t,0,.4);tf(this.g,`translate(100 178) scale(${s}) rotate(${wob(t,.6,3)}) translate(-100 -178)`);
+    const ph=(t*.7)%1;const lift=ph<.25?easeOut(ph/.25):ph<.6?1:1-easeIn((ph-.6)/.4);
+    tf(this.ld,`translate(${lift*16} ${-lift*34}) rotate(${lift*18} 150 52)`);
+    this.pf.forEach((c,i)=>{const k=((t*.9)+i/7)%1;const on=lift>.3?1:0;
+      at(c,{cx:80+rnd(i+2)*40+10*Math.sin(t*4+i),cy:60-k*70,r:5+k*10,opacity:(on*(1-k)*.8*s).toFixed(2)})})}}};
+
+AN.kidney=p=>({html:SVG(`<g data-k="g"><path d="M118 28 C66 24 32 64 36 112 C40 160 84 184 118 170 C146 160 142 128 126 118 C110 108 110 92 126 82 C148 68 162 32 118 28 Z" fill="${CORAL}" stroke="${CORAL}"/>
+   <path d="M128 100 H170" stroke-width="10"/><path data-k="sh" d="M70 66 C58 82 54 100 56 118" stroke="#fff" stroke-width="8" opacity=".55"/></g>
+   ${p.ok?`<g data-k="ck"><circle cx="152" cy="152" r="32" fill="#111013" stroke="#fff" stroke-width="7"/><path d="M137 152 L148 163 L168 140" stroke="#fff" stroke-width="9"/></g>`:""}`),
+  init(r){this.g=q(r,"g");this.sh=q(r,"sh");this.ck=q(r,"ck")},
+  upd(t){const s=pop(t,0,.4);const beat=Math.pow(Math.max(0,Math.sin(t*4.2)),10)*.09;
+    tf(this.g,`translate(100 100) scale(${s*(1+beat)}) rotate(${wob(t,.5,4)}) translate(-100 -100)`);
+    this.sh.setAttribute("opacity",(.3+.4*Math.abs(Math.sin(t*2))).toFixed(2));
+    if(this.ck){const k=pop(t,.45,.35);tf(this.ck,`translate(152 152) scale(${k}) translate(-152 -152)`);this.ck.setAttribute("opacity",clamp((t-.45)/.1))}}});
+
+AN.head=p=>{const N=6;const hairs=[...Array(N)].map(()=>`<path data-k="hr" d="" stroke="${CORAL}" stroke-width="9"/>`).join("");
+  return {html:SVG(`<g data-k="g">${hairs}<circle cx="100" cy="112" r="54" fill="#1c1a20"/><circle cx="82" cy="114" r="6" fill="#fff" stroke="none"/>
+   <circle cx="118" cy="114" r="6" fill="#fff" stroke="none"/><path d="M84 138 C94 147 106 147 116 138"/></g>`),
+  init(r){this.g=q(r,"g");this.hr=qa(r,"hr")},
+  upd(t){const s=pop(t,0,.4);tf(this.g,`translate(100 166) scale(${s}) rotate(${wob(t,.6,4)}) translate(-100 -166)`);
+    const hit=p.hit!=null&&t>p.hit?Math.exp(-(t-p.hit)*4):0;
+    this.hr.forEach((h,i)=>{const a=(-150+i*(120/(N-1)))*Math.PI/180;const bx=100+52*Math.cos(a),by=112+52*Math.sin(a);
+      const sw=(8+30*hit)*Math.sin(t*5+i*1.3);const L=34+4*Math.sin(t*3+i);
+      const tx=bx+Math.cos(a)*L+sw,ty=by+Math.sin(a)*L-6;const cx=bx+Math.cos(a)*L*.5-sw*.6,cy=by+Math.sin(a)*L*.5;
+      at(h,{d:`M${bx.toFixed(1)} ${by.toFixed(1)} Q${cx.toFixed(1)} ${cy.toFixed(1)} ${tx.toFixed(1)} ${ty.toFixed(1)}`})})}}};
+
 const STATIC={
  muscle:()=>`<path d="M34 150 C40 110 56 92 74 84 L70 52 C70 38 92 34 100 46 L112 76 C140 70 166 92 168 124 C170 152 150 168 122 168 H50 C40 168 32 160 34 150 Z"/><path d="M96 116 C110 104 132 106 140 122" stroke="${CORAL}"/>`,
  stairs:()=>`<path d="M20 180 H64 V140 H104 V100 H144 V60 H184"/>`,
@@ -388,7 +421,7 @@ KINDS.clock=(p)=>{const R=250,C=2*Math.PI*R;
 
 KINDS.timeline=(p)=>{const X0=110,X1=970,Y=420,sx=h=>X0+(X1-X0)*h/p.max;
   let html=`<div class="abs" data-r="ax" style="left:${X0}px;top:${Y}px;width:${X1-X0}px;height:10px;background:#4a4550;border-radius:5px;transform-origin:0 50%"></div>`;
-  (p.ticks||[]).forEach(h=>{html+=`<div class="abs tk" style="left:${sx(h)-80}px;width:160px;top:${Y-14}px;height:110px;transform-origin:50% 0"><div class="abs" style="left:77px;top:0;width:6px;height:38px;background:#8d8794"></div><div class="abs lbl" style="left:0;width:160px;top:54px;text-align:center;color:#cfcad5">${h} h</div></div>`;});
+  (p.ticks||[]).forEach((h,ti)=>{html+=`<div class="abs tk" style="left:${sx(h)-80}px;width:160px;top:${Y-14}px;height:110px;transform-origin:50% 0"><div class="abs" style="left:77px;top:0;width:6px;height:38px;background:#8d8794"></div><div class="abs lbl" style="left:0;width:160px;top:54px;text-align:center;color:#cfcad5">${(p.tlabels&&p.tlabels[ti])??(h+" h")}</div></div>`;});
   html+=(p.marks||[]).map((m,i)=>`<div class="abs mk" style="left:${sx(m.from)}px;top:${Y-(m.up?150:-120)}px;width:${Math.max(40,sx(m.to)-sx(m.from))}px;height:${m.up?110:100}px">
      <div class="abs bar" style="left:0;right:0;top:${m.up?70:0}px;height:34px;border-radius:17px;background:${m.coral?CORAL:"#fff"};transform-origin:0 50%"></div>
      <div class="abs anton lb" style="left:${m.labelLeft||0}px;top:${m.up?-40:50}px;white-space:nowrap;font-size:70px;color:${m.coral?CORAL:"#fff"}">${chars(m.label)}</div></div>`).join("");
