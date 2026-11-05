@@ -35,7 +35,7 @@
    "instagram": 415607407,
    "threads": 416753544
   },
-  "estado": "programado"
+  "estado": "publicado"
  },
  {
   "fecha": "2026-11-04",
@@ -50,7 +50,35 @@
    "threads": 416753629
   },
   "voz": "gemini-3.8-flash-tts/Achird",
-  "estado": "programado",
+  "estado": "publicado",
   "video": "videos/2026-11-04-agujetas.mp4"
+ },
+ {
+  "fecha": "2026-11-05",
+  "hora": "14:00",
+  "tipo": "video",
+  "tema": "Mitos de la creatina: hincha, calvicie y riñón (Antonio et al. 2021, JISSN)",
+  "contenido": "content/2026-11-05/v1_creatina.json",
+  "redes": {
+   "instagram": 417551270,
+   "tiktok": 417551337,
+   "youtube": 417551397,
+   "threads": 417551428
+  },
+  "voz": "gemini-3.8-flash-tts/Achird",
+  "estado": "programado",
+  "video": "videos/2026-11-05-creatina-mitos.mp4"
+ },
+ {
+  "fecha": "2026-11-05",
+  "hora": "18:00",
+  "tipo": "carrusel",
+  "tema": "Excusas para no ir al gym, valoradas (humor)",
+  "contenido": "content/2026-11-05/carrusel_excusas.json",
+  "redes": {
+   "instagram": 417551498,
+   "threads": 417551568
+  },
+  "estado": "programado"
  }
 ]
