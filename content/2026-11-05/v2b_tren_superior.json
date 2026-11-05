@@ -1,0 +1,238 @@
+{
+ "id": "2026-11-05-tren-superior-v3",
+ "publish": "2026-11-05T20:30:00",
+ "scenes": [
+  {
+   "say": "¿Piernas de caballo y tren superior de pollito?",
+   "sub": "¿Piernas de *caballo* y tren superior de *pollito*?",
+   "kind": "vs",
+   "bdelay": 0.2,
+   "a": {
+    "icon": "legs",
+    "label": "Piernas",
+    "value": "10",
+    "unit": "/10",
+    "white": true
+   },
+   "b": {
+    "icon": "chick",
+    "label": "Tren superior",
+    "value": "2",
+    "unit": "/10",
+    "intense": true
+   }
+  },
+  {
+   "say": "Si es tu caso, estás entrenando mal. Y no, no es la genética.",
+   "sub": "Si es tu caso, *estás entrenando mal*. Y no, *no es la genética*.",
+   "kind": "stamp",
+   "text": "ENTRENAS MAL",
+   "size": 120,
+   "icon": "muscle"
+  },
+  {
+   "say": "Me lo preguntasteis, así que van tres claves con ciencia.",
+   "sub": "Me lo preguntasteis: van *3 claves con ciencia*.",
+   "kind": "head",
+   "lines": [
+    "3 CLAVES",
+    "CON CIENCIA"
+   ],
+   "coral": [
+    1
+   ],
+   "size": 160,
+   "icon": "check",
+   "iconSize": 260,
+   "items": [
+    {
+     "icon": "chest",
+     "label": "PECHO"
+    },
+    {
+     "icon": "back",
+     "label": "ESPALDA"
+    },
+    {
+     "icon": "shoulder",
+     "label": "HOMBRO"
+    }
+   ]
+  },
+  {
+   "say": "Uno: cuenta tus series de pecho, espalda y hombro a la semana.",
+   "sub": "*Uno*: cuenta tus series de pecho, espalda y hombro *a la semana*.",
+   "kind": "chips",
+   "top": 20,
+   "fs": 88,
+   "items": [
+    {
+     "icon": "chest",
+     "label": "PECHO"
+    },
+    {
+     "icon": "back",
+     "label": "ESPALDA"
+    },
+    {
+     "icon": "shoulder",
+     "label": "HOMBRO"
+    }
+   ],
+   "tick": false
+  },
+  {
+   "say": "Con diez o más series semanales por músculo, se crece más.",
+   "sub": "Con *10 o más series* semanales por músculo, *se crece más*.",
+   "kind": "num",
+   "icon": "dumbbell",
+   "label": "Series a la semana",
+   "value": 10,
+   "unit": "+"
+  },
+  {
+   "say": "Lo dice un metaanálisis de 2017.",
+   "sub": "Lo dice un *metaanálisis de 2017*.",
+   "kind": "head",
+   "lines": [
+    "META-",
+    "ANÁLISIS"
+   ],
+   "coral": [
+    1
+   ],
+   "size": 170,
+   "icon": "paper",
+   "iconp": {
+    "text": "2017"
+   },
+   "iconSize": 260
+  },
+  {
+   "say": "Dos: entrena cada músculo al menos dos veces por semana.",
+   "sub": "*Dos*: entrena cada músculo al menos *dos veces por semana*.",
+   "kind": "head",
+   "lines": [
+    "2 VECES",
+    "POR SEMANA"
+   ],
+   "coral": [
+    0
+   ],
+   "size": 150,
+   "icon": "calendar",
+   "iconSize": 280
+  },
+  {
+   "say": "Dos veces hacen crecer más que una, con el mismo trabajo total.",
+   "sub": "Dos veces hacen crecer *más que una*, con el mismo trabajo total.",
+   "kind": "bars",
+   "caption": "*CRECIMIENTO*",
+   "items": [
+    {
+     "label": "1 vez",
+     "value": 1.0,
+     "top": ""
+    },
+    {
+     "label": "2 veces",
+     "value": 1.3,
+     "top": "MÁS",
+     "coral": true
+    }
+   ]
+  },
+  {
+   "say": "Tres: empieza la sesión por lo que quieres mejorar.",
+   "sub": "*Tres*: empieza la sesión por *lo que quieres mejorar*.",
+   "kind": "head",
+   "lines": [
+    "EMPIEZA",
+    "POR ARRIBA"
+   ],
+   "coral": [
+    1
+   ],
+   "size": 160,
+   "icon": "dumbbell",
+   "iconSize": 280
+  },
+  {
+   "say": "Lo que entrenas primero es lo que más progresa.",
+   "sub": "Lo que entrenas *primero* es lo que *más progresa*.",
+   "kind": "timeline",
+   "max": 60,
+   "ticks": [
+    0,
+    15,
+    30,
+    45,
+    60
+   ],
+   "tlabels": [
+    "INICIO",
+    "15 MIN",
+    "30 MIN",
+    "45 MIN",
+    "FIN"
+   ],
+   "marks": [
+    {
+     "from": 0,
+     "to": 30,
+     "label": "TREN SUPERIOR",
+     "coral": true,
+     "up": true,
+     "at": 0.15
+    },
+    {
+     "from": 30,
+     "to": 60,
+     "label": "PIERNA",
+     "at": 0.55
+    }
+   ]
+  },
+  {
+   "say": "¿Y las piernas? Mantenerlas cuesta mucho menos que construirlas.",
+   "sub": "¿Y las piernas? *Mantenerlas* cuesta mucho menos que construirlas.",
+   "kind": "head",
+   "lines": [
+    "PIERNAS:",
+    "A MANTENER"
+   ],
+   "coral": [
+    1
+   ],
+   "size": 150,
+   "icon": "legs",
+   "iconSize": 260,
+   "mark": "check"
+  },
+  {
+   "say": "Y cada semana, un poco más: más peso o más repeticiones.",
+   "sub": "Y cada semana, *un poco más*: más peso o más repeticiones.",
+   "kind": "head",
+   "lines": [
+    "CADA SEMANA",
+    "UN POCO MÁS"
+   ],
+   "coral": [
+    1
+   ],
+   "size": 140,
+   "icon": "flame",
+   "iconSize": 260
+  },
+  {
+   "say": "Guárdalo, y etiqueta al de las piernas de caballo.",
+   "sub": "*Guárdalo* y etiqueta al de las *piernas de caballo*.",
+   "kind": "cta",
+   "l1": "GUÁRDALO",
+   "size1": 130,
+   "l2": "Y ETIQUETA AL DE LAS PIERNAS DE CABALLO",
+   "size2": 60,
+   "l2lines": 1
+  }
+ ]
+}
