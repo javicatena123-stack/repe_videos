@@ -1,0 +1,19 @@
+{
+ "id": "2026-11-06-excusas-valoradas",
+ "publish": "2026-11-06T07:30:00",
+ "scenes": [
+  {"say": "Tu excusa para no ir al gym tiene nota. Y spoiler: es un cero.", "sub": "Tu excusa para no ir al gym tiene nota. Spoiler: *es un cero*.", "kind": "stamp", "text": "0/10", "icon": "sofa"},
+  {"say": "Las he valorado todas, sin piedad.", "sub": "Las he valorado todas, *sin piedad*.", "kind": "eyes", "title": "SIN PIEDAD"},
+  {"say": "«Estoy muy cansado»: un tres.", "sub": "«Estoy muy cansado»: *un 3*.", "kind": "num", "icon": "battery", "label": "“Estoy muy cansado”", "value": 3, "unit": "/10"},
+  {"say": "Entrenar suele darte más energía de la que te quita.", "sub": "Entrenar suele darte *más energía* de la que te quita.", "kind": "head", "lines": ["MÁS", "ENERGÍA"], "coral": [1], "size": 170, "icon": "flame", "iconSize": 280},
+  {"say": "«Empiezo el lunes»: un uno. Llevas ya unos cuantos lunes.", "sub": "«Empiezo el lunes»: *un 1*. Llevas ya unos cuantos lunes.", "kind": "num", "icon": "calendar", "label": "“Empiezo el lunes”", "value": 1, "unit": "/10"},
+  {"say": "«Está lleno»: un seis. Pero esperar la polea no ha matado a nadie.", "sub": "«Está lleno»: *un 6*. Esperar la polea *no ha matado a nadie*.", "kind": "num", "icon": "crowd", "label": "“Está lleno”", "value": 6, "unit": "/10"},
+  {"say": "«Tengo agujetas»: un dos. ¿De pierna? Pues hoy toca otra cosa.", "sub": "«Tengo agujetas»: *un 2*. ¿De pierna? Hoy toca *otra cosa*.", "kind": "num", "icon": "fibers", "label": "“Tengo agujetas”", "value": 2, "unit": "/10"},
+  {"say": "«No tengo ropa limpia»: un cero.", "sub": "«No tengo ropa limpia»: *un 0*.", "kind": "num", "icon": "shirt", "label": "“No tengo ropa limpia”", "value": 0, "unit": "/10"},
+  {"say": "Nadie se fija en tu camiseta. Están todos mirándose al espejo.", "sub": "Nadie se fija en tu camiseta: *están mirándose al espejo*.", "kind": "head", "lines": ["NADIE", "TE MIRA"], "coral": [1], "size": 170, "icon": "shirt", "iconSize": 280},
+  {"say": "¿Y la única que de verdad vale?", "sub": "¿Y la única que *de verdad vale*?", "kind": "eyes", "title": "¿LA ÚNICA?"},
+  {"say": "«Tengo fiebre»: un diez. Con fiebre, a casa.", "sub": "«Tengo fiebre»: *un 10*. Con fiebre, a casa.", "kind": "num", "icon": "thermo", "label": "“Tengo fiebre”", "value": 10, "unit": "/10"},
+  {"say": "Descansar también cuenta. El gym seguirá ahí.", "sub": "*Descansar también cuenta*. El gym seguirá ahí.", "kind": "head", "lines": ["DESCANSAR", "TAMBIÉN CUENTA"], "coral": [1], "size": 130, "icon": "check", "iconSize": 240},
+  {"say": "¿Cuál es la tuya? Confiésalo, y etiqueta al que siempre empieza el lunes.", "sub": "¿Cuál es la tuya? Confiésalo y *etiqueta al que siempre empieza el lunes*.", "kind": "cta", "l1": "¿CUÁL ES LA TUYA?", "size1": 110, "l2": "ETIQUETA AL DEL LUNES", "size2": 84, "l2lines": 1}
+ ]
+}
