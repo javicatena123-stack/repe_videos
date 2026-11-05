@@ -101,16 +101,16 @@
   "fecha": "2026-11-05",
   "hora": "20:30",
   "tipo": "video",
-  "tema": "Tren superior cuando las piernas van por delante: 3 claves (Schoenfeld 2017, 2016; Simão 2012). Prometido a @gdiazsilot08",
-  "contenido": "content/2026-11-05/v2_tren_superior.json",
+  "tema": "Piernas de 10 y tren superior de 4: estás entrenando mal (3 claves: Schoenfeld 2017, 2016; Simão 2012). Prometido a @gdiazsilot08",
+  "contenido": "content/2026-11-05/v2c_tren_superior.json",
   "redes": {
-   "instagram": 417738391,
-   "tiktok": 417738468,
-   "youtube": 417738571,
-   "threads": 417738629
+   "instagram": 417960408,
+   "tiktok": 417960467,
+   "youtube": 417960546,
+   "threads": 417960621
   },
   "voz": "gemini-3.8-flash-tts/Achird",
   "estado": "programado",
-  "video": "videos/2026-11-05-tren-superior.mp4"
+  "video": "videos/2026-11-05-tren-superior-v3.mp4"
  }
 ]
