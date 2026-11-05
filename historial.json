@@ -79,6 +79,22 @@
    "instagram": 417551498,
    "threads": 417551568
   },
-  "estado": "programado"
+  "estado": "cancelado (borrador en Metricool; se rehízo como vídeo del 6 nov 7:30)"
+ },
+ {
+  "fecha": "2026-11-06",
+  "hora": "07:30",
+  "tipo": "video (extra excepcional)",
+  "tema": "Excusas para no ir al gym, valoradas (humor)",
+  "contenido": "content/2026-11-06/v0_excusas.json",
+  "redes": {
+   "instagram": 417616345,
+   "tiktok": 417616503,
+   "youtube": 417616581,
+   "threads": 417616645
+  },
+  "voz": "gemini-3.8-flash-tts/Achird",
+  "estado": "programado",
+  "video": "videos/2026-11-06-excusas-valoradas.mp4"
  }
 ]
