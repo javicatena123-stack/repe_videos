@@ -524,7 +524,7 @@ KINDS.timeline=(p)=>{const X0=110,X1=970,Y=420,sx=h=>X0+(X1-X0)*h/p.max;
       else{const life=1-clamp((hp-m.to)/4);bar.style.transform=`scaleX(${easeOut((t-(m.at??.1))/.3)})`;e.style.opacity=(.25+.75*life).toFixed(2);popChars(lc,t,m.at??.1,.03,.3);}});}};
 
 /* Toni: acciones extra del motor (no están en toni.js) */
-const TONI_EXTRA_VIEW={legpress:"side"};
+const TONI_EXTRA_VIEW={legpress:"side",pushdown:"side",ohext:"side"};
 if(window.RepeToni){const T=window.RepeToni;
   /* prensa inclinada: o.range "full"|"bottom"(mitad estirada)|"top"(3 cm de arriba), o.period, o.x, o.y (pelvis) */
   T.actions.legpress=(t,o)=>{o=o||{};const R=o.range||"full";const per=o.period||(R==="top"?.7:2.2);
@@ -537,6 +537,18 @@ if(window.RepeToni){const T=window.RepeToni;
       hl:o.mark===false?{}:{quads:.4+.6*dn,glutes:.5*dn},
       face:{mouth:dn>.7||R==="top"?"effort":"smile",brows:R==="top"?"cocky":"focus",look:[.6,-.4],blink:0},
       sweat:o.sweat?1:0,sweatT:t,_lp:dn};};
+
+  const rep=(t,per)=>{const k=(((t%per)+per)%per)/per;return k<.45?T.ease.inOut(k/.45):(k<.55?1:1-T.ease.inOut((k-.55)/.45));};
+  /* tríceps en polea (jalón abajo), brazo pegado al cuerpo. dn 1 = brazo estirado abajo */
+  T.actions.pushdown=(t,o)=>{o=o||{};const dn=rep(t,o.period||1.8);
+    return T.ground({view:"side",x:o.x||0,torso:6,head:-4,breath:.6,legNear:{hip:4,kn:6,an:2},legFar:{hip:-4,kn:4,an:8},
+      armNear:{sh:8,el:112-104*dn,hand:"fist"},armFar:{sh:6,el:110-102*dn,hand:"fist"},
+      hl:o.mark===false?{}:{triceps:.35+.65*dn},face:{mouth:dn>.7?"effort":"smile",brows:"focus",look:[.2,.2]},_cab:"top"},o.ground||0);};
+  /* extensión de tríceps por encima de la cabeza (polea baja detrás). dn 1 = brazo estirado arriba */
+  T.actions.ohext=(t,o)=>{o=o||{};const dn=rep(t,o.period||1.9);
+    return T.ground({view:"side",x:o.x||0,torso:-4,head:4,breath:.6,legNear:{hip:4,kn:6,an:2},legFar:{hip:-4,kn:4,an:8},
+      armNear:{sh:-4,el:14,hand:"fist"},armFar:{sh:168,el:132-122*dn,hand:"fist"},
+      hl:o.mark===false?{}:{triceps:.45+.55*(1-dn)},face:{mouth:dn<.3?"effort":"smile",brows:"focus",look:[.3,-.4]},_cab:"low",_w:"wristFar"},o.ground||0);};
 }
 /* Toni (personaje, engine/toni.js). p: action | seq[{a,d,o}], o, mark, title, label, props("bench"|"stairs"|"stairsDown"), scale, tx, ty */
 KINDS.toni=(p)=>{const T=window.RepeToni;if(!T)return KINDS.head({lines:[p.title||""]});
@@ -555,6 +567,11 @@ KINDS.toni=(p)=>{const T=window.RepeToni;if(!T)return KINDS.head({lines:[p.title
     const sq=seq[k];const v=vOf(sq.a);const it=get(v);if(cur!==it){tn.innerHTML="";tn.appendChild(it.g);cur=it;}
     const o=Object.assign({talk:true},sq.o||{});if(p.mark&&o.mark===undefined)o.mark=p.mark;
     const ps=T.pose(sq.a,t-acc,o);it.set(ps);
+    if(ps._cab){const W=T.worldPoint("side",ps,ps._w||"wristNear",[0,26]);const cb=box.querySelector('[data-r=sled2]');
+      const px=ps._cab==="top"?W[0]+40:W[0]-230,py=ps._cab==="top"?-610:-40;
+      cb.innerHTML=`<circle cx="${px}" cy="${py}" r="20" fill="#2e2a33" stroke="#8d8794" stroke-width="6"/><path d="M${px} ${py} L${W[0].toFixed(1)} ${W[1].toFixed(1)}" stroke="#cfcad5" stroke-width="5"/><circle cx="${W[0].toFixed(1)}" cy="${W[1].toFixed(1)}" r="10" fill="#FE594D"/>`;
+      box.querySelector('[data-r=sled2]').parentNode.insertBefore(cb,box.querySelector('[data-r=tn]'));}
+    if(lb&&sq.label!==undefined&&lb.dataset.t!==sq.label){lb.dataset.t=sq.label;lb.firstElementChild.textContent=sq.label;}
     if(sq.a==="legpress"){const A=T.worldPoint("side",ps,"ankleNear",[18,30]),P=T.worldPoint("side",ps,"pelvis",[0,0]);
       const dx=A[0]-P[0],dy=A[1]-P[1],L=Math.hypot(dx,dy)||1,ux=dx/L,uy=dy/L,nx=-uy,ny=ux;const ang=Math.atan2(uy,ux)*180/Math.PI;
       const sl=box.querySelector('[data-r=sled2]'),rl=box.querySelector('[data-r=sled]');
