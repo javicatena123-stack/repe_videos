@@ -146,8 +146,26 @@
   },
   "voz": "gemini-3.8-flash-tts/Achird",
   "video": "videos/2026-11-06-maquinas-famosas-v3.mp4",
-  "estado": "programado",
+  "estado": "publicado",
   "toni": true,
   "nota": "v2: Toni hace la polea y la extensión por encima de la cabeza (petición de Javier)"
+ },
+ {
+  "fecha": "2026-11-06",
+  "hora": "20:30",
+  "tipo": "video (tendencia viral)",
+  "tema": "Rodilla por delante de la punta del pie en la sentadilla: frenarla multiplica la carga en la cadera (Fry y cols. 2003, JSCR)",
+  "titulo": "Si tu rodilla no pasa la punta del pie, le metes 10 veces más carga a tu cadera",
+  "ref": "@adrianherrerocoach «¿Cómo bajar más en sentadillas?» (IG, 3,5 M, 50x); formato «Cuando entiendas…» (@gravl.es, 4,1 M, 730x)",
+  "metricool": {
+   "instagram": 418938698,
+   "tiktok": 418938783,
+   "youtube": 418938873,
+   "threads": 418939040
+  },
+  "voz": "gemini-3.8-flash-tts/Achird",
+  "video": "videos/2026-11-06-rodillas-punta-pie.mp4",
+  "estado": "programado",
+  "toni": true
  }
 ]
