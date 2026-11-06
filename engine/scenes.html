@@ -31,6 +31,7 @@ html,body{margin:0;padding:0;background:#111013;}
 </style></head>
 <body><div id="stage"><div id="glow"></div><svg id="bgp" viewBox="0 0 1080 1920"></svg><div id="barbg"></div><div id="bar"></div><div id="pill">repe.</div>
 <div id="vis"></div><div id="sub"></div><div id="flash"></div></div>
+<script src="toni.js"></script>
 <script>
 const NS="http://www.w3.org/2000/svg";
 const CORAL="#FE594D", WHITE="#ffffff", GREY="#5a5560", DARK="#111013", BLUE="#8fd0ff", PINK="#ffd6d2";
@@ -521,6 +522,27 @@ KINDS.timeline=(p)=>{const X0=110,X1=970,Y=420,sx=h=>X0+(X1-X0)*h/p.max;
       if(m.coral){const fill=clamp((hp-m.from)/(m.to-m.from));bar.style.transform=`scaleX(${Math.max(.001,fill)}) scaleY(${1+.15*Math.sin(t*9)*fill})`;
         const tc=.35+invEIO(m.from/p.max)*Math.max(.8,(D||2.5)-.7);popChars(lc,t,tc,.03,.3);}
       else{const life=1-clamp((hp-m.to)/4);bar.style.transform=`scaleX(${easeOut((t-(m.at??.1))/.3)})`;e.style.opacity=(.25+.75*life).toFixed(2);popChars(lc,t,m.at??.1,.03,.3);}});}};
+
+/* Toni (personaje, engine/toni.js). p: action | seq[{a,d,o}], o, mark, title, label, props("bench"|"stairs"|"stairsDown"), scale, tx, ty */
+KINDS.toni=(p)=>{const T=window.RepeToni;if(!T)return KINDS.head({lines:[p.title||""]});
+  const seq=p.seq||[{a:p.action||"idle",d:999,o:p.o||{}}];
+  const view=T.viewOf(seq[0].a);const S=p.scale||(seq[0].a==="bench"?1.05:(view==="front"?1.12:1.12));
+  const ty=p.ty??(p.title?860:840),tx=p.tx??540;
+  const box=el(`<svg width="1080" height="880" viewBox="0 0 1080 880" overflow="visible"><g data-r="w" transform="translate(${tx} ${ty}) scale(${S})">
+     <ellipse cx="${(seq[0].o&&seq[0].o.x)||0}" cy="4" rx="190" ry="22" fill="#000" opacity=".45"/>${p.props==="bench"?T.props.bench((seq[0].o&&seq[0].o.x)||-60,(seq[0].o&&seq[0].o.y)||0,400):""}<g data-r="tn"></g></g></svg>`,"left:0;top:0;width:1080px;height:880px;transform-origin:50% 90%");
+  const tn=box.querySelector('[data-r=tn]');const inst={};
+  const get=v=>{if(!inst[v]){inst[v]=T.create({view:v,standalone:false});}return inst[v];};
+  const ttl=p.title?el(`<div class="anton" style="font-size:${p.titleSize||100}px;text-align:center;width:1000px">${(p.title||"").split("*").map((s,i)=>i%2?`<span class="coral">${chars(s)}</span>`:chars(s)).join("")}</div>`,"left:40px;top:-10px;width:1000px;transform-origin:50% 50%"):null;
+  const tc=ttl?[...ttl.querySelectorAll(".ch")]:[];
+  const lb=p.label?el(`<div class="anton" style="background:#C8F135;color:#111013;border-radius:40px;padding:6px 34px 10px;font-size:64px;white-space:nowrap">${esc(p.label)}</div>`,`left:${p.labelLeft??78}%;top:${p.labelTop??300}px;transform-origin:50% 50%`):null;
+  let cur=null;
+  return t=>{let acc=0,k=0;while(k<seq.length-1&&t>acc+seq[k].d){acc+=seq[k].d;k++;}
+    const sq=seq[k];const v=T.viewOf(sq.a);const it=get(v);if(cur!==it){tn.innerHTML="";tn.appendChild(it.g);cur=it;}
+    const o=Object.assign({talk:true},sq.o||{});if(p.mark&&o.mark===undefined)o.mark=p.mark;
+    it.set(T.pose(sq.a,t-acc,o));
+    const e=easeOut(t/.35);box.style.opacity=fade(t,0,.15);box.style.transform=`translateY(${(1-e)*80}px) scale(${.9+.1*e})`;
+    if(ttl){popChars(tc,t,.05,.03,.3);ttl.style.transform=`rotate(${wob(t,.6,1.2)}deg)`;}
+    if(lb)lb.style.transform=`translate(-50%,0) scale(${pop(t,.3,.35)*(1+.04*Math.sin(t*6))}) rotate(${wob(t,.5,2)}deg)`;}};
 
 KINDS.eyes=(p)=>{const box=el(`<svg width="620" height="300" viewBox="-30 -60 620 300" overflow="visible">
     <path data-r="b1" d="M40 -10 Q140 -45 240 -10" stroke="${CORAL}" stroke-width="16" fill="none" stroke-linecap="round"/><path data-r="b2" d="M320 -10 Q420 -45 520 -10" stroke="${CORAL}" stroke-width="16" fill="none" stroke-linecap="round"/>

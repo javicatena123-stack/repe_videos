@@ -1,0 +1,20 @@
+{
+ "id": "2026-11-06-maquinas-famosas",
+ "publish": "2026-11-06T14:00:00",
+ "ref": "Formato viral «el más famoso vs el mejor» (@madelman_ 1,6 M) y «el peor agarre del gym» (@apntrainer, 390x su media)",
+ "scenes": [
+  {"say": "Las dos máquinas más famosas del gimnasio te están frenando el músculo. Y casi nadie lo sabe.", "sub": "Las dos máquinas más famosas del gym te están *frenando el músculo*.", "kind": "chips", "trans": "punch", "tick": false, "fs": 78, "items": [{"icon": "dumbbell", "label": "POLEA DE TRÍCEPS"}, {"icon": "legs", "label": "CURL TUMBADO"}]},
+  {"say": "Empezamos por el tríceps: es la mayor parte de tu brazo.", "sub": "Empezamos por el *tríceps*: es la mayor parte de tu brazo.", "kind": "toni", "action": "mark", "o": {"muscle": "triceps"}, "mark": "triceps", "title": "TU *TRÍCEPS*", "label": "TRÍCEPS"},
+  {"say": "Y casi todo el mundo lo entrena en la polea, con los brazos pegados al cuerpo.", "sub": "Y casi todos lo entrenan en polea, con los *brazos pegados* al cuerpo.", "kind": "eyes", "title": "¿TÚ TAMBIÉN?"},
+  {"say": "En un estudio de 2023, veintiuna personas entrenaron doce semanas: un brazo en polea, y el otro con el brazo por encima de la cabeza.", "sub": "Estudio de 2023: *12 semanas*, un brazo en polea y el otro *por encima de la cabeza*.", "kind": "num", "icon": "calendar", "label": "21 personas", "value": 12, "unit": "semanas"},
+  {"say": "El brazo de la polea creció un catorce por ciento. El de encima de la cabeza, un veinte.", "sub": "Polea: *+14 %*. Por encima de la cabeza: *+20 %*.", "kind": "vs", "a": {"icon": "dumbbell", "label": "Polea, brazo pegado", "value": "+14", "unit": "%", "white": true}, "b": {"icon": "muscle", "label": "Brazo por encima", "value": "+20", "unit": "%"}},
+  {"say": "Un cuarenta por ciento más de músculo. Y moviendo menos peso.", "sub": "*Un 40 % más* de músculo. Y moviendo *menos peso*.", "kind": "head", "lines": ["UN 40 %", "MÁS"], "coral": [1], "size": 170, "icon": "flame", "iconSize": 260},
+  {"say": "¿Por qué? Con el brazo arriba, el tríceps trabaja estirado.", "sub": "¿Por qué? Con el brazo arriba, el tríceps trabaja *estirado*.", "kind": "head", "lines": ["MÚSCULO", "ESTIRADO"], "coral": [1], "size": 150, "icon": "fibers", "iconp": {"repair": true}, "iconSize": 280},
+  {"say": "Y la segunda máquina: el curl femoral tumbado.", "sub": "Y la segunda máquina: el *curl femoral tumbado*.", "kind": "stamp", "text": "#2", "size": 260, "icon": "legs"},
+  {"say": "Mismo equipo, en 2021: sentado, el femoral creció un catorce por ciento. Tumbado, solo un nueve.", "sub": "Mismo equipo, 2021: sentado *+14 %*. Tumbado, solo *+9 %*.", "kind": "bars", "caption": "MÁS *FEMORAL*", "items": [{"label": "TUMBADO", "value": 9.3, "top": "9%"}, {"label": "SENTADO", "value": 14.1, "top": "14%", "coral": true}]},
+  {"say": "Sentado, con la cadera doblada, el femoral también trabaja estirado.", "sub": "Sentado, con la cadera doblada, el femoral trabaja *estirado*.", "kind": "toni", "action": "standSide", "o": {"x": -40}, "mark": ["hams", "glutes"], "label": "FEMORAL", "labelLeft": 74},
+  {"say": "Ojo: no son malas máquinas. Pero lo más famoso no siempre es lo mejor.", "sub": "Ojo: no son malas. Pero lo más famoso *no siempre es lo mejor*.", "kind": "neq", "left": "LO MÁS FAMOSO", "right": "LO MEJOR", "size": 120},
+  {"say": "Tríceps con el brazo arriba, y femoral sentado. Pruébalo un mes.", "sub": "Tríceps con el *brazo arriba* y femoral *sentado*. Pruébalo un mes.", "kind": "toni", "action": "thumbsUp", "title": "*BRAZO ARRIBA* Y *SENTADO*", "titleSize": 84},
+  {"say": "Guárdalo, y pásaselo al que solo hace polea.", "sub": "Guárdalo y *pásaselo al que solo hace polea*.", "kind": "cta", "l1": "GUÁRDALO", "size1": 130, "l2": "PÁSASELO AL DE LA POLEA", "size2": 80, "l2lines": 1}
+ ]
+}
