@@ -1,0 +1,173 @@
+{
+ "id": "2026-11-06-rodillas-punta-pie",
+ "publish": "2026-11-06T20:30:00",
+ "ref": "Viral de técnica de sentadilla: @adrianherrerocoach «¿Cómo bajar más en sentadillas?» (IG, 3,5 M, 50x su media) y formato «Cuando entiendas…» (@gravl.es, 4,1 M, 730x)",
+ "scenes": [
+  {
+   "say": "Si en la sentadilla no dejas que tu rodilla pase la punta del pie, le estás metiendo diez veces más carga a tu cadera.",
+   "sub": "Si tu rodilla no pasa la punta del pie, le metes *diez veces más carga* a tu cadera.",
+   "kind": "toni",
+   "action": "squatwall",
+   "o": {
+    "x": -40,
+    "wall": 104
+   },
+   "mark": [
+    "glutes",
+    "back"
+   ],
+   "title": "RODILLAS ATRÁS = *X10*",
+   "titleSize": 104,
+   "label": "CADERA",
+   "labelLeft": 22,
+   "labelTop": 300,
+   "scale": 1.18,
+   "ty": 865
+  },
+  {
+   "say": "Te lo han dicho mil veces: la rodilla, nunca por delante de la punta del pie.",
+   "sub": "Te lo han dicho mil veces: la rodilla, *nunca por delante* de la punta del pie.",
+   "kind": "eyes",
+   "title": "¿SEGURO?"
+  },
+  {
+   "say": "En un estudio de 2003, siete hombres que entrenaban hicieron sentadilla de dos formas: libre, y con una tabla delante de las rodillas.",
+   "sub": "Estudio de 2003: 7 hombres que entrenaban. Sentadilla *libre* y *con una tabla* delante de las rodillas.",
+   "kind": "toni",
+   "seq": [
+    {
+     "a": "squat",
+     "d": 5.0,
+     "o": {
+      "x": -40
+     },
+     "label": "LIBRE"
+    },
+    {
+     "a": "squatwall",
+     "d": 9,
+     "o": {
+      "x": -40,
+      "wall": 104
+     },
+     "label": "CON TABLA"
+    }
+   ],
+   "title": "DOS *SENTADILLAS*",
+   "label": "LIBRE",
+   "scale": 1.18,
+   "ty": 865,
+   "labelLeft": 80,
+   "labelTop": 420
+  },
+  {
+   "say": "Con la tabla, la rodilla cargó un veintidós por ciento menos.",
+   "sub": "Con la tabla, la rodilla cargó un *22 % menos*.",
+   "kind": "num",
+   "icon": "check",
+   "label": "menos carga en la rodilla",
+   "value": 22,
+   "unit": "%"
+  },
+  {
+   "say": "Pero la cadera pasó de veintiocho a trescientos newtons metro. Diez veces más.",
+   "sub": "Pero la cadera pasó de *28* a *300 N·m*. ¡Diez veces más!",
+   "kind": "bars",
+   "caption": "CARGA EN LA *CADERA*",
+   "items": [
+    {
+     "label": "LIBRE",
+     "value": 28,
+     "top": "28",
+     "at": 1.3
+    },
+    {
+     "label": "CON TABLA",
+     "value": 303,
+     "top": "303",
+     "coral": true,
+     "at": 2.2
+    }
+   ]
+  },
+  {
+   "say": "¿Por qué? Si la rodilla no puede ir hacia delante, el tronco se tiene que inclinar un montón.",
+   "sub": "¿Por qué? Si la rodilla no avanza, el tronco se tiene que *inclinar un montón*.",
+   "kind": "head",
+   "lines": [
+    "TRONCO",
+    "INCLINADO"
+   ],
+   "coral": [
+    1
+   ],
+   "size": 150,
+   "icon": "crystals",
+   "iconSize": 260
+  },
+  {
+   "say": "Y esa carga se la come la cadera, y la zona lumbar.",
+   "sub": "Y esa carga se la come la *cadera* y la *zona lumbar*.",
+   "kind": "stamp",
+   "text": "LUMBAR",
+   "icon": "flame",
+   "size": 170
+  },
+  {
+   "say": "Para bajar hasta abajo, la rodilla casi siempre tiene que pasar la punta del pie. Es lo normal.",
+   "sub": "Para bajar hasta abajo, la rodilla *casi siempre* pasa la punta del pie. *Es lo normal*.",
+   "kind": "neq",
+   "left": "RODILLA DELANTE",
+   "right": "LESIÓN",
+   "size": 110
+  },
+  {
+   "say": "Eso sí: el talón, siempre pegado al suelo, y la rodilla, hacia donde apunta el pie.",
+   "sub": "Eso sí: *talón pegado* al suelo y la rodilla *hacia donde apunta el pie*.",
+   "kind": "chips",
+   "fs": 66,
+   "items": [
+    {
+     "icon": "check",
+     "label": "TALÓN EN EL SUELO",
+     "at": 0.6
+    },
+    {
+     "icon": "legs",
+     "label": "RODILLA → PIE",
+     "at": 2.6
+    }
+   ]
+  },
+  {
+   "say": "Así que suelta las rodillas, y baja.",
+   "sub": "Así que *suelta las rodillas* y baja.",
+   "kind": "toni",
+   "action": "squat",
+   "o": {
+    "x": -40
+   },
+   "mark": [
+    "quads",
+    "glutes"
+   ],
+   "title": "*SUELTA* LAS RODILLAS",
+   "titleSize": 104,
+   "label": "LIBRE",
+   "scale": 1.18,
+   "ty": 865,
+   "labelLeft": 80,
+   "labelTop": 420
+  },
+  {
+   "say": "Guárdalo, y pásaselo al que te dijo lo de la punta del pie.",
+   "sub": "Guárdalo y *pásaselo al de la punta del pie*.",
+   "kind": "cta",
+   "l1": "GUÁRDALO",
+   "size1": 130,
+   "l2": "PÁSASELO AL DE LA PUNTA DEL PIE",
+   "size2": 70,
+   "l2lines": 1
+  }
+ ]
+}
