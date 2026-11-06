@@ -66,7 +66,7 @@
    "threads": 417551428
   },
   "voz": "gemini-3.8-flash-tts/Achird",
-  "estado": "programado",
+  "estado": "publicado",
   "video": "videos/2026-11-05-creatina-mitos.mp4"
  },
  {
@@ -94,7 +94,7 @@
    "threads": 417616645
   },
   "voz": "gemini-3.8-flash-tts/Achird",
-  "estado": "programado",
+  "estado": "publicado",
   "video": "videos/2026-11-06-excusas-valoradas.mp4"
  },
  {
@@ -110,7 +110,24 @@
    "threads": 417960621
   },
   "voz": "gemini-3.8-flash-tts/Achird",
-  "estado": "programado",
+  "estado": "publicado",
   "video": "videos/2026-11-05-tren-superior-v3.mp4"
+ },
+ {
+  "fecha": "2026-11-06",
+  "hora": "14:00",
+  "tipo": "video",
+  "tema": "Medias repes: la mitad estirada crece más, la de arriba es ego (Kassiano 2023, Pedrosa 2022, Wolf 2023/2025)",
+  "titulo": "Hay medias repes que hacen crecer el doble que una repe completa",
+  "metricool": {
+   "instagram": 418720708,
+   "tiktok": 418720736,
+   "youtube": 418720782,
+   "threads": 418720804
+  },
+  "voz": "gemini-3.8-flash-tts/Achird",
+  "video": "videos/2026-11-06-medias-repes.mp4",
+  "estado": "programado",
+  "origen": "banco de ideas: @carls_jr (prensa sobrevalorada)"
  }
 ]

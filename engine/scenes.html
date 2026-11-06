@@ -354,6 +354,20 @@ AN.chick=p=>({html:SVG(`<g data-k="g"><path d="M70 176 L66 192 M58 192 H76 M120 
     tf(this.w,`rotate(${-25*Math.abs(Math.sin(t*9))} 84 130)`);
     tf(this.h,`rotate(${8*Math.sin(t*6)} 128 100)`)}});
 
+AN.press=p=>({html:SVG(`<path d="M88 152 L196 44" stroke="#4a4550" stroke-width="6" stroke-dasharray="4 12"/>
+   <path d="M14 136 L96 166 L120 166" stroke="#4a4550" stroke-width="18"/>
+   <g data-k="g"><circle cx="16" cy="112" r="15"/><path d="M32 128 L88 150" stroke-width="12"/>
+   <path data-k="th" d="" stroke-width="13" stroke="${p.range==="bottom"?CORAL:"#fff"}"/><path data-k="sh" d="" stroke-width="11"/>
+   <g data-k="sl"><path d="M0 -34 L0 34" stroke="${CORAL}" stroke-width="12"/>${[...Array(p.range==="top"?3:1)].map((_,i)=>`<circle cx="${22+i*14}" cy="0" r="${24-i*2}" fill="${i?"#1c1a20":CORAL}" stroke="${CORAL}" stroke-width="6"/>`).join("")}</g></g>`),
+  init(r){this.g=q(r,"g");this.th=q(r,"th");this.sh=q(r,"sh");this.sl=q(r,"sl")},
+  upd(t){const s=pop(t,0,.4);const R=p.range||"full";const [d0,d1]=R==="bottom"?[40,74]:R==="top"?[96,108]:[40,108];
+    const per=R==="top"?.5:(p.intense?1.1:1.6);const ph=(t/per)%1;const k=ph<.5?easeInOut(ph*2):1-easeInOut((ph-.5)*2);
+    const d=d1-(d1-d0)*k;const Hx=88,Hy=152,c=.7071;const Fx=Hx+c*d,Fy=Hy-c*d;
+    const L=58,h=Math.sqrt(Math.max(0,L*L-(d/2)*(d/2)));const Kx=(Hx+Fx)/2-c*h,Ky=(Hy+Fy)/2-c*h;
+    at(this.th,{d:`M${Hx} ${Hy} L${Kx.toFixed(1)} ${Ky.toFixed(1)}`});at(this.sh,{d:`M${Kx.toFixed(1)} ${Ky.toFixed(1)} L${Fx.toFixed(1)} ${Fy.toFixed(1)}`});
+    tf(this.sl,`translate(${(Fx+5).toFixed(1)} ${(Fy-5).toFixed(1)}) rotate(-45)`);
+    tf(this.g,`translate(100 100) scale(${s}) translate(-100 ${-100+wob(t,1.1,3)})`)}});
+
 const STATIC={
  muscle:()=>`<path d="M34 150 C40 110 56 92 74 84 L70 52 C70 38 92 34 100 46 L112 76 C140 70 166 92 168 124 C170 152 150 168 122 168 H50 C40 168 32 160 34 150 Z"/><path d="M96 116 C110 104 132 106 140 122" stroke="${CORAL}"/>`,
  stairs:()=>`<path d="M20 180 H64 V140 H104 V100 H144 V60 H184"/>`,
