@@ -19,7 +19,7 @@ Desde el 6 nov 2026 son **3 vídeos diarios**. Solo el de las 07:30 contesta a l
 
 ## 3. Investigación de tendencias (cada mañana)
 1. Revisa qué se publicó (`historial.json`) y las métricas de lo de ayer (Metricool analytics) para repetir lo que funciona.
-2. vidIQ: **máximo 1 búsqueda al día** (`vidiq_instagram_tiktok_outlier_search`, 5 créditos) y solo si quedan más de 15 créditos (`vidiq_balance`; el plan gratis renueva el día 2 de cada mes). Rota el tema: técnica, nutrición, humor/cultura gym, recuperación, mitos.
+2. vidIQ: **1 búsqueda al día** (`vidiq_instagram_tiktok_outlier_search`, 5 créditos; una segunda solo si quedan más de 40) y solo si quedan más de 15 créditos (`vidiq_balance`; el plan gratis renueva el día 2 de cada mes). Rota el tema: técnica, nutrición, humor/cultura gym, recuperación, mitos.
 3. WebSearch: noticias y debates fitness/nutrición/wellness de la semana en España y estudios recientes.
 4. **14:00 y 20:30 = virales.** Cada tema sale de un vídeo concreto que ha funcionado en la última semana o el último mes en el nicho fitness hispano (outliers de vidIQ: muchas vistas, likes y guardados, varias veces la media de su cuenta). Se repite el tema o el formato, con nuestro estilo y un estudio detrás, y se apunta en el plan y en `historial.json` (`ref`) el vídeo de referencia. Elige temas que no estén en `historial.json` de los últimos 30 días. Formatos que más funcionan ahora en el nicho hispano: "error vs correcto", "mito desmontado con un estudio", listas rápidas con valoración, humor identificable ("la hora a la que entrenas te define", "excusas", "tipos de gente en el gym").
 
