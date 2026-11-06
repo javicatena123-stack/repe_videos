@@ -114,20 +114,39 @@
   "video": "videos/2026-11-05-tren-superior-v3.mp4"
  },
  {
-  "fecha": "2026-11-06",
-  "hora": "14:00",
-  "tipo": "video",
+  "fecha": "2026-11-07",
+  "hora": "07:30",
+  "tipo": "video (respuesta a seguidores)",
   "tema": "Medias repes: la mitad estirada crece más, la de arriba es ego (Kassiano 2023, Pedrosa 2022, Wolf 2023/2025)",
   "titulo": "Hay medias repes que hacen crecer el doble que una repe completa",
   "metricool": {
-   "instagram": 418720708,
-   "tiktok": 418720736,
-   "youtube": 418720782,
-   "threads": 418720804
+   "instagram": 418747500,
+   "tiktok": 418747564,
+   "youtube": 418747635,
+   "threads": 418747693
   },
   "voz": "gemini-3.8-flash-tts/Achird",
-  "video": "videos/2026-11-06-medias-repes.mp4",
+  "video": "videos/2026-11-07-medias-repes-toni.mp4",
   "estado": "programado",
-  "origen": "banco de ideas: @carls_jr (prensa sobrevalorada)"
+  "origen": "banco de ideas: @carls_jr (prensa sobrevalorada)",
+  "nota": "Movido del 6 nov 14:00 al 7 nov 07:30 a petición de Javier; rehecho con Toni en la prensa"
+ },
+ {
+  "fecha": "2026-11-06",
+  "hora": "14:00",
+  "tipo": "video (tendencia viral)",
+  "tema": "Las 2 máquinas más famosas te frenan el músculo: polea de tríceps vs brazo por encima de la cabeza (Maeo 2023) y curl femoral tumbado vs sentado (Maeo 2021)",
+  "titulo": "Las dos máquinas más famosas del gym te están frenando el músculo",
+  "ref": "@madelman_ «El más famoso - El mejor» (IG, 1,6 M, oct 2026); @apntrainer «El peor agarre del gym» (IG, 1,1 M, 390x su media)",
+  "metricool": {
+   "instagram": 418757088,
+   "tiktok": 418757136,
+   "youtube": 418757208,
+   "threads": 418757261
+  },
+  "voz": "gemini-3.8-flash-tts/Achird",
+  "video": "videos/2026-11-06-maquinas-famosas.mp4",
+  "estado": "programado",
+  "toni": true
  }
 ]

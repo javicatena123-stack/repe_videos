@@ -523,13 +523,28 @@ KINDS.timeline=(p)=>{const X0=110,X1=970,Y=420,sx=h=>X0+(X1-X0)*h/p.max;
         const tc=.35+invEIO(m.from/p.max)*Math.max(.8,(D||2.5)-.7);popChars(lc,t,tc,.03,.3);}
       else{const life=1-clamp((hp-m.to)/4);bar.style.transform=`scaleX(${easeOut((t-(m.at??.1))/.3)})`;e.style.opacity=(.25+.75*life).toFixed(2);popChars(lc,t,m.at??.1,.03,.3);}});}};
 
+/* Toni: acciones extra del motor (no están en toni.js) */
+const TONI_EXTRA_VIEW={legpress:"side"};
+if(window.RepeToni){const T=window.RepeToni;
+  /* prensa inclinada: o.range "full"|"bottom"(mitad estirada)|"top"(3 cm de arriba), o.period, o.x, o.y (pelvis) */
+  T.actions.legpress=(t,o)=>{o=o||{};const R=o.range||"full";const per=o.period||(R==="top"?.7:2.2);
+    const k=(((t%per)+per)%per)/per;const c=k<.5?T.ease.inOut(k*2):1-T.ease.inOut((k-.5)*2);
+    const [d0,d1]=R==="bottom"?[.55,1]:R==="top"?[0,.16]:[0,1];const dn=d0+(d1-d0)*c;
+    const hip=86+50*dn,kn=6+112*dn;
+    return {view:"side",pivot:"pelvis",x:(o.x||0),y:(o.y||0),rot:-50,torso:0,head:24,hips:0,
+      legNear:{hip,kn,an:kn-hip+68},legFar:{hip:hip-3,kn:kn-2,an:kn-hip+66},
+      armNear:{sh:22,el:30,hand:"fist"},armFar:{sh:26,el:34,hand:"fist"},
+      hl:o.mark===false?{}:{quads:.4+.6*dn,glutes:.5*dn},
+      face:{mouth:dn>.7||R==="top"?"effort":"smile",brows:R==="top"?"cocky":"focus",look:[.6,-.4],blink:0},
+      sweat:o.sweat?1:0,sweatT:t,_lp:dn};};
+}
 /* Toni (personaje, engine/toni.js). p: action | seq[{a,d,o}], o, mark, title, label, props("bench"|"stairs"|"stairsDown"), scale, tx, ty */
 KINDS.toni=(p)=>{const T=window.RepeToni;if(!T)return KINDS.head({lines:[p.title||""]});
   const seq=p.seq||[{a:p.action||"idle",d:999,o:p.o||{}}];
-  const view=T.viewOf(seq[0].a);const S=p.scale||(seq[0].a==="bench"?1.05:(view==="front"?1.12:1.12));
+  const vOf=a=>TONI_EXTRA_VIEW[a]||T.viewOf(a);const view=vOf(seq[0].a);const S=p.scale||(seq[0].a==="bench"?1.05:(view==="front"?1.12:1.12));
   const ty=p.ty??(p.title?860:840),tx=p.tx??540;
   const box=el(`<svg width="1080" height="880" viewBox="0 0 1080 880" overflow="visible"><g data-r="w" transform="translate(${tx} ${ty}) scale(${S})">
-     <ellipse cx="${(seq[0].o&&seq[0].o.x)||0}" cy="4" rx="190" ry="22" fill="#000" opacity=".45"/>${p.props==="bench"?T.props.bench((seq[0].o&&seq[0].o.x)||-60,(seq[0].o&&seq[0].o.y)||0,400):""}<g data-r="tn"></g></g></svg>`,"left:0;top:0;width:1080px;height:880px;transform-origin:50% 90%");
+     ${seq[0].a==="legpress"?"":`<ellipse cx="${(seq[0].o&&seq[0].o.x)||0}" cy="4" rx="190" ry="22" fill="#000" opacity=".45"/>`}${p.props==="bench"?T.props.bench((seq[0].o&&seq[0].o.x)||-60,(seq[0].o&&seq[0].o.y)||0,400):""}<g data-r="sled"></g><g data-r="tn"></g><g data-r="sled2"></g></g></svg>`,"left:0;top:0;width:1080px;height:880px;transform-origin:50% 90%");
   const tn=box.querySelector('[data-r=tn]');const inst={};
   const get=v=>{if(!inst[v]){inst[v]=T.create({view:v,standalone:false});}return inst[v];};
   const ttl=p.title?el(`<div class="anton" style="font-size:${p.titleSize||100}px;text-align:center;width:1000px">${(p.title||"").split("*").map((s,i)=>i%2?`<span class="coral">${chars(s)}</span>`:chars(s)).join("")}</div>`,"left:40px;top:-10px;width:1000px;transform-origin:50% 50%"):null;
@@ -537,9 +552,16 @@ KINDS.toni=(p)=>{const T=window.RepeToni;if(!T)return KINDS.head({lines:[p.title
   const lb=p.label?el(`<div class="anton" style="background:#C8F135;color:#111013;border-radius:40px;padding:6px 34px 10px;font-size:64px;white-space:nowrap">${esc(p.label)}</div>`,`left:${p.labelLeft??78}%;top:${p.labelTop??300}px;transform-origin:50% 50%`):null;
   let cur=null;
   return t=>{let acc=0,k=0;while(k<seq.length-1&&t>acc+seq[k].d){acc+=seq[k].d;k++;}
-    const sq=seq[k];const v=T.viewOf(sq.a);const it=get(v);if(cur!==it){tn.innerHTML="";tn.appendChild(it.g);cur=it;}
+    const sq=seq[k];const v=vOf(sq.a);const it=get(v);if(cur!==it){tn.innerHTML="";tn.appendChild(it.g);cur=it;}
     const o=Object.assign({talk:true},sq.o||{});if(p.mark&&o.mark===undefined)o.mark=p.mark;
-    it.set(T.pose(sq.a,t-acc,o));
+    const ps=T.pose(sq.a,t-acc,o);it.set(ps);
+    if(sq.a==="legpress"){const A=T.worldPoint("side",ps,"ankleNear",[18,30]),P=T.worldPoint("side",ps,"pelvis",[0,0]);
+      const dx=A[0]-P[0],dy=A[1]-P[1],L=Math.hypot(dx,dy)||1,ux=dx/L,uy=dy/L,nx=-uy,ny=ux;const ang=Math.atan2(uy,ux)*180/Math.PI;
+      const sl=box.querySelector('[data-r=sled2]'),rl=box.querySelector('[data-r=sled]');
+      sl.innerHTML=`<g transform="translate(${A[0].toFixed(1)} ${A[1].toFixed(1)}) rotate(${ang.toFixed(1)})"><rect x="0" y="-95" width="22" height="190" rx="8" fill="#FE594D" stroke="#1A1419" stroke-width="6"/>
+        ${[...Array(o.range==="top"?4:2)].map((_,i)=>`<rect x="${30+i*26}" y="${-70+i*4}" width="22" height="${140-i*8}" rx="6" fill="${i%2?"#2e2a33":"#4a4550"}" stroke="#1A1419" stroke-width="5"/>`).join("")}</g>`;
+      if(!rl.innerHTML){const bx=P[0],by=P[1];rl.innerHTML=`<path d="M${(bx-260).toFixed(0)} ${(by-170).toFixed(0)} L${(bx+30).toFixed(0)} ${(by+40).toFixed(0)} L${(bx+150).toFixed(0)} ${(by+40).toFixed(0)}" stroke="#4a4550" stroke-width="44" stroke-linecap="round" fill="none"/>
+        <path d="M${(bx+40).toFixed(0)} ${(by+60).toFixed(0)} L${(bx+40+ux*700).toFixed(0)} ${(by+60+uy*700).toFixed(0)}" stroke="#2e2a33" stroke-width="14" stroke-dasharray="6 22" stroke-linecap="round"/>`;}}
     const e=easeOut(t/.35);box.style.opacity=fade(t,0,.15);box.style.transform=`translateY(${(1-e)*80}px) scale(${.9+.1*e})`;
     if(ttl){popChars(tc,t,.05,.03,.3);ttl.style.transform=`rotate(${wob(t,.6,1.2)}deg)`;}
     if(lb)lb.style.transform=`translate(-50%,0) scale(${pop(t,.3,.35)*(1+.04*Math.sin(t*6))}) rotate(${wob(t,.5,2)}deg)`;}};
