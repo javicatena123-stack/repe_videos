@@ -158,14 +158,15 @@
   "titulo": "Si tu rodilla no pasa la punta del pie, le metes 10 veces más carga a tu cadera",
   "ref": "@adrianherrerocoach «¿Cómo bajar más en sentadillas?» (IG, 3,5 M, 50x); formato «Cuando entiendas…» (@gravl.es, 4,1 M, 730x)",
   "metricool": {
-   "instagram": 418938698,
-   "tiktok": 418938783,
-   "youtube": 418938873,
-   "threads": 418939040
+   "instagram": 419001264,
+   "tiktok": 419001322,
+   "youtube": 419001395,
+   "threads": 419001444
   },
   "voz": "gemini-3.8-flash-tts/Achird",
-  "video": "videos/2026-11-06-rodillas-punta-pie.mp4",
+  "video": "videos/2026-11-06-rodillas-punta-pie-v2.mp4",
   "estado": "programado",
-  "toni": true
+  "toni": true,
+  "nota": "v2: la primera toma de voz no sonaba a Achird (huella 0,919); rehecha con otra toma (0,962)"
  }
 ]
