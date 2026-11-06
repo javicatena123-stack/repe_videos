@@ -76,18 +76,21 @@
     {
      "label": "COMPLETA",
      "value": 6.7,
-     "top": "6,7%"
+     "top": "6,7%",
+     "at": 0.8
+    },
+    {
+     "label": "CORTA",
+     "value": 3.4,
+     "top": "3,4%",
+     "at": 3.6
     },
     {
      "label": "ESTIRADA",
      "value": 15.2,
      "top": "15,2%",
-     "coral": true
-    },
-    {
-     "label": "CORTA",
-     "value": 3.4,
-     "top": "3,4%"
+     "coral": true,
+     "at": 5.7
     }
    ]
   },

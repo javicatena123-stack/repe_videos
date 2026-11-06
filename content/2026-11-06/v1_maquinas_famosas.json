@@ -84,7 +84,8 @@
     "label": "Brazo por encima",
     "value": "+20",
     "unit": "%"
-   }
+   },
+   "bdelay": 2.4
   },
   {
    "say": "Un cuarenta por ciento más de músculo. Y moviendo menos peso.",
@@ -134,15 +135,17 @@
    "caption": "MÁS *FEMORAL*",
    "items": [
     {
-     "label": "TUMBADO",
-     "value": 9.3,
-     "top": "9%"
-    },
-    {
      "label": "SENTADO",
      "value": 14.1,
      "top": "14%",
-     "coral": true
+     "coral": true,
+     "at": 1.9
+    },
+    {
+     "label": "TUMBADO",
+     "value": 9.3,
+     "top": "9%",
+     "at": 4.2
     }
    ]
   },
