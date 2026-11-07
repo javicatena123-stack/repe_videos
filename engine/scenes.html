@@ -623,7 +623,7 @@ KINDS.chips=(p)=>{const tick=p.tick!==false;
     <div class="abs anton" style="left:270px;top:${it.small?50:(250-(p.fs||88)*1.02)/2}px;font-size:${it.small?62:(p.fs||88)}px;width:470px;white-space:nowrap">${esc(it.label)}</div>
     ${it.small?`<div class="abs lbl" style="left:272px;top:140px;width:560px;font-size:34px">${esc(it.small)}</div>`:""}
     ${tick?`<div class="abs" data-r="tk" style="left:730px;top:60px;width:120px;height:120px"></div>`:""}`,
-    `left:110px;top:${(p.top||110)+i*300}px;width:860px;height:250px`);
+    `left:110px;top:${(p.top??110)+i*(p.gap||300)}px;width:860px;height:250px`);
     const t0=it.at??.25*i,tt=it.at!=null?it.at+.6:.55+.3*i+.2;return {d,t0,tt,ic:placeIcon(d.querySelector('[data-r=ic]'),it.icon,it.iconp,t0+.1),tk:tick?placeIcon(d.querySelector('[data-r=tk]'),"check",{},tt):null,cd:d.querySelector('[data-r=cd]')}});
   return t=>{rows.forEach((r,i)=>{const k=clamp((t-r.t0)/.35);setT(r.d,{x:(i%2?1:-1)*900*(1-back(k)),y:wob(t,.45,4,i),o:fade(t,r.t0,.1)});r.ic(t);if(r.tk)r.tk(t);
       const hl=t>r.tt;r.cd.style.borderColor=hl?CORAL:"#2e2a33";});}};

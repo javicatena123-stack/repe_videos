@@ -127,7 +127,7 @@
   },
   "voz": "gemini-3.8-flash-tts/Achird",
   "video": "videos/2026-11-07-medias-repes-toni-v2.mp4",
-  "estado": "programado",
+  "estado": "publicado",
   "origen": "banco de ideas: @carls_jr (prensa sobrevalorada)",
   "nota": "Movido del 6 nov 14:00 al 7 nov 07:30 a petición de Javier; rehecho con Toni en la prensa"
  },
@@ -165,7 +165,7 @@
   },
   "voz": "gemini-3.8-flash-tts/Achird",
   "video": "videos/2026-11-06-rodillas-punta-pie-v2.mp4",
-  "estado": "programado",
+  "estado": "publicado",
   "toni": true,
   "nota": "v2: la primera toma de voz no sonaba a Achird (huella 0,919); rehecha con otra toma (0,962)"
  }

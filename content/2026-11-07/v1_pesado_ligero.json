@@ -1,0 +1,180 @@
+{
+ "id": "2026-11-07-pesado-ligero",
+ "publish": "2026-11-07T14:00:00",
+ "ref": "@elcuerpomiente «¿Pesado a 5 repeticiones o ligero a 30? Crecen lo mismo» (IG, 921 K, 3 nov 2026, animación)",
+ "scenes": [
+  {
+   "say": "Levantar pesado no te hace crecer más. Y lo dicen veintiún estudios.",
+   "sub": "Levantar pesado *no te hace crecer más*. Y lo dicen *21 estudios*.",
+   "kind": "toni",
+   "action": "curl",
+   "o": {
+    "x": -40,
+    "period": 1.6,
+    "sweat": true
+   },
+   "mark": "biceps",
+   "title": "PESADO = *LIGERO*",
+   "titleSize": 110,
+   "label": "MISMO MÚSCULO",
+   "labelLeft": 28,
+   "labelTop": 300,
+   "scale": 1.18,
+   "ty": 865
+  },
+  {
+   "say": "Sí, va por ti, el de los cien kilos y tres repes a medias.",
+   "sub": "Sí, va por ti, el de los *100 kilos* y *tres repes a medias*.",
+   "kind": "eyes",
+   "title": "¿100 KILOS?"
+  },
+  {
+   "say": "En 2017, unos investigadores juntaron veintiún estudios: pesos altos contra pesos ligeros.",
+   "sub": "En 2017 juntaron *21 estudios*: pesos altos contra pesos ligeros.",
+   "kind": "num",
+   "icon": "calendar",
+   "label": "estudios comparados",
+   "value": 21,
+   "unit": ""
+  },
+  {
+   "say": "Resultado: el mismo músculo. Siempre que llegues cerca del fallo.",
+   "sub": "Resultado: *el mismo músculo*. Siempre que llegues *cerca del fallo*.",
+   "kind": "head",
+   "lines": [
+    "MISMO",
+    "MÚSCULO"
+   ],
+   "coral": [
+    1
+   ],
+   "size": 160,
+   "icon": "muscle",
+   "iconSize": 260,
+   "mark": "check"
+  },
+  {
+   "say": "La clave: las últimas repes tienen que costar de verdad.",
+   "sub": "La clave: las últimas repes tienen que *costar de verdad*.",
+   "kind": "toni",
+   "action": "squat",
+   "o": {
+    "x": -40,
+    "period": 2.0,
+    "sweat": true
+   },
+   "mark": [
+    "quads",
+    "glutes"
+   ],
+   "title": "LAS ÚLTIMAS, *QUE DUELAN*",
+   "titleSize": 96,
+   "label": "CERCA DEL FALLO",
+   "labelLeft": 28,
+   "labelTop": 300,
+   "scale": 1.18,
+   "ty": 865
+  },
+  {
+   "say": "En otro estudio, cuarenta y nueve chicos que ya entrenaban hicieron doce semanas: unos de ocho a doce repes, y otros de veinte a veinticinco.",
+   "sub": "Otro estudio: *49 chicos* que ya entrenaban, 12 semanas. Unos de *8 a 12 repes* y otros de *20 a 25*.",
+   "kind": "vs",
+   "a": {
+    "icon": "dumbbell",
+    "label": "Pesado",
+    "value": "8-12",
+    "unit": "repes",
+    "white": true
+   },
+   "b": {
+    "icon": "clock",
+    "label": "Ligero",
+    "value": "20-25",
+    "unit": "repes"
+   },
+   "bdelay": 6.0
+  },
+  {
+   "say": "Ganaron el mismo músculo.",
+   "sub": "Ganaron *el mismo músculo*.",
+   "kind": "stamp",
+   "text": "EMPATE",
+   "size": 190,
+   "icon": "muscle"
+  },
+  {
+   "say": "¿Y la fuerza? Ahí sí gana el pesado: para mover más kilos, toca entrenar con kilos.",
+   "sub": "¿Y la fuerza? Ahí *sí gana el pesado*: para mover kilos, toca entrenar con kilos.",
+   "kind": "head",
+   "lines": [
+    "FUERZA:",
+    "GANA PESADO"
+   ],
+   "coral": [
+    1
+   ],
+   "size": 140,
+   "icon": "battery",
+   "iconSize": 240
+  },
+  {
+   "say": "Ojo: con pesos ridículos, de un veinte por ciento de tu máximo, ya creces menos.",
+   "sub": "Ojo: con pesos ridículos, *un 20 % de tu máximo*, ya *creces menos*.",
+   "kind": "head",
+   "lines": [
+    "DEMASIADO",
+    "LIGERO, NO"
+   ],
+   "coral": [
+    1
+   ],
+   "size": 140,
+   "icon": "drop",
+   "iconSize": 240,
+   "mark": "cross"
+  },
+  {
+   "say": "Así que si te molesta una articulación, baja el peso, sube las repes, y apura hasta el final.",
+   "sub": "Si te molesta una articulación: *baja el peso*, *sube las repes* y apura hasta el final.",
+   "kind": "chips",
+   "fs": 64,
+   "items": [
+    {
+     "icon": "dumbbell",
+     "label": "MENOS PESO",
+     "at": 2.2
+    },
+    {
+     "icon": "check",
+     "label": "MÁS REPES",
+     "at": 3.6
+    },
+    {
+     "icon": "flame",
+     "label": "HASTA EL FINAL",
+     "at": 4.2
+    }
+   ],
+   "top": 20,
+   "gap": 268
+  },
+  {
+   "say": "El peso lo eliges tú. El esfuerzo, no.",
+   "sub": "El peso lo eliges tú. *El esfuerzo, no*.",
+   "kind": "toni",
+   "action": "thumbsUp",
+   "title": "*EL ESFUERZO*, NO",
+   "titleSize": 110
+  },
+  {
+   "say": "Guárdalo, y pásaselo al de los cien kilos.",
+   "sub": "Guárdalo y *pásaselo al de los 100 kilos*.",
+   "kind": "cta",
+   "l1": "GUÁRDALO",
+   "size1": 130,
+   "l2": "PÁSASELO AL DE LOS 100 KILOS",
+   "size2": 74,
+   "l2lines": 1
+  }
+ ]
+}
