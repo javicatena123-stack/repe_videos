@@ -184,6 +184,42 @@
   },
   "voz": "gemini-3.8-flash-tts/Achird (voicecheck 0,951)",
   "video": "videos/2026-11-07-pesado-ligero.mp4",
+  "estado": "publicado",
+  "toni": true
+ },
+ {
+  "fecha": "2026-11-07",
+  "hora": "20:30",
+  "tipo": "video (tendencia viral)",
+  "tema": "Cardio y pesas: mismo músculo y fuerza máxima; solo baja algo la explosividad (Schumann y cols. 2022, Sports Med, 43 estudios)",
+  "titulo": "Llevas años sin hacer cardio para no perder músculo. Y 43 estudios dicen que no hacía falta",
+  "ref": "@wellnessgoal_vane «Si haces CARDIO después de entrenar FUERZA, esto es lo que pasa» (IG, 1,3 M, 221x)",
+  "metricool": {
+   "instagram": 419945113,
+   "tiktok": 419945157,
+   "youtube": 419945200,
+   "threads": 419945230
+  },
+  "voz": "gemini-3.8-flash-tts/Achird (2.ª toma; voicecheck 0,966)",
+  "video": "videos/2026-11-07-cardio-musculo.mp4",
+  "estado": "programado",
+  "toni": true
+ },
+ {
+  "fecha": "2026-11-08",
+  "hora": "07:30",
+  "tipo": "video (respuesta a seguidores)",
+  "tema": "Creatina: 3-5 g al día (no mg), sin fase de carga, a cualquier hora (Hultman 1996; ISSN)",
+  "titulo": "Me escribió uno que toma 40 miligramos de creatina al día. Eso es cien veces menos de lo que funciona",
+  "ref": "@sick2550 (YouTube, Short de la creatina, 5 nov)",
+  "metricool": {
+   "instagram": 419945310,
+   "tiktok": 419945339,
+   "youtube": 419945390,
+   "threads": 419945423
+  },
+  "voz": "gemini-3.8-flash-tts/Achird (voicecheck 0,951)",
+  "video": "videos/2026-11-08-creatina-dosis.mp4",
   "estado": "programado",
   "toni": true
  }
