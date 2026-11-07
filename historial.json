@@ -168,5 +168,23 @@
   "estado": "publicado",
   "toni": true,
   "nota": "v2: la primera toma de voz no sonaba a Achird (huella 0,919); rehecha con otra toma (0,962)"
+ },
+ {
+  "fecha": "2026-11-07",
+  "hora": "14:00",
+  "tipo": "video (tendencia viral)",
+  "tema": "Pesado o ligero: mismo músculo cerca del fallo (Schoenfeld 2017 metaanálisis; Morton 2016; Lasevicius 2018)",
+  "titulo": "Levantar pesado no te hace crecer más. Y lo dicen 21 estudios",
+  "ref": "@elcuerpomiente «¿Pesado a 5 repeticiones o ligero a 30? Crecen lo mismo» (IG, 921 K, 3 nov 2026)",
+  "metricool": {
+   "instagram": 419812044,
+   "tiktok": 419812067,
+   "youtube": 419812111,
+   "threads": 419812135
+  },
+  "voz": "gemini-3.8-flash-tts/Achird (voicecheck 0,951)",
+  "video": "videos/2026-11-07-pesado-ligero.mp4",
+  "estado": "programado",
+  "toni": true
  }
 ]
