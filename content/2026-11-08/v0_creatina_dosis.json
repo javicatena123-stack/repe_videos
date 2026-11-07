@@ -1,0 +1,189 @@
+{
+ "id": "2026-11-08-creatina-dosis",
+ "publish": "2026-11-08T07:30:00",
+ "ref": "Respuesta a seguidores: @sick2550 (YouTube, Short de la creatina, 5 nov): «¿3g-5g o 3mg-5mg? … suelo consumir 40mg»",
+ "scenes": [
+  {
+   "say": "Me escribió uno que toma cuarenta miligramos de creatina al día. Eso es cien veces menos de lo que funciona.",
+   "sub": "Uno me escribió que toma *40 miligramos* de creatina al día. Es *cien veces menos* de lo que funciona.",
+   "kind": "stamp",
+   "text": "÷100",
+   "size": 220,
+   "icon": "tub"
+  },
+  {
+   "say": "La dosis de los estudios: de tres a cinco gramos al día. Gramos, no miligramos.",
+   "sub": "La dosis de los estudios: *de 3 a 5 gramos* al día. *Gramos*, no miligramos.",
+   "kind": "toni",
+   "action": "point",
+   "title": "*3-5 GRAMOS* AL DÍA",
+   "titleSize": 106,
+   "label": "NO MILIGRAMOS",
+   "labelLeft": 64,
+   "labelTop": 440
+  },
+  {
+   "say": "Cuarenta miligramos son cuatro centésimas de gramo. Ni lo notas.",
+   "sub": "40 miligramos son *0,04 gramos*. Ni lo notas.",
+   "kind": "vs",
+   "a": {
+    "icon": "drop",
+    "label": "Lo que tomaba",
+    "value": "0,04",
+    "unit": "g",
+    "white": true
+   },
+   "b": {
+    "icon": "tub",
+    "label": "Lo que funciona",
+    "value": "3-5",
+    "unit": "g"
+   },
+   "bdelay": 2.4
+  },
+  {
+   "say": "¿Y la fase de carga de veinte gramos? No hace falta.",
+   "sub": "¿Y la *fase de carga* de 20 gramos? *No hace falta*.",
+   "kind": "head",
+   "lines": [
+    "¿CARGA?",
+    "NO HACE FALTA"
+   ],
+   "coral": [
+    1
+   ],
+   "size": 140,
+   "icon": "calendar",
+   "iconSize": 240,
+   "mark": "cross"
+  },
+  {
+   "say": "En un estudio, unos tomaron veinte gramos durante seis días, y otros, tres gramos durante veintiocho días. Acabaron con la misma creatina en el músculo.",
+   "sub": "Unos tomaron *20 g seis días* y otros *3 g durante 28 días*. Acabaron con *la misma creatina* en el músculo.",
+   "kind": "bars",
+   "caption": "CREATINA EN EL *MÚSCULO*",
+   "items": [
+    {
+     "label": "CARGA 20 G",
+     "value": 20,
+     "top": "+20%",
+     "at": 0.9
+    },
+    {
+     "label": "3 G AL DÍA",
+     "value": 20,
+     "top": "+20%",
+     "coral": true,
+     "at": 2.9
+    }
+   ]
+  },
+  {
+   "say": "La carga solo llega antes: en una semana, en vez de en un mes.",
+   "sub": "La carga solo *llega antes*: en una semana, en vez de *en un mes*.",
+   "kind": "timeline",
+   "max": 28,
+   "ticks": [
+    0,
+    7,
+    14,
+    21,
+    28
+   ],
+   "tlabels": [
+    "DÍA 0",
+    "1 SEM",
+    "2 SEM",
+    "3 SEM",
+    "1 MES"
+   ],
+   "marks": [
+    {
+     "from": 0,
+     "to": 6,
+     "label": "CARGA",
+     "up": true
+    },
+    {
+     "from": 0,
+     "to": 28,
+     "label": "3-5 G AL DÍA",
+     "coral": true,
+     "at": 0.2
+    }
+   ]
+  },
+  {
+   "say": "¿Cuándo tomarla? Da igual la hora. Lo que importa es tomarla todos los días.",
+   "sub": "¿Cuándo? *Da igual la hora*. Lo que importa es *tomarla todos los días*.",
+   "kind": "clock",
+   "hours": 24,
+   "full": 24,
+   "text": "24 H",
+   "label": "a la hora que quieras"
+  },
+  {
+   "say": "Con agua, en el batido, o con la comida.",
+   "sub": "*Con agua*, *en el batido* o *con la comida*.",
+   "kind": "chips",
+   "fs": 72,
+   "top": 20,
+   "gap": 268,
+   "items": [
+    {
+     "icon": "glass",
+     "label": "CON AGUA"
+    },
+    {
+     "icon": "shaker",
+     "label": "EN EL BATIDO"
+    },
+    {
+     "icon": "plate",
+     "label": "CON LA COMIDA"
+    }
+   ]
+  },
+  {
+   "say": "¿Y si un día se te olvida? No pasa nada: el músculo no se vacía en un día.",
+   "sub": "¿Se te olvida un día? *No pasa nada*: el músculo no se vacía en un día.",
+   "kind": "toni",
+   "action": "shrug",
+   "title": "¿SE TE OLVIDÓ? *NADA*",
+   "titleSize": 104
+  },
+  {
+   "say": "Eso sí: si un médico te la ha pautado de otra forma, haz caso a tu médico.",
+   "sub": "Eso sí: si *un médico* te la ha pautado de otra forma, *haz caso a tu médico*.",
+   "kind": "head",
+   "lines": [
+    "¿TE LA PAUTÓ",
+    "UN MÉDICO?"
+   ],
+   "coral": [
+    1
+   ],
+   "size": 130,
+   "icon": "check",
+   "iconSize": 220
+  },
+  {
+   "say": "Tres a cinco gramos, cada día, y a correr.",
+   "sub": "*3 a 5 gramos*, cada día, y a correr.",
+   "kind": "toni",
+   "action": "thumbsUp",
+   "title": "*3-5 G*, CADA DÍA",
+   "titleSize": 112
+  },
+  {
+   "say": "Y seguid preguntando en comentarios, que de ahí salen vídeos como este.",
+   "sub": "Y *seguid preguntando* en comentarios: de ahí salen vídeos como este.",
+   "kind": "cta",
+   "l1": "PREGUNTA",
+   "size1": 130,
+   "l2": "EN COMENTARIOS",
+   "size2": 90,
+   "l2lines": 1
+  }
+ ]
+}

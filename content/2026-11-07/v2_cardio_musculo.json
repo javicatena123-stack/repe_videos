@@ -1,0 +1,137 @@
+{
+ "id": "2026-11-07-cardio-musculo",
+ "publish": "2026-11-07T20:30:00",
+ "ref": "@wellnessgoal_vane «Si haces CARDIO después de entrenar FUERZA, esto es lo que pasa» (IG, 1,3 M, 221x su media, 18 oct 2026)",
+ "scenes": [
+  {
+   "say": "Llevas años sin hacer cardio para no perder músculo. Y cuarenta y tres estudios dicen que no hacía falta.",
+   "sub": "Llevas años sin hacer cardio *para no perder músculo*. Y *43 estudios* dicen que no hacía falta.",
+   "kind": "toni",
+   "action": "walk",
+   "o": {
+    "x0": -40,
+    "move": false
+   },
+   "mark": [
+    "quads",
+    "calves"
+   ],
+   "title": "CARDIO = *¿MENOS MÚSCULO?*",
+   "titleSize": 80,
+   "label": "CARDIO",
+   "labelLeft": 24,
+   "labelTop": 420,
+   "scale": 1.18,
+   "ty": 865
+  },
+  {
+   "say": "Sí, va por ti, el que no pisa la cinta para no perder ganancias.",
+   "sub": "Sí, va por ti, el que *no pisa la cinta* para no perder ganancias.",
+   "kind": "eyes",
+   "title": "¿CARDIO? JAMÁS"
+  },
+  {
+   "say": "En 2022, un equipo juntó cuarenta y tres estudios: gente que solo hacía pesas, contra gente que hacía pesas y cardio.",
+   "sub": "En 2022 juntaron *43 estudios*: solo pesas contra *pesas y cardio*.",
+   "kind": "num",
+   "icon": "crowd",
+   "label": "estudios comparados",
+   "value": 43,
+   "unit": ""
+  },
+  {
+   "say": "Resultado: el mismo músculo, y la misma fuerza máxima.",
+   "sub": "Resultado: *el mismo músculo* y la *misma fuerza máxima*.",
+   "kind": "head",
+   "lines": [
+    "MISMO MÚSCULO,",
+    "MISMA FUERZA"
+   ],
+   "coral": [
+    1
+   ],
+   "size": 120,
+   "icon": "muscle",
+   "iconSize": 240,
+   "mark": "check"
+  },
+  {
+   "say": "O sea, que puedes tener cardio y bíceps a la vez.",
+   "sub": "O sea, que puedes tener *cardio y bíceps* a la vez.",
+   "kind": "toni",
+   "action": "flexDouble",
+   "o": {
+    "hold": 3
+   },
+   "title": "CARDIO *Y* BÍCEPS",
+   "titleSize": 110
+  },
+  {
+   "say": "Lo único que se resiente un poco es la explosividad: saltar, o esprintar.",
+   "sub": "Lo único que se resiente un poco es la *explosividad*: saltar o esprintar.",
+   "kind": "head",
+   "lines": [
+    "EXPLOSIVIDAD:",
+    "UN POCO MENOS"
+   ],
+   "coral": [
+    1
+   ],
+   "size": 120,
+   "icon": "clock",
+   "iconSize": 240
+  },
+  {
+   "say": "Y sobre todo cuando lo haces en la misma sesión. Con tres horas o más de por medio, no se vio.",
+   "sub": "Sobre todo *en la misma sesión*. Con *3 horas o más* de por medio, no se vio.",
+   "kind": "neq",
+   "left": "MISMA SESIÓN",
+   "right": "3 H DESPUÉS",
+   "size": 120
+  },
+  {
+   "say": "Y para el músculo, da igual bici o correr.",
+   "sub": "Y para el músculo, *da igual bici o correr*.",
+   "kind": "stamp",
+   "text": "BICI = CINTA",
+   "size": 130,
+   "icon": "check"
+  },
+  {
+   "say": "¿El orden? Si buscas fuerza de piernas, pesas primero. Y el cardio, mejor en otro momento del día.",
+   "sub": "¿El orden? Para fuerza de piernas, *pesas primero*. Y el cardio, *mejor en otro rato*.",
+   "kind": "chips",
+   "fs": 66,
+   "items": [
+    {
+     "icon": "dumbbell",
+     "label": "PESAS PRIMERO",
+     "at": 2.3
+    },
+    {
+     "icon": "calendar",
+     "label": "CARDIO, OTRO RATO",
+     "at": 3.6
+    }
+   ]
+  },
+  {
+   "say": "Así que el cardio, sin miedo.",
+   "sub": "Así que el cardio, *sin miedo*.",
+   "kind": "toni",
+   "action": "thumbsUp",
+   "title": "*SIN MIEDO* AL CARDIO",
+   "titleSize": 104
+  },
+  {
+   "say": "Guárdalo, y pásaselo al que no pisa la cinta.",
+   "sub": "Guárdalo y *pásaselo al que no pisa la cinta*.",
+   "kind": "cta",
+   "l1": "GUÁRDALO",
+   "size1": 130,
+   "l2": "PÁSASELO AL QUE NO PISA LA CINTA",
+   "size2": 66,
+   "l2lines": 1
+  }
+ ]
+}
