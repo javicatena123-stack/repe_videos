@@ -129,7 +129,8 @@
   "video": "videos/2026-11-07-medias-repes-toni-v2.mp4",
   "estado": "publicado",
   "origen": "banco de ideas: @carls_jr (prensa sobrevalorada)",
-  "nota": "Movido del 6 nov 14:00 al 7 nov 07:30 a petición de Javier; rehecho con Toni en la prensa"
+  "nota": "Movido del 6 nov 14:00 al 7 nov 07:30 a petición de Javier; rehecho con Toni en la prensa",
+  "acento": "ES"
  },
  {
   "fecha": "2026-11-06",
@@ -185,7 +186,8 @@
   "voz": "gemini-3.8-flash-tts/Achird (voicecheck 0,951)",
   "video": "videos/2026-11-07-pesado-ligero.mp4",
   "estado": "publicado",
-  "toni": true
+  "toni": true,
+  "acento": "LATAM (accentcheck 8 nov)"
  },
  {
   "fecha": "2026-11-07",
@@ -203,7 +205,8 @@
   "voz": "gemini-3.8-flash-tts/Achird (2.ª toma; voicecheck 0,966)",
   "video": "videos/2026-11-07-cardio-musculo.mp4",
   "estado": "programado",
-  "toni": true
+  "toni": true,
+  "acento": "ES"
  },
  {
   "fecha": "2026-11-08",
@@ -221,6 +224,7 @@
   "voz": "gemini-3.8-flash-tts/Achird (voicecheck 0,951)",
   "video": "videos/2026-11-08-creatina-dosis.mp4",
   "estado": "programado",
-  "toni": true
+  "toni": true,
+  "acento": "ES"
  }
 ]
