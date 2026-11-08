@@ -226,5 +226,24 @@
   "estado": "programado",
   "toni": true,
   "acento": "ES"
+ },
+ {
+  "fecha": "2026-11-08",
+  "hora": "14:00",
+  "tipo": "video (tendencia viral)",
+  "tema": "Tendones: el centro del Aquiles casi no se renueva desde los 17 (carbono 14 de las bombas, Heinemeier 2013); se fortalecen con peso alto >70 % y >12 semanas (Bohm 2015, 27 estudios); el músculo se adapta antes",
+  "titulo": "El centro de tu tendón de Aquiles es el mismo que tenías con 17 años. Y se descubrió gracias a las bombas atómicas",
+  "ref": "@mono_culturista «Cómo entrenar tus tendones para tener más fuerza que alguien más musculado» (TikTok, 1,4 M, 20,6x, 27 oct)",
+  "metricool": {
+   "instagram": 420617522,
+   "tiktok": 420617551,
+   "youtube": 420617596,
+   "threads": 420617630
+  },
+  "voz": "gemini-3.8-flash-tts/Achird (2.ª toma; voicecheck 0,977)",
+  "acento": "ES",
+  "video": "videos/2026-11-08-tendones.mp4",
+  "estado": "programado",
+  "toni": true
  }
 ]
