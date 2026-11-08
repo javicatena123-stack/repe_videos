@@ -283,5 +283,40 @@
   "video": "videos/2026-11-09-prensa-kilos.mp4",
   "estado": "programado",
   "toni": true
+ },
+ {
+  "fecha": "2026-11-09",
+  "hora": "14:00",
+  "tipo": "video (tendencia / ejemplo del estilo nuevo)",
+  "tema": "Colágeno para el músculo: proteína incompleta (sin triptófano, PDCAAS 0) y poca leucina (0,4 g en 15 g vs ~1,6 g en whey); Zdzieblik 2015 (53 hombres mayores, 12 sem, 15 g) solo contra placebo sin proteína; Oikawa 2020: la whey activa más la síntesis que el colágeno; Shaw 2017: 15 g gelatina + vit C 1 h antes duplica un marcador de síntesis de colágeno (tendones)",
+  "titulo": "Tu colágeno saca un cero como proteína",
+  "ref": "vídeo de ejemplo pedido por Javier el 8 nov (le encantó y pidió subirlo); sin viral de referencia",
+  "gancho_tipo": "humillación con nota",
+  "visuales": [
+   "meter",
+   "stamp(scoop)",
+   "xray",
+   "vs(switch,shaker)",
+   "toni shock",
+   "paper",
+   "bars",
+   "invert",
+   "split",
+   "toni shrug",
+   "num(stopwatch)",
+   "chips(egg,drumstick,milk)",
+   "cta"
+  ],
+  "metricool": {
+   "instagram": 421193607,
+   "tiktok": 421193635,
+   "youtube": 421193695,
+   "threads": 421193728
+  },
+  "voz": "gemini-3.8-flash-tts/Achird (pausas recortadas + atempo 1.06; voicecheck 0,933, por debajo de 0,94, aprobado por Javier tras escucharlo)",
+  "acento": "ES",
+  "video": "videos/2026-11-09-colageno.mp4",
+  "estado": "programado",
+  "toni": true
  }
 ]
