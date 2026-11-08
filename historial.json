@@ -204,7 +204,7 @@
   },
   "voz": "gemini-3.8-flash-tts/Achird (2.ª toma; voicecheck 0,966)",
   "video": "videos/2026-11-07-cardio-musculo.mp4",
-  "estado": "programado",
+  "estado": "publicado",
   "toni": true,
   "acento": "ES"
  },
@@ -223,7 +223,7 @@
   },
   "voz": "gemini-3.8-flash-tts/Achird (voicecheck 0,951)",
   "video": "videos/2026-11-08-creatina-dosis.mp4",
-  "estado": "programado",
+  "estado": "publicado",
   "toni": true,
   "acento": "ES"
  },
@@ -243,6 +243,44 @@
   "voz": "gemini-3.8-flash-tts/Achird (2.ª toma; voicecheck 0,977)",
   "acento": "ES",
   "video": "videos/2026-11-08-tendones.mp4",
+  "estado": "programado",
+  "toni": true
+ },
+ {
+  "fecha": "2026-11-08",
+  "hora": "20:30",
+  "tipo": "video (tendencia viral)",
+  "tema": "Flexiones = press de banca: mismo pecho, tríceps y fuerza en el banco (Kikuchi y Nakazato 2017, 18 chicos sin experiencia, 8 semanas, 40 % 1RM, hasta el fallo); solo el bíceps creció más con el banco",
+  "titulo": "Las flexiones de toda la vida te ponen el mismo pecho que el press de banca. Y lo ha medido un estudio",
+  "ref": "@albaestrada.coach «esto no es una flexión» (IG, 1,6 M, 28,7x, 17 oct)",
+  "metricool": {
+   "instagram": 420752963,
+   "tiktok": 420753002,
+   "youtube": 420753053,
+   "threads": 420753090
+  },
+  "voz": "gemini-3.8-flash-tts/Achird (voicecheck 0,972)",
+  "acento": "ES",
+  "video": "videos/2026-11-08-flexiones-banca.mp4",
+  "estado": "programado",
+  "toni": true
+ },
+ {
+  "fecha": "2026-11-09",
+  "hora": "07:30",
+  "tipo": "video (respuesta a seguidores)",
+  "tema": "Prensa vs sentadilla: los kilos de la prensa no son los que crees (a 45° se empuja ~70 % de los discos, sin contar carro ni rozamiento); si te pasa al revés: rango, palancas y costumbre",
+  "titulo": "Me preguntáis por qué alguien mueve menos en prensa que en sentadilla. Y es que los kilos de la prensa no son los que crees",
+  "ref": "banco de ideas: @ELGAMINGZ213 (YouTube, 3 nov) y pique de prensa de @luxo.bkr y @l__.king.__l (IG, 3 nov)",
+  "metricool": {
+   "instagram": 420753171,
+   "tiktok": 420753213,
+   "youtube": 420753306,
+   "threads": 420753342
+  },
+  "voz": "gemini-3.8-flash-tts/Achird (voicecheck 0,954)",
+  "acento": "ES",
+  "video": "videos/2026-11-09-prensa-kilos.mp4",
   "estado": "programado",
   "toni": true
  }
