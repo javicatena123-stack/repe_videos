@@ -1,0 +1,202 @@
+{
+ "id": "ejemplo-colageno",
+ "ref": "vídeo de ejemplo del 8 nov (catálogo ampliado + ganchos clickbait)",
+ "scenes": [
+  {
+   "say": "Tu colágeno saca un cero como proteína.",
+   "sub": "Tu colágeno saca *un cero* como proteína.",
+   "kind": "meter",
+   "title": "TU *COLÁGENO*",
+   "value": 0,
+   "max": 10,
+   "at": 1.45,
+   "label": "Nota como proteína (PDCAAS)",
+   "stamp": "CERO",
+   "trans": "punch"
+  },
+  {
+   "say": "Le falta un aminoácido esencial entero: el triptófano.",
+   "sub": "Le falta un aminoácido esencial *entero*: el *triptófano*.",
+   "kind": "stamp",
+   "text": "INCOMPLETA",
+   "size": 150,
+   "icon": "scoop"
+  },
+  {
+   "say": "Y la leucina, el interruptor que enciende tu músculo…",
+   "sub": "Y la *leucina*, el interruptor que *enciende tu músculo*…",
+   "kind": "xray",
+   "mark": [
+    "chest",
+    "biceps",
+    "quads"
+   ],
+   "o": {
+    "muscle": "chest"
+   },
+   "title": "*LEUCINA* = ON",
+   "titleSize": 110
+  },
+  {
+   "say": "…la lleva cuatro veces menos que la whey.",
+   "sub": "…la lleva *cuatro veces menos* que la whey.",
+   "kind": "vs",
+   "bdelay": 1.25,
+   "a": {
+    "icon": "switch",
+    "iconp": {
+     "off": true
+    },
+    "value": "0,4",
+    "unit": "g",
+    "label": "15 g de colágeno",
+    "white": true
+   },
+   "b": {
+    "icon": "shaker",
+    "value": "1,6",
+    "unit": "g",
+    "label": "15 g de whey"
+   }
+  },
+  {
+   "say": "Pero espera, que hay un estudio que dice que sí funciona.",
+   "sub": "Pero espera, que hay un estudio que dice que *sí funciona*.",
+   "kind": "toni",
+   "action": "shock",
+   "title": "¿¡QUE *SÍ* FUNCIONA!?",
+   "titleSize": 104,
+   "trans": "punch"
+  },
+  {
+   "say": "Cincuenta y tres hombres mayores, doce semanas de pesas y quince gramos de colágeno al día.",
+   "sub": "*53* hombres mayores, *12 semanas* de pesas y *15 gramos* de colágeno al día.",
+   "kind": "paper",
+   "title": "ESTUDIO",
+   "source": "Zdzieblik et al. · British Journal of Nutrition",
+   "stamp": "2015",
+   "stampAt": 0.2,
+   "rows": [
+    {
+     "v": "53",
+     "l": "HOMBRES MAYORES",
+     "at": 0.35
+    },
+    {
+     "v": "12",
+     "l": "SEMANAS DE PESAS",
+     "at": 1.75
+    },
+    {
+     "v": "15 G",
+     "l": "COLÁGENO AL DÍA",
+     "at": 3.2,
+     "w": 290
+    }
+   ]
+  },
+  {
+   "say": "Ganaron más masa magra que el grupo placebo: cuatro coma dos kilos contra dos coma nueve.",
+   "sub": "Ganaron *más masa magra* que el placebo: *4,2 kilos* contra 2,9.",
+   "kind": "bars",
+   "caption": "Masa magra ganada",
+   "items": [
+    {
+     "label": "PLACEBO",
+     "value": 2.9,
+     "top": "+2,9 KG",
+     "at": 3.95
+    },
+    {
+     "label": "COLÁGENO",
+     "value": 4.2,
+     "top": "+4,2 KG",
+     "coral": true,
+     "at": 2.55
+    }
+   ]
+  },
+  {
+   "say": "¿El truco? Lo compararon con un placebo sin nada de proteína.",
+   "sub": "¿El truco? Lo compararon con un placebo *sin nada de proteína*.",
+   "kind": "invert",
+   "lines": [
+    "¿EL TRUCO?",
+    "LO COMPARARON",
+    "CON *NADA*"
+   ],
+   "size": 150,
+   "step": 0.45
+  },
+  {
+   "say": "Cuando lo midieron contra la whey en mujeres mayores, la whey activó mucho más la síntesis de músculo.",
+   "sub": "Contra la *whey*, en mujeres mayores, la whey activó *mucho más* la síntesis de músculo.",
+   "kind": "split",
+   "bdelay": 1.1,
+   "verdict": 3.5,
+   "a": {
+    "label": "COLÁGENO",
+    "toni": "shrug"
+   },
+   "b": {
+    "label": "WHEY",
+    "toni": "flexDouble"
+   }
+  },
+  {
+   "say": "Entonces, ¿colágeno a la basura?",
+   "sub": "Entonces, ¿colágeno *a la basura*?",
+   "kind": "toni",
+   "action": "shrug",
+   "title": "¿A LA *BASURA*?",
+   "titleSize": 120
+  },
+  {
+   "say": "Tampoco. Quince gramos con vitamina C, una hora antes de entrenar, duplicaron un marcador de colágeno.",
+   "sub": "Tampoco. *15 g* con vitamina C, *1 hora antes* de entrenar, *duplicaron* un marcador de colágeno.",
+   "kind": "num",
+   "icon": "stopwatch",
+   "label": "marcador de colágeno",
+   "prefix": "x",
+   "value": 2,
+   "unit": ""
+  },
+  {
+   "say": "Para tendones puede tener sentido. Pero para el músculo, tira de huevos, carne, pescado o lácteos.",
+   "sub": "Para tendones, puede. Para el *músculo*: huevos, carne, pescado o lácteos.",
+   "kind": "chips",
+   "fs": 62,
+   "top": 190,
+   "gap": 225,
+   "items": [
+    {
+     "icon": "egg",
+     "label": "HUEVOS",
+     "at": 3.0
+    },
+    {
+     "icon": "drumstick",
+     "label": "CARNE O PESCADO",
+     "at": 3.6
+    },
+    {
+     "icon": "milk",
+     "label": "LÁCTEOS Y WHEY",
+     "at": 4.6
+    }
+   ],
+   "title": "PARA EL *MÚSCULO*",
+   "titleSize": 96
+  },
+  {
+   "say": "Guárdalo y pásaselo al que se toma el colágeno pensando en el bíceps.",
+   "sub": "*Guárdalo* y pásaselo al que toma colágeno *pensando en el bíceps*.",
+   "kind": "cta",
+   "l1": "GUÁRDALO",
+   "size1": 140,
+   "l2": "Y PÁSASELO",
+   "size2": 90,
+   "l2lines": 1
+  }
+ ]
+}
