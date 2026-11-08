@@ -1,0 +1,182 @@
+{
+ "id": "2026-11-08-tendones",
+ "publish": "2026-11-08T14:00:00",
+ "ref": "@mono_culturista «Cómo entrenar tus tendones para tener más fuerza que alguien más musculado» (TikTok, 1,4 M, 20,6x su media, 27 oct 2026)",
+ "scenes": [
+  {
+   "say": "El centro de tu tendón de Aquiles es el mismo que tenías con diecisiete años. Y se ha descubierto gracias a las bombas atómicas.",
+   "sub": "El centro de tu *tendón de Aquiles* es el mismo que tenías *con 17 años*. Y se ha descubierto gracias a las *bombas atómicas*.",
+   "kind": "toni",
+   "action": "mark",
+   "o": {
+    "muscle": "calves"
+   },
+   "mark": [
+    "calves"
+   ],
+   "title": "TU TENDÓN *TIENE 17 AÑOS*",
+   "titleSize": 84,
+   "scale": 1.12
+  },
+  {
+   "say": "Las pruebas nucleares de los años sesenta llenaron el aire de carbono catorce. Y acabó dentro de todos nosotros.",
+   "sub": "Las *pruebas nucleares* de los años 60 llenaron el aire de *carbono 14*. Y acabó *dentro de todos*.",
+   "kind": "timeline",
+   "max": 76,
+   "ticks": [
+    0,
+    13,
+    30,
+    50,
+    76
+   ],
+   "tlabels": [
+    "1950",
+    "1963",
+    "1980",
+    "2000",
+    "HOY"
+   ],
+   "marks": [
+    {
+     "from": 5,
+     "to": 13,
+     "label": "PRUEBAS NUCLEARES",
+     "coral": true,
+     "up": true,
+     "at": 0.4
+    }
+   ]
+  },
+  {
+   "say": "En veintiocho tendones de Aquiles, el centro seguía con el carbono de los diecisiete años.",
+   "sub": "En *28 tendones* de Aquiles, el centro seguía con el carbono *de los 17 años*.",
+   "kind": "num",
+   "icon": "crowd",
+   "label": "tendones de Aquiles",
+   "value": 28,
+   "unit": ""
+  },
+  {
+   "say": "El músculo, en cambio, se renueva sin parar.",
+   "sub": "El músculo, en cambio, *se renueva sin parar*.",
+   "kind": "vs",
+   "bdelay": 0.3,
+   "a": {
+    "icon": "calendar",
+    "label": "Centro del tendón",
+    "value": "17 AÑOS",
+    "white": true
+   },
+   "b": {
+    "icon": "muscle",
+    "label": "Músculo: se renueva",
+    "value": "NUEVO"
+   }
+  },
+  {
+   "say": "Por eso un tendón lesionado tarda tanto en curarse.",
+   "sub": "Por eso un *tendón lesionado* tarda tanto en curarse.",
+   "kind": "head",
+   "lines": [
+    "POR ESO TARDA",
+    "TANTO EN CURAR"
+   ],
+   "coral": [
+    1
+   ],
+   "size": 116,
+   "icon": "fibers",
+   "iconSize": 240
+  },
+  {
+   "say": "Pero ojo: tu tendón sí puede hacerse más fuerte.",
+   "sub": "Pero ojo: tu tendón *sí puede hacerse más fuerte*.",
+   "kind": "toni",
+   "action": "shrug",
+   "title": "¿ENTONCES *QUÉ*?",
+   "titleSize": 110
+  },
+  {
+   "say": "Una revisión de veintisiete estudios lo confirma: con entreno, el tendón se vuelve más rígido. O sea, más fuerte.",
+   "sub": "Una revisión de *27 estudios*: con entreno, el tendón se vuelve *más rígido*. O sea, *más fuerte*.",
+   "kind": "head",
+   "lines": [
+    "27 ESTUDIOS",
+    "TENDÓN MÁS FUERTE"
+   ],
+   "coral": [
+    1
+   ],
+   "size": 112,
+   "icon": "check",
+   "iconSize": 220
+  },
+  {
+   "say": "La clave: peso alto, más del setenta por ciento de tu máximo.",
+   "sub": "La clave: *peso alto*, más del *70 % de tu máximo*.",
+   "kind": "toni",
+   "action": "deadlift",
+   "title": "*+70 %* DE TU MÁXIMO",
+   "titleSize": 104,
+   "label": "PESO ALTO",
+   "labelLeft": 74,
+   "labelTop": 360
+  },
+  {
+   "say": "Y paciencia: más de doce semanas.",
+   "sub": "Y *paciencia*: *más de 12 semanas*.",
+   "kind": "clock",
+   "hours": 12,
+   "full": 12,
+   "text": "+12",
+   "label": "semanas de entreno"
+  },
+  {
+   "say": "Aguantar en tensión, sin moverte, también vale.",
+   "sub": "*Aguantar en tensión*, sin moverte, también vale.",
+   "kind": "toni",
+   "action": "squatwall",
+   "title": "AGUANTAR *TAMBIÉN VALE*",
+   "titleSize": 96,
+   "scale": 1.12
+  },
+  {
+   "say": "Eso sí: el músculo se adapta antes. Si subes los kilos de golpe, lo paga el tendón.",
+   "sub": "Eso sí: el *músculo* se adapta antes. Si subes los kilos *de golpe*, lo paga el *tendón*.",
+   "kind": "chips",
+   "fs": 64,
+   "tick": false,
+   "items": [
+    {
+     "icon": "muscle",
+     "label": "MÚSCULO: RÁPIDO",
+     "at": 0.75
+    },
+    {
+     "icon": "clock",
+     "label": "TENDÓN: LENTO",
+     "at": 3.4
+    }
+   ]
+  },
+  {
+   "say": "Así que sube poco a poco.",
+   "sub": "Así que sube *poco a poco*.",
+   "kind": "stamp",
+   "text": "POCO A POCO",
+   "size": 124,
+   "icon": "dumbbell"
+  },
+  {
+   "say": "Guárdalo, y pásaselo al que sube cinco kilos cada semana.",
+   "sub": "Guárdalo y *pásaselo al que sube 5 kilos cada semana*.",
+   "kind": "cta",
+   "l1": "GUÁRDALO",
+   "size1": 130,
+   "l2": "PÁSASELO AL QUE SUBE 5 KG CADA SEMANA",
+   "size2": 56,
+   "l2lines": 1
+  }
+ ]
+}
