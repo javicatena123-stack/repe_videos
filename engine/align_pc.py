@@ -27,7 +27,7 @@ def main():
             try:
                 r = json.load(urllib.request.urlopen(urllib.request.Request(
                     f"https://generativelanguage.googleapis.com/v1beta/models/{m}:generateContent",
-                    data=json.dumps(body).encode(), headers={"Content-Type": "application/json", "x-goog-api-key": K}), timeout=170))
+                    data=json.dumps(body).encode(), headers={"Content-Type": "application/json", "x-goog-api-key": K}), timeout=75))
                 txt = "".join(p.get("text", "") for p in r["candidates"][0]["content"]["parts"])
                 st = json.loads(re.search(r"\{.*\}", txt, re.S).group(0))["starts"]
                 if len(st) != len(lines):

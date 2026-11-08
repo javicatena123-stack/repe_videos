@@ -1,0 +1,146 @@
+{
+ "id": "2026-11-08-flexiones-banca",
+ "publish": "2026-11-08T20:30:00",
+ "ref": "@albaestrada.coach «esto no es una flexión» (IG, 1,6 M, 28,7x su media, 17 oct 2026)",
+ "scenes": [
+  {
+   "say": "Las flexiones de toda la vida te ponen el mismo pecho que el press de banca. Y lo ha medido un estudio.",
+   "sub": "Las *flexiones* de toda la vida te ponen *el mismo pecho* que el press de banca. Y lo ha medido *un estudio*.",
+   "kind": "toni",
+   "action": "pushup",
+   "title": "FLEXIONES = *PRESS DE BANCA*",
+   "titleSize": 84,
+   "scale": 1.25,
+   "ty": 740
+  },
+  {
+   "say": "Sí, va por ti, el que hace cola media hora para el banco.",
+   "sub": "Sí, va por ti, el que *hace cola media hora* para el banco.",
+   "kind": "eyes",
+   "title": "¿Y MI BANCO?"
+  },
+  {
+   "say": "En 2017 lo probaron con dieciocho chicos que no entrenaban, durante ocho semanas.",
+   "sub": "En 2017 lo probaron con *18 chicos* que no entrenaban, durante *8 semanas*.",
+   "kind": "num",
+   "icon": "crowd",
+   "label": "chicos que no entrenaban",
+   "value": 18,
+   "unit": ""
+  },
+  {
+   "say": "Unos hacían press de banca, con un peso ligero.",
+   "sub": "Unos hacían *press de banca*, con un peso ligero.",
+   "kind": "toni",
+   "action": "bench",
+   "props": "bench",
+   "title": "GRUPO *BANCO*",
+   "titleSize": 110,
+   "ty": 760
+  },
+  {
+   "say": "Y otros, flexiones, ajustadas a un peso parecido. Todos, hasta el fallo.",
+   "sub": "Y otros, *flexiones*, ajustadas a un peso parecido. Todos, *hasta el fallo*.",
+   "kind": "toni",
+   "action": "pushup",
+   "o": {
+    "period": 1.6
+   },
+   "title": "GRUPO *FLEXIONES*",
+   "titleSize": 104,
+   "scale": 1.25,
+   "ty": 740
+  },
+  {
+   "say": "Resultado: el pecho, el tríceps y la fuerza en el banco subieron en los dos grupos, sin diferencias.",
+   "sub": "Resultado: *pecho*, *tríceps* y *fuerza en el banco* subieron en los dos grupos, *sin diferencias*.",
+   "kind": "chips",
+   "fs": 60,
+   "items": [
+    {
+     "icon": "chest",
+     "label": "PECHO",
+     "at": 0.25
+    },
+    {
+     "icon": "muscle",
+     "label": "TRÍCEPS",
+     "at": 0.8
+    },
+    {
+     "icon": "dumbbell",
+     "label": "FUERZA EN BANCO",
+     "at": 1.45
+    }
+   ],
+   "top": 70,
+   "gap": 230
+  },
+  {
+   "say": "La única diferencia: el bíceps solo creció con el banco.",
+   "sub": "La única diferencia: el *bíceps* solo creció *con el banco*.",
+   "kind": "vs",
+   "bdelay": 1.8,
+   "a": {
+    "icon": "muscle",
+    "label": "Bíceps con banco",
+    "value": "SÍ"
+   },
+   "b": {
+    "icon": "cross",
+    "label": "Bíceps con flexiones",
+    "value": "NO",
+    "white": true
+   }
+  },
+  {
+   "say": "O sea, que sin máquina y sin hacer cola, también se gana pecho.",
+   "sub": "O sea, que *sin máquina* y *sin hacer cola*, también se gana pecho.",
+   "kind": "head",
+   "lines": [
+    "SIN MÁQUINA,",
+    "SIN COLA"
+   ],
+   "coral": [
+    1
+   ],
+   "size": 120,
+   "icon": "check",
+   "iconSize": 220
+  },
+  {
+   "say": "Eso sí: flexiones completas, con el pecho abajo, y cerca del fallo.",
+   "sub": "Eso sí: *flexiones completas*, con el *pecho abajo*, y cerca del fallo.",
+   "kind": "stamp",
+   "text": "PECHO ABAJO",
+   "size": 124,
+   "icon": "chest"
+  },
+  {
+   "say": "Y ojo: era gente que empezaba. Si ya mueves mucho peso, el banco sigue mandando.",
+   "sub": "Y ojo: era *gente que empezaba*. Si ya mueves *mucho peso*, el banco sigue mandando.",
+   "kind": "neq",
+   "left": "EMPIEZAS",
+   "right": "YA MUEVES MUCHO",
+   "size": 110
+  },
+  {
+   "say": "¿Te salen demasiado fáciles? Sube los pies a un banco, o ponte una mochila con peso.",
+   "sub": "¿Te salen *demasiado fáciles*? *Pies en un banco* o *mochila con peso*.",
+   "kind": "toni",
+   "action": "thumbsUp",
+   "title": "¿FÁCILES? *MOCHILA*",
+   "titleSize": 104
+  },
+  {
+   "say": "Guárdalo, y pásaselo al que hace cola para el banco.",
+   "sub": "Guárdalo y *pásaselo al que hace cola para el banco*.",
+   "kind": "cta",
+   "l1": "GUÁRDALO",
+   "size1": 130,
+   "l2": "PÁSASELO AL DE LA COLA DEL BANCO",
+   "size2": 62,
+   "l2lines": 1
+  }
+ ]
+}

@@ -524,7 +524,7 @@ KINDS.timeline=(p)=>{const X0=110,X1=970,Y=420,sx=h=>X0+(X1-X0)*h/p.max;
       else{const life=1-clamp((hp-m.to)/4);bar.style.transform=`scaleX(${easeOut((t-(m.at??.1))/.3)})`;e.style.opacity=(.25+.75*life).toFixed(2);popChars(lc,t,m.at??.1,.03,.3);}});}};
 
 /* Toni: acciones extra del motor (no están en toni.js) */
-const TONI_EXTRA_VIEW={legpress:"side",pushdown:"side",ohext:"side",squatwall:"side"};
+const TONI_EXTRA_VIEW={legpress:"side",pushdown:"side",ohext:"side",squatwall:"side",pushup:"side"};
 if(window.RepeToni){const T=window.RepeToni;
   /* prensa inclinada: o.range "full"|"bottom"(mitad estirada)|"top"(3 cm de arriba), o.period, o.x, o.y (pelvis) */
   T.actions.legpress=(t,o)=>{o=o||{};const R=o.range||"full";const per=o.period||(R==="top"?.7:2.2);
@@ -555,6 +555,14 @@ if(window.RepeToni){const T=window.RepeToni;
     return T.ground({view:"side",x:o.x||0,torso:-4,head:4,breath:.6,legNear:{hip:4,kn:6,an:2},legFar:{hip:-4,kn:4,an:8},
       armNear:{sh:-4,el:14,hand:"fist"},armFar:{sh:168,el:132-122*dn,hand:"fist"},
       hl:o.mark===false?{}:{triceps:.45+.55*(1-dn)},face:{mouth:dn<.3?"effort":"smile",brows:"focus",look:[.3,-.4]},_cab:"low",_w:"wristFar"},o.ground||0);};
+  /* flexión (de perfil, apoyado en las puntas). o.bad = cadera caída y medio rango; o.x desplaza; dn 1 = pecho abajo */
+  T.actions.pushup=(t,o)=>{o=o||{};const dn=rep(t,o.period||2.0)*(o.bad?.45:1);const r=(o.r0??58)+(o.r1??24)*dn;
+    const sag=0;
+    return {view:"side",x:(o.x||0)-230,y:o.y||0,rot:r,torso:-sag,head:-8-r*.45,hips:0,
+      legNear:{hip:sag,kn:0,an:-60},legFar:{hip:sag-2,kn:0,an:-60},
+      armNear:{sh:r-(o.ka??34)*dn,el:(o.ke??104)*dn,hand:"fist"},armFar:{sh:r-2-(o.ka??34)*dn,el:(o.ke??104)*dn-2,hand:"fist"},
+      hl:o.mark===false?{}:{chest:.35+.65*dn,triceps:.3+.5*dn},
+      face:{mouth:dn>.6?"effort":"smile",brows:"focus",look:[.6,.5]}};};
 }
 /* Toni (personaje, engine/toni.js). p: action | seq[{a,d,o}], o, mark, title, label, props("bench"|"stairs"|"stairsDown"), scale, tx, ty */
 KINDS.toni=(p)=>{const T=window.RepeToni;if(!T)return KINDS.head({lines:[p.title||""]});

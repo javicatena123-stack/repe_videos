@@ -1,0 +1,151 @@
+{
+ "id": "2026-11-09-prensa-kilos",
+ "publish": "2026-11-09T07:30:00",
+ "ref": "banco de ideas: @ELGAMINGZ213 (YouTube, 3 nov) y pique de prensa de @luxo.bkr y @l__.king.__l (Instagram, 3 nov)",
+ "scenes": [
+  {
+   "say": "Me preguntáis por qué alguien mueve menos en prensa que en sentadilla.",
+   "sub": "Me preguntáis por qué alguien mueve *menos en prensa* que en sentadilla.",
+   "kind": "toni",
+   "action": "legpress",
+   "o": {
+    "range": "full"
+   },
+   "title": "LA PRENSA *MIENTE*",
+   "titleSize": 120,
+   "scale": 1.1,
+   "ty": 720
+  },
+  {
+   "say": "Y es que los kilos de la prensa no son los que crees.",
+   "sub": "Y es que los kilos de la prensa *no son los que crees*.",
+   "kind": "neq",
+   "left": "KILOS EN DISCOS",
+   "right": "KILOS QUE EMPUJAS",
+   "size": 100
+  },
+  {
+   "say": "Y va por los que presumís de trescientos cincuenta kilos en los comentarios.",
+   "sub": "Y va por los que presumís de *350 kilos* en los comentarios.",
+   "kind": "eyes",
+   "title": "350 KG X 3"
+  },
+  {
+   "say": "Lo normal es mover bastante más en la prensa.",
+   "sub": "Lo normal es mover *bastante más en la prensa*.",
+   "kind": "head",
+   "lines": [
+    "LO NORMAL:",
+    "MÁS EN PRENSA"
+   ],
+   "coral": [
+    1
+   ],
+   "size": 120,
+   "icon": "press",
+   "iconSize": 360
+  },
+  {
+   "say": "Porque en una prensa inclinada a cuarenta y cinco grados, de cada cien kilos de discos, solo empujas unos setenta en la dirección del carro.",
+   "sub": "En una prensa a *45 grados*, de cada *100 kilos* de discos, solo empujas *unos 70* en la dirección del carro.",
+   "kind": "bars",
+   "items": [
+    {
+     "label": "DISCOS",
+     "value": 100,
+     "top": "100 KG",
+     "at": 3.0
+    },
+    {
+     "label": "EMPUJAS",
+     "value": 71,
+     "top": "≈70 KG",
+     "coral": true,
+     "at": 4.9
+    }
+   ],
+   "caption": "Prensa a 45°"
+  },
+  {
+   "say": "Sin contar el peso del carro, ni el rozamiento.",
+   "sub": "Sin contar *el peso del carro* ni *el rozamiento*.",
+   "kind": "num",
+   "icon": "dumbbell",
+   "label": "de los discos, más o menos",
+   "value": 70,
+   "unit": "%"
+  },
+  {
+   "say": "En la sentadilla, en cambio, levantas la barra entera. Y encima, tu propio cuerpo.",
+   "sub": "En la sentadilla, en cambio, levantas *la barra entera*. Y encima, *tu propio cuerpo*.",
+   "kind": "toni",
+   "action": "squat",
+   "title": "SENTADILLA: *TODO EL PESO*",
+   "titleSize": 92
+  },
+  {
+   "say": "Así que comparar kilos entre las dos no tiene sentido.",
+   "sub": "Así que *comparar kilos* entre las dos *no tiene sentido*.",
+   "kind": "stamp",
+   "text": "KILOS ≠ KILOS",
+   "size": 120,
+   "icon": "cross"
+  },
+  {
+   "say": "Si a ti te pasa al revés, mira tres cosas.",
+   "sub": "Si a ti te pasa *al revés*, mira *tres cosas*.",
+   "kind": "toni",
+   "action": "shrug",
+   "title": "¿TE PASA *AL REVÉS*?",
+   "titleSize": 100
+  },
+  {
+   "say": "Si en la prensa bajas mucho más. Si la máquina tiene palancas que cambian el peso. Y la costumbre: lo que más entrenas, mejor se te da.",
+   "sub": "Si *bajas más en la prensa*, si la máquina tiene *palancas*, y la *costumbre*.",
+   "kind": "chips",
+   "fs": 52,
+   "top": 70,
+   "gap": 230,
+   "items": [
+    {
+     "icon": "legs",
+     "label": "BAJAS MÁS EN PRENSA",
+     "at": 0.1
+    },
+    {
+     "icon": "press",
+     "label": "MÁQUINA CON PALANCAS",
+     "at": 1.4
+    },
+    {
+     "icon": "calendar",
+     "label": "COSTUMBRE",
+     "at": 3.6
+    }
+   ]
+  },
+  {
+   "say": "Y si en la prensa bajas hasta abajo, enhorabuena: esa es la buena.",
+   "sub": "Y si en la prensa *bajas hasta abajo*, enhorabuena: *esa es la buena*.",
+   "kind": "toni",
+   "action": "legpress",
+   "o": {
+    "range": "bottom"
+   },
+   "title": "RANGO *COMPLETO*",
+   "titleSize": 110,
+   "scale": 1.1,
+   "ty": 720
+  },
+  {
+   "say": "Seguid preguntando en comentarios: de ahí salen vídeos como este.",
+   "sub": "Seguid preguntando en comentarios: *de ahí salen vídeos* como este.",
+   "kind": "cta",
+   "l1": "PREGUNTA",
+   "size1": 130,
+   "l2": "EN COMENTARIOS",
+   "size2": 80,
+   "l2lines": 1
+  }
+ ]
+}
