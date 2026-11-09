@@ -351,5 +351,70 @@
   "video": "videos/2026-11-09-descanso.mp4",
   "estado": "programado",
   "toni": true
+ },
+ {
+  "fecha": "2026-11-10",
+  "hora": "14:00",
+  "tipo": "video (tendencia)",
+  "tema": "Alcohol tras entrenar (Parr et al. 2014, PLOS ONE: 8 hombres activos, ~12 copas; síntesis -24 % con proteína, -37 % con hidratos); una caña no se midió",
+  "titulo": "Una borrachera después de entrenar frena tu músculo un 37 %",
+  "ref": "tema de la tanda; viral pendiente (vidIQ sin créditos)",
+  "gancho_tipo": "número que escandaliza",
+  "visuales": [
+   "num(glass)",
+   "stamp",
+   "paper",
+   "split",
+   "bars",
+   "invert",
+   "xray",
+   "toni shrug",
+   "neq",
+   "chips(shaker,drop,calendar)",
+   "cta"
+  ],
+  "metricool": {
+   "instagram": 421585468,
+   "tiktok": 421585530,
+   "youtube": 421585602,
+   "threads": 421585654
+  },
+  "voz": "gemini-3.8-flash-tts/Achird, 1.ª toma; voicecheck 0,964",
+  "acento": "ES",
+  "video": "videos/2026-11-10-alcohol.mp4",
+  "estado": "programado",
+  "toni": true
+ },
+ {
+  "fecha": "2026-11-10",
+  "hora": "20:30",
+  "tipo": "video (tendencia)",
+  "tema": "Agujetas: el daño muscular no es lo que hace crecer (Damas, Libardi y Ugrinowitsch 2018, revisión); efecto de la repetición; lo que sí cuenta",
+  "titulo": "Que mañana te duela todo no significa que hayas crecido",
+  "ref": "tema de la tanda; viral pendiente (vidIQ sin créditos)",
+  "gancho_tipo": "contradicción",
+  "visuales": [
+   "head strike",
+   "eyes",
+   "stamp(fibers)",
+   "split (los dos ganan)",
+   "invert",
+   "xray",
+   "head(calendar)",
+   "toni thumbsUp",
+   "chips(flame,dumbbell,egg)",
+   "cta"
+  ],
+  "metricool": {
+   "instagram": 421596700,
+   "tiktok": 421596749,
+   "youtube": 421596907,
+   "threads": 421597029
+  },
+  "voz": "gemini-3.8-flash-tts/Achird, 1.ª toma (recortadas las instrucciones leídas); voicecheck 0,961",
+  "acento": "ES",
+  "video": "videos/2026-11-10-agujetas.mp4",
+  "estado": "programado",
+  "toni": true
  }
 ]
