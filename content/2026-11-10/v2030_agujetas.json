@@ -1,0 +1,141 @@
+{
+ "id": "2026-11-10-agujetas",
+ "publish": "2026-11-10T20:30:00",
+ "ref": "tema de la tanda del 9 nov (mito de las agujetas); viral pendiente de confirmar (vidIQ sin créditos)",
+ "scenes": [
+  {
+   "say": "Que mañana te duela todo no significa que hayas crecido.",
+   "sub": "Que mañana te duela todo *no significa que hayas crecido*.",
+   "kind": "head",
+   "lines": [
+    "ME DUELE",
+    "= HE CRECIDO"
+   ],
+   "coral": [
+    0
+   ],
+   "size": 140,
+   "strike": 1,
+   "strikeAt": 1.6,
+   "trans": "punch"
+  },
+  {
+   "say": "Bajar las escaleras como un robot no es ninguna medalla.",
+   "sub": "Bajar las escaleras *como un robot* no es ninguna medalla.",
+   "kind": "eyes",
+   "title": "MODO ROBOT"
+  },
+  {
+   "say": "Una revisión de dos mil dieciocho concluyó que el daño muscular no es lo que te hace crecer.",
+   "sub": "Una revisión de *2018* concluyó que el daño muscular *no es lo que te hace crecer*.",
+   "kind": "stamp",
+   "text": "MITO",
+   "icon": "fibers"
+  },
+  {
+   "say": "Entrenos con mucho daño y entrenos con poco daño dieron músculo y fuerza parecidos.",
+   "sub": "Con *mucho daño* o con *poco daño*: músculo y fuerza *parecidos*.",
+   "kind": "split",
+   "bdelay": 1.4,
+   "verdict": 3.2,
+   "size": 76,
+   "a": {
+    "label": "MUCHO DAÑO",
+    "toni": "shrug",
+    "good": true
+   },
+   "b": {
+    "label": "POCO DAÑO",
+    "toni": "flexDouble",
+    "good": true
+   }
+  },
+  {
+   "say": "No creces por sufrir.",
+   "sub": "No creces por *sufrir*.",
+   "kind": "invert",
+   "lines": [
+    "NO CRECES",
+    "POR *SUFRIR*"
+   ],
+   "size": 170,
+   "step": 0.35
+  },
+  {
+   "say": "Creces por darle trabajo de calidad al músculo, serie tras serie, semana tras semana.",
+   "sub": "Creces por darle *trabajo de calidad* al músculo, semana tras semana.",
+   "kind": "xray",
+   "mark": [
+    "quads",
+    "chest",
+    "delts"
+   ],
+   "o": {
+    "muscle": "quads"
+   },
+   "title": "CRECES POR *TRABAJO*",
+   "titleSize": 100
+  },
+  {
+   "say": "Y encima, cuanto más repites un ejercicio, menos agujetas te da.",
+   "sub": "Y encima, cuanto más *repites* un ejercicio, *menos agujetas* te da.",
+   "kind": "head",
+   "lines": [
+    "CUANTO MÁS",
+    "REPITES,",
+    "MENOS DUELE"
+   ],
+   "coral": [
+    2
+   ],
+   "size": 120,
+   "icon": "calendar",
+   "iconSize": 260
+  },
+  {
+   "say": "Así que si un día no tienes agujetas, no pasa nada.",
+   "sub": "Si un día *no tienes agujetas*, *no pasa nada*.",
+   "kind": "toni",
+   "action": "thumbsUp",
+   "title": "SIN AGUJETAS: *TODO OK*",
+   "titleSize": 96
+  },
+  {
+   "say": "Lo que sí cuenta: acercarte al fallo, subir poco a poco y comer bien de proteína.",
+   "sub": "Lo que *sí cuenta*: acercarte al *fallo*, *subir poco a poco* y comer bien de *proteína*.",
+   "kind": "chips",
+   "title": "LO QUE *SÍ* CUENTA",
+   "titleSize": 104,
+   "top": 190,
+   "gap": 225,
+   "fs": 62,
+   "items": [
+    {
+     "icon": "flame",
+     "label": "CERCA DEL FALLO",
+     "at": 1.1
+    },
+    {
+     "icon": "dumbbell",
+     "label": "SUBIR POCO A POCO",
+     "at": 2.3
+    },
+    {
+     "icon": "egg",
+     "label": "PROTEÍNA",
+     "at": 3.6
+    }
+   ]
+  },
+  {
+   "say": "Guárdalo y pásaselo al que presume de no poder sentarse.",
+   "sub": "*Guárdalo* y pásaselo al que presume de *no poder sentarse*.",
+   "kind": "cta",
+   "l1": "GUÁRDALO",
+   "size1": 140,
+   "l2": "Y PÁSASELO",
+   "size2": 90,
+   "l2lines": 1
+  }
+ ]
+}
