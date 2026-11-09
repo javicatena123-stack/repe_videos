@@ -1,0 +1,183 @@
+{
+ "id": "2026-11-11-proteina",
+ "publish": "2026-11-11T20:30:00",
+ "ref": "tema de la tanda del 9 nov (cuánta proteína hace falta); viral pendiente (vidIQ sin créditos)",
+ "scenes": [
+  {
+   "say": "Tu tercer batido de proteína es puro ego.",
+   "sub": "Tu *tercer batido* de proteína es *puro ego*.",
+   "kind": "toni",
+   "action": "flexDouble",
+   "o": {
+    "hold": 1.6
+   },
+   "title": "TU 3.er *BATIDO*",
+   "titleSize": 120,
+   "label": "EGO",
+   "trans": "punch"
+  },
+  {
+   "say": "¿No me crees? Hay un estudio enorme.",
+   "sub": "¿No me crees? Hay un *estudio enorme*.",
+   "kind": "eyes",
+   "title": "¿NO ME CREES?"
+  },
+  {
+   "say": "Cuarenta y nueve estudios. Mil ochocientas sesenta y tres personas entrenando fuerza.",
+   "sub": "*49 estudios*. *1.863 personas* entrenando fuerza.",
+   "kind": "paper",
+   "title": "ESTUDIO",
+   "source": "Morton et al. · Br J Sports Med",
+   "stamp": "2018",
+   "stampAt": 0.2,
+   "rows": [
+    {
+     "v": "49",
+     "l": "ESTUDIOS",
+     "at": 0.4
+    },
+    {
+     "v": "1.863",
+     "l": "PERSONAS",
+     "at": 1.6,
+     "w": 330
+    }
+   ]
+  },
+  {
+   "say": "Más proteína, más músculo. Hasta que llegas a uno coma seis gramos por kilo.",
+   "sub": "Más proteína, más músculo… hasta *1,6 g por kilo*.",
+   "kind": "bars",
+   "caption": "Músculo ganado",
+   "items": [
+    {
+     "label": "MÁS",
+     "value": 60,
+     "top": "",
+     "at": 0.5
+    },
+    {
+     "label": "1,6 G/KG",
+     "value": 100,
+     "top": "TOPE",
+     "coral": true,
+     "at": 2.4
+    },
+    {
+     "label": "MÁS AÚN",
+     "value": 100,
+     "top": "IGUAL",
+     "at": 3.1
+    }
+   ]
+  },
+  {
+   "say": "Y ahí, la curva se aplana.",
+   "sub": "Y ahí, la curva *se aplana*.",
+   "kind": "invert",
+   "lines": [
+    "Y AHÍ",
+    "LA CURVA",
+    "*SE APLANA*"
+   ],
+   "size": 160,
+   "step": 0.3,
+   "trans": "punch"
+  },
+  {
+   "say": "¿Y tus tres batidos? No suman más músculo.",
+   "sub": "¿Y tus tres batidos? *No suman* más músculo.",
+   "kind": "toni",
+   "action": "shock",
+   "title": "¿Y TUS *3 BATIDOS*?",
+   "titleSize": 110
+  },
+  {
+   "say": "Tu bíceps ni se entera.",
+   "sub": "Tu bíceps *ni se entera*.",
+   "kind": "xray",
+   "mark": "biceps",
+   "o": {},
+   "title": "TU *BÍCEPS*",
+   "titleSize": 110,
+   "label": "NI SE ENTERA"
+  },
+  {
+   "say": "Si pesas ochenta kilos, son unos ciento treinta gramos al día.",
+   "sub": "Si pesas *80 kilos*, son unos *130 g al día*.",
+   "kind": "num",
+   "icon": "drumstick",
+   "label": "SI PESAS 80 KG",
+   "value": 130,
+   "unit": "g/día"
+  },
+  {
+   "say": "Y llegas comiendo normal: huevos, lácteos y tu táper de siempre.",
+   "sub": "Y llegas comiendo normal: *huevos*, *lácteos* y tu *táper* de siempre.",
+   "kind": "chips",
+   "title": "COMIDA *NORMAL*",
+   "titleSize": 110,
+   "top": 190,
+   "gap": 225,
+   "fs": 62,
+   "items": [
+    {
+     "icon": "egg",
+     "label": "HUEVOS",
+     "at": 1.0
+    },
+    {
+     "icon": "milk",
+     "label": "LÁCTEOS",
+     "at": 1.7
+    },
+    {
+     "icon": "tupper",
+     "label": "TU TÁPER",
+     "at": 2.5
+    }
+   ]
+  },
+  {
+   "say": "Tres batidos o llegar justo: mismo músculo, y uno te sale más barato.",
+   "sub": "Tres batidos o llegar justo: *mismo músculo*, y uno *más barato*.",
+   "kind": "split",
+   "a": {
+    "label": "3 BATIDOS"
+   },
+   "b": {
+    "label": "1,6 JUSTO"
+   },
+   "bdelay": 1.0,
+   "verdict": 2.6,
+   "trans": "left"
+  },
+  {
+   "say": "Ojo: había margen hasta dos coma dos, y a dieta conviene ir algo más arriba.",
+   "sub": "Ojo: margen hasta *2,2 g/kg*, y *a dieta* conviene ir algo más arriba.",
+   "kind": "head",
+   "lines": [
+    "¿A DIETA?",
+    "SUBE HASTA",
+    "2,2 G/KG"
+   ],
+   "coral": [
+    2
+   ],
+   "size": 130,
+   "icon": "scoop",
+   "iconSize": 260,
+   "trans": "up"
+  },
+  {
+   "say": "Guárdalo y pásaselo al del batido en cada mano.",
+   "sub": "*Guárdalo* y pásaselo al del *batido en cada mano*.",
+   "kind": "cta",
+   "l1": "GUÁRDALO",
+   "size1": 140,
+   "l2": "Y CALCULA TU 1,6",
+   "size2": 80,
+   "l2lines": 1
+  }
+ ]
+}

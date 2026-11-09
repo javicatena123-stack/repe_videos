@@ -1,0 +1,187 @@
+{
+ "id": "2026-11-11-respuesta-triceps",
+ "publish": "2026-11-11T07:30:00",
+ "ref": "pregunta de @Mipeke1234 (YouTube, Short del 6 nov «Las dos máquinas más famosas del gym…», 7 nov)",
+ "scenes": [
+  {
+   "say": "Me preguntáis si cada ejercicio de tríceps trabaja una cabeza distinta.",
+   "sub": "Me preguntáis si cada ejercicio de tríceps trabaja *una cabeza distinta*.",
+   "kind": "xray",
+   "mark": "triceps",
+   "title": "¿UNA CABEZA *CADA UNO*?",
+   "titleSize": 100,
+   "label": "3 CABEZAS",
+   "trans": "punch"
+  },
+  {
+   "say": "Y la respuesta no es la que creéis.",
+   "sub": "Y la respuesta *no es la que creéis*.",
+   "kind": "head",
+   "lines": [
+    "NO ES LO",
+    "QUE CREÉIS"
+   ],
+   "coral": [
+    1
+   ],
+   "size": 150,
+   "icon": "switch",
+   "iconp": {
+    "off": true
+   },
+   "iconSize": 260
+  },
+  {
+   "say": "Solo la cabeza larga cruza el hombro, y se estira con el brazo arriba.",
+   "sub": "Solo la *cabeza larga* cruza el hombro, y *se estira* con el brazo arriba.",
+   "kind": "toni",
+   "action": "ohext",
+   "mark": "triceps",
+   "title": "LA CABEZA *LARGA*",
+   "titleSize": 110,
+   "label": "SE ESTIRA"
+  },
+  {
+   "say": "Veintiún principiantes, doce semanas: un brazo en polea y el otro por encima de la cabeza.",
+   "sub": "*21 principiantes*, *12 semanas*: un brazo en polea y el otro *por encima de la cabeza*.",
+   "kind": "paper",
+   "title": "ESTUDIO",
+   "source": "Maeo et al. · Eur J Sport Sci",
+   "stamp": "2023",
+   "stampAt": 0.2,
+   "rows": [
+    {
+     "v": "21",
+     "l": "PRINCIPIANTES",
+     "at": 0.4,
+     "w": 320
+    },
+    {
+     "v": "12",
+     "l": "SEMANAS",
+     "at": 1.5
+    },
+    {
+     "v": "2",
+     "l": "BRAZOS, 2 EJERCICIOS",
+     "at": 2.6,
+     "w": 300
+    }
+   ]
+  },
+  {
+   "say": "La cabeza larga creció un cincuenta por ciento más con el brazo arriba.",
+   "sub": "La cabeza larga creció *un 50 % más* con el brazo arriba.",
+   "kind": "bars",
+   "caption": "Cabeza larga",
+   "items": [
+    {
+     "label": "POLEA",
+     "value": 19.6,
+     "top": "+19,6%",
+     "at": 0.6
+    },
+    {
+     "label": "ARRIBA",
+     "value": 28.5,
+     "top": "+28,5%",
+     "coral": true,
+     "at": 1.9
+    }
+   ]
+  },
+  {
+   "say": "Pero lo que flipa: las otras dos también crecieron más.",
+   "sub": "Pero lo que flipa: *las otras dos también* crecieron más.",
+   "kind": "invert",
+   "lines": [
+    "LAS OTRAS DOS",
+    "*TAMBIÉN*",
+    "*CRECIERON MÁS*"
+   ],
+   "size": 140,
+   "step": 0.35,
+   "trans": "punch"
+  },
+  {
+   "say": "Lateral y medial: catorce coma seis contra diez coma cinco por ciento.",
+   "sub": "Lateral y medial: *+14,6 %* contra *+10,5 %*.",
+   "kind": "vs",
+   "bdelay": 2.0,
+   "a": {
+    "icon": "flame",
+    "value": "+14,6",
+    "unit": "%",
+    "label": "Brazo arriba"
+   },
+   "b": {
+    "icon": "battery",
+    "value": "+10,5",
+    "unit": "%",
+    "label": "Polea",
+    "white": true
+   }
+  },
+  {
+   "say": "¿Y lo mejor? Con el brazo arriba movían bastante menos peso.",
+   "sub": "¿Y lo mejor? Con el brazo arriba movían *bastante menos peso*.",
+   "kind": "toni",
+   "action": "shock",
+   "title": "¿CON *MENOS* PESO?",
+   "titleSize": 110
+  },
+  {
+   "say": "O sea, la polea no es mala, pero el brazo arriba gana.",
+   "sub": "La polea *no es mala*, pero el brazo arriba *gana*.",
+   "kind": "split",
+   "a": {
+    "label": "POLEA",
+    "toni": "pushdown"
+   },
+   "b": {
+    "label": "BRAZO ARRIBA",
+    "toni": "ohext"
+   },
+   "bdelay": 0.9,
+   "verdict": 2.2,
+   "trans": "left"
+  },
+  {
+   "say": "Hazlo con mancuerna o polea a la espalda, dos días por semana.",
+   "sub": "Con *mancuerna* o *polea a la espalda*, *dos días por semana*.",
+   "kind": "chips",
+   "title": "BRAZO *ARRIBA*",
+   "titleSize": 110,
+   "top": 190,
+   "gap": 225,
+   "fs": 62,
+   "items": [
+    {
+     "icon": "dumbbell",
+     "label": "CON MANCUERNA",
+     "at": 0.6
+    },
+    {
+     "icon": "check",
+     "label": "POLEA A LA ESPALDA",
+     "at": 1.5
+    },
+    {
+     "icon": "calendar",
+     "label": "2 DÍAS / SEMANA",
+     "at": 2.6
+    }
+   ]
+  },
+  {
+   "say": "Gracias por la pregunta. Dejad la vuestra y va al próximo vídeo.",
+   "sub": "Gracias por la pregunta. *Dejad la vuestra* y va al *próximo vídeo*.",
+   "kind": "cta",
+   "l1": "COMENTA",
+   "size1": 140,
+   "l2": "TU PREGUNTA",
+   "size2": 90,
+   "l2lines": 1
+  }
+ ]
+}

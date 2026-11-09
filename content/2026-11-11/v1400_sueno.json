@@ -1,0 +1,156 @@
+{
+ "id": "2026-11-11-sueno",
+ "publish": "2026-11-11T14:00:00",
+ "ref": "tema de la tanda del 9 nov (sueño y músculo); viral pendiente de confirmar (vidIQ sin créditos)",
+ "scenes": [
+  {
+   "say": "Una noche sin dormir y tu músculo fabrica un dieciocho por ciento menos.",
+   "sub": "Una noche sin dormir y tu músculo fabrica *un 18 % menos*.",
+   "kind": "stamp",
+   "text": "-18%",
+   "size": 220,
+   "icon": "moon",
+   "trans": "punch"
+  },
+  {
+   "say": "¿Una sola noche? Sí, una.",
+   "sub": "¿Una *sola* noche? Sí, *una*.",
+   "kind": "toni",
+   "action": "shock",
+   "title": "¿UNA *SOLA* NOCHE?",
+   "titleSize": 110
+  },
+  {
+   "say": "Trece jóvenes sanos pasaron una noche entera en vela, y al día siguiente les midieron el músculo.",
+   "sub": "*13 jóvenes sanos*, una noche entera *en vela*, y al día siguiente, a medir el músculo.",
+   "kind": "paper",
+   "title": "ESTUDIO",
+   "source": "Lamon et al. · Physiological Reports",
+   "stamp": "2021",
+   "stampAt": 0.2,
+   "rows": [
+    {
+     "v": "13",
+     "l": "JÓVENES SANOS",
+     "at": 0.5
+    },
+    {
+     "v": "1",
+     "l": "NOCHE EN VELA",
+     "at": 1.9,
+     "w": 150
+    },
+    {
+     "v": "7+6",
+     "l": "CHICOS Y CHICAS",
+     "at": 3.2,
+     "w": 280
+    }
+   ]
+  },
+  {
+   "say": "Resultado: su músculo fabricó un dieciocho por ciento menos que después de dormir bien.",
+   "sub": "Resultado: *un 18 % menos* de síntesis de músculo que tras dormir bien.",
+   "kind": "bars",
+   "caption": "Síntesis de músculo",
+   "items": [
+    {
+     "label": "DURMIENDO",
+     "value": 100,
+     "top": "100%",
+     "at": 2.4
+    },
+    {
+     "label": "EN VELA",
+     "value": 82,
+     "top": "-18%",
+     "coral": true,
+     "at": 3.3
+    }
+   ]
+  },
+  {
+   "say": "Y encima, el cortisol subió un veintiún por ciento y la testosterona bajó un veinticuatro.",
+   "sub": "Y encima: cortisol *+21 %*, testosterona *-24 %*.",
+   "kind": "vs",
+   "bdelay": 2.0,
+   "a": {
+    "icon": "flame",
+    "value": "+21",
+    "unit": "%",
+    "label": "Cortisol",
+    "white": true
+   },
+   "b": {
+    "icon": "battery",
+    "value": "-24",
+    "unit": "%",
+    "label": "Testosterona"
+   }
+  },
+  {
+   "say": "Y dormir es gratis.",
+   "sub": "Y dormir es *gratis*.",
+   "kind": "invert",
+   "lines": [
+    "DORMIR",
+    "ES *GRATIS*"
+   ],
+   "size": 180,
+   "step": 0.35
+  },
+  {
+   "say": "Y no hace falta pasar la noche en vela: cinco noches de cuatro horas también lo bajaron.",
+   "sub": "Y *5 noches de 4 horas* también lo bajaron.",
+   "kind": "clock",
+   "hours": 4,
+   "full": 8,
+   "label": "x 5 noches"
+  },
+  {
+   "say": "¿Que un día duermes mal? Tranquilo, el músculo no se te va en una noche.",
+   "sub": "¿Un día duermes mal? Tranquilo, el músculo *no se va en una noche*.",
+   "kind": "toni",
+   "action": "shrug",
+   "title": "¿UNA *MALA* NOCHE?",
+   "titleSize": 110
+  },
+  {
+   "say": "Lo que suma: horario fijo, habitación fresca y nada de café por la tarde.",
+   "sub": "Lo que suma: *horario fijo*, *habitación fresca* y *nada de café* por la tarde.",
+   "kind": "chips",
+   "title": "DUERME *MEJOR*",
+   "titleSize": 110,
+   "top": 190,
+   "gap": 225,
+   "fs": 62,
+   "items": [
+    {
+     "icon": "calendar",
+     "label": "HORARIO FIJO",
+     "at": 0.8
+    },
+    {
+     "icon": "thermo",
+     "label": "HABITACIÓN FRESCA",
+     "at": 1.8
+    },
+    {
+     "icon": "coffee",
+     "label": "SIN CAFÉ DE TARDE",
+     "at": 3.0
+    }
+   ]
+  },
+  {
+   "say": "Guárdalo y pásaselo al que entrena a tope y duerme cinco horas.",
+   "sub": "*Guárdalo* y pásaselo al que entrena a tope y *duerme cinco horas*.",
+   "kind": "cta",
+   "l1": "GUÁRDALO",
+   "size1": 140,
+   "l2": "Y A DORMIR",
+   "size2": 90,
+   "l2lines": 1
+  }
+ ]
+}
