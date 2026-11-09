@@ -318,5 +318,38 @@
   "video": "videos/2026-11-09-colageno.mp4",
   "estado": "programado",
   "toni": true
+ },
+ {
+  "fecha": "2026-11-09",
+  "hora": "20:30",
+  "tipo": "video (tendencia viral)",
+  "tema": "Descanso entre series: 1 vs 3 min (Schoenfeld et al. 2016, 21 hombres entrenados, 8 semanas): 3 min más grosor de cuádriceps y más fuerza en sentadilla y banca; los de 1 min también crecen; aislados 1-2 min",
+  "titulo": "Descansar un minuto entre series te roba músculo",
+  "ref": "post de @fitlabx sobre descansar 3 min (93 % más de crecimiento, exagerado); pendiente confirmar vistas (vidIQ sin créditos)",
+  "gancho_tipo": "acusación directa",
+  "visuales": [
+   "head(stopwatch,cross)",
+   "toni shock",
+   "paper",
+   "split",
+   "invert",
+   "xray quads",
+   "chips(legs,chest)",
+   "head(battery)",
+   "stamp(fibers repair)",
+   "toni curl",
+   "cta"
+  ],
+  "metricool": {
+   "instagram": 421575941,
+   "tiktok": 421575995,
+   "youtube": 421576088,
+   "threads": 421576138
+  },
+  "voz": "gemini-3.8-flash-tts/Achird, 3.ª toma (la 1.ª salió LATAM, la 2.ª improvisó otro texto); recortadas las instrucciones leídas; voicecheck 0,974",
+  "acento": "ES",
+  "video": "videos/2026-11-09-descanso.mp4",
+  "estado": "programado",
+  "toni": true
  }
 ]
