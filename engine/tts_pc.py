@@ -37,7 +37,7 @@ def main():
         part = {"text": text, "speech_metadata": {"style": STYLE_LITE}}
     else:
         # receta de la voz buena elegida por Javier (prueba de voces): instrucciones en español + guion
-        part = {"text": DIRECTION + content.get("direction_extra", "") + "GUION (léelo exactamente, palabra por palabra, sin añadir ni cambiar nada):\n" + "\n".join(s["say"] for s in content["scenes"])}
+        part = {"text": DIRECTION + content.get("direction_extra", "") + "\n".join(s["say"] for s in content["scenes"])}
     body = {"contents": [{"parts": [part]}],
             "generationConfig": {"responseModalities": ["AUDIO"],
                                  "speechConfig": {"voiceConfig": {"prebuiltVoiceConfig": {"voiceName": voice}}}}}

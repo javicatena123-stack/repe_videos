@@ -1,0 +1,177 @@
+{
+ "id": "2026-11-10-alcohol",
+ "publish": "2026-11-10T14:00:00",
+ "ref": "tema de la tanda del 9 nov (alcohol y recuperación); viral pendiente de confirmar (vidIQ sin créditos)",
+ "scenes": [
+  {
+   "say": "Una borrachera después de entrenar frena tu músculo un treinta y siete por ciento.",
+   "sub": "Una borrachera después de entrenar frena tu músculo *un 37 %*.",
+   "kind": "num",
+   "icon": "glass",
+   "label": "fábrica de músculo",
+   "prefix": "-",
+   "value": 37,
+   "unit": "%",
+   "trans": "punch"
+  },
+  {
+   "say": "Y ojo, que no hablamos de una caña.",
+   "sub": "Y ojo, que *no hablamos de una caña*.",
+   "kind": "stamp",
+   "text": "NI UNA NI DOS",
+   "size": 130
+  },
+  {
+   "say": "Un estudio dio a ocho deportistas unas doce copas después de entrenar.",
+   "sub": "Un estudio: *8 deportistas*, unas *12 copas* después de entrenar.",
+   "kind": "paper",
+   "title": "ESTUDIO",
+   "source": "Parr et al. · PLOS ONE",
+   "stamp": "2014",
+   "stampAt": 0.2,
+   "rows": [
+    {
+     "v": "8",
+     "l": "HOMBRES ACTIVOS",
+     "at": 1.1,
+     "w": 150
+    },
+    {
+     "v": "12",
+     "l": "COPAS (±2)",
+     "at": 2.1
+    },
+    {
+     "v": "+",
+     "l": "TRAS ENTRENAR",
+     "at": 3.0,
+     "w": 150
+    }
+   ]
+  },
+  {
+   "say": "Unos tomaron solo proteína. Otros, la misma proteína con alcohol.",
+   "sub": "Unos, *solo proteína*. Otros, la misma proteína *con alcohol*.",
+   "kind": "split",
+   "bdelay": 1.4,
+   "verdict": 2.6,
+   "a": {
+    "label": "PROTEÍNA",
+    "toni": "flexDouble",
+    "good": true
+   },
+   "b": {
+    "label": "+ ALCOHOL",
+    "toni": "shrug",
+    "good": false
+   }
+  },
+  {
+   "say": "Con alcohol, el músculo fabricó un veinticuatro por ciento menos. Y si en vez de proteína había hidratos, un treinta y siete.",
+   "sub": "Con alcohol, *-24 %* de síntesis de músculo. Con hidratos en vez de proteína, *-37 %*.",
+   "kind": "bars",
+   "caption": "Síntesis de músculo",
+   "items": [
+    {
+     "label": "PROTEÍNA",
+     "value": 100,
+     "top": "100 %",
+     "at": 0.3
+    },
+    {
+     "label": "+ ALCOHOL",
+     "value": 76,
+     "top": "-24 %",
+     "at": 2.2
+    },
+    {
+     "label": "ALC. + HIDRATOS",
+     "value": 63,
+     "top": "-37 %",
+     "coral": true,
+     "at": 5.4
+    }
+   ]
+  },
+  {
+   "say": "Aunque te tomes el batido.",
+   "sub": "*Aunque te tomes el batido*.",
+   "kind": "invert",
+   "lines": [
+    "AUNQUE TE",
+    "TOMES EL",
+    "*BATIDO*"
+   ],
+   "size": 150,
+   "step": 0.3
+  },
+  {
+   "say": "La fábrica de tu músculo se queda a medio gas.",
+   "sub": "La fábrica de tu músculo se queda *a medio gas*.",
+   "kind": "xray",
+   "mark": [
+    "quads",
+    "chest",
+    "biceps"
+   ],
+   "o": {
+    "muscle": "chest"
+   },
+   "title": "A *MEDIO GAS*",
+   "titleSize": 120
+  },
+  {
+   "say": "¿Y una caña con los amigos?",
+   "sub": "¿Y *una caña* con los amigos?",
+   "kind": "toni",
+   "action": "shrug",
+   "title": "¿Y UNA *CAÑA*?",
+   "titleSize": 120
+  },
+  {
+   "say": "Eso no se midió. Una caña no es lo mismo que doce copas.",
+   "sub": "Eso *no se midió*. Una caña no es lo mismo que *doce copas*.",
+   "kind": "neq",
+   "left": "UNA CAÑA",
+   "right": "12 COPAS",
+   "size": 140
+  },
+  {
+   "say": "Si sales, batido después de entrenar, agua entre copas y que no sea cada finde.",
+   "sub": "Si sales: *batido* después de entrenar, *agua* entre copas y que *no sea cada finde*.",
+   "kind": "chips",
+   "title": "SI *SALES*",
+   "titleSize": 110,
+   "top": 190,
+   "gap": 225,
+   "fs": 62,
+   "items": [
+    {
+     "icon": "shaker",
+     "label": "BATIDO AL ACABAR",
+     "at": 0.5
+    },
+    {
+     "icon": "drop",
+     "label": "AGUA ENTRE COPAS",
+     "at": 2.0
+    },
+    {
+     "icon": "calendar",
+     "label": "NO CADA FINDE",
+     "at": 3.4
+    }
+   ]
+  },
+  {
+   "say": "Guárdalo y pásaselo al que entrena el viernes y lo deshace el sábado.",
+   "sub": "*Guárdalo* y pásaselo al que entrena el viernes y *lo deshace el sábado*.",
+   "kind": "cta",
+   "l1": "GUÁRDALO",
+   "size1": 140,
+   "l2": "Y PÁSASELO",
+   "size2": 90,
+   "l2lines": 1
+  }
+ ]
+}
