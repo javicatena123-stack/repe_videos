@@ -1,0 +1,168 @@
+{
+ "id": "2026-11-09-descanso",
+ "publish": "2026-11-09T20:30:00",
+ "ref": "post de @fitlabx sobre descansar 3 min («93 % más de crecimiento», exagerado); referencia provisional del plan de la tanda",
+ "scenes": [
+  {
+   "say": "Descansar un minuto entre series te roba músculo.",
+   "sub": "Descansar *un minuto* entre series te *roba músculo*.",
+   "kind": "head",
+   "lines": [
+    "1 MINUTO",
+    "DE DESCANSO"
+   ],
+   "coral": [
+    0
+   ],
+   "size": 150,
+   "icon": "stopwatch",
+   "iconSize": 330,
+   "mark": "cross",
+   "markAt": 1.8,
+   "trans": "punch"
+  },
+  {
+   "say": "¿Cómo? ¿Que descansar menos es peor?",
+   "sub": "¿Cómo? ¿Que descansar *menos* es *peor*?",
+   "kind": "toni",
+   "action": "shock",
+   "title": "¿DESCANSAR *MENOS* ES PEOR?",
+   "titleSize": 82,
+   "trans": "punch"
+  },
+  {
+   "say": "Un estudio puso a veintiún hombres entrenados a hacer lo mismo durante ocho semanas.",
+   "sub": "Un estudio: *21 hombres entrenados*, el mismo entreno durante *8 semanas*.",
+   "kind": "paper",
+   "title": "ESTUDIO",
+   "source": "Schoenfeld et al. · J Strength Cond Res",
+   "stamp": "2016",
+   "stampAt": 0.2,
+   "rows": [
+    {
+     "v": "21",
+     "l": "HOMBRES ENTRENADOS",
+     "at": 0.6
+    },
+    {
+     "v": "=",
+     "l": "MISMO ENTRENO",
+     "at": 2.0,
+     "w": 150
+    },
+    {
+     "v": "8",
+     "l": "SEMANAS",
+     "at": 3.0,
+     "w": 150
+    }
+   ]
+  },
+  {
+   "say": "Unos descansaban un minuto entre series. Otros, tres minutos.",
+   "sub": "Unos descansaban *un minuto*. Otros, *tres minutos*.",
+   "kind": "split",
+   "bdelay": 2.1,
+   "verdict": 3.1,
+   "a": {
+    "label": "1 MINUTO",
+    "toni": "shrug"
+   },
+   "b": {
+    "label": "3 MINUTOS",
+    "toni": "flexDouble"
+   }
+  },
+  {
+   "say": "Y ganaron los de tres minutos.",
+   "sub": "Y ganaron los de *tres minutos*.",
+   "kind": "invert",
+   "lines": [
+    "GANARON",
+    "LOS DE *3 MIN*"
+   ],
+   "size": 160,
+   "step": 0.5
+  },
+  {
+   "say": "Más grosor en el cuádriceps…",
+   "sub": "Más grosor en el *cuádriceps*…",
+   "kind": "xray",
+   "mark": "quads",
+   "o": {
+    "muscle": "quads"
+   },
+   "title": "MÁS *CUÁDRICEPS*",
+   "titleSize": 110
+  },
+  {
+   "say": "…y más fuerza en sentadilla y en press de banca.",
+   "sub": "…y más fuerza en *sentadilla* y en *press de banca*.",
+   "kind": "chips",
+   "title": "MÁS *FUERZA*",
+   "titleSize": 110,
+   "top": 220,
+   "gap": 280,
+   "fs": 66,
+   "items": [
+    {
+     "icon": "legs",
+     "label": "SENTADILLA",
+     "at": 0.9
+    },
+    {
+     "icon": "chest",
+     "label": "PRESS DE BANCA",
+     "at": 1.7
+    }
+   ]
+  },
+  {
+   "say": "¿Por qué? Porque llegas a la siguiente serie con la batería cargada y metes más repeticiones.",
+   "sub": "Llegas a la siguiente serie con la *batería cargada* y metes *más repeticiones*.",
+   "kind": "head",
+   "lines": [
+    "BATERÍA",
+    "AL 100 %"
+   ],
+   "coral": [
+    1
+   ],
+   "size": 150,
+   "icon": "battery",
+   "iconSize": 320
+  },
+  {
+   "say": "Ojo: los de un minuto también crecieron. Solo que menos.",
+   "sub": "Ojo: los de un minuto *también crecieron*. Solo que *menos*.",
+   "kind": "stamp",
+   "text": "TAMBIÉN CRECEN",
+   "size": 120,
+   "icon": "fibers",
+   "iconp": {
+    "repair": true
+   }
+  },
+  {
+   "say": "Y en ejercicios pequeños, como un curl, con uno o dos minutos vas sobrado.",
+   "sub": "En ejercicios pequeños, como un *curl*, con *1-2 minutos* vas sobrado.",
+   "kind": "toni",
+   "action": "curl",
+   "o": {
+    "x": -40
+   },
+   "title": "AISLADOS: *1-2 MIN*",
+   "titleSize": 104
+  },
+  {
+   "say": "Guárdalo y pásaselo al que descansa treinta segundos y se cree un máquina.",
+   "sub": "*Guárdalo* y pásaselo al que descansa *30 segundos* y se cree un máquina.",
+   "kind": "cta",
+   "l1": "GUÁRDALO",
+   "size1": 140,
+   "l2": "Y DESCANSA BIEN",
+   "size2": 86,
+   "l2lines": 1
+  }
+ ]
+}

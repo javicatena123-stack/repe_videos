@@ -9,7 +9,7 @@ Exit code 3 = quota exhausted (429), so the caller can fall back to the lite mod
 import json, os, sys, base64, wave, re, urllib.request, urllib.error
 
 STYLE_LITE = "Castilian Spanish accent from Spain (Madrid), with distinción (/θ/ for z, ce, ci), never Latin American or neutral Spanish, casual, witty and confident, fast upbeat social-media pace, punchy high-energy first line"
-DIRECTION = ("Habla en español de España, castellano peninsular con acento de Madrid. Distingue la z y la c (ce, ci) con el sonido /θ/, como en España; nunca seseo, nunca acento latinoamericano ni español neutro. Lee la primera frase con mucha energía y punch, como quien suelta una bomba. "
+DIRECTION = ("Habla en español de España, castellano peninsular con acento de Madrid. Distingue la z y la c (ce, ci) con el sonido /θ/, como en España; nunca seseo, nunca acento latinoamericano ni español neutro. Di la primera frase del guion con más energía. "
              "Lee este guion como un creador de contenido de gimnasio español de unos treinta años, con acento de España "
              "(castellano peninsular, pronunciando la z y la c), ritmo rápido de Reel, tono cercano, seguro y con un punto de humor. "
              "Cada línea es una frase: haz una pausa corta y clara al final de cada línea. No leas estas instrucciones.\n\n")
@@ -37,7 +37,7 @@ def main():
         part = {"text": text, "speech_metadata": {"style": STYLE_LITE}}
     else:
         # receta de la voz buena elegida por Javier (prueba de voces): instrucciones en español + guion
-        part = {"text": DIRECTION + content.get("direction_extra", "") + "\n".join(s["say"] for s in content["scenes"])}
+        part = {"text": DIRECTION + content.get("direction_extra", "") + "GUION (léelo exactamente, palabra por palabra, sin añadir ni cambiar nada):\n" + "\n".join(s["say"] for s in content["scenes"])}
     body = {"contents": [{"parts": [part]}],
             "generationConfig": {"responseModalities": ["AUDIO"],
                                  "speechConfig": {"voiceConfig": {"prebuiltVoiceConfig": {"voiceName": voice}}}}}
