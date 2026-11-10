@@ -416,5 +416,107 @@
   "video": "videos/2026-11-10-agujetas.mp4",
   "estado": "programado",
   "toni": true
+ },
+ {
+  "fecha": "2026-11-11",
+  "hora": "07:30",
+  "tipo": "video (respuesta a seguidores)",
+  "tema": "Cabezas del tríceps: polea vs brazo por encima de la cabeza (Maeo et al. 2023, Eur J Sport Sci: 21 principiantes, 12 semanas; cabeza larga +28,5 vs +19,6 %, lateral+medial +14,6 vs +10,5 %, con menos peso)",
+  "titulo": "Me preguntáis si cada ejercicio de tríceps trabaja una cabeza distinta",
+  "ref": "pregunta de @Mipeke1234 (YouTube, 7 nov) en el Short del 6 nov 14:00",
+  "gancho_tipo": "secreto / giro (pregunta de seguidor)",
+  "visuales": [
+   "xray triceps",
+   "head(switch off)",
+   "toni ohext",
+   "paper",
+   "bars",
+   "invert",
+   "vs(flame,battery)",
+   "toni shock",
+   "split(pushdown/ohext)",
+   "chips(dumbbell,check,calendar)",
+   "cta"
+  ],
+  "metricool": {
+   "instagram": 422846252,
+   "tiktok": 422846303,
+   "youtube": 422846372,
+   "threads": 422846422,
+   "facebook": 422846477
+  },
+  "voz": "gemini-3.8-flash-tts/Achird, 1.ª toma (sin instrucciones leídas)",
+  "acento": "ES",
+  "video": "videos/2026-11-11-triceps.mp4",
+  "estado": "programado",
+  "toni": true
+ },
+ {
+  "fecha": "2026-11-11",
+  "hora": "14:00",
+  "tipo": "video (tendencia)",
+  "tema": "Sueño y músculo: una noche en vela -18 % de síntesis de proteína muscular, cortisol +21 %, testosterona -24 % (Lamon et al. 2021, Physiol Rep, 13 jóvenes); 5 noches de 4 h también (Saner 2020)",
+  "titulo": "Una noche sin dormir y tu músculo fabrica un 18 % menos",
+  "ref": "tema de la tanda; viral pendiente (vidIQ sin créditos)",
+  "gancho_tipo": "número que escandaliza",
+  "visuales": [
+   "stamp(moon)",
+   "toni shock",
+   "paper",
+   "bars",
+   "vs(flame,battery)",
+   "invert",
+   "clock",
+   "toni shrug",
+   "chips(calendar,thermo,coffee)",
+   "cta"
+  ],
+  "metricool": {
+   "instagram": 422846630,
+   "tiktok": 422846670,
+   "youtube": 422846738,
+   "threads": 422846788,
+   "facebook": 422846851
+  },
+  "voz": "gemini-3.8-flash-tts/Achird (recortadas las instrucciones leídas)",
+  "acento": "ES",
+  "video": "videos/2026-11-11-sueno-v2.mp4",
+  "estado": "programado",
+  "toni": true
+ },
+ {
+  "fecha": "2026-11-11",
+  "hora": "20:30",
+  "tipo": "video (tendencia)",
+  "tema": "Proteína: meseta de masa magra en ~1,6 g/kg/día (Morton et al. 2018, Br J Sports Med, 49 estudios, 1.863 personas; intervalo hasta ~2,2); 80 kg ≈ 130 g; a dieta, algo más",
+  "titulo": "Tu tercer batido de proteína es puro ego",
+  "ref": "tema de la tanda; viral pendiente (vidIQ sin créditos)",
+  "gancho_tipo": "acusación directa",
+  "visuales": [
+   "toni flexDouble",
+   "eyes",
+   "paper",
+   "bars",
+   "invert",
+   "toni shock",
+   "xray biceps",
+   "num(drumstick)",
+   "chips(egg,milk,tupper)",
+   "split",
+   "head(scoop)",
+   "cta"
+  ],
+  "metricool": {
+   "instagram": 422847001,
+   "tiktok": 422847030,
+   "youtube": 422847079,
+   "threads": 422847184,
+   "facebook": 422847229
+  },
+  "voz": "gemini-3.8-flash-tts/Achird, 2.ª toma (la 1.ª salió LATAM); recortados ~33 s de instrucciones leídas",
+  "acento": "ES",
+  "video": "videos/2026-11-11-proteina-v2.mp4",
+  "estado": "programado",
+  "toni": true
  }
 ]
