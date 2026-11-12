@@ -518,5 +518,111 @@
   "video": "videos/2026-11-11-proteina-v2.mp4",
   "estado": "programado",
   "toni": true
+ },
+ {
+  "fecha": "2026-11-12",
+  "hora": "14:30",
+  "tipo": "video (tendencia)",
+  "tema": "Hip thrust vs sentadilla: mismo glúteo por resonancia en 9 semanas; la sentadilla además más cuádriceps y aductores (Plotkin et al. 2023, Front Physiol, 34 sin experiencia; coautor Bret Contreras)",
+  "titulo": "El hip thrust no te pone más glúteo que la sentadilla",
+  "url": "https://raw.githubusercontent.com/javicatena123-stack/repe_videos/main/videos/2026-11-12-hipthrust.mp4",
+  "metricool": {
+   "instagram": 425503805,
+   "tiktok": 425503841,
+   "youtube": 425503883,
+   "threads": 425503929,
+   "facebook": 425503988
+  },
+  "modelo_voz": "gemini-3.8-flash-tts/Achird",
+  "acento": "ES",
+  "ref": "tendencia «glutemaxxing» y debate hip thrust vs sentadilla (TikTok/YouTube); sin viral concreto con cifras: vidIQ con 4 créditos",
+  "categoria": "técnica",
+  "formato": "mito vs realidad",
+  "gancho_tipo": "contradicción",
+  "duracion_s": 17.2,
+  "visuales": [
+   "toni squat (glutes)",
+   "stamp(paper) FIRMADO",
+   "head(glute) punch",
+   "vs(glute,quad)",
+   "neq",
+   "toni celebrate",
+   "cta"
+  ],
+  "estrenos": [
+   "icono glute",
+   "icono quad",
+   "toni squat",
+   "toni celebrate"
+  ],
+  "nota": "movido de 14:00 a 14:30: la tanda arrancó tarde (PC apagado a las 09:30)"
+ },
+ {
+  "fecha": "2026-11-12",
+  "hora": "18:30",
+  "tipo": "video (tendencia)",
+  "tema": "Reducción localizada: entrenar una zona no quema su grasa (metaanálisis Hum Mov 2022: 13 estudios, 1.158 personas; Vispute et al. 2011, 6 semanas de abdominales)",
+  "titulo": "Hacer abdominales no te quita la tripa. Lo dicen 13 estudios",
+  "url": "https://raw.githubusercontent.com/javicatena123-stack/repe_videos/main/videos/2026-11-12-abdominales.mp4",
+  "metricool": {
+   "instagram": 425504149,
+   "tiktok": 425504185,
+   "youtube": 425504283,
+   "threads": 425504343,
+   "facebook": 425504403
+  },
+  "modelo_voz": "gemini-3.8-flash-tts/Achird (2.ª toma)",
+  "acento": "ES",
+  "ref": "mito de «quemar tripa con abdominales» (retos de abdominales); sin viral concreto con cifras",
+  "categoria": "mito",
+  "formato": "mito vs realidad",
+  "gancho_tipo": "contradicción + número de estudios",
+  "duracion_s": 16.3,
+  "visuales": [
+   "xray abs (gancho)",
+   "num(paper)",
+   "invert",
+   "head(flame)",
+   "split(shrug/thumbsUp)",
+   "cta"
+  ],
+  "estrenos": [
+   "icono paper"
+  ],
+  "prueba_hora": "18:30"
+ },
+ {
+  "fecha": "2026-11-13",
+  "hora": "07:30",
+  "tipo": "video (respuesta a seguidores)",
+  "tema": "Sin flexiones, ¿vale el press de banca? Sí: mismo pecho y fuerza con banca y flexiones al mismo peso (Kikuchi y Nakazato 2017, 18 chicos, 8 semanas, flexiones adaptadas incluso de rodillas)",
+  "titulo": "Me preguntáis qué pasa si no podéis hacer ni una flexión",
+  "url": "https://raw.githubusercontent.com/javicatena123-stack/repe_videos/main/videos/2026-11-13-banca.mp4",
+  "metricool": {
+   "instagram": 425504486,
+   "tiktok": 425504539,
+   "youtube": 425504603,
+   "threads": 425504667,
+   "facebook": 425504724
+  },
+  "modelo_voz": "gemini-3.8-flash-tts/Achird",
+  "acento": "ES",
+  "ref": "banco de ideas: matias_nesteruk · Instagram · Reel «flexiones = press de banca» (8 nov)",
+  "categoria": "respuesta",
+  "formato": "responder un comentario",
+  "gancho_tipo": "identificación (pregunta de seguidor)",
+  "duracion_s": 18.4,
+  "visuales": [
+   "toni pushup",
+   "toni bench (chest)",
+   "bars",
+   "stamp DE RODILLAS",
+   "head(battery)",
+   "cta"
+  ],
+  "estrenos": [
+   "toni pushup",
+   "toni bench"
+  ]
  }
 ]

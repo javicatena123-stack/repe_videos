@@ -1,0 +1,82 @@
+{
+ "id": "2026-11-13-banca",
+ "publish": "2026-11-13T07:30:00",
+ "ref": "banco de ideas: matias_nesteruk · Instagram · Reel «flexiones = press de banca» (8 nov)",
+ "scenes": [
+  {
+   "say": "Me preguntáis qué pasa si no podéis hacer ni una flexión.",
+   "sub": "Me preguntáis qué pasa si no podéis hacer *ni una flexión*.",
+   "kind": "toni",
+   "action": "pushup",
+   "o": {},
+   "title": "¿NI *UNA FLEXIÓN*?",
+   "titleSize": 120,
+   "trans": "punch"
+  },
+  {
+   "say": "Tranquilo: el press de banca te pone el mismo pecho.",
+   "sub": "Tranquilo: el *press de banca* te pone el *mismo pecho*.",
+   "kind": "toni",
+   "action": "bench",
+   "props": "bench",
+   "o": {},
+   "mark": "chest",
+   "title": "PRESS DE *BANCA*",
+   "titleSize": 120,
+   "trans": "right"
+  },
+  {
+   "say": "Ocho semanas, mismo peso: igual de pecho y de fuerza.",
+   "sub": "*8 semanas*, mismo peso: *igual de pecho* y de fuerza.",
+   "kind": "bars",
+   "caption": "Pecho ganado",
+   "items": [
+    {
+     "label": "BANCA",
+     "value": 100,
+     "top": "IGUAL",
+     "coral": true,
+     "at": 0.6
+    },
+    {
+     "label": "FLEXIONES",
+     "value": 100,
+     "top": "IGUAL",
+     "at": 1.4
+    }
+   ]
+  },
+  {
+   "say": "Y en el estudio, las flexiones se adaptaban. Hasta de rodillas.",
+   "sub": "Y en el estudio, las flexiones *se adaptaban*. Hasta *de rodillas*.",
+   "kind": "stamp",
+   "text": "DE RODILLAS",
+   "size": 150,
+   "trans": "punch"
+  },
+  {
+   "say": "Lo que manda: acercarte al fallo.",
+   "sub": "Lo que manda: *acercarte al fallo*.",
+   "kind": "head",
+   "lines": [
+    "LO QUE MANDA:",
+    "CERCA DEL FALLO"
+   ],
+   "coral": [
+    1
+   ],
+   "size": 120,
+   "icon": "battery",
+   "iconSize": 300
+  },
+  {
+   "say": "Seguid preguntando: va al próximo vídeo.",
+   "sub": "*Seguid preguntando*: va al *próximo vídeo*.",
+   "kind": "cta",
+   "l1": "PREGUNTA",
+   "l2": "Y VA AL PRÓXIMO VÍDEO",
+   "size1": 150,
+   "size2": 70
+  }
+ ]
+}

@@ -1,0 +1,84 @@
+{
+ "id": "2026-11-12-abdominales",
+ "publish": "2026-11-12T18:30:00",
+ "ref": "mito eterno de «quemar tripa con abdominales» (retos de abdominales de TikTok); sin cifras de un viral concreto: vidIQ con 4 créditos",
+ "scenes": [
+  {
+   "say": "Hacer abdominales no te quita la tripa. Lo dicen trece estudios.",
+   "sub": "Hacer abdominales *no te quita la tripa*. Lo dicen *13 estudios*.",
+   "kind": "xray",
+   "mark": "abs",
+   "o": {},
+   "title": "¿ABDOS *CONTRA LA TRIPA*?",
+   "titleSize": 94,
+   "label": "NO",
+   "trans": "punch"
+  },
+  {
+   "say": "Más de mil cien personas.",
+   "sub": "Más de *1.100 personas*.",
+   "kind": "num",
+   "icon": "paper",
+   "label": "1.158 PERSONAS",
+   "value": 13,
+   "unit": "estudios"
+  },
+  {
+   "say": "Entrenar una zona no quema su grasa.",
+   "sub": "Entrenar una zona *no quema su grasa*.",
+   "kind": "invert",
+   "lines": [
+    "ENTRENAR",
+    "UNA ZONA",
+    "*NO QUEMA*",
+    "SU GRASA"
+   ],
+   "size": 150,
+   "step": 0.28,
+   "trans": "punch"
+  },
+  {
+   "say": "La grasa se va de todo el cuerpo.",
+   "sub": "La grasa se va de *todo el cuerpo*.",
+   "kind": "head",
+   "lines": [
+    "SE VA DE",
+    "TODO EL CUERPO"
+   ],
+   "coral": [
+    1
+   ],
+   "size": 130,
+   "icon": "flame",
+   "iconSize": 300
+  },
+  {
+   "say": "¿Qué la quita? Comer algo menos y moverte más.",
+   "sub": "¿Qué la quita? *Comer algo menos* y *moverte más*.",
+   "kind": "split",
+   "a": {
+    "label": "1.000 ABDOS",
+    "toni": "shrug"
+   },
+   "b": {
+    "label": "COMER Y MOVERTE",
+    "toni": "thumbsUp",
+    "o": {}
+   },
+   "bdelay": 0.8,
+   "verdict": 2.0,
+   "size": 58,
+   "trans": "left"
+  },
+  {
+   "say": "Pásaselo al de las cien abdominales diarias.",
+   "sub": "*Pásaselo* al de las *100 abdominales* diarias.",
+   "kind": "cta",
+   "l1": "PÁSASELO",
+   "l2": "AL DE LAS 100 ABDOMINALES",
+   "size1": 150,
+   "size2": 70
+  }
+ ],
+ "direction_extra": "Ritmo rápido de Reel, sin pausas largas entre frases.\n"
+}

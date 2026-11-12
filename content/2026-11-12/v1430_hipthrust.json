@@ -1,0 +1,90 @@
+{
+ "id": "2026-11-12-hipthrust",
+ "publish": "2026-11-12T14:30:00",
+ "ref": "tendencia «glutemaxxing» y debate hip thrust vs sentadilla en TikTok/YouTube (sin cifras de un viral concreto: vidIQ con 4 créditos)",
+ "scenes": [
+  {
+   "say": "El hip thrust no te pone más glúteo que la sentadilla.",
+   "sub": "El *hip thrust* no te pone *más glúteo* que la sentadilla.",
+   "kind": "toni",
+   "action": "squat",
+   "o": {},
+   "mark": "glutes",
+   "title": "¿MÁS *GLÚTEO*?",
+   "titleSize": 130,
+   "trans": "punch"
+  },
+  {
+   "say": "Y lo firma el que lo hizo famoso.",
+   "sub": "Y lo firma *el que lo hizo famoso*.",
+   "kind": "stamp",
+   "text": "FIRMADO",
+   "size": 190,
+   "icon": "paper"
+  },
+  {
+   "say": "Nueve semanas, resonancia: mismo glúteo con los dos.",
+   "sub": "*9 semanas*, resonancia: *mismo glúteo* con los dos.",
+   "kind": "head",
+   "lines": [
+    "MISMO",
+    "GLÚTEO"
+   ],
+   "coral": [
+    1
+   ],
+   "size": 190,
+   "icon": "glute",
+   "iconSize": 330,
+   "trans": "punch"
+  },
+  {
+   "say": "Y la sentadilla, de regalo, más cuádriceps.",
+   "sub": "Y la sentadilla, *de regalo*, más *cuádriceps*.",
+   "kind": "vs",
+   "a": {
+    "icon": "glute",
+    "label": "HIP THRUST",
+    "value": "1",
+    "unit": "músculo",
+    "white": true
+   },
+   "b": {
+    "icon": "quad",
+    "label": "SENTADILLA",
+    "value": "+1",
+    "unit": "cuádriceps"
+   },
+   "bdelay": 0.9,
+   "trans": "left"
+  },
+  {
+   "say": "¿Lo notas más? Notarlo no es crecer.",
+   "sub": "¿Lo notas más? *Notarlo* no es *crecer*.",
+   "kind": "neq",
+   "left": "NOTARLO",
+   "right": "CRECER",
+   "size": 150
+  },
+  {
+   "say": "Haz los dos y listo.",
+   "sub": "Haz *los dos* y listo.",
+   "kind": "toni",
+   "action": "celebrate",
+   "o": {},
+   "title": "HAZ *LOS DOS*",
+   "titleSize": 120,
+   "trans": "up",
+   "scale": 0.8
+  },
+  {
+   "say": "Pásaselo a tu compi del hip thrust.",
+   "sub": "*Pásaselo* a tu compi del *hip thrust*.",
+   "kind": "cta",
+   "l1": "PÁSASELO",
+   "l2": "A TU COMPI DEL HIP THRUST",
+   "size1": 150,
+   "size2": 70
+  }
+ ]
+}
