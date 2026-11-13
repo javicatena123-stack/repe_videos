@@ -929,4 +929,237 @@ AN.hamstring=p=>({html:SVG(`<g data-k="g">
   upd(t){const s=pop(t,0,.4);tf(this.g,`translate(100 110) scale(${s}) translate(-100 -110)`);
     const e=.5-.5*Math.cos(clamp(t-.2,0,99)*3.4);tf(this.sh,`rotate(${(95*e).toFixed(1)} 102 128)`);
     const k=1+.16*e;tf(this.m,`translate(84 80) scale(${k.toFixed(3)} 1) translate(-84 -80)`)}});
+/* ================================================================ FONDOS (13 nov 2026)
+   Parámetro "bg" en cualquier escena: "bg": "gym" | "gym2" | "gym3" | "kitchen" | "kitchen2" | "bedroom" | "bedroom2"
+   | "park" | "park2" | "lab" | "sofa" | "super" | "speedlines" | "spotlight".
+   Dibujados planos y oscuros (siluetas #1c1a20-#3a3540, detalles coral al 20-45 %), capas con parallax lento,
+   capa lejana desenfocada y sombreado arriba y abajo para que el título, Toni y los subtítulos se lean siempre. */
+const BGHZ=1010, BGVP=[540,640];
+const bR=(x,y,w,h,f,rx=0,ex="")=>`<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${rx}" fill="${f}" ${ex}/>`;
+const bC=(x,y,r,f,ex="")=>`<circle cx="${x}" cy="${y}" r="${r}" fill="${f}" ${ex}/>`;
+function bgWall(f){return bR(-60,-60,1200,BGHZ+60,f);}
+function bgFloor(fill,line,{n=10,rows=7,op=.55,grid=true}={}){let s=`<path d="M-60 ${BGHZ} H1140 V1980 H-60 Z" fill="${fill}"/>`;
+  if(grid){for(let i=0;i<=n;i++){const x=-500+i*(2080/n);const x2=BGVP[0]+(x-BGVP[0])*(1920-BGVP[1])/(BGHZ-BGVP[1]);
+    s+=`<path d="M${x.toFixed(0)} ${BGHZ} L${x2.toFixed(0)} 1920" stroke="${line}" stroke-width="4" opacity="${op}"/>`;}}
+  for(let k=1;k<=rows;k++){const y=BGHZ+(1920-BGHZ)*Math.pow(k/rows,1.8);s+=`<path d="M-60 ${y.toFixed(0)} H1140" stroke="${line}" stroke-width="4" opacity="${op}"/>`;}
+  return s+`<path d="M-60 ${BGHZ} H1140" stroke="#3a3540" stroke-width="6"/>`;}
+function bgPlanks(fill,line){let s=`<path d="M-60 ${BGHZ} H1140 V1980 H-60 Z" fill="${fill}"/>`;
+  for(let k=0;k<9;k++){const y=BGHZ+(1920-BGHZ)*Math.pow((k+1)/9,1.7);const y0=BGHZ+(1920-BGHZ)*Math.pow(k/9,1.7);
+    s+=`<path d="M-60 ${y.toFixed(0)} H1140" stroke="${line}" stroke-width="4"/>`;
+    for(let j=0;j<4;j++){const x=((k*137+j*290)%1080);s+=`<path d="M${x} ${y0.toFixed(0)} V${y.toFixed(0)}" stroke="${line}" stroke-width="3" opacity=".7"/>`;}}
+  return s+`<path d="M-60 ${BGHZ} H1140" stroke="#3a3540" stroke-width="6"/>`;}
+function bgLamps(xs,y=0){return xs.map(x=>`<path d="M${x-70} ${y+70} L${x+70} ${y+70} L${x+40} ${y} L${x-40} ${y} Z" fill="#2e2a33"/>
+  <path d="M${x-60} ${y+72} L${x+60} ${y+72} L${x+230} ${y+760} L${x-230} ${y+760} Z" fill="#fff" opacity=".028"/>${bR(x-55,y+66,110,10,"#fff",5,'opacity=".55"')}`).join("");}
+function bgDumbbell(x,y,c="#4a4550",s=1){return `<g transform="translate(${x} ${y}) scale(${s})">${bR(0,-44,26,44,c,6)}${bR(58,-44,26,44,c,6)}${bR(20,-26,44,10,"#6b6572",4)}</g>`;}
+function bgPlate(x,y,r,c="#2e2a33"){return `${bC(x,y,r,c,`stroke="#4a4550" stroke-width="6"`)}${bC(x,y,r*.62,"none",`stroke="#3a3540" stroke-width="4"`)}${bC(x,y,r*.16,"#16141a")}`;}
+function bgTree(x,y,s,c="#1f2322"){return `<g transform="translate(${x} ${y}) scale(${s})">${bR(-22,-10,44,330,"#1a1b1c",10)}
+  ${bC(0,-60,120,c)}${bC(-95,0,95,c)}${bC(95,-10,100,c)}${bC(-40,-150,90,c)}${bC(60,-140,85,c)}${bC(0,30,90,c)}</g>`;}
+function bgKettle(x,y,c="#3a3540",s=1){return `<g transform="translate(${x} ${y}) scale(${s})"><path d="M-22 -58 C-22 -84 22 -84 22 -58" stroke="${c}" stroke-width="12" fill="none"/>${bC(0,-30,32,c)}</g>`;}
+function bgFlask(x,y,c=CORAL,s=1){return `<g transform="translate(${x} ${y}) scale(${s})"><path d="M-14 -120 L-14 -70 L-52 0 L52 0 L14 -70 L14 -120 Z" fill="#2a2730" stroke="#4a4550" stroke-width="5"/>
+  <path d="M-36 -28 L36 -28 L52 0 L-52 0 Z" fill="${c}" opacity=".5"/>${bR(-20,-130,40,14,"#4a4550",4)}</g>`;}
+const BGS={};
+
+/* ---------- gimnasio 1: sala de pesas (rack, discos en la pared, mancuernero) ---------- */
+BGS.gym=()=>({far:`${bgWall("#18161c")}
+   ${[80,330,580,830].map(x=>bR(x,250,190,90,"#211e27",8)+bR(x+10,258,170,74,CORAL,4,'opacity=".07"')).join("")}
+   ${bR(-60,560,1200,26,CORAL,0,'opacity=".22"')}${bR(-60,600,1200,8,CORAL,0,'opacity=".12"')}
+   <text x="540" y="900" text-anchor="middle" font-family="Anton" font-size="230" fill="#1f1d24" letter-spacing="20">NO PAIN</text>
+   ${bgLamps([180,540,900])}`,
+  mid:`${bR(60,470,26,540,"#34303a",4)}${bR(232,470,26,540,"#34303a",4)}${bR(48,456,224,22,"#3a3540",6)}
+   ${bR(48,960,224,18,"#3a3540",6)}${bR(80,705,22,22,CORAL,4)}${bR(218,705,22,22,CORAL,4)}
+   ${bR(-40,712,400,14,"#6b6572",7)}${bR(288,646,26,146,"#3a3540",6)}${bR(316,662,20,114,CORAL,5,'opacity=".75"')}
+   ${bgPlate(870,690,66)}${bgPlate(1000,670,58,"#34303a")}${bgPlate(930,820,52)}${bgPlate(1050,810,44,"#3a3540")}
+   ${bR(862,600,16,30,"#4a4550",4)}${bR(993,585,14,28,"#4a4550",4)}`,
+  near:`${bR(720,912,420,16,"#4a4550",6)}${bR(700,982,440,16,"#4a4550",6)}${bR(735,920,14,90,"#3a3540")}${bR(1060,920,14,90,"#3a3540")}
+   ${[0,1,2,3].map(i=>bgDumbbell(745+i*92,912,i===1?CORAL:"#5a5560",.9)).join("")}
+   ${[0,1,2,3].map(i=>bgDumbbell(735+i*96,982,i===3?CORAL:"#4a4550",1)).join("")}
+   ${bgKettle(120,1010,"#3a3540",1.1)}${bgKettle(200,1010,CORAL,.9)}`,
+  floor:bgFloor("#141217","#25222b")});
+
+/* ---------- gimnasio 2: máquinas y ventanales con la ciudad ---------- */
+BGS.gym2=()=>({far:`${bgWall("#17151b")}
+   <defs><linearGradient id="bgsky2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#151319"/><stop offset="1" stop-color="#3a1f25"/></linearGradient></defs>
+   ${bR(590,240,520,660,"url(#bgsky2)")}
+   ${[[600,640,70],[675,560,60],[740,690,80],[825,600,70],[900,520,90],[995,640,60],[1050,580,70]].map(([x,y,w])=>bR(x,y,w,900-y,"#201c24")+
+     [...Array(6)].map((_,k)=>bR(x+12+(k%2)*28,y+20+Math.floor(k/2)*46,14,20,k%3?"#fff":CORAL,2,`opacity="${k%3?.12:.35}"`)).join("")).join("")}
+   ${[590,720,850,980].map(x=>bR(x,240,14,660,"#2e2a33")).join("")}${bR(590,240,520,14,"#2e2a33")}${bR(590,560,520,10,"#2e2a33")}${bR(590,890,520,14,"#2e2a33")}
+   ${bR(-60,900,1200,110,"#1c1a20")}${bgLamps([200,540])}`,
+  mid:`${bR(40,330,24,680,"#3a3540",4)}${bR(250,330,24,680,"#3a3540",4)}${bR(30,320,256,26,"#4a4550",8)}
+   ${bC(155,370,22,"#2e2a33",'stroke="#6b6572" stroke-width="6"')}<path d="M155 392 L155 560 M155 392 C220 420 300 560 320 700" stroke="#8d8794" stroke-width="4" fill="none"/>
+   ${[...Array(12)].map((_,k)=>bR(110,560+k*32,90,26,k===6?CORAL:"#34303a",4,k===6?'opacity=".8"':"")).join("")}${bR(150,540,10,420,"#6b6572",3)}`,
+  near:`${bR(770,930,290,34,"#3a3540",16)}${bR(790,936,250,8,CORAL,4,'opacity=".55"')}${bR(800,962,18,48,"#4a4550")}${bR(1010,962,18,48,"#4a4550")}`,
+  floor:bgPlanks("#17151a","#25222b")});
+
+/* ---------- gimnasio 3: pared de espejos, neón y zona funcional ---------- */
+BGS.gym3=()=>({far:`${bgWall("#18161c")}
+   ${[0,216,432,648,864].map(x=>bR(x+6,300,204,660,"#1e1d24",4,'stroke="#3a3540" stroke-width="6"')+
+     `<path d="M${x+40} 960 L${x+180} 300 M${x+90} 960 L${x+210} 400" stroke="#fff" stroke-width="18" opacity=".035"/>`).join("")}
+   <g data-a="neon"><text x="170" y="560" text-anchor="middle" font-family="Poppins" font-weight="800" font-size="104" fill="none" stroke="${CORAL}" stroke-width="5">repe.</text>
+   <text x="170" y="560" text-anchor="middle" font-family="Poppins" font-weight="800" font-size="104" fill="${CORAL}" opacity=".18">repe.</text></g>
+   ${bgLamps([300,780])}`,
+  mid:`${bR(40,850,180,160,"#2e2a33",10)}${bR(54,864,152,10,CORAL,4,'opacity=".5"')}<path d="M40 900 H220" stroke="#3a3540" stroke-width="6"/>
+   ${bR(820,600,240,14,"#4a4550",6)}${bR(820,760,240,14,"#4a4550",6)}${bR(840,600,12,410,"#3a3540")}${bR(1040,600,12,410,"#3a3540")}
+   ${[0,1,2].map(i=>bC(880+i*70,560,34,i===1?CORAL:"#3a3540",i===1?'opacity=".75"':"")+bC(880+i*70,720,34,"#34303a")).join("")}`,
+  near:`${bgKettle(270,1010,"#4a4550",1)}${bgKettle(800,1010,"#3a3540",1.15)}${bgKettle(880,1010,CORAL,.85)}`,
+  floor:`${bgFloor("#141217","#24212a",{grid:false,rows:6})}<path d="M400 ${BGHZ} L680 ${BGHZ} L1000 1920 L80 1920 Z" fill="#1d1c22"/>
+   <path d="M400 ${BGHZ} L80 1920 M680 ${BGHZ} L1000 1920" stroke="#fff" stroke-width="6" opacity=".2"/>
+   ${[0,1,2,3].map(k=>{const t=Math.pow((k+1)/5,1.6),y=BGHZ+(1920-BGHZ)*t,xl=400-320*t,xr=680+320*t;return `<path d="M${xl.toFixed(0)} ${y.toFixed(0)} H${xr.toFixed(0)}" stroke="#fff" stroke-width="5" opacity=".12" stroke-dasharray="30 26"/>`}).join("")}`});
+
+/* ---------- cocina 1: nevera, encimera y sartén con vapor ---------- */
+BGS.kitchen=()=>({far:`${bgWall("#19171c")}
+   ${[...Array(7)].map((_,r)=>[...Array(11)].map((_,c)=>bR(c*104-(r%2)*52,560+r*42,100,38,"#1e1c22",4)).join("")).join("")}
+   ${bR(-40,300,1160,240,"#25222b",8)}${[0,1,2,3,4,5].map(i=>bR(i*190-20,300,6,240,"#16141a")+bR(i*190+70,500,40,10,"#4a4550",5)).join("")}
+   <path d="M760 300 L1040 300 L1000 440 L800 440 Z" fill="#2e2a33"/>${bR(790,440,220,12,"#3a3540",4)}`,
+  mid:`${bR(20,300,240,710,"#34303a",18)}<path d="M20 540 H260" stroke="#1a181e" stroke-width="8"/>${bR(220,360,12,120,"#5a5560",6)}${bR(220,600,12,180,"#5a5560",6)}
+   ${bC(80,400,14,CORAL,'opacity=".8"')}${bR(60,440,46,30,"#fff",4,'opacity=".25"')}
+   ${bR(-40,850,1160,28,"#4a4550",6)}${bR(-40,878,1160,140,"#26232b")}${[0,1,2,3,4,5].map(i=>bR(i*190-20,878,6,140,"#16141a")+bR(i*190+70,900,40,10,"#5a5560",5)).join("")}
+   ${bR(270,770,24,80,"#3a3540",8)}${bR(300,790,20,60,CORAL,8,'opacity=".55"')}
+   <ellipse cx="900" cy="836" rx="96" ry="18" fill="#3a3540"/><path d="M820 830 Q900 870 980 830" fill="#2a2730" stroke="#4a4550" stroke-width="5"/>${bR(990,826,90,12,"#4a4550",6)}
+   <g data-a="steam">${[0,1,2].map(i=>`<path data-s="${i}" d="M${870+i*30} 800 C${850+i*30} 760 ${890+i*30} 730 ${870+i*30} 690" stroke="#fff" stroke-width="10" fill="none" stroke-linecap="round" opacity=".18"/>`).join("")}</g>`,
+  near:"",
+  floor:`${bgFloor("#161419","#26232b",{n:12,rows:8})}`});
+
+/* ---------- cocina 2: ventana al amanecer, estantes con botes y frutero ---------- */
+BGS.kitchen2=()=>({far:`${bgWall("#1a171c")}
+   <defs><linearGradient id="bgsun2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1b1820"/><stop offset="1" stop-color="#5a2a2c"/></linearGradient></defs>
+   ${bR(680,320,340,440,"url(#bgsun2)",6)}${bC(850,700,80,CORAL,'opacity=".45"')}<path d="M680 680 Q770 640 850 670 T1020 650 V760 H680 Z" fill="#241d24"/>
+   ${bR(680,320,340,440,"none",6,'stroke="#3a3540" stroke-width="16"')}<path d="M850 320 V760 M680 540 H1020" stroke="#3a3540" stroke-width="12"/>
+   <path d="M650 300 C680 420 660 600 690 790 L640 790 L620 300 Z" fill="#2e2a33"/><path d="M1050 300 C1020 420 1040 600 1010 790 L1060 790 L1080 300 Z" fill="#2e2a33"/>`,
+  mid:`${bR(30,470,300,16,"#4a4550",6)}${bR(60,388,62,82,"#34303a",10)}${bR(56,380,70,16,CORAL,6,'opacity=".6"')}${bR(140,410,52,60,"#3a3540",10)}${bR(136,402,60,14,"#5a5560",6)}
+   ${bR(214,396,56,74,"#2e2a33",8)}<text x="242" y="444" text-anchor="middle" font-family="Anton" font-size="22" fill="#fff" opacity=".35">WHEY</text>
+   ${bR(30,640,300,16,"#4a4550",6)}${[0,1,2,3].map(i=>`<ellipse cx="${80}" cy="${632-i*10}" rx="48" ry="9" fill="${i%2?"#3a3540":"#4a4550"}"/>`).join("")}${bR(170,590,40,50,"#3a3540",8)}${bR(230,580,40,60,CORAL,8,'opacity=".45"')}
+   ${bR(640,860,480,28,"#4a4550",6)}${bR(640,888,480,130,"#26232b")}${[0,1,2].map(i=>bR(660+i*150,888,6,130,"#16141a")).join("")}
+   <path d="M720 852 Q780 800 840 852 Z" fill="#3a3540"/>${bC(752,830,16,CORAL,'opacity=".7"')}${bC(780,822,15,"#e8c35a",'opacity=".45"')}${bC(808,832,15,CORAL,'opacity=".5"')}
+   ${bR(940,790,70,62,"#34303a",20)}<path d="M1010 806 Q1040 816 1028 840" stroke="#4a4550" stroke-width="8" fill="none"/>`,
+  near:`<path d="M90 1010 L110 880 L210 880 L230 1010 Z" fill="#2e2a33"/>${[[-40,-60],[-10,-110],[25,-70],[55,-120],[80,-50]].map(([dx,dy],i)=>`<ellipse cx="${160+dx}" cy="${870+dy/2}" rx="22" ry="${-dy/2+10}" transform="rotate(${dx/2} ${160+dx} 870)" fill="#232826"/>`).join("")}`,
+  floor:bgPlanks("#18161b","#28252d")});
+
+/* ---------- dormitorio 1: noche, luna y lamparita ---------- */
+BGS.bedroom=()=>({far:`${bgWall("#15141d")}
+   ${bR(60,300,360,480,"#0f0f1a",6)}<g data-a="stars">${[[110,350],[170,420],[240,340],[380,380],[130,560],[290,520],[360,640],[200,690],[100,700]].map(([x,y],i)=>bC(x,y,i%3?3:5,"#fff",`data-t="${i}" opacity=".6"`)).join("")}</g>
+   ${bC(320,430,52,"#f3efe6",'opacity=".85"')}${bC(342,414,46,"#0f0f1a")}${bC(320,430,110,"#f3efe6",'opacity=".05"')}
+   ${bR(60,300,360,480,"none",6,'stroke="#3a3540" stroke-width="16"')}<path d="M240 300 V780 M60 540 H420" stroke="#3a3540" stroke-width="10"/>
+   <path d="M30 280 C70 420 40 640 80 820 L20 820 L10 280 Z" fill="#2a2532"/><path d="M450 280 C410 420 440 640 400 820 L460 820 L470 280 Z" fill="#2a2532"/>${bR(0,270,480,16,"#4a4550",8)}
+   ${bR(820,380,180,240,"#1e1c26",6,'stroke="#3a3540" stroke-width="10"')}<path d="M836 580 L890 500 L930 550 L960 510 L986 580 Z" fill="#2e2a38"/>`,
+  mid:`<g data-a="lamp">${bC(140,820,150,"#ffb08a",'opacity=".07"')}</g>${bR(60,880,170,130,"#2e2a33",10)}${bR(70,900,150,6,"#16141a")}
+   <path d="M105 780 L175 780 L195 850 L85 850 Z" fill="#ffcfa8" opacity=".55"/>${bR(135,850,10,30,"#4a4550")}
+   ${bR(990,690,110,330,"#3a3540",24)}${bR(560,880,560,110,"#2e2a33",24)}${bR(560,850,460,96,"#3a3540",34)}${bR(560,880,460,14,CORAL,6,'opacity=".35"')}
+   <ellipse cx="950" cy="845" rx="70" ry="30" fill="#4a4550"/>`,
+  near:"",
+  floor:`${bgPlanks("#16141b","#25222c")}<ellipse cx="540" cy="1200" rx="430" ry="90" fill="${CORAL}" opacity=".08"/>`});
+
+/* ---------- dormitorio 2: amanecer entre las persianas y despertador ---------- */
+BGS.bedroom2=()=>({far:`${bgWall("#18161c")}
+   ${bR(580,300,460,520,"#2a1a1e",6)}${[...Array(13)].map((_,k)=>bR(580,300+k*40,460,26,"#262229")+bR(580,326+k*40,460,14,CORAL,0,`opacity="${(.16+.03*k).toFixed(2)}"`)).join("")}
+   ${bR(580,300,460,520,"none",6,'stroke="#3a3540" stroke-width="14"')}
+   ${[0,1,2,3,4].map(k=>`<path d="M580 ${360+k*90} L80 ${560+k*120} L80 ${590+k*120} L580 ${380+k*90} Z" fill="${CORAL}" opacity=".05"/>`).join("")}`,
+  mid:`${bR(40,860,260,150,"#2e2a33",12)}${bR(50,880,240,6,"#16141a")}
+   ${bR(80,740,200,110,"#34303a",26)}${bC(110,734,22,"#4a4550")}${bC(250,734,22,"#4a4550")}
+   <g data-a="clock"><text x="180" y="822" text-anchor="middle" font-family="Anton" font-size="74" fill="${CORAL}">06:00</text></g>
+   ${bR(820,880,300,130,"#3a3540",26)}${bR(820,892,300,12,CORAL,6,'opacity=".3"')}`,
+  near:"",
+  floor:`${bgPlanks("#17151b","#26232c")}${[0,1,2].map(k=>`<path d="M${120+k*260} 1040 L${300+k*260} 1040 L${180+k*300} 1600 L${-20+k*300} 1600 Z" fill="${CORAL}" opacity=".04"/>`).join("")}`});
+
+/* ---------- parque 1: atardecer, árboles, farola y banco ---------- */
+BGS.park=()=>({far:`<defs><linearGradient id="bgskyp" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#111013"/><stop offset=".55" stop-color="#1d1519"/><stop offset="1" stop-color="#4a2328"/></linearGradient></defs>
+   ${bR(-60,-60,1200,BGHZ+60,"url(#bgskyp)")}<path d="M630 ${BGHZ-60} A130 130 0 0 1 890 ${BGHZ-60} Z" fill="${CORAL}" opacity=".5"/><path d="M530 ${BGHZ-60} A230 230 0 0 1 990 ${BGHZ-60} Z" fill="${CORAL}" opacity=".08"/>
+   ${bR(560,620,380,10,CORAL,5,'opacity=".12"')}${bR(160,700,300,8,CORAL,4,'opacity=".1"')}
+   <path d="M-60 ${BGHZ} L-60 900 Q150 820 330 880 T700 860 T1140 880 V${BGHZ} Z" fill="#1c171c"/>
+   ${[[400,880,.35],[620,870,.3],[880,885,.32]].map(([x,y,s])=>bgTree(x,y,s,"#1b181d")).join("")}`,
+  mid:`${bgTree(90,700,1,"#1f2322")}${bgTree(1010,690,.95,"#1d2120")}
+   ${bR(264,520,12,490,"#3a3540",5)}<path d="M240 520 L300 520 L290 480 L250 480 Z" fill="#4a4550"/>${bC(270,526,14,"#ffd6b0",'opacity=".9"')}
+   <g data-a="lamp">${bC(270,540,120,"#ffd6b0",'opacity=".09"')}</g>
+   ${[0,1,2].map(i=>bR(770,890+i*22,250,14,"#3a3540",6)).join("")}${bR(780,950,16,60,"#2e2a33")}${bR(995,950,16,60,"#2e2a33")}`,
+  near:"",
+  floor:`<path d="M-60 ${BGHZ} H1140 V1980 H-60 Z" fill="#161816"/><path d="M470 ${BGHZ} L610 ${BGHZ} L900 1920 L180 1920 Z" fill="#221f25"/>
+   <path d="M470 ${BGHZ} L180 1920 M610 ${BGHZ} L900 1920" stroke="#3a3540" stroke-width="6"/>`});
+
+/* ---------- parque 2: calistenia de noche con la ciudad detrás ---------- */
+BGS.park2=()=>({far:`${bR(-60,-60,1200,BGHZ+60,"#121219")}${bC(880,380,40,"#f3efe6",'opacity=".6"')}
+   ${[[0,700,120],[110,620,90],[190,740,110],[300,580,80],[390,690,130],[520,640,100],[630,560,90],[720,700,120],[840,600,100],[940,680,140]].map(([x,y,w])=>bR(x,y,w,BGHZ-y,"#1b1a22")+
+     [...Array(8)].map((_,k)=>bR(x+14+(k%3)*30,y+24+Math.floor(k/3)*50,12,18,k%4?"#fff":CORAL,2,`opacity="${k%4?.1:.3}"`)).join("")).join("")}
+   <g opacity=".22">${[...Array(28)].map((_,i)=>`<path d="M${i*44-200} 760 L${i*44+50} ${BGHZ} M${i*44+50} 760 L${i*44-200} ${BGHZ}" stroke="#8d8794" stroke-width="2"/>`).join("")}</g>${bR(-60,756,1200,8,"#4a4550")}`,
+  mid:`${bR(60,500,20,510,"#4a4550",6)}${bR(300,500,20,510,"#4a4550",6)}${bR(50,500,280,14,"#6b6572",7)}${bR(90,560,20,450,"#3a3540",5)}
+   ${bR(770,860,16,150,"#4a4550",5)}${bR(1000,860,16,150,"#4a4550",5)}${bR(760,860,270,12,"#6b6572",6)}${bR(780,920,16,90,"#4a4550",5)}${bR(990,920,16,90,"#4a4550",5)}${bR(770,920,250,10,"#5a5560",5)}
+   ${bR(1046,240,12,770,"#3a3540",4)}${bR(1010,226,80,30,"#4a4550",6)}<g data-a="lamp"><path d="M1020 256 L1080 256 L1200 1010 L760 1010 Z" fill="#fff" opacity=".035"/></g>`,
+  near:"",
+  floor:`${bgFloor("#151419","#24212a",{grid:false,rows:5})}<ellipse cx="540" cy="1250" rx="380" ry="70" fill="none" stroke="${CORAL}" stroke-width="8" opacity=".22"/>`});
+
+/* ---------- laboratorio: pizarra con fórmulas, matraces con burbujas ---------- */
+BGS.lab=()=>({far:`${bgWall("#16161b")}
+   ${bR(40,300,620,480,"#1b1f20",8,'stroke="#3a3540" stroke-width="16"')}${bR(40,780,620,14,"#4a4550",4)}
+   <g font-family="Poppins" font-weight="700" fill="#fff" opacity=".3" font-size="40"><text x="80" y="370">1,6 g/kg</text><text x="80" y="450">n = 96</text><text x="80" y="530" font-size="34">p &lt; 0,05</text>
+   <text x="80" y="620" font-size="34">MPS ↑ 24 h</text><text x="80" y="700" font-size="34">ΔCSA %</text></g>
+   <path d="M420 340 V500 H630" stroke="#fff" stroke-width="5" fill="none" opacity=".3"/><path d="M430 490 C480 480 520 420 620 360" stroke="${CORAL}" stroke-width="6" fill="none" opacity=".55"/>
+   <path d="M330 600 C330 560 380 560 380 600 C380 640 430 640 430 600" stroke="#fff" stroke-width="4" fill="none" opacity=".2"/>`,
+  mid:`${bR(760,560,320,16,"#4a4550",6)}${bR(760,760,320,16,"#4a4550",6)}
+   ${bgFlask(820,560,CORAL,.8)}${bgFlask(950,560,"#8fd0ff",.65)}${bR(1010,470,40,90,"#2a2730",6,'stroke="#4a4550" stroke-width="5"')}${bR(1010,520,40,40,CORAL,4,'opacity=".4"')}
+   ${[0,1,2,3].map(i=>bR(800+i*36,680,20,80,"#2a2730",10,'stroke="#4a4550" stroke-width="4"')+bR(800+i*36,720,20,40,i%2?CORAL:"#e8c35a",8,'opacity=".45"')).join("")}${bR(790,700,150,10,"#4a4550",4)}
+   ${bgFlask(1000,760,CORAL,.9)}<g data-a="bubbles">${[0,1,2,3].map(i=>bC(1000,700,6+i%2*3,"#fff",`data-b="${i}" opacity=".3"`)).join("")}</g>`,
+  near:`${bR(700,880,420,22,"#4a4550",6)}${bR(720,902,380,120,"#26232b")}<path d="M880 880 L880 820 L860 790 L900 760 L930 790 L910 820 L910 880 Z" fill="#3a3540"/>`,
+  floor:bgFloor("#151419","#24212a",{n:12,rows:8})});
+
+/* ---------- salón: sofá, tele y lámpara ---------- */
+BGS.sofa=()=>({far:`${bgWall("#18161c")}
+   ${bR(700,420,260,190,"#211e27",6,'stroke="#3a3540" stroke-width="12"')}<path d="M716 594 L790 500 L840 560 L880 520 L944 594 Z" fill="#2e2a33"/>${bC(900,470,18,CORAL,'opacity=".4"')}`,
+  mid:`${bR(30,560,330,200,"#0d0c10",14,'stroke="#3a3540" stroke-width="10"')}<g data-a="tv">${bR(42,572,306,176,"#8fd0ff",8,'opacity=".08"')}</g>
+   ${bC(195,660,200,"#8fd0ff",'opacity=".03"')}${bR(40,860,320,150,"#2e2a33",10)}${bR(180,760,30,100,"#3a3540")}
+   ${bR(560,760,560,150,"#2e2a33",44)}${bR(540,880,580,100,"#3a3540",30)}${bR(510,830,90,180,"#34303a",34)}${bR(650,800,130,100,CORAL,26,'opacity=".4"')}${bR(800,805,120,95,"#4a4550",26)}`,
+  near:"",
+  floor:`${bgPlanks("#17151a","#26232b")}<ellipse cx="540" cy="1220" rx="460" ry="100" fill="#26232b" opacity=".6"/>`});
+
+/* ---------- supermercado: pasillo con estanterías en perspectiva ---------- */
+BGS.super=()=>{const side=(m)=>{let s="";const X=x=>m?1080-x:x;
+    s+=`<path d="M${X(-20)} 230 L${X(380)} 610 L${X(380)} ${BGHZ} L${X(-20)} 1380 Z" fill="#1f1d24"/>`;
+    for(let k=0;k<5;k++){const yo=300+k*240,yi=640+k*85;s+=`<path d="M${X(-20)} ${yo} L${X(380)} ${yi}" stroke="#4a4550" stroke-width="10"/>`;
+      for(let j=0;j<7;j++){const f=j/7,f2=(j+.7)/7;const x1=-20+f*400,x2=-20+f2*400;const y1=yo+(yi-yo)*f,y2=yo+(yi-yo)*f2;const h=(1-f*.55)*(k<4?150:0)*(.6+.4*((j*7+k*3)%5)/5);
+        if(h>0)s+=`<path d="M${X(x1).toFixed(0)} ${y1.toFixed(0)} L${X(x2).toFixed(0)} ${y2.toFixed(0)} L${X(x2).toFixed(0)} ${(y2-h*.9).toFixed(0)} L${X(x1).toFixed(0)} ${(y1-h).toFixed(0)} Z" fill="${(j+k)%4===0?CORAL:((j+k)%2?"#34303a":"#3a3540")}" ${(j+k)%4===0?'opacity=".45"':""}/>`;}}
+    return s;};
+  return {far:`${bgWall("#17151b")}${bR(380,600,320,410,"#1b1920")}${[0,1,2,3].map(i=>bR(390+i*78,620,70,380,"#221f28",4)).join("")}
+   ${[0,1].map(k=>bR(260+k*60,70+k*60,560-k*120,12,"#fff",6,`opacity="${.45-k*.12}"`)).join("")}
+   ${bR(820,250,190,70,CORAL,10,'opacity=".7"')}<text x="915" y="300" text-anchor="middle" font-family="Anton" font-size="44" fill="#111013">PASILLO 4</text>${bR(912,200,6,50,"#4a4550")}`,
+   mid:side(false)+side(true),near:"",
+   floor:`<path d="M-60 ${BGHZ} H1140 V1980 H-60 Z" fill="#1a191e"/>${[0,1,2,3,4,5].map(k=>{const y=BGHZ+(1920-BGHZ)*Math.pow((k+1)/6,1.8);return `<path d="M-60 ${y.toFixed(0)} H1140" stroke="#26232b" stroke-width="4"/>`}).join("")}
+   <path d="M480 ${BGHZ} L600 ${BGHZ} L700 1920 L380 1920 Z" fill="#fff" opacity=".03"/>`};};
+
+/* ---------- abstractos ---------- */
+BGS.speedlines=()=>({far:`${bR(-60,-60,1200,2040,"#111013")}<g data-a="speed">${[...Array(48)].map((_,i)=>{const a=i/48*Math.PI*2+(i%3)*.03,r0=260+(i*37)%160;
+    return `<path d="M${(540+Math.cos(a)*r0).toFixed(0)} ${(760+Math.sin(a)*r0).toFixed(0)} L${(540+Math.cos(a)*1500).toFixed(0)} ${(760+Math.sin(a)*1500).toFixed(0)}" stroke="${i%4?"#fff":CORAL}" stroke-width="${6+(i*13)%14}" opacity="${i%4?.07:.16}"/>`}).join("")}</g>`,mid:"",near:"",floor:"",flat:true});
+BGS.spotlight=()=>({far:`${bR(-60,-60,1200,2040,"#0d0c0f")}<g data-a="spot"><path d="M440 -20 L640 -20 L900 1200 L180 1200 Z" fill="#fff" opacity=".05"/><path d="M490 -20 L590 -20 L780 1200 L300 1200 Z" fill="${CORAL}" opacity=".06"/></g>
+   <ellipse cx="540" cy="1195" rx="360" ry="70" fill="#fff" opacity=".07"/><ellipse cx="540" cy="1195" rx="250" ry="44" fill="${CORAL}" opacity=".12"/>`,mid:"",near:"",floor:"",flat:true});
+
+/* ---------- capa, sombreado y animación ---------- */
+const BGL={svg:null,cur:null,parts:null,an:null};
+function bgLayerInit(){if(BGL.svg)return;const s=document.createElementNS(NS,"svg");s.setAttribute("id","bgs");s.setAttribute("viewBox","0 0 1080 1920");
+  s.setAttribute("style","position:absolute;left:0;top:0;width:1080px;height:1920px");$("#stage").insertBefore(s,$("#bgp"));BGL.svg=s;}
+function bgSet(name,i){bgLayerInit();const s=BGL.svg;const v=name&&!Array.isArray(name)?String(name):null;
+  if(!v||!BGS[v]){s.innerHTML="";BGL.cur=null;BGL.parts=null;$("#glow").style.opacity="";return;}
+  if(BGL.cur===v)return;const b=BGS[v]();BGL.cur=v;
+  s.innerHTML=`<defs><filter id="bgblur" x="-5%" y="-5%" width="110%" height="110%"><feGaussianBlur stdDeviation="2.4"/></filter>
+    <linearGradient id="bgshade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#111013" stop-opacity=".6"/><stop offset=".13" stop-color="#111013" stop-opacity=".42"/>
+    <stop offset=".26" stop-color="#111013" stop-opacity=".12"/><stop offset=".5" stop-color="#111013" stop-opacity="0"/><stop offset=".61" stop-color="#111013" stop-opacity=".18"/>
+    <stop offset=".645" stop-color="#111013" stop-opacity=".72"/><stop offset=".78" stop-color="#111013" stop-opacity=".9"/><stop offset="1" stop-color="#111013" stop-opacity=".95"/></linearGradient>
+    <radialGradient id="bgvig" cx=".5" cy=".42" r=".75"><stop offset=".55" stop-color="#111013" stop-opacity="0"/><stop offset="1" stop-color="#111013" stop-opacity=".7"/></radialGradient></defs>
+    <g data-l="floor">${b.floor||""}</g><g data-l="far" filter="${b.flat?"":"url(#bgblur)"}">${b.far||""}</g><g data-l="mid">${b.mid||""}</g><g data-l="near">${b.near||""}</g>
+    <rect x="0" y="0" width="1080" height="1920" fill="url(#bgshade)"/><rect x="0" y="0" width="1080" height="1920" fill="url(#bgvig)"/>`;
+  BGL.parts={floor:s.querySelector('[data-l=floor]'),far:s.querySelector('[data-l=far]'),mid:s.querySelector('[data-l=mid]'),near:s.querySelector('[data-l=near]')};
+  BGL.an={steam:[...s.querySelectorAll('[data-s]')],stars:[...s.querySelectorAll('[data-t]')],lamp:[...s.querySelectorAll('[data-a=lamp]')],neon:s.querySelector('[data-a=neon]'),
+    clock:s.querySelector('[data-a=clock]'),tv:s.querySelector('[data-a=tv]'),bub:[...s.querySelectorAll('[data-b]')],speed:s.querySelector('[data-a=speed]'),spot:s.querySelector('[data-a=spot]')};
+  $("#glow").style.opacity=".45";}
+function bgFrame(gt,t){const P=BGL.parts;if(!P)return;const z=1.02+.025*Math.sin(gt*.18);
+  const mv=(g,a)=>g&&g.setAttribute("transform",`translate(${(a*Math.sin(gt*.23)).toFixed(1)} ${(a*.35*Math.cos(gt*.19)).toFixed(1)}) translate(540 960) scale(${z.toFixed(4)}) translate(-540 -960)`);
+  mv(P.floor,4);mv(P.far,6);mv(P.mid,13);mv(P.near,22);const A=BGL.an;
+  A.steam.forEach((p,i)=>{const ph=(gt*.6+i/3)%1;p.setAttribute("transform",`translate(${(6*Math.sin(gt*2+i)).toFixed(1)} ${(-60*ph).toFixed(1)})`);p.setAttribute("opacity",(.22*Math.sin(ph*Math.PI)).toFixed(3));});
+  A.stars.forEach((c,i)=>c.setAttribute("opacity",(.35+.4*(.5+.5*Math.sin(gt*2.3+i*1.7))).toFixed(2)));
+  A.lamp.forEach(l=>l.setAttribute("opacity",(.85+.15*Math.sin(gt*3.1)).toFixed(2)));
+  if(A.neon)A.neon.setAttribute("opacity",(Math.sin(gt*7)>-.92||Math.sin(gt*1.3)<.6?1:.35).toFixed(2));
+  if(A.clock)A.clock.setAttribute("opacity",(Math.sin(gt*5)>-.2?1:.25).toFixed(2));
+  if(A.tv)A.tv.setAttribute("opacity",(.6+.4*Math.abs(Math.sin(gt*4.7)*Math.sin(gt*2.1))).toFixed(2));
+  A.bub.forEach((c,i)=>{const ph=(gt*.7+i/4)%1;c.setAttribute("cy",(700-ph*110).toFixed(1));c.setAttribute("cx",(1000+8*Math.sin(gt*3+i)).toFixed(1));c.setAttribute("opacity",(.4*(1-ph)).toFixed(2));});
+  if(A.speed)A.speed.setAttribute("transform",`rotate(${(gt*4%360).toFixed(2)} 540 760)`),A.speed.setAttribute("opacity",(.75+.25*Math.sin(gt*9)).toFixed(2));
+  if(A.spot)A.spot.setAttribute("transform",`rotate(${(3*Math.sin(gt*.7)).toFixed(2)} 540 -20)`);}
+{const _bs=window.buildScene;window.buildScene=(i,st,D)=>{const r=_bs(i,st,D);const sc=SPEC.scenes[i]||{};bgSet(sc.kind==="invert"?null:sc.bg,i);return r;};
+ const _fr=window.frame;window.frame=(t,D)=>{const r=_fr(t,D);bgFrame(START+t,t);return r;};
+ const _ls=window.loadSpec;window.loadSpec=(s,tt)=>{BGL.cur=null;return _ls(s,tt);};}
+
 </script></body></html>
