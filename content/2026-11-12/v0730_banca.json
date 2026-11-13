@@ -11,7 +11,8 @@
    "o": {},
    "title": "¿NI *UNA FLEXIÓN*?",
    "titleSize": 120,
-   "trans": "punch"
+   "trans": "punch",
+   "bg": "gym3"
   },
   {
    "say": "Tranquilo: el press de banca te pone el mismo pecho.",
@@ -23,7 +24,8 @@
    "mark": "chest",
    "title": "PRESS DE *BANCA*",
    "titleSize": 120,
-   "trans": "right"
+   "trans": "right",
+   "bg": "gym"
   },
   {
    "say": "Ocho semanas, mismo peso: igual de pecho y de fuerza.",
@@ -52,7 +54,8 @@
    "kind": "stamp",
    "text": "DE RODILLAS",
    "size": 150,
-   "trans": "punch"
+   "trans": "punch",
+   "bg": "speedlines"
   },
   {
    "say": "Lo que manda: acercarte al fallo.",

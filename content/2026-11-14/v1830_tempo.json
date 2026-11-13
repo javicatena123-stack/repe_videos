@@ -1,0 +1,81 @@
+{
+ "id": "2026-11-14-tempo",
+ "publish": "2026-11-14T18:30:00",
+ "ref": "vídeos de «tempo 4-0-1 / bajar lento para crecer» del nicho; sin viral concreto con cifras",
+ "scenes": [
+  {
+   "say": "Bajar el peso súper lento no te hace crecer más.",
+   "sub": "Bajar el peso *súper lento* no te hace *crecer más*.",
+   "kind": "toni",
+   "action": "curl",
+   "o": {},
+   "title": "¿BAJAR *SÚPER LENTO*?",
+   "titleSize": 110,
+   "trans": "punch",
+   "bg": "gym2"
+  },
+  {
+   "say": "Ocho estudios, doscientas cuatro personas.",
+   "sub": "*8 estudios*, *204 personas*.",
+   "kind": "num",
+   "icon": "stopwatch",
+   "label": "204 PERSONAS",
+   "value": 8,
+   "unit": "estudios"
+  },
+  {
+   "say": "De medio segundo a ocho por repe: el mismo músculo.",
+   "sub": "De *medio segundo* a *ocho* por repe: *el mismo músculo*.",
+   "kind": "invert",
+   "lines": [
+    "0,5 S U 8 S:",
+    "*MISMO*",
+    "*MÚSCULO*"
+   ],
+   "size": 160,
+   "step": 0.3,
+   "trans": "punch"
+  },
+  {
+   "say": "Eso sí: más de diez segundos, peor.",
+   "sub": "Eso sí: más de *diez segundos*, *peor*.",
+   "kind": "head",
+   "lines": [
+    "+10 S POR REPE:",
+    "PEOR"
+   ],
+   "coral": [
+    1
+   ],
+   "size": 140,
+   "icon": "cross",
+   "iconSize": 260,
+   "bg": "speedlines"
+  },
+  {
+   "say": "Baja controlado y sube con decisión.",
+   "sub": "Baja *controlado* y sube *con decisión*.",
+   "kind": "split",
+   "a": {
+    "label": "SÚPER LENTO",
+    "toni": "shrug"
+   },
+   "b": {
+    "label": "CONTROLADO"
+   },
+   "bdelay": 0.7,
+   "verdict": 1.6,
+   "size": 66,
+   "trans": "left"
+  },
+  {
+   "say": "Pásaselo al que tarda un minuto por repe.",
+   "sub": "*Pásaselo* al que tarda *un minuto por repe*.",
+   "kind": "cta",
+   "l1": "PÁSASELO",
+   "l2": "AL DEL MINUTO POR REPE",
+   "size1": 150,
+   "size2": 66
+  }
+ ]
+}

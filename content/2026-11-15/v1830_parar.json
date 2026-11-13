@@ -1,0 +1,121 @@
+{
+ "id": "2026-11-15-parar",
+ "publish": "2026-11-15T18:30:00",
+ "ref": "miedo a perder músculo en vacaciones / «muscle memory» (tema recurrente); sin viral concreto con cifras",
+ "scenes": [
+  {
+   "say": "Tres semanas sin gym y acabas con el mismo músculo.",
+   "sub": "*Tres semanas sin gym* y acabas con el *mismo músculo*.",
+   "kind": "stamp",
+   "text": "3 SEMANAS SIN GYM",
+   "size": 120,
+   "icon": "sofa",
+   "trans": "punch",
+   "bg": "sofa"
+  },
+  {
+   "say": "Seis semanas entrenando, tres parados. Y otra vez.",
+   "sub": "*Seis semanas* entrenando, *tres parados*. Y otra vez.",
+   "kind": "timeline",
+   "max": 24,
+   "ticks": [
+    0,
+    6,
+    9,
+    15,
+    18,
+    24
+   ],
+   "tlabels": [
+    "0",
+    "6",
+    "9",
+    "15",
+    "18",
+    "24 SEM"
+   ],
+   "marks": [
+    {
+     "from": 0,
+     "to": 6,
+     "label": "GYM",
+     "up": true,
+     "coral": true
+    },
+    {
+     "from": 6,
+     "to": 9,
+     "label": "OFF",
+     "at": 0.9
+    },
+    {
+     "from": 9,
+     "to": 15,
+     "label": "GYM",
+     "up": true,
+     "coral": true
+    },
+    {
+     "from": 15,
+     "to": 18,
+     "label": "OFF",
+     "at": 1.8
+    },
+    {
+     "from": 18,
+     "to": 24,
+     "label": "GYM",
+     "up": true,
+     "coral": true
+    }
+   ]
+  },
+  {
+   "say": "Contra otros que no pararon en veinticuatro semanas.",
+   "sub": "Contra otros que *no pararon* en *24 semanas*.",
+   "kind": "toni",
+   "action": "bench",
+   "props": "bench",
+   "o": {},
+   "title": "*24 SEMANAS* SIN PARAR",
+   "titleSize": 104,
+   "trans": "right",
+   "bg": "gym"
+  },
+  {
+   "say": "Al final: el mismo músculo.",
+   "sub": "Al final: *el mismo músculo*.",
+   "kind": "head",
+   "lines": [
+    "MISMO",
+    "MÚSCULO"
+   ],
+   "coral": [
+    1
+   ],
+   "size": 190,
+   "icon": "chest",
+   "iconSize": 320,
+   "trans": "punch"
+  },
+  {
+   "say": "Así que vete de vacaciones tranquilo.",
+   "sub": "Así que vete de *vacaciones tranquilo*.",
+   "kind": "toni",
+   "action": "wave",
+   "o": {},
+   "title": "VETE *TRANQUILO*",
+   "titleSize": 120,
+   "bg": "park"
+  },
+  {
+   "say": "Pásaselo al que no se va de vacaciones por el gym.",
+   "sub": "*Pásaselo* al que no se va de vacaciones *por el gym*.",
+   "kind": "cta",
+   "l1": "PÁSASELO",
+   "l2": "AL QUE NO SE VA DE VACACIONES",
+   "size1": 150,
+   "size2": 62
+  }
+ ]
+}

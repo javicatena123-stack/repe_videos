@@ -1,0 +1,90 @@
+{
+ "id": "2026-11-13-musica",
+ "publish": "2026-11-13T18:30:00",
+ "ref": "tendencia de playlists de gym y «gym music» en TikTok; sin viral concreto con cifras",
+ "scenes": [
+  {
+   "say": "Entrenar sin música te hace rendir menos. Lo dicen ciento treinta y nueve estudios.",
+   "sub": "Entrenar *sin música* te hace *rendir menos*. Lo dicen *139 estudios*.",
+   "kind": "toni",
+   "action": "point",
+   "o": {},
+   "title": "¿ENTRENAS *SIN MÚSICA*?",
+   "titleSize": 104,
+   "trans": "punch",
+   "bg": "gym3"
+  },
+  {
+   "say": "Casi tres mil seiscientas personas.",
+   "sub": "Casi *3.600 personas*.",
+   "kind": "num",
+   "icon": "crowd",
+   "label": "PERSONAS",
+   "value": 3599,
+   "unit": ""
+  },
+  {
+   "say": "Rindes más, te cansas menos y lo disfrutas más.",
+   "sub": "*Rindes más*, *te cansas menos* y *lo disfrutas más*.",
+   "kind": "chips",
+   "title": "CON *MÚSICA*",
+   "titleSize": 110,
+   "top": 150,
+   "gap": 222,
+   "fs": 62,
+   "items": [
+    {
+     "icon": "flame",
+     "label": "RINDES MÁS",
+     "at": 0.2
+    },
+    {
+     "icon": "battery",
+     "label": "TE CANSAS MENOS",
+     "at": 0.8
+    },
+    {
+     "icon": "check",
+     "label": "LO DISFRUTAS",
+     "at": 1.7
+    }
+   ]
+  },
+  {
+   "say": "Y mejor si es rápida: más de ciento veinte pulsaciones.",
+   "sub": "Y mejor si es *rápida*: más de *120 pulsaciones*.",
+   "kind": "head",
+   "lines": [
+    "MÚSICA",
+    "+120 BPM"
+   ],
+   "coral": [
+    1
+   ],
+   "size": 170,
+   "icon": "stopwatch",
+   "iconSize": 300,
+   "trans": "punch",
+   "bg": "speedlines"
+  },
+  {
+   "say": "El efecto es pequeño. Pero es gratis.",
+   "sub": "El efecto es *pequeño*. Pero es *gratis*.",
+   "kind": "toni",
+   "action": "flexDouble",
+   "o": {},
+   "title": "PEQUEÑO, *PERO GRATIS*",
+   "titleSize": 100,
+   "bg": "gym"
+  },
+  {
+   "say": "Pásaselo al que entrena sin cascos.",
+   "sub": "*Pásaselo* al que entrena *sin cascos*.",
+   "kind": "cta",
+   "l1": "PÁSASELO",
+   "l2": "AL QUE ENTRENA SIN CASCOS",
+   "size1": 150,
+   "size2": 66
+  }
+ ]
+}
