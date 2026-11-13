@@ -634,26 +634,27 @@
   "hora": "14:00",
   "tipo": "video (tendencia viral)",
   "tema": "La sentadilla no hace crecer el femoral (Kubo 2019: 17 chicos, 10 semanas; cuádriceps +4,6-4,9 %, femoral sin cambios)",
-  "titulo": "La sentadilla no te hace crecer el femoral",
-  "url": "https://raw.githubusercontent.com/javicatena123-stack/repe_videos/main/videos/2026-11-13-femoral.mp4",
+  "titulo": "¿Haces sentadilla para el femoral? 10 semanas después: CERO",
+  "url": "https://raw.githubusercontent.com/javicatena123-stack/repe_videos/main/videos/2026-11-13-femoral-v2.mp4",
   "metricool": {
-   "instagram": 426501043,
-   "tiktok": 426501070,
-   "youtube": 426501100,
-   "threads": 426501132,
-   "facebook": 426501183
+   "instagram": 426669988,
+   "tiktok": 426670095,
+   "youtube": 426670202,
+   "threads": 426670248,
+   "facebook": 426670304
   },
   "modelo_voz": "gemini-3.8-flash-tts/Achird",
   "acento": "ES",
   "ref": "debate «la sentadilla lo trabaja todo» (nicho fitness)",
   "categoria": "técnica",
   "formato": "mito vs realidad",
-  "gancho_tipo": "contradicción",
-  "duracion_s": 17.8,
+  "gancho_tipo": "pregunta + número que escandaliza",
+  "duracion_s": 17.7,
   "visuales": [
-   "stamp CERO(hamstring, bg spotlight)",
+   "toni squat (bg gym)",
+   "stamp 0% (bg spotlight)",
    "vs quad/hamstring",
-   "invert",
+   "toni sleepy (bg bedroom)",
    "xray hams (bg lab)",
    "toni deadlift (bg gym2)",
    "cta"
@@ -663,8 +664,11 @@
    "bg spotlight",
    "bg lab",
    "bg gym2",
+   "bg bedroom",
+   "toni sleepy (v1.2)",
    "toni deadlift"
-  ]
+  ],
+  "nota": "v2 13/11 09:30: gancho más salsero a petición de Javier (antes «La sentadilla no te hace crecer el femoral»)"
  },
  {
   "fecha": "2026-11-14",
@@ -768,6 +772,42 @@
    "toni wave",
    "bg sofa",
    "icono sofa"
+  ],
+  "prueba_hora": "18:30"
+ },
+ {
+  "fecha": "2026-11-13",
+  "hora": "18:30",
+  "tipo": "video (tendencia viral)",
+  "tema": "Entrenar con música mejora rendimiento, esfuerzo percibido y disfrute (Terry, Karageorghis y cols. 2020: 139 estudios, 3.599 personas; efecto pequeño)",
+  "titulo": "Entrenar sin música te hace rendir menos",
+  "url": "https://raw.githubusercontent.com/javicatena123-stack/repe_videos/main/videos/2026-11-13-musica.mp4",
+  "metricool": {
+   "instagram": 426670421,
+   "tiktok": 426670493,
+   "youtube": 426670553,
+   "threads": 426670591,
+   "facebook": 426670623
+  },
+  "modelo_voz": "gemini-3.8-flash-tts/Achird",
+  "acento": "ES",
+  "ref": "tendencia de playlists de gym en TikTok",
+  "categoria": "cultura gym / rendimiento",
+  "formato": "mito vs realidad",
+  "gancho_tipo": "autoridad (nº de estudios)",
+  "duracion_s": 17.8,
+  "visuales": [
+   "toni point (bg gym3)",
+   "num(crowd)",
+   "chips con título",
+   "head +120 BPM(stopwatch, bg speedlines)",
+   "toni flexDouble v1.2 (bg gym)",
+   "cta"
+  ],
+  "estrenos": [
+   "bg gym3",
+   "icono crowd",
+   "toni flexDouble v1.2"
   ],
   "prueba_hora": "18:30"
  }
