@@ -597,13 +597,13 @@
   "tipo": "video (respuesta a seguidores)",
   "tema": "Sin flexiones, ¿vale el press de banca? Sí: mismo pecho y fuerza con banca y flexiones al mismo peso (Kikuchi y Nakazato 2017, 18 chicos, 8 semanas, flexiones adaptadas incluso de rodillas)",
   "titulo": "Me preguntáis qué pasa si no podéis hacer ni una flexión",
-  "url": "https://raw.githubusercontent.com/javicatena123-stack/repe_videos/main/videos/2026-11-13-banca.mp4",
+  "url": "https://raw.githubusercontent.com/javicatena123-stack/repe_videos/main/videos/2026-11-13-banca-fondos.mp4",
   "metricool": {
-   "instagram": 425504486,
-   "tiktok": 425504539,
-   "youtube": 425504603,
-   "threads": 425504667,
-   "facebook": 425504724
+   "instagram": 426488648,
+   "tiktok": 426488689,
+   "youtube": 426488726,
+   "threads": 426488757,
+   "facebook": 426488793
   },
   "modelo_voz": "gemini-3.8-flash-tts/Achird",
   "acento": "ES",
@@ -613,16 +613,162 @@
   "gancho_tipo": "identificación (pregunta de seguidor)",
   "duracion_s": 18.4,
   "visuales": [
-   "toni pushup",
-   "toni bench (chest)",
+   "toni pushup (bg gym3)",
+   "toni bench (chest, bg gym)",
    "bars",
-   "stamp DE RODILLAS",
+   "stamp DE RODILLAS (bg speedlines)",
    "head(battery)",
    "cta"
   ],
   "estrenos": [
    "toni pushup",
-   "toni bench"
+   "toni bench",
+   "bg gym3",
+   "bg gym",
+   "bg speedlines"
+  ],
+  "nota": "13/11 03:00: rehecho con fondos (mismo audio aprobado)"
+ },
+ {
+  "fecha": "2026-11-13",
+  "hora": "14:00",
+  "tipo": "video (tendencia viral)",
+  "tema": "La sentadilla no hace crecer el femoral (Kubo 2019: 17 chicos, 10 semanas; cuádriceps +4,6-4,9 %, femoral sin cambios)",
+  "titulo": "La sentadilla no te hace crecer el femoral",
+  "url": "https://raw.githubusercontent.com/javicatena123-stack/repe_videos/main/videos/2026-11-13-femoral.mp4",
+  "metricool": {
+   "instagram": 426501043,
+   "tiktok": 426501070,
+   "youtube": 426501100,
+   "threads": 426501132,
+   "facebook": 426501183
+  },
+  "modelo_voz": "gemini-3.8-flash-tts/Achird",
+  "acento": "ES",
+  "ref": "debate «la sentadilla lo trabaja todo» (nicho fitness)",
+  "categoria": "técnica",
+  "formato": "mito vs realidad",
+  "gancho_tipo": "contradicción",
+  "duracion_s": 17.8,
+  "visuales": [
+   "stamp CERO(hamstring, bg spotlight)",
+   "vs quad/hamstring",
+   "invert",
+   "xray hams (bg lab)",
+   "toni deadlift (bg gym2)",
+   "cta"
+  ],
+  "estrenos": [
+   "icono hamstring",
+   "bg spotlight",
+   "bg lab",
+   "bg gym2",
+   "toni deadlift"
   ]
+ },
+ {
+  "fecha": "2026-11-14",
+  "hora": "14:00",
+  "tipo": "video (tendencia viral)",
+  "tema": "Cardio en ayunas no quema más grasa (Hackett y Hagstrom 2017: 5 estudios, 96 personas)",
+  "titulo": "Hacer cardio en ayunas no te quema más grasa",
+  "url": "https://raw.githubusercontent.com/javicatena123-stack/repe_videos/main/videos/2026-11-14-ayunas.mp4",
+  "metricool": {
+   "instagram": 426501270,
+   "tiktok": 426501294,
+   "youtube": 426501325,
+   "threads": 426501363,
+   "facebook": 426501398
+  },
+  "modelo_voz": "gemini-3.8-flash-lite-tts/Achird (cupo de la buena agotado; la toma buena salió LATAM)",
+  "acento": "ES",
+  "ref": "mito del cardio en ayunas (recurrente)",
+  "categoria": "mito",
+  "formato": "mito vs realidad",
+  "gancho_tipo": "humillación con nota",
+  "duracion_s": 16.7,
+  "visuales": [
+   "meter 2/10 (bg spotlight)",
+   "paper",
+   "stamp EMPATE(coffee)",
+   "toni talk (bg park)",
+   "toni point (bg kitchen2)",
+   "cta"
+  ],
+  "estrenos": [
+   "bg park",
+   "bg kitchen2"
+  ]
+ },
+ {
+  "fecha": "2026-11-14",
+  "hora": "18:30",
+  "tipo": "video (tendencia viral)",
+  "tema": "Repeticiones súper lentas no dan más músculo (Schoenfeld, Ogborn y Krieger 2015: 8 estudios, 204 personas; 0,5-8 s igual, >10 s peor)",
+  "titulo": "Bajar el peso súper lento no te hace crecer más",
+  "url": "https://raw.githubusercontent.com/javicatena123-stack/repe_videos/main/videos/2026-11-14-tempo.mp4",
+  "metricool": {
+   "instagram": 426501476,
+   "tiktok": 426501526,
+   "youtube": 426501554,
+   "threads": 426501589,
+   "facebook": 426501623
+  },
+  "modelo_voz": "gemini-3.8-flash-tts/Achird",
+  "acento": "ES",
+  "ref": "vídeos de «tempo lento para crecer» del nicho",
+  "categoria": "técnica",
+  "formato": "mito vs realidad",
+  "gancho_tipo": "contradicción",
+  "duracion_s": 15.8,
+  "visuales": [
+   "toni curl (bg gym2)",
+   "num(stopwatch)",
+   "invert",
+   "head(cross, bg speedlines)",
+   "split",
+   "cta"
+  ],
+  "estrenos": [
+   "toni curl"
+  ],
+  "prueba_hora": "18:30"
+ },
+ {
+  "fecha": "2026-11-15",
+  "hora": "18:30",
+  "tipo": "video (tendencia viral)",
+  "tema": "Parar 3 semanas no hace perder músculo (Ogasawara 2013: 14 chicos, 24 semanas, ciclos 6 on/3 off = mismo músculo)",
+  "titulo": "Tres semanas sin gym y acabas con el mismo músculo",
+  "url": "https://raw.githubusercontent.com/javicatena123-stack/repe_videos/main/videos/2026-11-15-parar.mp4",
+  "metricool": {
+   "instagram": 426501680,
+   "tiktok": 426501706,
+   "youtube": 426501749,
+   "threads": 426501780,
+   "facebook": 426501811
+  },
+  "modelo_voz": "gemini-3.8-flash-tts/Achird",
+  "acento": "ES",
+  "ref": "miedo a perder músculo en vacaciones (recurrente)",
+  "categoria": "mito",
+  "formato": "mito vs realidad",
+  "gancho_tipo": "contradicción",
+  "duracion_s": 17.1,
+  "visuales": [
+   "stamp(sofa, bg sofa)",
+   "timeline",
+   "toni bench (bg gym)",
+   "head(chest)",
+   "toni wave (bg park)",
+   "cta"
+  ],
+  "estrenos": [
+   "timeline",
+   "toni wave",
+   "bg sofa",
+   "icono sofa"
+  ],
+  "prueba_hora": "18:30"
  }
 ]
