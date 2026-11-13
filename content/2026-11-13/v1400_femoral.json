@@ -4,18 +4,30 @@
  "ref": "debate «la sentadilla lo trabaja todo» (nicho fitness); sin viral concreto con cifras: vidIQ con 4 créditos",
  "scenes": [
   {
-   "say": "La sentadilla no te hace crecer el femoral.",
-   "sub": "La sentadilla *no te hace crecer* el *femoral*.",
-   "kind": "stamp",
-   "text": "CERO",
-   "size": 220,
-   "icon": "hamstring",
-   "trans": "punch",
-   "bg": "spotlight"
+   "say": "¿Haces sentadilla para el femoral?",
+   "sub": "¿Haces *sentadilla* para el *femoral*?",
+   "kind": "toni",
+   "action": "squat",
+   "o": {
+    "period": 1.6
+   },
+   "title": "¿SENTADILLA = *FEMORAL*?",
+   "titleSize": 104,
+   "bg": "gym",
+   "trans": "punch"
   },
   {
-   "say": "Diez semanas de sentadilla. Cuádriceps, a más. Femoral, cero.",
-   "sub": "*10 semanas* de sentadilla. Cuádriceps, a más. Femoral, *cero*.",
+   "say": "Diez semanas después, tu femoral: cero.",
+   "sub": "*Diez semanas* después, tu femoral: *cero*.",
+   "kind": "stamp",
+   "text": "0%",
+   "size": 240,
+   "bg": "spotlight",
+   "trans": "punch"
+  },
+  {
+   "say": "Mientras el cuádriceps crece casi un cinco por ciento.",
+   "sub": "Mientras el *cuádriceps* crece casi un *5 %*.",
    "kind": "vs",
    "a": {
     "icon": "quad",
@@ -30,25 +42,23 @@
     "value": "0",
     "unit": "%"
    },
-   "bdelay": 1.4,
+   "bdelay": 1.2,
    "trans": "left"
   },
   {
-   "say": "Tu femoral ni se entera.",
-   "sub": "Tu femoral *ni se entera*.",
-   "kind": "invert",
-   "lines": [
-    "TU FEMORAL",
-    "*NI SE*",
-    "*ENTERA*"
-   ],
-   "size": 170,
-   "step": 0.25,
+   "say": "Tu femoral ni se entera. Está de siesta.",
+   "sub": "Tu femoral *ni se entera*. Está *de siesta*.",
+   "kind": "toni",
+   "action": "sleepy",
+   "o": {},
+   "title": "TU FEMORAL, *DE SIESTA*",
+   "titleSize": 104,
+   "bg": "bedroom",
    "trans": "punch"
   },
   {
-   "say": "Trabaja, pero casi no se estira.",
-   "sub": "Trabaja, pero *casi no se estira*.",
+   "say": "¿Por qué? Casi no se estira.",
+   "sub": "¿Por qué? *Casi no se estira*.",
    "kind": "xray",
    "mark": "hams",
    "o": {},
@@ -65,8 +75,8 @@
    "o": {},
    "title": "PESO *MUERTO*",
    "titleSize": 120,
-   "trans": "up",
-   "bg": "gym2"
+   "bg": "gym2",
+   "trans": "up"
   },
   {
    "say": "Pásaselo al que solo hace sentadilla.",

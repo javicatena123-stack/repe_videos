@@ -663,6 +663,7 @@
         const drop = ((p.sweatT || 0) % 1 + 1) % 1;
         html += `<g opacity="${(Math.min(1, p.sweat) * (1 - drop * 0.6)).toFixed(2)}">${PROPS.sweat(hp[0], hp[1] + 50 * drop, 1.1)}</g>`;
       }
+      if (p.emote) html += emoteSVG(v, p);
       fx.innerHTML = html;
     }
   }
@@ -946,6 +947,195 @@
       face: faceOf(t, o, { mouth: dn > 0.7 ? 'effort' : 'smile', brows: 'focus' }) };
   };
 
+  // ================================================================ v1.2 (13 nov 2026): gestos nuevos y mejorados
+  // Pedido por Javier: que Toni no se quede quieto mirando a cámara, mejores gestos (bíceps, saludo) y correr de verdad.
+  const fract = (x) => x - Math.floor(x);
+  const pulse = (h, per, len) => { if (h <= 0) return 0; const c = fract(h / per); return c < len ? Math.sin(Math.PI * c / len) : 0; };
+  // ----- reposo vivo: respira, cambia el peso, mira a un lado de vez en cuando y levanta las cejas
+  A.idle = (t, o) => { o = o || {};
+    const sd = o.seed || 0, b = 0.5 + 0.5 * sn(t, 0.35), w = sn(t, 0.16), w2 = sn(t, 0.16, 0.25);
+    const gl = fract((t + sd + 1.2) / 4.6), glance = gl > 0.55 && gl < 0.8 ? Math.sin(Math.PI * (gl - 0.55) / 0.25) : 0;
+    const side = Math.floor((t + sd + 1.2) / 4.6) % 2 ? 1 : -1;
+    const br = fract((t + sd + 2.1) / 5.3) < 0.09 ? 'up' : (o.brows || 'neutral');
+    return { view: 'front', x: o.x || 0, y: o.y || 0, breath: b, hips: 1.4 * w, torso: -1.3 * w + 0.6 * sn(t, 0.35),
+      head: 1.5 * sn(t, 0.22) - 1.1 * w + 3.5 * glance * side,
+      armL: { sh: 13 + 2 * b + 1.6 * w2, el: 10 + 3 * b + 4 * Math.max(0, w2) }, armR: { sh: 13 + 2 * b - 1.6 * w2, el: 10 + 3 * b + 4 * Math.max(0, -w2) },
+      face: faceOf(t, o, { brows: br, look: [0.8 * glance * side, -0.12 * glance] }) };
+  };
+  // ----- hablar con gestos: manos abiertas que explican (derecha, las dos, izquierda) y cabeza que acompaña
+  A.talk = (t, o) => { o = Object.assign({ talk: true }, o || {});
+    const p = A.idle(t, o), per = 2.2, seg = Math.floor((t + 0.3) / per) % 3, ph = fract((t + 0.3) / per);
+    const g = ph < 0.18 ? ease.out(ph / 0.18) : (ph < 0.78 ? 1 : 1 - ease.inOut((ph - 0.78) / 0.22));
+    const beat = Math.sin(t * 8.2);
+    const arm = (k, s) => ({ sh: 16 + 22 * k + 4 * beat * k * s, el: 10 - 112 * k - 10 * beat * k, wr: -14 * k, hand: k > 0.3 ? 'open' : 'fist', flex: false });
+    if (seg !== 2) p.armR = arm(g, 1);
+    if (seg !== 0) p.armL = arm(g * (seg === 1 ? 0.85 : 1), -1);
+    p.head += 2.4 * beat * g; p.torso += 0.8 * beat * g;
+    if (seg === 1 && g > 0.6) p.face.brows = 'up';
+    return p;
+  };
+  // ----- saludo: brazo arriba con la mano abierta que se mueve de lado a lado, guiño
+  A.wave = (t, o) => { o = o || {};
+    const k = ease.back(clamp01(t * 3.2)), on = clamp01(t * 3 - 0.35), w = Math.sin(t * TAU * 2.2) * on;
+    const p = A.idle(t, o);
+    return merge(p, { armR: { sh: 14 + 132 * k, el: 10 + 26 * k + 26 * w, wr: 22 * w, hand: k > 0.35 ? 'open' : 'fist', flex: false },
+      armL: { sh: 15, el: 16 }, head: 5 * k + 2.5 * w, torso: -2 * k + 0.8 * w,
+      face: { mouth: o.talk ? 'open' : 'grin', brows: 'up', wink: t > 0.7 && t < 0.95 } });
+  };
+  // ----- doble bíceps de verdad: codos a la altura de los hombros, puños girados hacia la cabeza, dos apretones,
+  //       se mira un bíceps, luego el otro, y guiña a cámara. o.hold (2,2 s) alarga la pose; o.shine:false quita los brillos
+  A.flexDouble = (t, o) => { o = o || {};
+    const hold = o.hold != null ? o.hold : 2.2, tIn = 0.32, tOut = tIn + hold;
+    const up = { armL: { sh: 100, el: 98, wr: 44, flex: 1 }, armR: { sh: 100, el: 98, wr: 44, flex: 1 }, face: { mouth: 'grin', brows: 'cocky' }, breath: 1.3, head: -2 };
+    const pose = keys('front', [[0, A.idle(0)], [tIn, up, 'back'], [tOut, up], [tOut + 0.45, A.idle(0)]], t, o.loop);
+    const h = t - tIn, live = h > 0 && t < tOut;
+    const sq = live ? pulse(h, 1.0, 0.38) : 0, jit = sq * 1.8 * Math.sin(t * 62);
+    for (const a of ['armL', 'armR']) { pose[a].el += 10 * sq + jit; pose[a].sh += 4 * sq; pose[a].wr += 16 * sq; pose[a].flex = 1; pose[a].hand = 'fist'; }
+    pose.breath += 0.6 * sq;
+    let lk = [0, 0], hd = 0;
+    if (live && h > 0.15 && h < 0.8) { const k = Math.sin(Math.PI * (h - 0.15) / 0.65); lk = [-0.95 * k, -0.45 * k]; hd = -7 * k; }
+    else if (live && h > 1.05 && h < 1.7) { const k = Math.sin(Math.PI * (h - 1.05) / 0.65); lk = [0.95 * k, -0.45 * k]; hd = 7 * k; }
+    pose.head += hd;
+    pose.face = Object.assign({}, pose.face, { look: lk, blink: blinkAt(t + 1), wink: live && h > 1.85 && h < 2.1 },
+      sq > 0.35 ? { mouth: 'effort', brows: 'angry' } : {});
+    pose.x = o.x || 0; pose.y = o.y || 0;
+    const on = clamp01((t - tIn + 0.1) * 5) * (t < tOut ? 1 : clamp01(1 - (t - tOut) * 3));
+    pose.hl = { biceps: o.mark === false ? 0 : on * (0.75 + 0.25 * Math.sin(t * 12)) };
+    if (live && o.shine !== false) { pose.emote = 'shine'; pose.emoteT = h; }
+    return pose;
+  };
+  // ----- bíceps con un brazo: saca el derecho, se lo señala con la otra mano, lo mira y guiña
+  A.flexOne = (t, o) => { o = o || {};
+    const k = ease.back(clamp01(t * 3)), h = t - 0.33, sq = pulse(h, 1.1, 0.36);
+    const p = A.idle(t, o);
+    p.armR = { sh: 14 + 86 * k + 4 * sq, el: 10 + 88 * k + 10 * sq, wr: 44 * k + 14 * sq, hand: 'fist', flex: k };
+    p.armL = { sh: 13 + 6 * k, el: 10 - 108 * k, wr: -20 * k, hand: k > 0.5 ? 'point' : 'fist', flex: false };
+    const look = h > 0.1 && h < 1.4;
+    p.head += look ? 7 : 0; p.breath += 0.4 + 0.5 * sq;
+    p.face = Object.assign({}, p.face, { look: look ? [0.95, -0.4] : [0, 0], brows: 'cocky', mouth: sq > 0.4 ? 'effort' : (look ? 'smirk' : 'grin'), wink: h > 1.55 && h < 1.8 });
+    p.hl = {};
+    if (h > 0) { p.emote = 'shineR'; p.emoteT = h; }
+    return p;
+  };
+  // ----- risa: manos en la barriga, rebota, ojos cerrados de gusto y «JA JA»
+  A.laugh = (t, o) => { o = o || {};
+    const k = ease.out(clamp01(t * 4)), bob = Math.abs(Math.sin(t * TAU * 3.3));
+    const p = A.idle(t, o);
+    return merge(p, { y: (o.y || 0) + 7 * bob * k, head: (-5 + 4 * Math.sin(t * TAU * 1.65)) * k, torso: 1.6 * Math.sin(t * TAU * 1.65) * k, breath: 0.6 + 0.6 * bob,
+      armL: { sh: 12 + 4 * bob, el: 10 - 92 * k, wr: -10 * k, hand: 'open', flex: false }, armR: { sh: 12 + 4 * bob, el: 10 - 92 * k, wr: -10 * k, hand: 'open', flex: false },
+      face: { mouth: 'open', open: 0.7 + 0.3 * bob, brows: 'up', lid: 0.18 + 0.72 * k, blink: 0, look: [0, 0] }, emote: t > 0.15 ? 'laugh' : null, emoteT: t });
+  };
+  // ----- «esto no»: cruza los antebrazos en X delante del pecho y niega con la cabeza
+  A.nope = (t, o) => { o = o || {};
+    const k = ease.back(clamp01(t * 3.5)), s = Math.sin(t * TAU * 2.4) * clamp01(t * 3 - 0.4);
+    const p = A.idle(t, o);
+    return merge(p, { armL: { sh: 18 + 6 * k, el: 10 - 140 * k, wr: -12 * k, hand: k > 0.5 ? 'open' : 'fist', flex: false },
+      armR: { sh: 22 + 6 * k, el: 10 - 128 * k, wr: -12 * k, hand: k > 0.5 ? 'open' : 'fist', flex: false },
+      head: 9 * s, face: { mouth: 'flat', brows: 'angry', look: [-0.35 * s, 0] }, emote: t > 0.3 ? 'nope' : null, emoteT: t - 0.3 });
+  };
+  // ----- en jarras: manos en la cintura, pecho fuera, ceja chulita y sonrisa de lado
+  A.hips = (t, o) => { o = o || {};
+    const k = ease.out(clamp01(t * 3.5));
+    const p = A.idle(t, o);
+    const arm = { sh: 14 + 42 * k, el: 10 - 134 * k, wr: -24 * k, hand: 'fist', flex: false };
+    return merge(p, { armL: arm, armR: arm, breath: 1 + 0.4 * k, head: -3 * k, y: (o.y || 0) - 4 * k,
+      face: { mouth: o.talk ? 'open' : 'smirk', brows: 'cocky' } });
+  };
+  // ----- pensar: un brazo cruzado, el otro con el puño arriba, mira arriba y sale un «?»
+  A.think = (t, o) => { o = o || {};
+    const k = ease.out(clamp01(t * 3));
+    const p = A.idle(t, o);
+    return merge(p, { armL: { sh: 12, el: 10 - 96 * k, wr: -8 * k, hand: 'open', flex: false }, armR: { sh: 14 + 6 * k, el: 10 + 140 * k, wr: 20 * k, hand: 'fist', flex: false },
+      head: 7 * k + 2 * Math.sin(t * 2), face: { mouth: 'flat', brows: 'focus', look: [0.6 * k, -0.9 * k] }, emote: t > 0.25 ? 'question' : null, emoteT: t - 0.25 });
+  };
+  // ----- llorar a chorros: cabeza gacha, hombros que tiemblan y dos fuentes de lágrimas
+  A.cry = (t, o) => { o = o || {};
+    const k = ease.out(clamp01(t * 3)), sob = Math.sin(t * TAU * 4) * k;
+    const p = A.idle(t, o);
+    return merge(p, { armL: { sh: 8 + 3 * sob, el: 6 }, armR: { sh: 8 - 3 * sob, el: 6 }, y: (o.y || 0) + 3 * Math.abs(sob), head: 4 * Math.sin(t * 1.3) * k,
+      face: { mouth: 'O', open: 0.5 + 0.3 * Math.abs(sob), brows: 'sad', lid: 0.45, look: [0, 0.3] }, emote: t > 0.15 ? 'tears' : null, emoteT: t });
+  };
+  // ----- aplaudir: las manos se juntan delante del pecho
+  A.clap = (t, o) => { o = o || {};
+    const k = ease.out(clamp01(t * 4)), c = 0.5 + 0.5 * Math.cos(t * TAU * 3.2), gap = 16 + 70 * c;
+    const p = A.idle(t, o);
+    const aL = armIKF(p, 'L', -gap, -650), aR = armIKF(p, 'R', gap, -650);
+    const mix = (a, sd) => ({ sh: 14 + (a.sh - 14) * k, el: 10 + (a.el - 10) * k, wr: 0, hand: 'open', flex: false });
+    return merge(p, { armL: mix(aL), armR: mix(aR), face: { mouth: 'grin', brows: 'up' }, emote: c < 0.12 && t > 0.2 ? 'clap' : null, emoteT: t });
+  };
+  // ----- bailecito de victoria: brazos que suben por turnos, cadera que se mueve y botes
+  A.dance = (t, o) => { o = o || {};
+    const b = t * TAU * 1.9, s = Math.sin(b), j = Math.abs(Math.sin(b));
+    const p = A.idle(t, o);
+    return merge(p, { y: (o.y || 0) - 18 * j, hips: 6 * s, torso: -5 * s, head: 6 * s,
+      armL: { sh: 90 + 60 * s, el: 70 - 50 * s, hand: 'fist', flex: false }, armR: { sh: 90 - 60 * s, el: 70 + 50 * s, hand: 'fist', flex: false },
+      face: { mouth: 'grin', brows: 'up', wink: s > 0.9 }, emote: 'notes', emoteT: t });
+  };
+  // ----- sueño: bosteza, párpados que caen y «Zzz»
+  A.sleepy = (t, o) => { o = o || {};
+    const yawn = pulse(t - 0.2, 3.2, 0.45), nod = 0.5 - 0.5 * Math.cos(t * 1.4);
+    const p = A.idle(t, o);
+    return merge(p, { armL: { sh: 8, el: 6 }, armR: { sh: 8, el: 6 }, head: 7 * nod, y: (o.y || 0) + 4 * nod,
+      face: { mouth: yawn > 0.1 ? 'O' : 'flat', open: yawn, brows: 'sad', lid: 0.6 + 0.3 * nod, blink: 0, look: [0, 0.4] }, emote: 'zzz', emoteT: t });
+  };
+  // ----- correr de verdad (perfil): fase de vuelo, rodillas arriba, talón al glúteo, brazos a 90° en contra de las piernas.
+  //       Corre en el sitio (como en una cinta). o.T = s por zancada completa (0,62), o.move:true avanza, o.sweat
+  const RUNK = [[0, 26, 14], [0.15, 4, 40], [0.33, -26, 16], [0.5, -16, 104], [0.7, 50, 88], [0.88, 38, 26], [1, 26, 14]];
+  function runLeg(q) { q = fract(q); let i = 0; while (i < RUNK.length - 2 && q > RUNK[i + 1][0]) i++;
+    const [q0, h0, k0] = RUNK[i], [q1, h1, k1] = RUNK[i + 1], e = ease.inOut((q - q0) / (q1 - q0));
+    const hip = h0 + (h1 - h0) * e, kn = k0 + (k1 - k0) * e;
+    let an = kn - hip; if (q > 0.22 && q < 0.48) an -= 28 * Math.sin(Math.PI * (q - 0.22) / 0.26); else if (q > 0.6 && q < 0.95) an += 8;
+    return { hip, kn, an };
+  }
+  A.run = (t, o) => { o = o || {};
+    const T = o.T || 0.62, ph = t / T, ln = runLeg(ph), lf = runLeg(ph + 0.5);
+    const arm = (leg, q) => ({ sh: -1.15 * (leg.hip - 12), el: 92 - 14 * Math.sin(TAU * q), hand: 'fist', flex: false });
+    let pose = { view: 'side', x: o.x || 0, torso: 13, head: -11, breath: 0.6 + 0.4 * Math.sin(TAU * ph * 2),
+      legNear: ln, legFar: lf, armNear: arm(ln, ph), armFar: arm(lf, ph + 0.5),
+      face: faceOf(t, o, { mouth: 'open', open: o.talk ? talkOpen(t) : 0.3, brows: 'focus' }),
+      sweat: o.sweat ? 1 : 0, sweatT: t * 1.3 };
+    pose = ground(pose, o.ground || 0);
+    const fl = (q) => { q = fract(q); return q > 0.34 && q < 0.5 ? Math.sin(Math.PI * (q - 0.34) / 0.16) : 0; };
+    pose.y -= 18 * Math.max(fl(ph), fl(ph + 0.5));
+    if (o.move) pose.x += (o.speed || 380) * t;
+    return pose;
+  };
+
+  // ----- efectos de gesto (se dibujan delante de Toni): ?, !, Zzz, JA JA, lágrimas, brillos, notas, aplauso, «no»
+  function emoteSVG(v, p) {
+    const e = p.emote, t = p.emoteT || 0, fr = v === 'front';
+    const H = (pt) => worldPoint(v, p, 'head', pt);
+    const T = (pt, s, str, rot, col, op) => `<text x="${pt[0].toFixed(1)}" y="${pt[1].toFixed(1)}" transform="rotate(${(rot || 0).toFixed(1)} ${pt[0].toFixed(1)} ${pt[1].toFixed(1)})" font-family="Anton, Impact, sans-serif" font-size="${s.toFixed(0)}" text-anchor="middle" fill="${col}" stroke="${C.line}" stroke-width="6" paint-order="stroke" stroke-linejoin="round" opacity="${Math.max(0, Math.min(1, op)).toFixed(2)}">${str}</text>`;
+    const star = (c, r, op) => `<path d="M ${c[0]} ${c[1] - r} Q ${c[0]} ${c[1]} ${c[0] + r} ${c[1]} Q ${c[0]} ${c[1]} ${c[0]} ${c[1] + r} Q ${c[0]} ${c[1]} ${c[0] - r} ${c[1]} Q ${c[0]} ${c[1]} ${c[0]} ${c[1] - r} Z" fill="#FFFFFF" stroke="${C.line}" stroke-width="3" opacity="${op.toFixed(2)}"/>`;
+    let h = '';
+    if (e === 'question' || e === 'exclaim') {
+      const a = H(fr ? [86, -150] : [50, -160]), bob = 8 * Math.sin(t * 4.2), s = 0.6 + 0.4 * ease.back(clamp01(t * 3));
+      h += T([a[0], a[1] + bob], 110 * s, e === 'question' ? '?' : '!', 12 * Math.sin(t * 3), C.tank, clamp01(t * 4));
+    }
+    if (e === 'zzz') for (let i = 0; i < 3; i++) { const q = fract(t * 0.55 + i / 3); const a = H(fr ? [95 + 45 * q, -100 - 85 * q] : [60 + 45 * q, -110 - 85 * q]);
+      h += T(a, 38 + 34 * q, 'Z', -12 + 10 * q, '#FFFFFF', Math.sin(Math.PI * q)); }
+    if (e === 'laugh') for (let i = 0; i < 2; i++) { const q = fract(t * 1.5 + i * 0.5); const a = H(fr ? [i ? 104 : -104, -130 - 40 * q] : [70, -150 - 40 * q]);
+      h += T(a, 58 * (0.7 + 0.3 * ease.back(clamp01(q * 4))), 'JA', i ? 12 : -12, C.tank, q < 0.7 ? 1 : (1 - q) / 0.3); }
+    if (e === 'tears' && fr) for (const sd of [-1, 1]) {
+      const pts = [[sd * 17, -44], [sd * 70, -90], [sd * 120, 30]].map(H);
+      const d = `M ${pts[0][0].toFixed(1)} ${pts[0][1].toFixed(1)} Q ${pts[1][0].toFixed(1)} ${pts[1][1].toFixed(1)} ${pts[2][0].toFixed(1)} ${pts[2][1].toFixed(1)}`;
+      h += `<path d="${d}" fill="none" stroke="${C.sweat}" stroke-width="13" stroke-linecap="round" stroke-dasharray="20 12" stroke-dashoffset="${(-t * 160).toFixed(1)}" opacity="${clamp01(t * 4).toFixed(2)}"/>`;
+      for (let i = 0; i < 2; i++) { const q = fract(t * 1.8 + i * 0.5), b = H([sd * (120 + 6 * i), 30 + 120 * q]); h += `<g opacity="${(1 - q).toFixed(2)}">${PROPS.sweat(b[0], b[1], 1)}</g>`; }
+    }
+    if (e === 'shine' || e === 'shineR') {
+      (e === 'shine' ? ['elbowL', 'elbowR'] : ['elbowR']).forEach((id, j) => { const w = worldPoint(v, p, id, [0, 0]), sg = id.endsWith('L') ? -1 : 1;
+        for (let i = 0; i < 2; i++) { const q = fract(t * 1.2 + i * 0.5 + j * 0.25);
+          h += star([w[0] + sg * (55 + 35 * i), w[1] - 70 - 45 * i], 18 * Math.sin(Math.PI * q) + 2, Math.sin(Math.PI * q)); } });
+    }
+    if (e === 'notes') for (let i = 0; i < 2; i++) { const q = fract(t * 0.8 + i * 0.5); const a = H([(i ? 120 : -120) + 20 * Math.sin(q * 6), -110 - 110 * q]);
+      h += T(a, 60, '♪', 10 * Math.sin(q * 5), C.tank, Math.sin(Math.PI * q)); }
+    if (e === 'clap') { const a = worldPoint(v, p, 'wristL', [0, 40]); [[-50, -40], [50, -40], [0, -70]].forEach((d) => {
+      h += `<path d="M ${(a[0] + d[0] * 0.5).toFixed(1)} ${(a[1] + d[1] * 0.5).toFixed(1)} L ${(a[0] + d[0]).toFixed(1)} ${(a[1] + d[1]).toFixed(1)}" stroke="${C.tank}" stroke-width="8" stroke-linecap="round"/>`; }); }
+    if (e === 'nope' && t > 0) { const a = H(fr ? [-104, -150] : [60, -170]), s = ease.back(clamp01(t * 4));
+      h += `<g transform="translate(${a[0].toFixed(1)} ${a[1].toFixed(1)}) scale(${s.toFixed(3)}) rotate(${(6 * Math.sin(t * 9)).toFixed(1)})"><circle r="40" fill="${C.tank}" stroke="${C.line}" stroke-width="6"/><path d="M -16 -16 L 16 16 M 16 -16 L -16 16" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round"/></g>`; }
+    return h;
+  }
+
   // Pose lista para usar desde un guion: acción + opciones comunes.
   //   o.mark: 'chest' | ['chest','abs'] → marca músculos (pulso); o.face: {…} → sobrescribe la cara;
   //   o.flip: true → mira a la izquierda; o.scale; o.dx/o.dy → desplaza.
@@ -966,7 +1156,7 @@
   }
   // vista que usa cada acción (para crear la instancia correcta)
   const VIEW_OF = { idle: 'front', talk: 'front', wave: 'front', flexDouble: 'front', mark: 'front', point: 'front', thumbsUp: 'front', shrug: 'front', celebrate: 'front',
-    press: 'front', pullup: 'front',
+    press: 'front', pullup: 'front', flexOne: 'front', laugh: 'front', nope: 'front', hips: 'front', think: 'front', cry: 'front', clap: 'front', dance: 'front', sleepy: 'front', run: 'side',
     standSide: 'side', walk: 'side', stairsUp: 'side', stairsDown: 'side', curl: 'side', squat: 'side', bench: 'side', deadlift: 'side', lunge: 'side' };
 
   function play(inst, name, t, o) {
@@ -974,7 +1164,7 @@
     const pose = fn(t, o || {}); inst.set(pose); return pose;
   }
 
-  const api = { version: '1.1.0', armIKF, cycle, create, actions: A, pose, viewOf: (name) => VIEW_OF[name] || 'front', keys, blend, merge, lerpPose, ease, ground, worldPoint, basePose, play, gait, legIK, colors: C, props: PROPS, symbolPaths };
+  const api = { version: '1.2.0', armIKF, cycle, create, actions: A, pose, viewOf: (name) => VIEW_OF[name] || 'front', keys, blend, merge, lerpPose, ease, ground, worldPoint, basePose, play, gait, legIK, colors: C, props: PROPS, symbolPaths };
   root.RepeToni = api;
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
 })(typeof window !== 'undefined' ? window : globalThis);
