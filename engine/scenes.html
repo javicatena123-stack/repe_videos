@@ -1215,16 +1215,16 @@ KINDS.ollaScale=(p)=>{const up=KINDS.toni(Object.assign({},p,{action:p.action||"
   const ticks=[...Array(9)].map((_,i)=>{const a=(-120+i*30)*Math.PI/180;return `<path d="M${(Math.sin(a)*120).toFixed(1)} ${(-Math.cos(a)*120).toFixed(1)} L${(Math.sin(a)*100).toFixed(1)} ${(-Math.cos(a)*100).toFixed(1)}" stroke="#111013" stroke-width="6"/><text x="${(Math.sin(a)*78).toFixed(1)}" y="${(-Math.cos(a)*78+9).toFixed(1)}" text-anchor="middle" font-family="Anton" font-size="26" fill="#111013">${i*10}</text>`}).join("");
   const box=el(`<svg width="1080" height="1100" viewBox="0 0 1080 1100" overflow="visible">
     <rect x="250" y="690" width="580" height="86" rx="26" fill="#e9e6ef" stroke="${OL_INK}" stroke-width="8"/><rect x="270" y="704" width="540" height="16" rx="8" fill="#fff" opacity=".7"/>
-    <g transform="translate(540 905)"><circle r="150" fill="#4a4550" stroke="${OL_INK}" stroke-width="8"/><circle r="132" fill="#f3f1f6"/>${ticks}
+    <g transform="translate(880 400) scale(.7)"><circle r="150" fill="#4a4550" stroke="${OL_INK}" stroke-width="8"/><circle r="132" fill="#f3f1f6"/>${ticks}
      <g data-r="nd"><path d="M-7 10 L0 -118 L7 10 Z" fill="${CORAL}"/></g><circle r="16" fill="#111013"/>
      <g data-r="cr" opacity="0" stroke="#111013" stroke-width="5" fill="none"><path d="M-20 -40 L-60 -70 L-80 -50 L-120 -80 M-20 -40 L10 -90 L-5 -120 M-20 -40 L40 -20 L90 -40 L125 -20 M-20 -40 L-30 20 L-70 60 L-90 100"/></g></g>
-    <g data-r="lb" transform="translate(860 800)" opacity="0"><text text-anchor="middle" font-family="Anton" font-size="96" fill="${CORAL}">${to} T</text></g>
-    <g data-r="lb0" transform="translate(220 800)"><text text-anchor="middle" font-family="Anton" font-size="70" fill="#fff">${from} T</text><path data-r="st" d="M-80 -20 L80 -20" stroke="${CORAL}" stroke-width="10" stroke-dasharray="160" stroke-dashoffset="160"/></g></svg>`,"left:0;top:0;width:1080px;height:1100px;transform-origin:50% 80%");
+    <g data-r="lb" transform="translate(880 610)" opacity="0"><text text-anchor="middle" font-family="Anton" font-size="96" fill="${CORAL}">${to} T</text></g>
+    <g data-r="lb0" transform="translate(200 520)"><text text-anchor="middle" font-family="Anton" font-size="70" fill="#fff">${from} T</text><path data-r="st" d="M-80 -20 L80 -20" stroke="${CORAL}" stroke-width="10" stroke-dasharray="160" stroke-dashoffset="160"/></g></svg>`,"left:0;top:0;width:1080px;height:1100px;transform-origin:50% 80%");
   const nd=box.querySelector('[data-r=nd]'),cr=box.querySelector('[data-r=cr]'),lb=box.querySelector('[data-r=lb]'),st=box.querySelector('[data-r=st]');
   const angOf=v=>-120+v/80*240;
   return (t,D)=>{up(t,D);const k=back(clamp((t-AT)/DUR));const v=from+(to-from)*k;const jit=t>AT?1.5*Math.sin(t*41):0;
     nd.setAttribute("transform",`rotate(${(angOf(v)+jit).toFixed(1)})`);st.setAttribute("stroke-dashoffset",(160*(1-easeOut((t-AT)/.35))).toFixed(0));
-    cr.setAttribute("opacity",(t>CR?1:0));lb.setAttribute("opacity",clamp((t-AT-DUR*.6)/.2).toFixed(2));lb.setAttribute("transform",`translate(860 800) scale(${pop(t,AT+DUR*.6,.3).toFixed(3)})`);
+    cr.setAttribute("opacity",(t>CR?1:0));lb.setAttribute("opacity",clamp((t-AT-DUR*.6)/.2).toFixed(2));lb.setAttribute("transform",`translate(880 610) scale(${pop(t,AT+DUR*.6,.3).toFixed(3)})`);
     box.style.transform=t>CR&&t<CR+.35?`translate(${(9*Math.sin(t*70)).toFixed(1)}px,${(5*Math.cos(t*63)).toFixed(1)}px)`:"";};};
 /* barra de oxígeno que se vacía hasta el rojo y la mascarilla que se le cae a Toni */
 KINDS.ollaO2=(p)=>{const T=window.RepeToni;const act=p.action||"sleepy";const S=p.scale||.98,ty=p.ty??(p.title?880:860),tx=p.tx??430;

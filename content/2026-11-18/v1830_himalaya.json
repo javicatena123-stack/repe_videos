@@ -1,0 +1,65 @@
+{
+ "id": "2026-11-18-himalaya",
+ "publish": "2026-11-18T18:30:00",
+ "formato": "ida de olla",
+ "variante": "epica",
+ "ref": "ritmo de humor absurdo de gym (Reels «why you shouldn't…»); premisa de Javier (14 nov)",
+ "direction_extra": "Tono de documental serio, solemne y muy seguro, como un experto explicando algo importantísimo. Haz un silencio de medio segundo antes de «Pero lo grave es otro».\n",
+ "scenes": [
+  {
+   "say": "Por qué no deberías hacer sentadillas con un tanque en el Himalaya.",
+   "sub": "Por qué no deberías hacer *sentadillas* con un *tanque* en el *Himalaya*.",
+   "kind": "ollaTank",
+   "bg": "himalaya",
+   "title": "SENTADILLAS + *TANQUE* + HIMALAYA",
+   "titleSize": 68,
+   "lead": 0.8,
+   "drop": 0.05,
+   "trans": "punch"
+  },
+  {
+   "say": "Primero: un Leopard 2 no pesa dieciocho toneladas. Pesa sesenta y seis.",
+   "sub": "Primero: un Leopard 2 no pesa 18 toneladas. Pesa *66*.",
+   "kind": "ollaScale",
+   "bg": "himalaya",
+   "title": "¿18 T? *66 T*",
+   "titleSize": 120,
+   "at": 1.4,
+   "dur": 1.0
+  },
+  {
+   "say": "Segundo: a ocho mil metros, un tercio del oxígeno.",
+   "sub": "Segundo: a *8.000 metros*, *un tercio* del oxígeno.",
+   "kind": "ollaO2",
+   "bg": "himalaya",
+   "title": "A *8.000 M*",
+   "titleSize": 120
+  },
+  {
+   "say": "Tercero: no hay gimnasio para devolverlo a su sitio.",
+   "sub": "Tercero: no hay *gimnasio* para devolverlo *a su sitio*.",
+   "kind": "ollaMap",
+   "bg": "himalaya",
+   "title": "¿Y EL *GIMNASIO*?",
+   "titleSize": 110
+  },
+  {
+   "say": "Pero lo grave es otro: media sentadilla.",
+   "sub": "Pero lo grave es otro: *media sentadilla*.",
+   "kind": "stamp",
+   "text": "MEDIA REPE",
+   "size": 170,
+   "bg": "speedlines",
+   "trans": "punch"
+  },
+  {
+   "say": "¿Dónde no harías sentadillas tú? Te leo.",
+   "sub": "¿Dónde no harías sentadillas tú? *Te leo*.",
+   "kind": "ollaCta",
+   "l1": "TE LEO",
+   "l2": "¿DÓNDE NO HARÍAS SENTADILLAS?",
+   "size1": 150,
+   "size2": 60
+  }
+ ]
+}

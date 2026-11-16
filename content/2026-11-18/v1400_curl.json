@@ -1,0 +1,80 @@
+{
+ "id": "2026-11-18-curl",
+ "publish": "2026-11-18T14:00:00",
+ "ref": "vídeos de «curl inclinado vs Scott» del nicho; sin viral concreto con cifras",
+ "scenes": [
+  {
+   "say": "Cada curl te hace crecer un trozo distinto del bíceps.",
+   "sub": "Cada curl te hace crecer *un trozo distinto* del bíceps.",
+   "kind": "toni",
+   "action": "curl",
+   "o": {},
+   "bg": "gym2",
+   "title": "¿QUÉ *CURL* HACES?",
+   "titleSize": 120,
+   "trans": "punch"
+  },
+  {
+   "say": "Sesenta y tres chicas, ocho semanas.",
+   "sub": "*63 chicas*, *8 semanas*.",
+   "kind": "num",
+   "icon": "crowd",
+   "label": "CHICAS · 8 SEMANAS",
+   "value": 63,
+   "unit": ""
+  },
+  {
+   "say": "Inclinado: crece más arriba. Scott: crece más abajo.",
+   "sub": "*Inclinado*: crece más *arriba*. *Scott*: crece más *abajo*.",
+   "kind": "chips",
+   "title": "¿DÓNDE *CRECE*?",
+   "titleSize": 110,
+   "top": 190,
+   "gap": 225,
+   "fs": 56,
+   "items": [
+    {
+     "icon": "muscle",
+     "label": "INCLINADO: ARRIBA",
+     "at": 0.2
+    },
+    {
+     "icon": "dumbbell",
+     "label": "SCOTT: ABAJO",
+     "at": 1.6
+    }
+   ]
+  },
+  {
+   "say": "¿Quieres el bíceps entero? Haz los dos.",
+   "sub": "¿Quieres el *bíceps entero*? *Haz los dos*.",
+   "kind": "invert",
+   "lines": [
+    "¿BÍCEPS ENTERO?",
+    "*HAZ LOS DOS*"
+   ],
+   "size": 150,
+   "step": 0.35,
+   "trans": "punch"
+  },
+  {
+   "say": "Así no te queda ni un trozo sin crecer.",
+   "sub": "Así no te queda *ni un trozo* sin crecer.",
+   "kind": "toni",
+   "action": "flexOne",
+   "o": {},
+   "bg": "gym3",
+   "title": "BÍCEPS *COMPLETO*",
+   "titleSize": 120
+  },
+  {
+   "say": "Pásaselo al que solo hace curl en Scott.",
+   "sub": "*Pásaselo* al que solo hace *curl en Scott*.",
+   "kind": "cta",
+   "l1": "PÁSASELO",
+   "l2": "AL QUE SOLO HACE SCOTT",
+   "size1": 150,
+   "size2": 70
+  }
+ ]
+}

@@ -810,5 +810,116 @@
    "toni flexDouble v1.2"
   ],
   "prueba_hora": "18:30"
+ },
+ {
+  "fecha": "2026-11-16",
+  "hora": "18:30",
+  "tipo": "video (tendencia viral)",
+  "tema": "La cuota mensual del gym sale más cara que ir por días (DellaVigna y Malmendier 2006: 7.752 socios; 4,3 visitas/mes, >17 $ por visita frente a 10 $)",
+  "titulo": "Tu cuota del gym te sale más cara que ir por días",
+  "url": "https://raw.githubusercontent.com/javicatena123-stack/repe_videos/main/videos/2026-11-16-cuota.mp4",
+  "metricool": {
+   "instagram": 430224355,
+   "tiktok": 430224434,
+   "youtube": 430224524,
+   "threads": 430201947,
+   "facebook": 430224649
+  },
+  "modelo_voz": "gemini-3.8-flash-tts/Achird",
+  "acento": "ES",
+  "ref": "humor de cuota de gym en el nicho",
+  "categoria": "cultura gym / humor",
+  "formato": "dato curioso",
+  "gancho_tipo": "dolor / pérdida",
+  "duracion_s": 18.34,
+  "visuales": [
+   "toni (bg gym2)",
+   "num",
+   "split",
+   "toni (bg sofa)",
+   "cta"
+  ],
+  "estrenos": [
+   "Toni hips",
+   "Toni think",
+   "fondo sofa",
+   "fondo gym2"
+  ],
+  "pregunta": "¿Cuántas veces has ido al gym este mes? Confesad 😅",
+  "pregunta_tipo": "confesion",
+  "prueba_hora": "18:30"
+ },
+ {
+  "fecha": "2026-11-17",
+  "hora": "07:30",
+  "tipo": "video (respuesta a seguidores)",
+  "tema": "Entrenar resfriado: regla del cuello (Weidner y cols. 1998: 50 personas, entrenar moderado no empeoró el resfriado)",
+  "titulo": "Me decís que no faltáis al gym ni con fiebre",
+  "url": "https://raw.githubusercontent.com/javicatena123-stack/repe_videos/main/videos/2026-11-17-resfriado.mp4",
+  "metricool": {
+   "instagram": 430224762,
+   "tiktok": 430224855,
+   "youtube": 430224935,
+   "threads": 430202334,
+   "facebook": 430225066
+  },
+  "modelo_voz": "gemini-3.8-flash-tts/Achird",
+  "acento": "ES",
+  "ref": "banco de ideas: «Yo ni enfermo faltaba»",
+  "categoria": "salud / descanso",
+  "formato": "respuesta",
+  "gancho_tipo": "lo que dicen los seguidores",
+  "duracion_s": 16.91,
+  "visuales": [
+   "toni (bg bedroom)",
+   "chips",
+   "toni nope",
+   "cta"
+  ],
+  "estrenos": [
+   "Toni nope",
+   "Toni cry",
+   "fondo bedroom"
+  ],
+  "pregunta": "¿Tú eres de los que van al gym con mocos? 🤧",
+  "pregunta_tipo": "habito"
+ },
+ {
+  "fecha": "2026-11-17",
+  "hora": "14:00",
+  "tipo": "video (tendencia viral)",
+  "tema": "Estirar no previene lesiones; la fuerza sí (Lauersen, Bertelsen y Andersen 2014: 25 estudios, 26.610 personas; fuerza < 1/3 de lesiones)",
+  "titulo": "Estirar antes de entrenar no te libra de lesionarte",
+  "url": "https://raw.githubusercontent.com/javicatena123-stack/repe_videos/main/videos/2026-11-16-estirar.mp4",
+  "metricool": {
+   "instagram": 430225196,
+   "tiktok": 430225240,
+   "youtube": 430225314,
+   "threads": 430225523,
+   "facebook": 430225449
+  },
+  "modelo_voz": "gemini-3.8-flash-tts/Achird",
+  "acento": "ES",
+  "ref": "vídeos de calentamiento/estiramientos del nicho",
+  "categoria": "lesiones / técnica",
+  "formato": "mito vs realidad",
+  "gancho_tipo": "autoridad (nº de estudios)",
+  "duracion_s": 16.27,
+  "visuales": [
+   "toni (bg gym3)",
+   "num(paper)",
+   "xray/invert",
+   "toni (bg spotlight)",
+   "speedlines",
+   "cta"
+  ],
+  "estrenos": [
+   "fondo gym3",
+   "fondo spotlight",
+   "fondo speedlines"
+  ],
+  "pregunta": "¿Estiras antes de entrenar o vas directo a las pesas? 👇",
+  "pregunta_tipo": "eleccion",
+  "nota": "iba lun 14:00; se pasó la hora y se movió a mar 14:00"
  }
 ]

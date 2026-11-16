@@ -1,0 +1,76 @@
+{
+ "id": "2026-11-17-fallo",
+ "publish": "2026-11-17T18:30:00",
+ "ref": "debate «al fallo siempre» en el nicho; sin viral concreto con cifras: vidIQ con 4 créditos",
+ "scenes": [
+  {
+   "say": "Ir al fallo en todas las series no te hace crecer más.",
+   "sub": "Ir al fallo en *todas las series* no te hace *crecer más*.",
+   "kind": "stamp",
+   "text": "AL FALLO",
+   "size": 180,
+   "icon": "battery",
+   "bg": "speedlines",
+   "trans": "punch"
+  },
+  {
+   "say": "Quince estudios lo han comparado.",
+   "sub": "*Quince estudios* lo han comparado.",
+   "kind": "num",
+   "icon": "paper",
+   "label": "METAANÁLISIS",
+   "value": 15,
+   "unit": "estudios"
+  },
+  {
+   "say": "Al fallo o dejando una o dos repes: casi el mismo músculo.",
+   "sub": "Al fallo o dejando *una o dos repes*: casi *el mismo músculo*.",
+   "kind": "split",
+   "a": {
+    "label": "AL FALLO",
+    "toni": "shock"
+   },
+   "b": {
+    "label": "1-2 EN RESERVA"
+   },
+   "bdelay": 1.0,
+   "verdict": 2.6,
+   "size": 66,
+   "trans": "left"
+  },
+  {
+   "say": "Lo que cuenta es acercarte, no reventar.",
+   "sub": "Lo que cuenta es *acercarte*, no *reventar*.",
+   "kind": "head",
+   "lines": [
+    "ACÉRCATE.",
+    "NO REVIENTES."
+   ],
+   "coral": [
+    1
+   ],
+   "size": 150,
+   "icon": "flame",
+   "iconSize": 260
+  },
+  {
+   "say": "Y llegas fresco a la siguiente serie.",
+   "sub": "Y llegas *fresco* a la siguiente serie.",
+   "kind": "toni",
+   "action": "laugh",
+   "o": {},
+   "bg": "gym",
+   "title": "*FRESCO* PARA LA SIGUIENTE",
+   "titleSize": 96
+  },
+  {
+   "say": "Pásaselo al que grita en cada serie.",
+   "sub": "*Pásaselo* al que *grita* en cada serie.",
+   "kind": "cta",
+   "l1": "PÁSASELO",
+   "l2": "AL QUE GRITA EN CADA SERIE",
+   "size1": 150,
+   "size2": 66
+  }
+ ]
+}
