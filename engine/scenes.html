@@ -1162,4 +1162,103 @@ function bgFrame(gt,t){const P=BGL.parts;if(!P)return;const z=1.02+.025*Math.sin
  const _fr=window.frame;window.frame=(t,D)=>{const r=_fr(t,D);bgFrame(START+t,t);return r;};
  const _ls=window.loadSpec;window.loadSpec=(s,tt)=>{BGL.cur=null;return _ls(s,tt);};}
 
+
+/* ================================================================ IDAS DE OLLA
+   Épica 1 · «Sentadillas con un tanque en el Himalaya» (16 nov 2026)
+   bg "himalaya" · kinds: ollaTank, ollaScale, ollaO2, ollaMap, ollaCta
+   Todo genérico: el tanque no lleva insignias ni banderas, está quieto y no dispara. */
+const OL_INK="#1A1419";
+/* fondo: cumbres de noche con nieve y ventisca en diagonal */
+BGS.himalaya=()=>{const peak=(pts,f,cap)=>`<path d="${pts}" fill="${f}"/>${cap?`<path d="${cap}" fill="#e9eef5" opacity=".9"/>`:""}`;
+  const stars=[...Array(26)].map((_,i)=>bC((i*197)%1080,40+(i*113)%380,2+(i%3),"#fff",`data-t="${i}" opacity=".5"`)).join("");
+  const snow=[...Array(70)].map((_,i)=>bC((i*157)%1180,(i*263)%1980,3+(i%4)*2.2,"#fff",`data-sn="${i}" opacity="${(.35+(i%5)*.12).toFixed(2)}"`)).join("");
+  return {far:`<defs><linearGradient id="hmsky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0c1322"/><stop offset=".6" stop-color="#1d2a44"/><stop offset="1" stop-color="#3a4a6a"/></linearGradient></defs>
+     ${bR(-60,-60,1200,BGHZ+120,"url(#hmsky)")}${stars}${bC(860,210,46,"#e9eef5",'opacity=".85"')}${bC(878,196,40,"#0c1322",'opacity=".9"')}
+     ${peak("M-80 760 L130 420 L260 560 L420 300 L600 600 L760 380 L960 640 L1160 470 L1160 1010 L-80 1010 Z","#26314a")}
+     ${peak("","",`M130 420 L175 485 L150 478 L120 500 L95 470 Z M420 300 L480 400 L445 390 L420 420 L395 392 L370 380 Z M760 380 L815 460 L780 452 L750 478 L725 445 Z`)}`,
+   mid:`${peak("M-80 1010 L-80 690 L210 470 L470 760 L640 560 L900 800 L1160 620 L1160 1010 Z","#344263")}
+     <path d="M210 470 L290 560 L250 552 L215 585 L180 548 L150 525 Z M640 560 L720 650 L680 640 L645 672 L610 640 L590 610 Z M1160 620 L1100 660 L1060 690 L1110 690 L1160 700 Z" fill="#f3f6fa"/>`,
+   near:`<g data-a="snowfx">${snow}</g>`,
+   floor:`<path d="M-60 ${BGHZ} H1140 V1980 H-60 Z" fill="#c9d3e2"/><path d="M-60 ${BGHZ} C200 ${BGHZ-30} 380 ${BGHZ+20} 560 ${BGHZ-10} C760 ${BGHZ-40} 920 ${BGHZ+10} 1140 ${BGHZ-20} L1140 ${BGHZ+40} L-60 ${BGHZ+40} Z" fill="#e9eef5"/>
+     ${[...Array(7)].map((_,k)=>{const y=BGHZ+60+k*k*22;return `<path d="M-60 ${y} C300 ${y-14} 700 ${y+14} 1140 ${y-6}" stroke="#aeb9cc" stroke-width="5" fill="none" opacity=".5"/>`}).join("")}`};};
+{const _fr2=window.frame;window.frame=(t,D)=>{const r=_fr2(t,D);if(BGL.cur==="himalaya"&&BGL.svg){const gt=START+t;
+   BGL.svg.querySelectorAll('[data-sn]').forEach(c=>{const i=+c.dataset.sn,sp=.55+(i%7)*.09;const x0=(i*157)%1180,y0=(i*263)%1980;
+     const y=((y0+gt*1100*sp)%2000)-40,x=(((x0-gt*620*sp)%1240)+1240)%1240-80;c.setAttribute("cx",x.toFixed(1));c.setAttribute("cy",y.toFixed(1));});}
+  return r;};}
+/* el tanque (genérico, gris, sin marcas) con su base en (0,0) */
+function olTank(snow=true){const w=[-170,-102,-34,34,102,170];
+  return `<g>
+   <path d="M-235 -74 L235 -74 Q262 -40 235 -6 L-235 -6 Q-262 -40 -235 -74 Z" fill="#26232b" stroke="${OL_INK}" stroke-width="7"/>
+   ${w.map(x=>`<g data-w="1" transform="translate(${x} -40)"><circle r="27" fill="#4a4550" stroke="${OL_INK}" stroke-width="5"/><path d="M-14 0 H14 M0 -14 V14" stroke="#2e2a33" stroke-width="6"/></g>`).join("")}
+   <path d="M-250 -74 L250 -74 L222 -138 L-214 -138 Z" fill="#3A3846" stroke="${OL_INK}" stroke-width="7" stroke-linejoin="round"/>
+   <rect x="-200" y="-108" width="400" height="12" rx="6" fill="${CORAL}" opacity=".85"/>
+   <path d="M-128 -138 L118 -138 L92 -206 L-96 -206 Z" fill="#4a4550" stroke="${OL_INK}" stroke-width="7" stroke-linejoin="round"/>
+   <rect x="-440" y="-186" width="330" height="22" rx="9" fill="#3A3846" stroke="${OL_INK}" stroke-width="6"/><rect x="-462" y="-192" width="34" height="34" rx="7" fill="#26232b" stroke="${OL_INK}" stroke-width="5"/>
+   <ellipse cx="20" cy="-208" rx="40" ry="11" fill="#26232b" stroke="${OL_INK}" stroke-width="5"/><circle cx="96" cy="-168" r="7" fill="${CORAL}"/>
+   ${snow?`<path d="M-96 -206 Q-60 -222 -20 -210 Q20 -226 60 -210 Q84 -218 92 -206 Z" fill="#f3f6fa"/><path d="M-214 -138 Q-150 -152 -90 -140 L-96 -136 Z M120 -140 Q170 -152 222 -138 Z" fill="#f3f6fa"/>`:""}</g>`;}
+/* Toni en sentadilla con el tanque en los hombros: tiembla, suda y se hunde cuando el tanque cae */
+KINDS.ollaTank=(p)=>{const T=window.RepeToni;const o=Object.assign({period:p.period||3.4,sweat:true},p.o||{});
+  const S=p.scale||1.0, ty=p.ty??(p.title?900:880), tx=p.tx??560;
+  const up=KINDS.toni(Object.assign({},p,{action:"squat",o,scale:S,ty,tx,seq:undefined}));
+  const box=el(`<svg width="1080" height="880" viewBox="0 0 1080 880" overflow="visible"><g transform="translate(${tx} ${ty}) scale(${S})"><g data-r="tk">${olTank(true)}</g><g data-r="dust"></g></g></svg>`,"left:0;top:0;width:1080px;height:880px;pointer-events:none");
+  const tk=box.querySelector('[data-r=tk]'),dust=box.querySelector('[data-r=dust]');const DROP=(p.drop??.22)+(p.lead??0);
+  dust.innerHTML=[...Array(10)].map((_,i)=>`<circle data-d="${i}" r="${10+(i%3)*6}" fill="#e9eef5" opacity="0"/>`).join("");const ds=[...dust.querySelectorAll('circle')];
+  const LEAD=p.lead??0;
+  return (t,D)=>{t=t+LEAD;up(t,D);const ps=T.pose("squat",t,o);const A=T.worldPoint("side",ps,"deltNear",[0,0]),B=T.worldPoint("side",ps,"deltFar",[0,0]);
+    const Hh=T.worldPoint("side",ps,"head",[0,0]);const sx=(A[0]+B[0])/2-20,sy=Math.min(A[1],B[1],Hh[1]-(p.headTop??98))-6;const lift=t<DROP?-70*(1-t/DROP)*(1-t/DROP):0;const land=t>DROP?Math.exp(-(t-DROP)*9)*Math.sin((t-DROP)*38)*10:0;
+    const sh=t>DROP?2.4*Math.sin(t*47)+1.6*Math.sin(t*31):0;const ang=(ps.torso||0)*.12;
+    tk.setAttribute("transform",`translate(${(sx+sh).toFixed(1)} ${(sy+lift+land).toFixed(1)}) rotate(${ang.toFixed(2)}) scale(.82)`);
+    ds.forEach((c,i)=>{const k=clamp((t-DROP)/.6);const a=(i/9-.5)*2.6;c.setAttribute("cx",(Math.sin(a)*(60+260*k)).toFixed(1));c.setAttribute("cy",(-10-60*k*Math.cos(a)*.5).toFixed(1));c.setAttribute("opacity",(t>DROP?.7*(1-k):0).toFixed(2));});};};
+/* báscula gigante bajo los pies de Toni: la aguja pasa de 18 a 66 y el cristal se raja */
+KINDS.ollaScale=(p)=>{const up=KINDS.toni(Object.assign({},p,{action:p.action||"cry",scale:p.scale||.86,ty:p.ty??700,seq:undefined}));
+  const from=p.from??18,to=p.to??66,AT=p.at??.5,DUR=p.dur??1.1,CR=p.crack??(AT+DUR+.05);
+  const ticks=[...Array(9)].map((_,i)=>{const a=(-120+i*30)*Math.PI/180;return `<path d="M${(Math.sin(a)*120).toFixed(1)} ${(-Math.cos(a)*120).toFixed(1)} L${(Math.sin(a)*100).toFixed(1)} ${(-Math.cos(a)*100).toFixed(1)}" stroke="#111013" stroke-width="6"/><text x="${(Math.sin(a)*78).toFixed(1)}" y="${(-Math.cos(a)*78+9).toFixed(1)}" text-anchor="middle" font-family="Anton" font-size="26" fill="#111013">${i*10}</text>`}).join("");
+  const box=el(`<svg width="1080" height="1100" viewBox="0 0 1080 1100" overflow="visible">
+    <rect x="250" y="690" width="580" height="86" rx="26" fill="#e9e6ef" stroke="${OL_INK}" stroke-width="8"/><rect x="270" y="704" width="540" height="16" rx="8" fill="#fff" opacity=".7"/>
+    <g transform="translate(540 905)"><circle r="150" fill="#4a4550" stroke="${OL_INK}" stroke-width="8"/><circle r="132" fill="#f3f1f6"/>${ticks}
+     <g data-r="nd"><path d="M-7 10 L0 -118 L7 10 Z" fill="${CORAL}"/></g><circle r="16" fill="#111013"/>
+     <g data-r="cr" opacity="0" stroke="#111013" stroke-width="5" fill="none"><path d="M-20 -40 L-60 -70 L-80 -50 L-120 -80 M-20 -40 L10 -90 L-5 -120 M-20 -40 L40 -20 L90 -40 L125 -20 M-20 -40 L-30 20 L-70 60 L-90 100"/></g></g>
+    <g data-r="lb" transform="translate(860 800)" opacity="0"><text text-anchor="middle" font-family="Anton" font-size="96" fill="${CORAL}">${to} T</text></g>
+    <g data-r="lb0" transform="translate(220 800)"><text text-anchor="middle" font-family="Anton" font-size="70" fill="#fff">${from} T</text><path data-r="st" d="M-80 -20 L80 -20" stroke="${CORAL}" stroke-width="10" stroke-dasharray="160" stroke-dashoffset="160"/></g></svg>`,"left:0;top:0;width:1080px;height:1100px;transform-origin:50% 80%");
+  const nd=box.querySelector('[data-r=nd]'),cr=box.querySelector('[data-r=cr]'),lb=box.querySelector('[data-r=lb]'),st=box.querySelector('[data-r=st]');
+  const angOf=v=>-120+v/80*240;
+  return (t,D)=>{up(t,D);const k=back(clamp((t-AT)/DUR));const v=from+(to-from)*k;const jit=t>AT?1.5*Math.sin(t*41):0;
+    nd.setAttribute("transform",`rotate(${(angOf(v)+jit).toFixed(1)})`);st.setAttribute("stroke-dashoffset",(160*(1-easeOut((t-AT)/.35))).toFixed(0));
+    cr.setAttribute("opacity",(t>CR?1:0));lb.setAttribute("opacity",clamp((t-AT-DUR*.6)/.2).toFixed(2));lb.setAttribute("transform",`translate(860 800) scale(${pop(t,AT+DUR*.6,.3).toFixed(3)})`);
+    box.style.transform=t>CR&&t<CR+.35?`translate(${(9*Math.sin(t*70)).toFixed(1)}px,${(5*Math.cos(t*63)).toFixed(1)}px)`:"";};};
+/* barra de oxígeno que se vacía hasta el rojo y la mascarilla que se le cae a Toni */
+KINDS.ollaO2=(p)=>{const T=window.RepeToni;const act=p.action||"sleepy";const S=p.scale||.98,ty=p.ty??(p.title?880:860),tx=p.tx??430;
+  const up=KINDS.toni(Object.assign({},p,{action:act,scale:S,ty,tx,seq:undefined}));const to=p.to??33,AT=p.at??.35,DUR=p.dur??1.3,FALL=p.fall??1.25;
+  const box=el(`<svg width="1080" height="880" viewBox="0 0 1080 880" overflow="visible">
+    <g transform="translate(905 260)"><rect x="-58" y="0" width="116" height="520" rx="30" fill="#26232b" stroke="#fff" stroke-width="9"/>
+     <rect data-r="f" x="-42" y="16" width="84" height="488" rx="20" fill="#fff"/><text x="0" y="-26" text-anchor="middle" font-family="Anton" font-size="70" fill="#fff">O₂</text>
+     <text data-r="pc" x="0" y="590" text-anchor="middle" font-family="Anton" font-size="78" fill="${CORAL}">100 %</text></g>
+    <g transform="translate(${tx} ${ty}) scale(${S})"><g data-r="mk"><path d="M-48 0 C-48 -40 48 -40 48 0 C48 34 -48 34 -48 0 Z" fill="#e9eef5" stroke="${OL_INK}" stroke-width="7"/><path d="M-48 -6 L-110 -30 M48 -6 L110 -30" stroke="${CORAL}" stroke-width="7"/><path d="M0 26 C10 80 60 100 90 140" stroke="#8d8794" stroke-width="10" fill="none"/></g></g></svg>`,"left:0;top:0;width:1080px;height:880px");
+  const f=box.querySelector('[data-r=f]'),pc=box.querySelector('[data-r=pc]'),mk=box.querySelector('[data-r=mk]');
+  return (t,D)=>{up(t,D);const k=easeOut((t-AT)/DUR);const lv=100-(100-to)*k;const h=488*lv/100;
+    f.setAttribute("y",(16+488-h).toFixed(1));f.setAttribute("height",h.toFixed(1));f.setAttribute("fill",lv<50?CORAL:"#fff");pc.textContent=Math.round(lv)+" %";
+    const ps=T.pose(act,t,Object.assign({talk:true},p.o||{}));const view=T.viewOf(act);const H=T.worldPoint(view,ps,"head",[view==="side"?30:0,-40]);
+    const fk=clamp((t-FALL)/.7);const yy=H[1]+fk*fk*(-H[1]+10),rr=fk*120,xx=H[0]+fk*60;
+    mk.setAttribute("transform",`translate(${xx.toFixed(1)} ${yy.toFixed(1)}) rotate(${rr.toFixed(1)})`);};};
+/* plano abierto: Toni diminuto con el tanque, un «GYM» lejísimos y el cartel clavado en la nieve */
+KINDS.ollaMap=(p)=>{const upT=KINDS.ollaTank(Object.assign({},p,{title:undefined,scale:p.tankScale||.48,tx:p.ttx??260,ty:p.tty??900,drop:-1}));
+  const ttl=p.title?el(`<div class="anton" style="font-size:${p.titleSize||100}px;text-align:center;width:1000px">${(p.title||"").split("*").map((s,i)=>i%2?`<span class="coral">${chars(s)}</span>`:chars(s)).join("")}</div>`,"left:40px;top:-10px;width:1000px"):null;
+  const tc=ttl?[...ttl.querySelectorAll(".ch")]:[];
+  const box=el(`<svg width="1080" height="1100" viewBox="0 0 1080 1100" overflow="visible">
+    <path data-r="rt" d="M330 760 C430 640 560 700 620 560 C680 420 820 470 860 330" stroke="#fff" stroke-width="9" fill="none" stroke-dasharray="22 20" stroke-linecap="round"/>
+    <g data-r="pin" transform="translate(860 300)"><path d="M0 40 C-40 -10 -50 -30 -50 -60 A50 50 0 1 1 50 -60 C50 -30 40 -10 0 40 Z" fill="${CORAL}" stroke="${OL_INK}" stroke-width="7"/>
+      <text x="0" y="-48" text-anchor="middle" font-family="Anton" font-size="44" fill="#111013">GYM</text><text x="0" y="110" text-anchor="middle" font-family="Anton" font-size="58" fill="#fff">MUY LEJOS</text></g>
+    <g data-r="sg" transform="translate(780 900)"><rect x="-12" y="-250" width="24" height="270" rx="6" fill="#8a5a3a" stroke="${OL_INK}" stroke-width="6"/>
+      <rect x="-200" y="-420" width="400" height="200" rx="18" fill="#f3efe6" stroke="${OL_INK}" stroke-width="8"/>
+      <text text-anchor="middle" font-family="Poppins" font-weight="800" font-size="40" fill="#111013"><tspan x="0" y="-362">DEVUELVE</tspan><tspan x="0" y="-314">EL MATERIAL</tspan><tspan x="0" y="-266" fill="${CORAL}">A SU SITIO</tspan></text>
+      <path d="M-200 -420 Q-150 -440 -100 -424 Q-40 -444 20 -424 Q90 -442 200 -420 Z" fill="#fff"/></g></svg>`,"left:0;top:0;width:1080px;height:1100px");
+  const rt=box.querySelector('[data-r=rt]'),pin=box.querySelector('[data-r=pin]'),sg=box.querySelector('[data-r=sg]');const L=rt.getTotalLength?rt.getTotalLength():900;
+  rt.setAttribute("stroke-dasharray",`22 20`);
+  return (t,D)=>{upT(t,D);popChars(tc,t,0,.025,.3);const k=easeOut((t-.15)/1.0);rt.style.clipPath="";rt.setAttribute("stroke-dashoffset","0");rt.style.opacity=k>0?1:0;
+    rt.setAttribute("stroke-dasharray",`${(L*k).toFixed(0)} 0`);if(k>=1)rt.setAttribute("stroke-dasharray","22 20");
+    const pk=pop(t,.9,.35);pin.setAttribute("transform",`translate(860 ${(300-140*(1-clamp((t-.9)/.35))).toFixed(1)}) scale(${pk.toFixed(3)})`);
+    const sk=pop(t,1.5,.35);sg.setAttribute("transform",`translate(780 900) rotate(${(4*Math.sin(t*3)*clamp(t-1.5)).toFixed(2)}) scale(${sk.toFixed(3)})`);};};
+/* CTA de comentario con «NO LO HAGAS» */
+KINDS.ollaCta=(p)=>{const up=KINDS.cta(p);const w=el(`<div class="anton" style="font-size:54px;color:#fff;opacity:.85;letter-spacing:4px;text-align:center;width:1080px">⚠ NO LO HAGAS ⚠</div>`,"left:0;top:760px;width:1080px");
+  return (t,D)=>{up(t,D);w.style.opacity=(.85*clamp((t-.3)/.3)).toFixed(2);};};
 </script></body></html>

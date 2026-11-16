@@ -1,0 +1,84 @@
+{
+ "id": "2026-11-17-resfriado",
+ "publish": "2026-11-17T07:30:00",
+ "ref": "banco de ideas: «Yo ni enfermo faltaba…» (YouTube, 6 nov)",
+ "scenes": [
+  {
+   "say": "Me decís que no faltáis al gym ni con fiebre.",
+   "sub": "Me decís que *no faltáis al gym* ni con *fiebre*.",
+   "kind": "toni",
+   "action": "think",
+   "o": {},
+   "bg": "bedroom",
+   "title": "¿GYM *CON FIEBRE*?",
+   "titleSize": 112,
+   "trans": "punch",
+   "scale": 0.8
+  },
+  {
+   "say": "Hay una regla fácil: la del cuello.",
+   "sub": "Hay una regla fácil: *la del cuello*.",
+   "kind": "head",
+   "lines": [
+    "LA REGLA",
+    "DEL CUELLO"
+   ],
+   "coral": [
+    1
+   ],
+   "size": 170,
+   "icon": "thermo",
+   "iconSize": 260,
+   "bg": "speedlines"
+  },
+  {
+   "say": "Mocos o garganta: entreno suave. Fiebre o pecho cargado: a la cama.",
+   "sub": "Mocos o garganta: *entreno suave*. Fiebre o pecho cargado: *a la cama*.",
+   "kind": "split",
+   "a": {
+    "label": "MOCOS",
+    "toni": "thumbsUp",
+    "good": true
+   },
+   "b": {
+    "label": "FIEBRE",
+    "toni": "sleepy",
+    "good": false
+   },
+   "bdelay": 1.5,
+   "verdict": 3.0,
+   "size": 72,
+   "trans": "left"
+  },
+  {
+   "say": "En un estudio, entrenar suave no empeoró el resfriado.",
+   "sub": "En un estudio, entrenar suave *no empeoró* el resfriado.",
+   "kind": "num",
+   "icon": "drop",
+   "label": "RESFRIADOS",
+   "value": 50,
+   "unit": "personas"
+  },
+  {
+   "say": "Pero con fiebre, a casa. Sin excusas.",
+   "sub": "Pero con fiebre, *a casa*. Sin excusas.",
+   "kind": "invert",
+   "lines": [
+    "CON FIEBRE:",
+    "*A CASA*"
+   ],
+   "size": 190,
+   "step": 0.3,
+   "trans": "punch"
+  },
+  {
+   "say": "Seguid preguntando: va al próximo vídeo.",
+   "sub": "*Seguid preguntando*: va al *próximo vídeo*.",
+   "kind": "cta",
+   "l1": "PREGUNTA",
+   "l2": "Y VA AL PRÓXIMO VÍDEO",
+   "size1": 150,
+   "size2": 70
+  }
+ ]
+}

@@ -1,0 +1,81 @@
+{
+ "id": "2026-11-16-cuota",
+ "publish": "2026-11-16T18:30:00",
+ "ref": "humor de «pago el gym y no voy» (recurrente tras el finde); sin viral concreto con cifras",
+ "scenes": [
+  {
+   "say": "Tu cuota del gym te sale más cara que ir por días.",
+   "sub": "Tu *cuota del gym* te sale *más cara* que ir por días.",
+   "kind": "toni",
+   "action": "cry",
+   "o": {},
+   "bg": "spotlight",
+   "title": "TU *CUOTA DEL GYM*",
+   "titleSize": 120,
+   "trans": "punch"
+  },
+  {
+   "say": "Estudiaron a más de siete mil socios.",
+   "sub": "Estudiaron a más de *7.000 socios*.",
+   "kind": "num",
+   "icon": "crowd",
+   "label": "SOCIOS",
+   "value": 7752,
+   "unit": ""
+  },
+  {
+   "say": "Diecisiete dólares por visita. Por días, solo diez.",
+   "sub": "*17 dólares* por visita. Por días, *solo 10*.",
+   "kind": "vs",
+   "a": {
+    "icon": "calendar",
+    "label": "CON CUOTA",
+    "value": "17",
+    "unit": "$",
+    "white": true
+   },
+   "b": {
+    "icon": "check",
+    "label": "POR DÍAS",
+    "value": "10",
+    "unit": "$"
+   },
+   "bdelay": 1.2,
+   "trans": "left"
+  },
+  {
+   "say": "¿Por qué? Iban unas cuatro veces al mes.",
+   "sub": "¿Por qué? Iban unas *cuatro veces al mes*.",
+   "kind": "head",
+   "lines": [
+    "IBAN",
+    "4 VECES AL MES"
+   ],
+   "coral": [
+    1
+   ],
+   "size": 150,
+   "bg": "speedlines",
+   "trans": "punch"
+  },
+  {
+   "say": "Y el resto del mes, pagando desde el sofá.",
+   "sub": "Y el resto del mes, *pagando desde el sofá*.",
+   "kind": "toni",
+   "action": "sleepy",
+   "o": {},
+   "bg": "sofa",
+   "title": "PAGANDO *DESDE EL SOFÁ*",
+   "titleSize": 100
+  },
+  {
+   "say": "Pásaselo al que paga el gym y no va.",
+   "sub": "*Pásaselo* al que *paga el gym y no va*.",
+   "kind": "cta",
+   "l1": "PÁSASELO",
+   "l2": "AL QUE PAGA Y NO VA",
+   "size1": 150,
+   "size2": 70
+  }
+ ]
+}

@@ -1,0 +1,100 @@
+{
+ "id": "2026-11-16-estirar",
+ "publish": "2026-11-16T14:00:00",
+ "ref": "vídeos de «rutina de estiramientos antes de entrenar» (recurrentes en el nicho); sin viral concreto con cifras: vidIQ con 4 créditos",
+ "scenes": [
+  {
+   "say": "Estirar antes de entrenar no te libra de lesionarte. Lo dicen veinticinco estudios.",
+   "sub": "Estirar antes de entrenar *no te libra de lesionarte*. Lo dicen *25 estudios*.",
+   "kind": "toni",
+   "action": "nope",
+   "o": {},
+   "bg": "gym3",
+   "title": "¿ESTIRAR *ANTES*?",
+   "titleSize": 120,
+   "trans": "punch"
+  },
+  {
+   "say": "Más de veintiséis mil personas.",
+   "sub": "Más de *26.000 personas*.",
+   "kind": "paper",
+   "title": "ESTUDIO",
+   "source": "Lauersen y cols. · Br J Sports Med",
+   "stamp": "2014",
+   "stampAt": 0.2,
+   "rows": [
+    {
+     "v": "25",
+     "l": "ESTUDIOS",
+     "at": 0.2
+    },
+    {
+     "v": "26.610",
+     "l": "PERSONAS",
+     "at": 0.9,
+     "w": 330
+    }
+   ]
+  },
+  {
+   "say": "Estirar: efecto cero.",
+   "sub": "Estirar: *efecto cero*.",
+   "kind": "invert",
+   "lines": [
+    "ESTIRAR:",
+    "*EFECTO*",
+    "*CERO*"
+   ],
+   "size": 180,
+   "step": 0.25,
+   "trans": "punch"
+  },
+  {
+   "say": "¿Lo que sí funciona? Entrenar fuerza: un tercio de lesiones.",
+   "sub": "¿Lo que sí funciona? *Entrenar fuerza*: *un tercio* de lesiones.",
+   "kind": "bars",
+   "caption": "Lesiones",
+   "items": [
+    {
+     "label": "NADA",
+     "value": 100,
+     "top": "",
+     "at": 0.4
+    },
+    {
+     "label": "ESTIRAR",
+     "value": 96,
+     "top": "IGUAL",
+     "at": 0.9
+    },
+    {
+     "label": "FUERZA",
+     "value": 32,
+     "top": "1/3",
+     "coral": true,
+     "at": 1.9
+    }
+   ]
+  },
+  {
+   "say": "Las pesas son tu mejor seguro.",
+   "sub": "Las *pesas* son tu *mejor seguro*.",
+   "kind": "toni",
+   "action": "hips",
+   "o": {},
+   "bg": "gym2",
+   "title": "LAS PESAS *TE PROTEGEN*",
+   "titleSize": 100,
+   "trans": "up"
+  },
+  {
+   "say": "Pásaselo al que estira veinte minutos y no entrena.",
+   "sub": "*Pásaselo* al que estira *veinte minutos* y no entrena.",
+   "kind": "cta",
+   "l1": "PÁSASELO",
+   "l2": "AL QUE ESTIRA Y NO ENTRENA",
+   "size1": 150,
+   "size2": 66
+  }
+ ]
+}
