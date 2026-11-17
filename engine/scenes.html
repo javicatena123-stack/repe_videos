@@ -1238,7 +1238,7 @@ KINDS.ollaO2=(p)=>{const T=window.RepeToni;const act=p.action||"sleepy";const S=
   return (t,D)=>{up(t,D);const k=easeOut((t-AT)/DUR);const lv=100-(100-to)*k;const h=488*lv/100;
     f.setAttribute("y",(16+488-h).toFixed(1));f.setAttribute("height",h.toFixed(1));f.setAttribute("fill",lv<50?CORAL:"#fff");pc.textContent=Math.round(lv)+" %";
     const ps=T.pose(act,t,Object.assign({talk:true},p.o||{}));const view=T.viewOf(act);const H=T.worldPoint(view,ps,"head",[view==="side"?30:0,-40]);
-    const fk=clamp((t-FALL)/.7);const yy=H[1]+fk*fk*(-H[1]+10),rr=fk*120,xx=H[0]+fk*60;
+    const fk=clamp((t-FALL)/.7);const yy=H[1]+fk*fk*(-H[1]-70),rr=fk*120,xx=H[0]+fk*60;
     mk.setAttribute("transform",`translate(${xx.toFixed(1)} ${yy.toFixed(1)}) rotate(${rr.toFixed(1)})`);};};
 /* plano abierto: Toni diminuto con el tanque, un «GYM» lejísimos y el cartel clavado en la nieve */
 KINDS.ollaMap=(p)=>{const upT=KINDS.ollaTank(Object.assign({},p,{title:undefined,scale:p.tankScale||.48,tx:p.ttx??260,ty:p.tty??900,drop:-1}));
