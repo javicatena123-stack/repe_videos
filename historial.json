@@ -921,5 +921,118 @@
   "pregunta": "¿Estiras antes de entrenar o vas directo a las pesas? 👇",
   "pregunta_tipo": "eleccion",
   "nota": "iba lun 14:00; se pasó la hora y se movió a mar 14:00"
+ },
+ {
+  "fecha": "2026-11-17",
+  "hora": "18:30",
+  "tipo": "video (tendencia viral)",
+  "tema": "Ir al fallo no da más músculo que quedarse a 1-2 repes (Refalo y cols. 2023: 15 estudios; diferencia trivial o nula)",
+  "titulo": "Ir al fallo en todas las series no te hace crecer más",
+  "url": "https://raw.githubusercontent.com/javicatena123-stack/repe_videos/main/videos/2026-11-17-fallo.mp4",
+  "metricool": {
+   "instagram": 431132854,
+   "tiktok": 431132889,
+   "youtube": 431132930,
+   "threads": 431132966,
+   "facebook": 431133009
+  },
+  "modelo_voz": "gemini-3.8-flash-tts/Achird",
+  "acento": "ES",
+  "ref": "debate «al fallo siempre» del nicho",
+  "categoria": "hipertrofia",
+  "formato": "mito vs realidad",
+  "gancho_tipo": "contradicción",
+  "duracion_s": 16.78,
+  "visuales": [
+   "stamp AL FALLO (battery, bg speedlines)",
+   "num(paper)",
+   "split (toni shock)",
+   "head ACÉRCATE (flame)",
+   "toni laugh (bg gym)",
+   "cta"
+  ],
+  "estrenos": [
+   "Toni laugh"
+  ],
+  "pregunta": "¿Cuántas series llevas al fallo de verdad en cada ejercicio? 👀",
+  "pregunta_tipo": "habito",
+  "prueba_hora": "18:30"
+ },
+ {
+  "fecha": "2026-11-18",
+  "hora": "14:00",
+  "tipo": "video (tendencia viral)",
+  "tema": "Curl inclinado vs Scott: crecen zonas distintas del bíceps (Kassiano y cols. 2025: 63 chicas, 8 semanas)",
+  "titulo": "Cada curl te hace crecer un trozo distinto del bíceps",
+  "url": "https://raw.githubusercontent.com/javicatena123-stack/repe_videos/main/videos/2026-11-18-curl.mp4",
+  "metricool": {
+   "instagram": 431133071,
+   "tiktok": 431133152,
+   "youtube": 431133232,
+   "threads": 431133273,
+   "facebook": 431133296
+  },
+  "modelo_voz": "gemini-3.8-flash-tts/Achird",
+  "acento": "ES",
+  "ref": "vídeos de «curl inclinado vs Scott» del nicho",
+  "categoria": "técnica / tren superior",
+  "formato": "comparativa",
+  "gancho_tipo": "curiosidad",
+  "duracion_s": 20.1,
+  "visuales": [
+   "toni curl (bg gym2)",
+   "num(crowd)",
+   "chips con título",
+   "invert",
+   "toni flexOne (bg gym3)",
+   "cta"
+  ],
+  "estrenos": [
+   "Toni curl"
+  ],
+  "pregunta": "¿Qué curl no falta nunca en tu día de brazo? 💪",
+  "pregunta_tipo": "favorito"
+ },
+ {
+  "fecha": "2026-11-18",
+  "hora": "18:30",
+  "tipo": "ida de olla",
+  "variante": "epica",
+  "tema": "Por qué no deberías hacer sentadillas con un tanque en el Himalaya (Leopard 2 ~66 t; a 8.000 m ~1/3 de oxígeno; giro: media sentadilla)",
+  "titulo": "Por qué no deberías hacer sentadillas con un tanque en el Himalaya",
+  "url": "https://raw.githubusercontent.com/javicatena123-stack/repe_videos/main/videos/2026-11-18-himalaya.mp4",
+  "metricool": {
+   "instagram": 431133346,
+   "tiktok": 431133386,
+   "youtube": 431133487,
+   "threads": 431133561,
+   "facebook": 431133632
+  },
+  "modelo_voz": "gemini-3.8-flash-tts/Achird",
+  "acento": "ES",
+  "ref": "premisa de Javier (14 nov); serie «Por qué no deberías…»",
+  "categoria": "humor",
+  "formato": "ida de olla",
+  "gancho_tipo": "absurdo",
+  "duracion_s": 22.57,
+  "visuales": [
+   "ollaTank (bg himalaya)",
+   "ollaScale",
+   "ollaO2",
+   "ollaMap",
+   "stamp MEDIA REPE (speedlines)",
+   "ollaCta"
+  ],
+  "estrenos": [
+   "fondo himalaya",
+   "ollaTank",
+   "ollaScale",
+   "ollaO2",
+   "ollaMap",
+   "ollaCta"
+  ],
+  "pregunta": "¿Dónde hacemos la próxima sentadilla? 👇",
+  "pregunta_tipo": "absurda",
+  "prueba_hora": "18:30"
  }
 ]
