@@ -1,0 +1,84 @@
+{
+ "id": "2026-11-19-femoral",
+ "publish": "2026-11-19T14:00:00",
+ "ref": "vídeos de «curl femoral sentado vs tumbado» del nicho; Maeo 2021",
+ "scenes": [
+  {
+   "say": "Estás haciendo el curl femoral en la máquina equivocada.",
+   "sub": "Estás haciendo el *curl femoral* en la *máquina equivocada*.",
+   "kind": "xray",
+   "mark": "hams",
+   "title": "CURL *FEMORAL*",
+   "titleSize": 120,
+   "label": "FEMORAL",
+   "trans": "punch"
+  },
+  {
+   "say": "Sentado o tumbado. No crecen igual.",
+   "sub": "*Sentado* o *tumbado*. No crecen igual.",
+   "kind": "split",
+   "a": {
+    "label": "TUMBADO"
+   },
+   "b": {
+    "label": "SENTADO"
+   },
+   "bdelay": 0.8,
+   "verdict": 1.8,
+   "size": 70,
+   "trans": "left"
+  },
+  {
+   "say": "Doce semanas: sentado, un catorce por ciento más. Tumbado, solo un nueve.",
+   "sub": "12 semanas: *sentado*, un *14%* más. Tumbado, solo un *9%*.",
+   "kind": "bars",
+   "caption": "FEMORAL EN 12 SEMANAS",
+   "items": [
+    {
+     "label": "SENTADO",
+     "value": 14,
+     "top": "+14%",
+     "coral": true,
+     "at": 0.7
+    },
+    {
+     "label": "TUMBADO",
+     "value": 9,
+     "top": "+9%",
+     "at": 3.2
+    }
+   ]
+  },
+  {
+   "say": "¿Por qué? Sentado, el femoral trabaja estirado.",
+   "sub": "¿Por qué? Sentado, el femoral trabaja *estirado*.",
+   "kind": "invert",
+   "lines": [
+    "SENTADO =",
+    "*FEMORAL ESTIRADO*"
+   ],
+   "size": 120,
+   "step": 0.5,
+   "trans": "punch"
+  },
+  {
+   "say": "Y estirado es donde más crece.",
+   "sub": "Y *estirado* es donde *más crece*.",
+   "kind": "toni",
+   "action": "think",
+   "o": {},
+   "bg": "gym3",
+   "title": "ESTIRADO = *MÁS MÚSCULO*",
+   "titleSize": 92
+  },
+  {
+   "say": "Pásaselo al que solo usa la tumbada.",
+   "sub": "*Pásaselo* al que solo usa la *tumbada*.",
+   "kind": "cta",
+   "l1": "PÁSASELO",
+   "l2": "AL QUE SOLO USA LA TUMBADA",
+   "size1": 150,
+   "size2": 66
+  }
+ ]
+}

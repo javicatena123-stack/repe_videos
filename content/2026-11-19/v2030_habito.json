@@ -1,0 +1,86 @@
+{
+ "id": "2026-11-19-habito",
+ "publish": "2026-11-19T20:30:00",
+ "ref": "tendencia «21 días para crear un hábito» en reels de motivación; Lally 2010",
+ "scenes": [
+  {
+   "say": "Los veintiún días para crear un hábito son mentira.",
+   "sub": "Los *21 días* para crear un hábito son *mentira*.",
+   "kind": "stamp",
+   "text": "MENTIRA",
+   "size": 170,
+   "icon": "calendar",
+   "bg": "speedlines",
+   "trans": "punch"
+  },
+  {
+   "say": "Noventa y seis personas: sesenta y seis días de media.",
+   "sub": "*96 personas*: *66 días* de media.",
+   "kind": "num",
+   "icon": "crowd",
+   "label": "DÍAS DE MEDIA",
+   "value": 66,
+   "unit": "días"
+  },
+  {
+   "say": "Y a algunos les costó más de ocho meses.",
+   "sub": "Y a algunos les costó más de *ocho meses*.",
+   "kind": "timeline",
+   "max": 260,
+   "ticks": [
+    0,
+    66,
+    254
+   ],
+   "marks": [
+    {
+     "from": 18,
+     "to": 254,
+     "label": "DE 18 A 254 DÍAS",
+     "up": true,
+     "coral": true,
+     "at": 0.3
+    }
+   ],
+   "tlabels": [
+    "DÍA 0",
+    "66",
+    "254"
+   ]
+  },
+  {
+   "say": "Lo bueno: saltarte un día no lo estropea.",
+   "sub": "Lo bueno: saltarte *un día* no lo *estropea*.",
+   "kind": "head",
+   "lines": [
+    "¿TE SALTAS UN DÍA?",
+    "NO PASA NADA"
+   ],
+   "coral": [
+    1
+   ],
+   "size": 110,
+   "icon": "check",
+   "iconSize": 220
+  },
+  {
+   "say": "Así que sigue yendo, aunque no te apetezca.",
+   "sub": "Así que *sigue yendo*, aunque no te apetezca.",
+   "kind": "toni",
+   "action": "hips",
+   "o": {},
+   "bg": "gym",
+   "title": "*SIGUE* YENDO",
+   "titleSize": 120
+  },
+  {
+   "say": "Pásaselo al que lo dejó en la semana tres.",
+   "sub": "*Pásaselo* al que lo dejó en la *semana tres*.",
+   "kind": "cta",
+   "l1": "PÁSASELO",
+   "l2": "AL QUE LO DEJÓ EN LA SEMANA 3",
+   "size1": 150,
+   "size2": 64
+  }
+ ]
+}

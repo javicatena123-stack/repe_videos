@@ -1,0 +1,86 @@
+{
+ "id": "2026-11-20-tendones",
+ "publish": "2026-11-20T07:30:00",
+ "ref": "banco de ideas: «¿fortalece los ligamentos?» (Inbox, 14 nov)",
+ "scenes": [
+  {
+   "say": "Me preguntáis si las pesas fortalecen los ligamentos.",
+   "sub": "Me preguntáis si las pesas fortalecen los *ligamentos*.",
+   "kind": "toni",
+   "action": "talk",
+   "o": {},
+   "bg": "gym2",
+   "title": "¿Y LOS *LIGAMENTOS*?",
+   "titleSize": 110,
+   "trans": "punch"
+  },
+  {
+   "say": "De ligamentos hay pocos estudios. De tendones, veintisiete.",
+   "sub": "De ligamentos hay *pocos estudios*. De tendones, *27*.",
+   "kind": "paper",
+   "title": "ESTUDIO",
+   "source": "Bohm y cols. · Sports Med Open",
+   "stamp": "2015",
+   "stampAt": 0.4,
+   "rows": [
+    {
+     "v": "27",
+     "l": "estudios de tendones",
+     "at": 1.6
+    }
+   ]
+  },
+  {
+   "say": "Con peso, el tendón se vuelve más rígido y aguanta más.",
+   "sub": "Con peso, el tendón se vuelve *más rígido* y *aguanta más*.",
+   "kind": "head",
+   "lines": [
+    "TENDÓN",
+    "MÁS FUERTE"
+   ],
+   "coral": [
+    1
+   ],
+   "size": 140,
+   "icon": "fibers",
+   "iconp": {
+    "mode": "repair"
+   },
+   "iconSize": 240
+  },
+  {
+   "say": "Pero sobre todo con cargas pesadas.",
+   "sub": "Pero sobre todo con *cargas pesadas*.",
+   "kind": "split",
+   "a": {
+    "label": "PESO DE JUGUETE"
+   },
+   "b": {
+    "label": "CARGA PESADA"
+   },
+   "bdelay": 0.6,
+   "verdict": 1.4,
+   "size": 60,
+   "trans": "left"
+  },
+  {
+   "say": "Y tarda más que el músculo: dale meses.",
+   "sub": "Y tarda más que el músculo: *dale meses*.",
+   "kind": "toni",
+   "action": "deadlift",
+   "o": {},
+   "bg": "gym3",
+   "title": "PACIENCIA: *MESES*",
+   "titleSize": 110
+  },
+  {
+   "say": "Gracias por la pregunta. Deja la tuya.",
+   "sub": "Gracias por la pregunta. *Deja la tuya*.",
+   "kind": "cta",
+   "l1": "DEJA LA TUYA",
+   "l2": "VA AL PRÓXIMO VÍDEO",
+   "size1": 140,
+   "size2": 66
+  }
+ ]
+}
