@@ -1034,5 +1034,109 @@
   "pregunta": "¿Dónde hacemos la próxima sentadilla? 👇",
   "pregunta_tipo": "absurda",
   "prueba_hora": "18:30"
+ },
+ {
+  "fecha": "2026-11-19",
+  "hora": "14:00",
+  "tipo": "video (tendencia viral)",
+  "tema": "Curl femoral sentado hace crecer más que tumbado (Maeo y cols. 2021: 20 personas, 12 semanas, +14 % vs +9 %)",
+  "titulo": "Estás haciendo el curl femoral en la máquina equivocada",
+  "url": "https://raw.githubusercontent.com/javicatena123-stack/repe_videos/main/videos/2026-11-19-femoral.mp4",
+  "metricool": {
+   "instagram": 433923209,
+   "tiktok": 433923248,
+   "youtube": 433923299,
+   "threads": 433923312,
+   "facebook": 433923368
+  },
+  "modelo_voz": "gemini-3.8-flash-tts/Achird",
+  "acento": "ES",
+  "ref": "vídeos de «curl femoral sentado vs tumbado» del nicho",
+  "categoria": "técnica / pierna",
+  "formato": "haz esto, no aquello",
+  "gancho_tipo": "acusación directa",
+  "duracion_s": 19.13,
+  "visuales": [
+   "xray hams",
+   "split",
+   "bars",
+   "invert",
+   "toni think (bg gym3)",
+   "cta"
+  ],
+  "estrenos": [
+   "Toni think (2º uso)"
+  ],
+  "pregunta": "¿Curl femoral sentado o tumbado? 👇",
+  "pregunta_tipo": "eleccion"
+ },
+ {
+  "fecha": "2026-11-19",
+  "hora": "20:30",
+  "tipo": "video (tendencia viral)",
+  "tema": "Crear un hábito cuesta 66 días de media, no 21 (Lally y cols. 2010: 96 personas, 18-254 días)",
+  "titulo": "Los 21 días para crear un hábito son mentira",
+  "url": "https://raw.githubusercontent.com/javicatena123-stack/repe_videos/main/videos/2026-11-19-habito.mp4",
+  "metricool": {
+   "instagram": 433923443,
+   "tiktok": 433923484,
+   "youtube": 433923531,
+   "threads": 433923576,
+   "facebook": 433923623
+  },
+  "modelo_voz": "gemini-3.8-flash-tts/Achird",
+  "acento": "ES",
+  "ref": "tendencia «21 días para crear un hábito» en reels de motivación",
+  "categoria": "cultura gym / motivación",
+  "formato": "mito vs realidad",
+  "gancho_tipo": "contradicción",
+  "duracion_s": 16.67,
+  "visuales": [
+   "stamp MENTIRA (calendar, bg speedlines)",
+   "num(crowd)",
+   "timeline",
+   "head (check)",
+   "toni hips (bg gym)",
+   "cta"
+  ],
+  "estrenos": [
+   "timeline con tlabels"
+  ],
+  "pregunta": "¿Cuántas semanas seguidas llevas yendo al gym? 💪",
+  "pregunta_tipo": "habito",
+  "prueba_hora": "20:30"
+ },
+ {
+  "fecha": "2026-11-20",
+  "hora": "07:30",
+  "tipo": "video (respuesta a seguidores)",
+  "tema": "¿Las pesas fortalecen ligamentos? De tendones sí: más rígidos con cargas altas (Bohm y cols. 2015: 27 estudios, 264 personas)",
+  "titulo": "Me preguntáis si las pesas fortalecen los ligamentos",
+  "url": "https://raw.githubusercontent.com/javicatena123-stack/repe_videos/main/videos/2026-11-20-tendones.mp4",
+  "metricool": {
+   "instagram": 433940942,
+   "tiktok": 433940994,
+   "youtube": 433941056,
+   "threads": 433941082,
+   "facebook": 433941148
+  },
+  "modelo_voz": "gemini-3.8-flash-tts/Achird",
+  "acento": "ES",
+  "ref": "banco de ideas: @Ciclotonina (Inbox, 14 nov)",
+  "categoria": "salud / lesiones",
+  "formato": "respuesta",
+  "gancho_tipo": "lo que dicen los seguidores",
+  "duracion_s": 17.27,
+  "visuales": [
+   "toni talk (bg gym2)",
+   "paper",
+   "head (fibers repair)",
+   "split",
+   "toni deadlift (bg gym3)",
+   "cta"
+  ],
+  "estrenos": [],
+  "pregunta": "¿Qué duda queréis que respondamos en el próximo vídeo? 👇",
+  "pregunta_tipo": "siguiente"
  }
 ]
