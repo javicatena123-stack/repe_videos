@@ -26,7 +26,7 @@
     {
      "v": "27",
      "l": "estudios de tendones",
-     "at": 1.6
+     "at": 1.8
     }
    ]
   },
@@ -44,7 +44,7 @@
    "size": 140,
    "icon": "fibers",
    "iconp": {
-    "mode": "repair"
+    "repair": true
    },
    "iconSize": 240
   },
@@ -58,8 +58,8 @@
    "b": {
     "label": "CARGA PESADA"
    },
-   "bdelay": 0.6,
-   "verdict": 1.4,
+   "bdelay": 0.5,
+   "verdict": 1.1,
    "size": 60,
    "trans": "left"
   },

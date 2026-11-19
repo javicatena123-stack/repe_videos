@@ -1261,4 +1261,69 @@ KINDS.ollaMap=(p)=>{const upT=KINDS.ollaTank(Object.assign({},p,{title:undefined
 /* CTA de comentario con «NO LO HAGAS» */
 KINDS.ollaCta=(p)=>{const up=KINDS.cta(p);const w=el(`<div class="anton" style="font-size:54px;color:#fff;opacity:.85;letter-spacing:4px;text-align:center;width:1080px">⚠ NO LO HAGAS ⚠</div>`,"left:0;top:760px;width:1080px");
   return (t,D)=>{up(t,D);w.style.opacity=(.85*clamp((t-.3)/.3)).toFixed(2);};};
+/* ================================================================ IDAS DE OLLA
+   Épica 2 · «Flexiones en el ala de un vuelo Barcelona-Múnich» (19 nov 2026)
+   bg "sky" · kinds: ollaWing (con opciones wind, shoe, thermo, frost, sign, belt)
+   Avión genérico: blanco con detalles coral, sin aerolínea, sin logos; vuela tranquilo y Toni nunca se cae. */
+BGS.sky=()=>{const cl=(x,y,s,o)=>`<g transform="translate(${x} ${y}) scale(${s})" opacity="${o}"><circle cx="-60" cy="10" r="46" fill="#fff"/><circle cx="0" cy="-12" r="62" fill="#fff"/><circle cx="66" cy="8" r="48" fill="#fff"/><rect x="-106" y="10" width="220" height="46" rx="23" fill="#fff"/></g>`;
+  const fast=[...Array(9)].map((_,i)=>`<g data-cl="${i}">${cl(0,0,.7+(i%3)*.35,(.55+(i%4)*.1).toFixed(2))}</g>`).join("");
+  return {far:`<defs><linearGradient id="skyg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2f7fd0"/><stop offset=".7" stop-color="#7cbcf0"/><stop offset="1" stop-color="#cfe7fb"/></linearGradient></defs>
+     ${bR(-60,-60,1200,BGHZ+160,"url(#skyg)")}${bC(880,200,70,"#fff6d6",'opacity=".95"')}${bC(880,200,110,"#fff6d6",'opacity=".25"')}`,
+   mid:`${cl(160,520,1.1,.8)}${cl(620,600,1.4,.75)}${cl(980,480,.9,.8)}`,
+   near:`<g data-a="cloudfx">${fast}</g>`,
+   floor:`<path d="M-60 ${BGHZ-40} H1140 V1980 H-60 Z" fill="#eef5fc"/>${[...Array(12)].map((_,k)=>`<g data-cf="${k}">${bC(0,0,70+(k%4)*22,"#fff")}</g>`).join("")}`};};
+{const _fr3=window.frame;window.frame=(t,D)=>{const r=_fr3(t,D);if(BGL.cur==="sky"&&BGL.svg){const gt=START+t;
+   BGL.svg.querySelectorAll('[data-cl]').forEach(g=>{const i=+g.dataset.cl,sp=.8+(i%4)*.35;const x=((((i*251)%1400)-gt*1500*sp)%1500+1500)%1500-200,y=200+(i*173)%700;g.setAttribute("transform",`translate(${x.toFixed(1)} ${y})`);});
+   BGL.svg.querySelectorAll('[data-cf]').forEach(g=>{const k=+g.dataset.cf;const x=((((k*137)%1300)-gt*700)%1400+1400)%1400-150,y=BGHZ-30+(k%3)*40;g.setAttribute("transform",`translate(${x.toFixed(1)} ${y})`);});}
+  return r;};}
+/* ala genérica (origen en el punto donde se apoya Toni), con motor, winglet y luz */
+function olWing(){return `<g>
+   <g data-r="fus"><rect x="-1100" y="-330" width="540" height="420" rx="160" fill="#f6f7fa" stroke="${OL_INK}" stroke-width="8"/>
+    <rect x="-1100" y="-40" width="530" height="16" fill="${CORAL}" opacity=".9"/>
+    ${[...Array(3)].map((_,i)=>`<g transform="translate(${-880+i*110} -170)"><rect x="-34" y="-46" width="68" height="92" rx="30" fill="#9cc6ea" stroke="${OL_INK}" stroke-width="6"/><g data-px="${i}"><circle cx="0" cy="6" r="18" fill="#3b3742"/><rect x="-24" y="22" width="48" height="30" rx="12" fill="#3b3742"/></g></g>`).join("")}</g>
+   <path d="M-700 -10 L430 -52 Q470 -50 470 -34 L440 -18 L-700 80 Z" fill="#f3f4f7" stroke="${OL_INK}" stroke-width="8" stroke-linejoin="round"/>
+   <path d="M-690 30 L440 -30" stroke="${CORAL}" stroke-width="10" opacity=".85"/>
+   <path d="M430 -52 L462 -150 Q470 -160 482 -150 L470 -36 Z" fill="#f3f4f7" stroke="${OL_INK}" stroke-width="7" stroke-linejoin="round"/>
+   <circle data-r="nav" cx="472" cy="-148" r="10" fill="${CORAL}"/>
+   <g transform="translate(-170 70)"><rect x="-150" y="0" width="230" height="96" rx="46" fill="#e9ebf0" stroke="${OL_INK}" stroke-width="8"/>
+    <rect x="-40" y="-14" width="30" height="24" fill="#d5d8df" stroke="${OL_INK}" stroke-width="6"/>
+    <ellipse cx="80" cy="48" rx="20" ry="46" fill="#3b3742" stroke="${OL_INK}" stroke-width="7"/><g data-r="fan" transform="translate(80 48)"><path d="M0 -40 L0 40 M-16 -30 L16 30 M16 -30 L-16 30" stroke="#8d8794" stroke-width="7"/></g>
+    <rect x="-130" y="38" width="120" height="12" rx="6" fill="${CORAL}" opacity=".8"/></g></g>`;}
+const OL_SHOE=`<g><path d="M-40 0 L-40 -26 Q-40 -40 -24 -40 L6 -40 Q20 -22 44 -16 Q60 -12 60 0 Z" fill="#fff" stroke="${OL_INK}" stroke-width="6"/><path d="M-40 0 H60" stroke="${CORAL}" stroke-width="8"/></g>`;
+KINDS.ollaWing=(p)=>{const T=window.RepeToni;const S=p.scale||.82,tx=p.tx??640,ty=p.ty??(p.title?660:640),WX=p.wx??130;const o=Object.assign({period:p.period||1.6},p.o||{});
+  const back=el(`<svg width="1080" height="1100" viewBox="0 0 1080 1100" overflow="visible"><g data-r="wg" transform="translate(${tx+WX} ${ty+6})">${olWing()}</g></svg>`,"left:0;top:0;width:1080px;height:1100px;pointer-events:none");
+  const up=KINDS.toni(Object.assign({},p,{action:"pushup",o,scale:S,ty,tx,seq:undefined}));
+  const sign=p.sign?`<g data-r="sg" transform="translate(830 250)"><rect x="-120" y="-80" width="240" height="160" rx="26" fill="#2a2730" stroke="#fff" stroke-width="8"/>
+     <g data-r="sgi" fill="#8d8794"><circle cx="0" cy="-30" r="16"/><path d="M-26 -8 H26 L18 40 H-18 Z"/><path d="M-46 8 H46" stroke="#8d8794" stroke-width="10"/></g>
+     <text data-r="ding" x="0" y="-110" text-anchor="middle" font-family="Anton" font-size="70" fill="#fff" opacity="0">DING!</text></g>`:"";
+  const th=p.thermo?`<g data-r="th" transform="translate(900 200)"><rect x="-34" y="0" width="68" height="420" rx="34" fill="#fff" stroke="${OL_INK}" stroke-width="8"/><circle cx="0" cy="440" r="56" fill="#fff" stroke="${OL_INK}" stroke-width="8"/>
+     <rect data-r="thf" x="-16" y="30" width="32" height="400" rx="16" fill="${CORAL}"/><circle data-r="thb" cx="0" cy="440" r="40" fill="${CORAL}"/>
+     <text data-r="tht" x="-80" y="250" text-anchor="end" font-family="Anton" font-size="96" fill="#fff" stroke="${OL_INK}" stroke-width="3">15 °C</text></g>`:"";
+  const front=el(`<svg width="1080" height="1100" viewBox="0 0 1080 1100" overflow="visible">
+     <g data-r="wl">${p.wind?[...Array(14)].map((_,i)=>`<path data-l="${i}" d="M0 0 H${160+(i%4)*90}" stroke="#fff" stroke-width="${5+(i%3)*3}" stroke-linecap="round" opacity=".75"/>`).join(""):""}</g>
+     <defs><linearGradient id="frg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#bfe3ff" stop-opacity="1"/><stop offset=".8" stop-color="#bfe3ff" stop-opacity=".8"/><stop offset="1" stop-color="#bfe3ff" stop-opacity="0"/></linearGradient></defs><rect data-r="fr" x="-60" y="-60" width="1200" height="1000" fill="url(#frg)" opacity="0"/>
+     <g data-r="ic" opacity="0" fill="#e8f6ff" stroke="#9cc6ea" stroke-width="3">${[...Array(7)].map((_,i)=>`<path d="M${-6+i*14} 0 L${i*14} ${26+(i%3)*14} L${6+i*14} 0 Z"/>`).join("")}</g>
+     <g data-r="bt" opacity="0"><path data-r="btp" d="" stroke="#3b3742" stroke-width="22" fill="none" stroke-linecap="round"/><rect data-r="btb" x="-24" y="-16" width="48" height="32" rx="6" fill="#c9ccd4" stroke="${OL_INK}" stroke-width="5"/></g>
+     <g data-r="sh" opacity="0">${OL_SHOE}</g>${sign}${th}</svg>`,"left:0;top:0;width:1080px;height:1100px;pointer-events:none");
+  const q=s=>front.querySelector(`[data-r=${s}]`);const wg=back.querySelector('[data-r=wg]'),fan=back.querySelector('[data-r=fan]'),nav=back.querySelector('[data-r=nav]'),pxs=[...back.querySelectorAll('[data-px]')];
+  const ls=[...front.querySelectorAll('[data-l]')],fr=q("fr"),ic=q("ic"),bt=q("bt"),btp=q("btp"),btb=q("btb"),sh=q("sh");
+  const LEAD=p.lead??0;
+  return (t,D)=>{t=t+LEAD;up(t,D);const gust=(p.gust??.15);const gk=t>gust?Math.exp(-(t-gust)*3)*Math.sin((t-gust)*40):0;
+    const vib=2.2*Math.sin(t*53)+1.4*Math.sin(t*37)+gk*14;wg.setAttribute("transform",`translate(${tx+WX} ${(ty+6+vib).toFixed(1)})`);
+    fan.setAttribute("transform",`translate(80 48) scale(1 ${Math.cos(t*60).toFixed(2)})`);nav.setAttribute("opacity",(Math.sin(t*9)>0?1:.25));
+    ls.forEach((l,i)=>{const sp=1900+(i%5)*420;const x=((((i*311)%1400)-t*sp)%1500+1500)%1500-250,y=120+(i*97)%760;l.setAttribute("transform",`translate(${x.toFixed(0)} ${y})`);});
+    const ps=T.pose("pushup",t,o);const W=(id,pt)=>{const a=T.worldPoint("side",ps,id,pt||[0,0]);return [tx+a[0]*S,ty+a[1]*S];};
+    if(p.look){pxs.forEach((g,i)=>{const k=clamp((t-(p.lookAt??.3)-i*.12)/.25);g.setAttribute("transform",`translate(${(14*k).toFixed(1)} 0)`);});}
+    if(p.shoe){const s0=p.shoeAt??.9,k=clamp((t-s0)/1.1);const A=W("ankleNear",[0,10]);
+      sh.setAttribute("opacity",t<s0+1.1?1:0);sh.setAttribute("transform",`translate(${(A[0]-k*900).toFixed(1)} ${(A[1]-k*520+k*k*180).toFixed(1)}) rotate(${(-k*720).toFixed(0)}) scale(${(S*(1-.4*k)).toFixed(2)})`);}
+    if(p.thermo){const a=p.thermo.at??.3,d=p.thermo.dur??1.4,f=p.thermo.from??15,to=p.thermo.to??-56;const k=easeOut((t-a)/d);const v=f+(to-f)*k;
+      const h=400*(.15+.85*(1-k));q("thf").setAttribute("y",(430-h).toFixed(1));q("thf").setAttribute("height",h.toFixed(1));
+      const col=v<0?"#5fb3f5":CORAL;q("thf").setAttribute("fill",col);q("thb").setAttribute("fill",col);q("tht").textContent=Math.round(v)+" °C";
+      fr.setAttribute("opacity",(.28*k).toFixed(2));const H=W("head",[18,48]);ic.setAttribute("opacity",clamp((t-a-d*.6)/.3).toFixed(2));ic.setAttribute("transform",`translate(${(H[0]-44).toFixed(1)} ${H[1].toFixed(1)})`);
+      front.style.transform=t>a?`translate(${(2*Math.sin(t*61)).toFixed(1)}px,0)`:"";}
+    if(p.sign){const a=p.signAt??.5;const on=t>a;q("sgi").setAttribute("fill",on?CORAL:"#8d8794");q("sgi").querySelector("path:last-child").setAttribute("stroke",on?CORAL:"#8d8794");
+      q("ding").setAttribute("opacity",clamp((t-a)/.1)*clamp(1-(t-a-.9)/.3));q("ding").setAttribute("transform",`scale(${pop(t,a,.3).toFixed(3)})`);q("sg").setAttribute("transform",`translate(830 250) scale(${(1+.08*Math.exp(-(t-a)*6)*(on?1:0)).toFixed(3)})`);}
+    if(p.belt){const a=p.beltAt??1.2,k=easeOut((t-a)/.5);const P=W("pelvis",[0,0]);const gx=P[0],gy=ty+10;
+      bt.setAttribute("opacity",t>a?1:0);btp.setAttribute("d",`M${gx-90} ${gy} Q${gx-60} ${P[1]-40*k} ${gx} ${P[1]-20} Q${gx+60} ${P[1]-40*k} ${gx+90} ${gy}`);
+      btb.setAttribute("transform",`translate(${gx.toFixed(1)} ${(P[1]-20).toFixed(1)}) scale(${pop(t,a+.3,.3).toFixed(3)})`);}};};
 </script></body></html>

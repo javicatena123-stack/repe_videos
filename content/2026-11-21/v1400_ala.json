@@ -1,0 +1,79 @@
+{
+ "id": "2026-11-21-ala",
+ "publish": "2026-11-21T14:00:00",
+ "formato": "ida de olla",
+ "variante": "epica",
+ "ref": "ritmo de humor absurdo de gym; premisa de Javier (14 nov)",
+ "direction_extra": "Tono de documental serio, solemne y muy seguro, como un experto explicando algo importantísimo. Haz un silencio de medio segundo antes de «Pero lo peor».\n",
+ "scenes": [
+  {
+   "say": "Por qué no deberías hacer flexiones en el ala de un vuelo Barcelona-Múnich.",
+   "sub": "Por qué no deberías hacer *flexiones* en el *ala* de un vuelo *Barcelona-Múnich*.",
+   "kind": "ollaWing",
+   "bg": "sky",
+   "title": "FLEXIONES EN EL ALA · *11.000 M*",
+   "titleSize": 68,
+   "wind": true,
+   "lead": 0.6,
+   "gust": 0.1,
+   "trans": "punch"
+  },
+  {
+   "say": "Primero: vas a ochocientos kilómetros por hora. Adiós, zapatilla.",
+   "sub": "Primero: vas a *800 km/h*. Adiós, *zapatilla*.",
+   "kind": "ollaWing",
+   "bg": "sky",
+   "title": "*800* KM/H",
+   "titleSize": 130,
+   "wind": true,
+   "shoe": true,
+   "shoeAt": 1.6
+  },
+  {
+   "say": "Segundo: ahí fuera hace cincuenta y seis grados bajo cero.",
+   "sub": "Segundo: ahí fuera hace *56 grados bajo cero*.",
+   "kind": "ollaWing",
+   "bg": "sky",
+   "title": "A 11.000 M: *−56 °C*",
+   "titleSize": 100,
+   "thermo": {
+    "from": 15,
+    "to": -56,
+    "at": 0.6,
+    "dur": 1.4
+   }
+  },
+  {
+   "say": "Tercero: la luz del cinturón está encendida.",
+   "sub": "Tercero: la luz del *cinturón* está *encendida*.",
+   "kind": "ollaWing",
+   "bg": "sky",
+   "title": "SEÑAL DEL *CINTURÓN*",
+   "titleSize": 100,
+   "sign": true,
+   "signAt": 0.9,
+   "belt": true,
+   "beltAt": 1.6,
+   "look": true,
+   "lookAt": 1.0
+  },
+  {
+   "say": "Pero lo peor: otra vez sin pierna.",
+   "sub": "Pero lo peor: otra vez *sin pierna*.",
+   "kind": "stamp",
+   "text": "PIERNA: 0",
+   "size": 160,
+   "bg": "speedlines",
+   "trans": "punch"
+  },
+  {
+   "say": "¿Dónde no harías flexiones tú? Te leo.",
+   "sub": "¿Dónde no harías flexiones tú? *Te leo*.",
+   "kind": "ollaCta",
+   "l1": "TE LEO",
+   "l2": "¿DÓNDE NO HARÍAS FLEXIONES?",
+   "size1": 150,
+   "size2": 62
+  }
+ ]
+}
