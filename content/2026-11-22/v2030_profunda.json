@@ -1,0 +1,83 @@
+{
+ "id": "2026-11-22-profunda",
+ "publish": "2026-11-22T20:30:00",
+ "ref": "mito «la sentadilla profunda destroza las rodillas» del nicho; Hartmann 2013",
+ "scenes": [
+  {
+   "say": "La sentadilla profunda no te destroza las rodillas.",
+   "sub": "La sentadilla *profunda* no te *destroza las rodillas*.",
+   "kind": "toni",
+   "action": "squat",
+   "o": {},
+   "bg": "gym2",
+   "title": "¿PROFUNDA = *RODILLAS ROTAS*?",
+   "titleSize": 76,
+   "trans": "punch"
+  },
+  {
+   "say": "Una revisión de más de ciento sesenta estudios lo ha mirado.",
+   "sub": "Una revisión de más de *160 estudios* lo ha mirado.",
+   "kind": "paper",
+   "title": "REVISIÓN",
+   "source": "Hartmann, Wirth y Klusemann · Sports Med",
+   "stamp": "2013",
+   "stampAt": 0.4,
+   "rows": [
+    {
+     "v": "+160",
+     "l": "estudios revisados",
+     "at": 1.4
+    }
+   ]
+  },
+  {
+   "say": "Al bajar del todo, la carga se reparte mejor.",
+   "sub": "Al bajar del todo, la carga se *reparte mejor*.",
+   "kind": "head",
+   "lines": [
+    "MÁS ABAJO",
+    "MEJOR REPARTO"
+   ],
+   "coral": [
+    1
+   ],
+   "size": 130,
+   "icon": "legs",
+   "iconSize": 230
+  },
+  {
+   "say": "El problema es meter mucho peso con media sentadilla.",
+   "sub": "El problema es meter *mucho peso* con *media sentadilla*.",
+   "kind": "split",
+   "a": {
+    "label": "MEDIA + PESAZO"
+   },
+   "b": {
+    "label": "PROFUNDA BIEN HECHA"
+   },
+   "bdelay": 1.0,
+   "verdict": 2.2,
+   "size": 56,
+   "trans": "left"
+  },
+  {
+   "say": "Baja con técnica y sin miedo.",
+   "sub": "Baja con *técnica* y *sin miedo*.",
+   "kind": "toni",
+   "action": "flexDouble",
+   "o": {},
+   "bg": "gym3",
+   "title": "*SIN* MIEDO",
+   "titleSize": 120
+  },
+  {
+   "say": "Pásaselo al que no pasa de la mitad.",
+   "sub": "*Pásaselo* al que no pasa de la *mitad*.",
+   "kind": "cta",
+   "l1": "PÁSASELO",
+   "l2": "AL QUE NO PASA DE LA MITAD",
+   "size1": 150,
+   "size2": 66
+  }
+ ]
+}
