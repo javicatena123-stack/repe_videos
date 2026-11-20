@@ -1,0 +1,80 @@
+{
+ "id": "2026-11-21-sueno",
+ "publish": "2026-11-21T20:30:00",
+ "ref": "tendencia «dormir para crecer» en reels de fitness; Lamon 2021",
+ "scenes": [
+  {
+   "say": "Una noche sin dormir y tu músculo construye un dieciocho por ciento menos.",
+   "sub": "Una noche *sin dormir* y tu músculo construye un *18% menos*.",
+   "kind": "toni",
+   "action": "sleepy",
+   "o": {},
+   "bg": "bedroom2",
+   "title": "*−18%*",
+   "titleSize": 130,
+   "trans": "punch"
+  },
+  {
+   "say": "Trece personas, una noche en vela.",
+   "sub": "*13 personas*, una noche *en vela*.",
+   "kind": "clock",
+   "hours": 24,
+   "full": 24,
+   "text": "24 H",
+   "label": "SIN DORMIR"
+  },
+  {
+   "say": "Al día siguiente: menos síntesis de músculo y más cortisol.",
+   "sub": "Al día siguiente: *menos músculo* y *más cortisol*.",
+   "kind": "bars",
+   "caption": "AL DÍA SIGUIENTE",
+   "items": [
+    {
+     "label": "SÍNTESIS",
+     "value": 18,
+     "top": "−18%",
+     "coral": true,
+     "at": 0.9
+    },
+    {
+     "label": "CORTISOL",
+     "value": 21,
+     "top": "+21%",
+     "at": 2.2
+    }
+   ]
+  },
+  {
+   "say": "El gym rompe. Dormir es lo que construye.",
+   "sub": "El gym *rompe*. *Dormir* es lo que *construye*.",
+   "kind": "head",
+   "lines": [
+    "EL GYM ROMPE",
+    "DORMIR CONSTRUYE"
+   ],
+   "coral": [
+    1
+   ],
+   "size": 110,
+   "icon": "moon",
+   "iconSize": 220
+  },
+  {
+   "say": "Tu mejor suplemento es la almohada.",
+   "sub": "Tu mejor *suplemento* es la *almohada*.",
+   "kind": "stamp",
+   "text": "ALMOHADA",
+   "size": 160,
+   "bg": "speedlines"
+  },
+  {
+   "say": "Pásaselo al que entrena con cinco horas de sueño.",
+   "sub": "*Pásaselo* al que entrena con *cinco horas* de sueño.",
+   "kind": "cta",
+   "l1": "PÁSASELO",
+   "l2": "AL QUE DUERME 5 HORAS",
+   "size1": 150,
+   "size2": 70
+  }
+ ]
+}

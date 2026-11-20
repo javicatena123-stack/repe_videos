@@ -1,0 +1,78 @@
+{
+ "id": "2026-11-20-gritar",
+ "publish": "2026-11-20T20:30:00",
+ "ref": "humor de «el que grita en el gym» (reels de cultura gym); Welch y Tschampl",
+ "scenes": [
+  {
+   "say": "El que grita en el gym tiene razón.",
+   "sub": "El que *grita* en el gym *tiene razón*.",
+   "kind": "toni",
+   "action": "shock",
+   "o": {},
+   "bg": "gym",
+   "title": "¡AAAAH!",
+   "titleSize": 150,
+   "trans": "punch"
+  },
+  {
+   "say": "Cincuenta personas apretando un dinamómetro.",
+   "sub": "*50 personas* apretando un dinamómetro.",
+   "kind": "num",
+   "icon": "crowd",
+   "label": "PERSONAS",
+   "value": 50,
+   "unit": ""
+  },
+  {
+   "say": "Con un grito, un ocho por ciento más de fuerza.",
+   "sub": "Con un grito, un *8% más* de fuerza.",
+   "kind": "bars",
+   "caption": "FUERZA DE AGARRE",
+   "items": [
+    {
+     "label": "EN SILENCIO",
+     "value": 100,
+     "top": "100",
+     "at": 0.3
+    },
+    {
+     "label": "CON GRITO",
+     "value": 108,
+     "top": "+8%",
+     "coral": true,
+     "at": 1.2
+    }
+   ]
+  },
+  {
+   "say": "El grito quita el freno que pone tu cerebro.",
+   "sub": "El grito quita el *freno* que pone tu *cerebro*.",
+   "kind": "invert",
+   "lines": [
+    "EL GRITO",
+    "*QUITA EL FRENO*"
+   ],
+   "size": 130,
+   "step": 0.45
+  },
+  {
+   "say": "Eso sí: uno corto, no un concierto.",
+   "sub": "Eso sí: *uno corto*, no un concierto.",
+   "kind": "toni",
+   "action": "laugh",
+   "o": {},
+   "bg": "spotlight",
+   "title": "*UNO* CORTO",
+   "titleSize": 120
+  },
+  {
+   "say": "Pásaselo al que grita en cada serie.",
+   "sub": "*Pásaselo* al que *grita* en cada serie.",
+   "kind": "cta",
+   "l1": "PÁSASELO",
+   "l2": "AL QUE GRITA EN CADA SERIE",
+   "size1": 150,
+   "size2": 66
+  }
+ ]
+}

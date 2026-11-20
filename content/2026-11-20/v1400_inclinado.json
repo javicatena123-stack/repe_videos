@@ -1,0 +1,73 @@
+{
+ "id": "2026-11-20-inclinado",
+ "publish": "2026-11-20T14:00:00",
+ "ref": "vídeos de «press inclinado vs plano» del nicho; Chaves 2020",
+ "scenes": [
+  {
+   "say": "Si solo haces press plano, te dejas la parte de arriba del pecho.",
+   "sub": "Si solo haces *press plano*, te dejas la parte de *arriba del pecho*.",
+   "kind": "toni",
+   "action": "bench",
+   "o": {},
+   "bg": "gym2",
+   "title": "¿SOLO *PRESS PLANO*?",
+   "titleSize": 110,
+   "trans": "punch"
+  },
+  {
+   "say": "Cuarenta y siete chicos, ocho semanas.",
+   "sub": "*47 chicos*, *8 semanas*.",
+   "kind": "num",
+   "icon": "calendar",
+   "label": "CHICOS · 8 SEMANAS",
+   "value": 47,
+   "unit": ""
+  },
+  {
+   "say": "Plano o inclinado: la misma fuerza.",
+   "sub": "Plano o inclinado: la *misma fuerza*.",
+   "kind": "vs",
+   "a": {
+    "icon": "chest",
+    "value": "10",
+    "unit": "kg",
+    "label": "PLANO"
+   },
+   "b": {
+    "icon": "shoulder",
+    "value": "11",
+    "unit": "kg",
+    "label": "INCLINADO"
+   },
+   "bdelay": 0.8
+  },
+  {
+   "say": "Pero arriba del pecho, el inclinado creció casi el doble.",
+   "sub": "Pero arriba del pecho, el *inclinado* creció *casi el doble*.",
+   "kind": "stamp",
+   "text": "×2",
+   "size": 220,
+   "bg": "speedlines",
+   "trans": "punch"
+  },
+  {
+   "say": "Así que mete el inclinado en tu rutina.",
+   "sub": "Así que *mete el inclinado* en tu rutina.",
+   "kind": "toni",
+   "action": "thumbsUp",
+   "o": {},
+   "bg": "gym3",
+   "title": "*INCLINADO* SÍ",
+   "titleSize": 120
+  },
+  {
+   "say": "Pásaselo al que solo hace press plano.",
+   "sub": "*Pásaselo* al que solo hace *press plano*.",
+   "kind": "cta",
+   "l1": "PÁSASELO",
+   "l2": "AL QUE SOLO HACE PLANO",
+   "size1": 150,
+   "size2": 70
+  }
+ ]
+}
