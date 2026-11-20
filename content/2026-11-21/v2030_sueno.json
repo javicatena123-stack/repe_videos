@@ -34,13 +34,13 @@
      "value": 18,
      "top": "−18%",
      "coral": true,
-     "at": 0.9
+     "at": 1.4
     },
     {
      "label": "CORTISOL",
      "value": 21,
      "top": "+21%",
-     "at": 2.2
+     "at": 2.6
     }
    ]
   },
