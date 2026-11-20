@@ -27,7 +27,7 @@
    "titleSize": 130,
    "wind": true,
    "shoe": true,
-   "shoeAt": 1.6
+   "shoeAt": 2.8
   },
   {
    "say": "Segundo: ahí fuera hace cincuenta y seis grados bajo cero.",
@@ -39,8 +39,8 @@
    "thermo": {
     "from": 15,
     "to": -56,
-    "at": 0.6,
-    "dur": 1.4
+    "at": 0.8,
+    "dur": 1.6
    }
   },
   {
@@ -61,8 +61,8 @@
    "say": "Pero lo peor: otra vez sin pierna.",
    "sub": "Pero lo peor: otra vez *sin pierna*.",
    "kind": "stamp",
-   "text": "PIERNA: 0",
-   "size": 160,
+   "text": "PIERNA: 0",
+   "size": 120,
    "bg": "speedlines",
    "trans": "punch"
   },
