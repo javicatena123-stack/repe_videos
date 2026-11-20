@@ -33,14 +33,14 @@
      "label": "EN SILENCIO",
      "value": 100,
      "top": "100",
-     "at": 0.3
+     "at": 0.2
     },
     {
      "label": "CON GRITO",
      "value": 108,
      "top": "+8%",
      "coral": true,
-     "at": 1.2
+     "at": 1.3
     }
    ]
   },
