@@ -1138,5 +1138,179 @@
   "estrenos": [],
   "pregunta": "¿Qué duda queréis que respondamos en el próximo vídeo? 👇",
   "pregunta_tipo": "siguiente"
+ },
+ {
+  "fecha": "2026-11-20",
+  "hora": "14:00",
+  "tipo": "video (tendencia viral)",
+  "tema": "Press inclinado hace crecer más la parte alta del pecho que el plano (Chaves y cols. 2020: 47 chicos, 8 semanas; misma fuerza)",
+  "titulo": "Si solo haces press plano, te dejas la parte de arriba del pecho",
+  "url": "https://raw.githubusercontent.com/javicatena123-stack/repe_videos/main/videos/2026-11-20-inclinado.mp4",
+  "metricool": {
+   "instagram": 435307894,
+   "tiktok": 435307934,
+   "youtube": 435308012,
+   "threads": 435308094,
+   "facebook": 435308176
+  },
+  "modelo_voz": "gemini-3.8-flash-tts/Achird",
+  "acento": "ES",
+  "ref": "vídeos de «press inclinado vs plano» del nicho",
+  "categoria": "técnica / pecho",
+  "formato": "haz esto, no aquello",
+  "gancho_tipo": "peligro concreto",
+  "duracion_s": 15.83,
+  "visuales": [
+   "toni bench (bg gym2)",
+   "num(calendar)",
+   "vs (chest, shoulder)",
+   "stamp ×2 (speedlines)",
+   "toni thumbsUp (bg gym3)",
+   "cta"
+  ],
+  "estrenos": [],
+  "pregunta": "¿Cuál es tu ejercicio de pecho favorito? 💪",
+  "pregunta_tipo": "favorito"
+ },
+ {
+  "fecha": "2026-11-20",
+  "hora": "20:30",
+  "tipo": "video (tendencia viral)",
+  "tema": "Gritar da un 8 % más de fuerza de agarre (Welch y Tschampl, Iowa State: 50 personas)",
+  "titulo": "El que grita en el gym tiene razón",
+  "url": "https://raw.githubusercontent.com/javicatena123-stack/repe_videos/main/videos/2026-11-20-gritar.mp4",
+  "metricool": {
+   "instagram": 435326650,
+   "tiktok": 435326665,
+   "youtube": 435326691,
+   "threads": 435326710,
+   "facebook": 435326723
+  },
+  "modelo_voz": "gemini-3.8-flash-tts/Achird",
+  "acento": "ES",
+  "ref": "humor de «el que grita en el gym»",
+  "categoria": "humor / cultura gym",
+  "formato": "dato curioso",
+  "gancho_tipo": "contradicción",
+  "duracion_s": 15.67,
+  "visuales": [
+   "toni shock (bg gym)",
+   "num(crowd)",
+   "bars",
+   "invert",
+   "toni laugh (bg spotlight)",
+   "cta"
+  ],
+  "estrenos": [],
+  "pregunta": "Confesad: ¿sois de los que gritan en cada serie? 😅",
+  "pregunta_tipo": "confesion",
+  "prueba_hora": "20:30",
+  "nota": "pausas largas acortadas a 0,22 s"
+ },
+ {
+  "fecha": "2026-11-21",
+  "hora": "14:00",
+  "tipo": "ida de olla",
+  "variante": "epica",
+  "tema": "Por qué no deberías hacer flexiones en el ala de un vuelo Barcelona-Múnich (830 km/h, −56 °C, luz del cinturón; giro: otra vez sin pierna)",
+  "titulo": "Por qué no deberías hacer flexiones en el ala de un vuelo Barcelona-Múnich",
+  "url": "https://raw.githubusercontent.com/javicatena123-stack/repe_videos/main/videos/2026-11-21-ala.mp4",
+  "metricool": {
+   "instagram": 435337161,
+   "tiktok": 435337188,
+   "youtube": 435337216,
+   "threads": 435337241,
+   "facebook": 435337276
+  },
+  "modelo_voz": "gemini-3.8-flash-tts/Achird",
+  "acento": "ES",
+  "ref": "premisa de Javier (14 nov); serie «Por qué no deberías…»",
+  "categoria": "humor",
+  "formato": "ida de olla",
+  "gancho_tipo": "absurdo",
+  "duracion_s": 19.21,
+  "visuales": [
+   "ollaWing (bg sky, wind)",
+   "ollaWing (shoe)",
+   "ollaWing (thermo)",
+   "ollaWing (sign, belt, look)",
+   "stamp PIERNA: 0 (speedlines)",
+   "ollaCta"
+  ],
+  "estrenos": [
+   "fondo sky",
+   "ollaWing"
+  ],
+  "pregunta": "¿Dónde hacemos las próximas flexiones? 👇",
+  "pregunta_tipo": "absurda",
+  "nota": "pausas acortadas; silencio de 0,6 s antes del giro"
+ },
+ {
+  "fecha": "2026-11-21",
+  "hora": "20:30",
+  "tipo": "video (tendencia viral)",
+  "tema": "Una noche sin dormir baja un 18 % la síntesis de proteína muscular (Lamon y cols. 2021: 13 adultos)",
+  "titulo": "Una noche sin dormir y tu músculo construye un 18 % menos",
+  "url": "https://raw.githubusercontent.com/javicatena123-stack/repe_videos/main/videos/2026-11-21-sueno.mp4",
+  "metricool": {
+   "instagram": 435340495,
+   "tiktok": 435340552,
+   "youtube": 435340629,
+   "threads": 435340694,
+   "facebook": 435340768
+  },
+  "modelo_voz": "gemini-3.8-flash-tts/Achird",
+  "acento": "ES",
+  "ref": "tendencia «dormir para crecer» en reels de fitness",
+  "categoria": "recuperación",
+  "formato": "dato curioso",
+  "gancho_tipo": "número que escandaliza",
+  "duracion_s": 18.67,
+  "visuales": [
+   "toni sleepy (bg bedroom2)",
+   "clock",
+   "bars",
+   "head (moon)",
+   "stamp ALMOHADA",
+   "cta"
+  ],
+  "estrenos": [],
+  "pregunta": "¿Cuántas horas duermes de media? 😴",
+  "pregunta_tipo": "habito",
+  "prueba_hora": "20:30"
+ },
+ {
+  "fecha": "2026-11-22",
+  "hora": "20:30",
+  "tipo": "video (tendencia viral)",
+  "tema": "La sentadilla profunda no destroza las rodillas (Hartmann, Wirth y Klusemann 2013: revisión de más de 160 artículos)",
+  "titulo": "La sentadilla profunda no te destroza las rodillas",
+  "url": "https://raw.githubusercontent.com/javicatena123-stack/repe_videos/main/videos/2026-11-22-profunda.mp4",
+  "metricool": {
+   "instagram": 435343436,
+   "tiktok": 435343501,
+   "youtube": 435343589,
+   "threads": 435343617,
+   "facebook": 435343675
+  },
+  "modelo_voz": "gemini-3.8-flash-tts/Achird",
+  "acento": "ES",
+  "ref": "mito «sentadilla profunda = rodillas rotas» del nicho",
+  "categoria": "técnica / pierna",
+  "formato": "mito vs realidad",
+  "gancho_tipo": "contradicción",
+  "duracion_s": 16.0,
+  "visuales": [
+   "toni squat (bg gym2)",
+   "paper",
+   "head (legs)",
+   "split",
+   "toni flexDouble (bg gym3)",
+   "cta"
+  ],
+  "estrenos": [],
+  "pregunta": "¿Sentadilla profunda o te quedas en la mitad? 👇",
+  "pregunta_tipo": "eleccion",
+  "prueba_hora": "20:30"
  }
 ]
