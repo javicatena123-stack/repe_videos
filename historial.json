@@ -1361,7 +1361,7 @@
    "facebook": 438465939
   },
   "modelo_voz": "gemini-3.8-flash-tts/Achird",
-  "acento": "pendiente (cuota Gemini; timbre 0.962)",
+  "acento": "ES",
   "ref": "humor de «el del móvil en la máquina»; Rebold 2015",
   "categoria": "cultura gym",
   "formato": "humor + dato",
@@ -1412,5 +1412,72 @@
   "estrenos": [],
   "pregunta": "¿Qué dato del gym quieres que busquemos en los estudios? Déjalo aquí 👇",
   "pregunta_tipo": "pedir_tema"
+ },
+ {
+  "modelo_voz": "gemini-3.8-flash-tts/Achird",
+  "estrenos": [],
+  "fecha": "2026-11-24",
+  "hora": "14:00",
+  "tipo": "video (tendencia viral)",
+  "tema": "Comer cada 3 horas no acelera el metabolismo (Schoenfeld, Aragon y Krieger 2015: metaanálisis de 15 estudios; la ventaja salía de uno solo)",
+  "titulo": "Comer cada 3 horas no acelera tu metabolismo",
+  "url": "https://raw.githubusercontent.com/javicatena123-stack/repe_videos/main/videos/2026-11-24-comidas.mp4",
+  "metricool": {
+   "instagram": 438941063,
+   "tiktok": 438941131,
+   "youtube": 438941231,
+   "threads": 438941308,
+   "facebook": 438941389
+  },
+  "acento": "ES (accentcheck_alt 2 de 3; la primera pasada dio LATAM)",
+  "ref": "mito «come cada 3 horas» del nicho",
+  "categoria": "nutrición / mito",
+  "formato": "mito vs realidad",
+  "gancho_tipo": "contradicción + número de estudios",
+  "duracion_s": 19.37,
+  "visuales": [
+   "toni think (bg kitchen)",
+   "paper",
+   "meter",
+   "neq",
+   "toni thumbsUp (bg kitchen2)",
+   "cta"
+  ],
+  "pregunta": "¿Cuántas veces comes tú al día? 👇",
+  "pregunta_tipo": "habito"
+ },
+ {
+  "modelo_voz": "gemini-3.8-flash-tts/Achird",
+  "estrenos": [],
+  "fecha": "2026-11-24",
+  "hora": "20:30",
+  "tipo": "video (tendencia viral)",
+  "tema": "Las pesas libres tenían 362 veces más bacterias que la taza de un váter (EmLab P&K para FitRated: 27 máquinas, 3 gimnasios)",
+  "titulo": "Las pesas del gym están más sucias que un váter",
+  "url": "https://raw.githubusercontent.com/javicatena123-stack/repe_videos/main/videos/2026-11-24-bacterias.mp4",
+  "metricool": {
+   "instagram": 438941496,
+   "tiktok": 438941593,
+   "youtube": 438941662,
+   "threads": 438941729,
+   "facebook": 438941821
+  },
+  "acento": "ES",
+  "ref": "viral «el gym está más sucio que un váter»",
+  "categoria": "cultura gym / humor",
+  "formato": "dato curioso",
+  "gancho_tipo": "asco / comparación",
+  "duracion_s": 19.17,
+  "visuales": [
+   "toni nope (bg gym2)",
+   "num (dumbbell 27)",
+   "vs",
+   "split",
+   "toni point (bg gym3)",
+   "cta"
+  ],
+  "pregunta": "Sé sincero: ¿limpias la máquina después de usarla? 👇",
+  "pregunta_tipo": "confesion",
+  "prueba_hora": "20:30"
  }
 ]
