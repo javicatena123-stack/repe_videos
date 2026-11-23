@@ -1,0 +1,82 @@
+{
+ "id": "2026-11-24-bacterias",
+ "publish": "2026-11-24T20:30:00",
+ "ref": "viral «el gym está más sucio que un váter»; estudio de EmLab P&K para FitRated (27 máquinas, 3 gimnasios)",
+ "scenes": [
+  {
+   "say": "Las pesas del gym están más sucias que un váter.",
+   "sub": "Las pesas del gym están *más sucias* que un *váter*.",
+   "kind": "toni",
+   "action": "nope",
+   "o": {},
+   "bg": "gym2",
+   "title": "MÁS SUCIAS QUE UN *VÁTER*",
+   "titleSize": 90,
+   "trans": "punch"
+  },
+  {
+   "say": "Un laboratorio analizó veintisiete máquinas de tres gimnasios.",
+   "sub": "Un laboratorio analizó *27 máquinas* de *3 gimnasios*.",
+   "kind": "num",
+   "icon": "dumbbell",
+   "label": "MÁQUINAS",
+   "value": 27,
+   "unit": ""
+  },
+  {
+   "say": "Pesas libres: trescientas sesenta y dos veces más bacterias que la taza del váter.",
+   "sub": "Pesas libres: *362 veces* más bacterias que el *váter*.",
+   "kind": "vs",
+   "a": {
+    "icon": "drop",
+    "value": "1",
+    "unit": "x",
+    "label": "VÁTER"
+   },
+   "b": {
+    "icon": "dumbbell",
+    "value": "362",
+    "unit": "x",
+    "label": "PESAS"
+   },
+   "bdelay": 0.3
+  },
+  {
+   "say": "La solución: toalla y limpiar la máquina antes y después.",
+   "sub": "La solución: *toalla* y limpiar *antes y después*.",
+   "kind": "split",
+   "a": {
+    "label": "SIN LIMPIAR",
+    "toni": "shrug"
+   },
+   "b": {
+    "label": "CON TOALLA",
+    "toni": "thumbsUp",
+    "o": {}
+   },
+   "bdelay": 0.8,
+   "verdict": 2.0,
+   "size": 58,
+   "trans": "left"
+  },
+  {
+   "say": "Y no te toques la cara entre series.",
+   "sub": "Y *no te toques la cara* entre series.",
+   "kind": "toni",
+   "action": "point",
+   "o": {},
+   "bg": "gym3",
+   "title": "*MANOS* FUERA",
+   "titleSize": 130
+  },
+  {
+   "say": "Pásaselo al que nunca limpia la máquina.",
+   "sub": "*Pásaselo* al que *nunca limpia* la máquina.",
+   "kind": "cta",
+   "l1": "PÁSASELO",
+   "l2": "AL QUE NUNCA LIMPIA LA MÁQUINA",
+   "size1": 150,
+   "size2": 60
+  }
+ ]
+}

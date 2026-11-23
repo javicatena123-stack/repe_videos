@@ -1,0 +1,71 @@
+{
+ "id": "2026-11-24-comidas",
+ "publish": "2026-11-24T14:00:00",
+ "ref": "mito «come cada 3 horas para acelerar el metabolismo» del nicho; Schoenfeld, Aragon y Krieger 2015",
+ "scenes": [
+  {
+   "say": "Comer cada tres horas no acelera tu metabolismo.",
+   "sub": "Comer *cada 3 horas* no acelera tu *metabolismo*.",
+   "kind": "toni",
+   "action": "think",
+   "o": {},
+   "bg": "kitchen",
+   "title": "¿*6 COMIDAS* AL DÍA?",
+   "titleSize": 96,
+   "trans": "punch"
+  },
+  {
+   "say": "Juntaron quince estudios: comer pocas veces contra comer muchas.",
+   "sub": "Juntaron *15 estudios*: comer *pocas veces* contra *muchas*.",
+   "kind": "paper",
+   "title": "METAANÁLISIS",
+   "source": "Schoenfeld, Aragon y Krieger · Nutr Rev 2015",
+   "rows": [
+    {
+     "v": "15",
+     "l": "ESTUDIOS"
+    }
+   ],
+   "stamp": "¿Y?"
+  },
+  {
+   "say": "Y la ventaja de comer más veces salía de un solo estudio.",
+   "sub": "Y la *ventaja* salía de *un solo estudio*.",
+   "kind": "meter",
+   "title": "¿CUÁNTOS LO *VEN*?",
+   "titleSize": 100,
+   "value": 1,
+   "max": 15,
+   "at": 1.0,
+   "label": "ESTUDIOS A FAVOR",
+   "trans": "punch"
+  },
+  {
+   "say": "Lo que cuenta es cuánto comes, no cuántas veces.",
+   "sub": "Lo que cuenta es *cuánto* comes, no *cuántas veces*.",
+   "kind": "neq",
+   "left": "6 COMIDAS",
+   "right": "MÁS QUEMA",
+   "size": 140
+  },
+  {
+   "say": "Así que come las veces que te venga bien.",
+   "sub": "Así que come las veces que *te venga bien*.",
+   "kind": "toni",
+   "action": "thumbsUp",
+   "o": {},
+   "bg": "kitchen2",
+   "title": "*TÚ* ELIGES",
+   "titleSize": 130
+  },
+  {
+   "say": "Pásaselo al que va con el táper a todas partes.",
+   "sub": "*Pásaselo* al que va con el *táper* a todas partes.",
+   "kind": "cta",
+   "l1": "PÁSASELO",
+   "l2": "AL QUE VA CON EL TÁPER A TODAS PARTES",
+   "size1": 150,
+   "size2": 56
+  }
+ ]
+}

@@ -1,0 +1,80 @@
+{
+ "id": "2026-11-24-estudios",
+ "publish": "2026-11-24T07:30:00",
+ "ref": "banco de ideas: «cuáles estudios» (@saxelm11, Inbox 14 nov)",
+ "scenes": [
+  {
+   "say": "Me preguntáis de dónde saco los estudios.",
+   "sub": "Me preguntáis de dónde saco los *estudios*.",
+   "kind": "toni",
+   "action": "talk",
+   "o": {},
+   "bg": "gym2",
+   "title": "¿DE DÓNDE *SALEN*?",
+   "titleSize": 110,
+   "trans": "punch"
+  },
+  {
+   "say": "Todos van en el texto: autores, año y revista.",
+   "sub": "Todos van en el *texto*: autores, año y revista.",
+   "kind": "chips",
+   "title": "EN EL *TEXTO*",
+   "titleSize": 110,
+   "top": 190,
+   "gap": 225,
+   "fs": 60,
+   "items": [
+    {
+     "icon": "paper",
+     "label": "AUTORES Y AÑO",
+     "at": 0.6
+    },
+    {
+     "icon": "check",
+     "label": "REVISTA",
+     "at": 1.6
+    }
+   ]
+  },
+  {
+   "say": "Búscalos en Google Académico o en PubMed.",
+   "sub": "Búscalos en *Google Académico* o en *PubMed*.",
+   "kind": "toni",
+   "action": "point",
+   "o": {},
+   "bg": "gym3",
+   "title": "*BÚSCALOS*",
+   "titleSize": 130
+  },
+  {
+   "say": "Y mira cuánta gente había: diez personas no son veintiséis mil.",
+   "sub": "Y mira cuánta gente había: *10 personas* no son *26.000*.",
+   "kind": "num",
+   "icon": "crowd",
+   "label": "PERSONAS",
+   "value": 26000,
+   "unit": "",
+   "sep": true,
+   "nsize": 165
+  },
+  {
+   "say": "Así no te la cuela nadie.",
+   "sub": "Así *no te la cuela* nadie.",
+   "kind": "toni",
+   "action": "hips",
+   "o": {},
+   "bg": "gym",
+   "title": "*NI UNA*",
+   "titleSize": 130
+  },
+  {
+   "say": "Gracias por la pregunta. Deja la tuya.",
+   "sub": "Gracias por la pregunta. *Deja la tuya*.",
+   "kind": "cta",
+   "l1": "DEJA LA TUYA",
+   "l2": "VA AL PRÓXIMO VÍDEO",
+   "size1": 140,
+   "size2": 66
+  }
+ ]
+}
