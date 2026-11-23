@@ -1312,5 +1312,105 @@
   "pregunta": "¿Sentadilla profunda o te quedas en la mitad? 👇",
   "pregunta_tipo": "eleccion",
   "prueba_hora": "20:30"
+ },
+ {
+  "fecha": "2026-11-23",
+  "hora": "14:00",
+  "tipo": "video (tendencia viral)",
+  "tema": "Gemelo de pie crece ~12 %, sentado casi nada (Kinoshita y cols. 2023, 12 semanas, una pierna de cada)",
+  "titulo": "Si haces gemelos sentado, casi no te crecen",
+  "url": "https://raw.githubusercontent.com/javicatena123-stack/repe_videos/main/videos/2026-11-23-gemelos.mp4",
+  "metricool": {
+   "instagram": 438470618,
+   "tiktok": 438470674,
+   "youtube": 438470742,
+   "threads": 438470791,
+   "facebook": 438470837
+  },
+  "modelo_voz": "gemini-3.8-flash-tts/Achird",
+  "acento": "ES",
+  "ref": "vídeos «gemelo de pie vs sentado» del nicho; Kinoshita 2023",
+  "categoria": "técnica / pierna",
+  "formato": "dato curioso",
+  "gancho_tipo": "contradicción",
+  "duracion_s": 17.8,
+  "visuales": [
+   "toni shock (bg gym2)",
+   "num (calendar 12)",
+   "vs",
+   "invert",
+   "toni point (bg gym3)",
+   "cta"
+  ],
+  "estrenos": [],
+  "pregunta": "¿A ti te cuesta que crezcan los gemelos? Cuéntalo 👇",
+  "pregunta_tipo": "experiencia"
+ },
+ {
+  "fecha": "2026-11-23",
+  "hora": "20:30",
+  "tipo": "video (humor)",
+  "tema": "Usar el móvil (escribir/hablar) en la cinta baja la intensidad; la música la sube (Rebold y cols. 2015: 44 personas)",
+  "titulo": "Mirar el móvil entre series te hace entrenar peor",
+  "url": "https://raw.githubusercontent.com/javicatena123-stack/repe_videos/main/videos/2026-11-23-movil.mp4",
+  "metricool": {
+   "instagram": 438465762,
+   "tiktok": 438465804,
+   "youtube": 438465864,
+   "threads": 438465896,
+   "facebook": 438465939
+  },
+  "modelo_voz": "gemini-3.8-flash-tts/Achird",
+  "acento": "pendiente (cuota Gemini; timbre 0.962)",
+  "ref": "humor de «el del móvil en la máquina»; Rebold 2015",
+  "categoria": "cultura gym",
+  "formato": "humor + dato",
+  "gancho_tipo": "personaje reconocible",
+  "duracion_s": 16.21,
+  "visuales": [
+   "eyes",
+   "num (crowd 44)",
+   "stamp MÁS LENTO",
+   "head (fire)",
+   "toni flexDouble (bg gym3)",
+   "cta"
+  ],
+  "estrenos": [],
+  "pregunta": "Confiesa: ¿qué miras tú en el móvil entre series? 👇",
+  "pregunta_tipo": "confesion",
+  "prueba_hora": "20:30"
+ },
+ {
+  "fecha": "2026-11-24",
+  "hora": "07:30",
+  "tipo": "video (respuesta)",
+  "tema": "Respuesta a @saxelm11 «¿cuáles estudios?»: dónde buscarlos (Google Académico, PubMed) y mirar el tamaño de muestra",
+  "titulo": "¿De dónde salen los estudios?",
+  "url": "https://raw.githubusercontent.com/javicatena123-stack/repe_videos/main/videos/2026-11-24-estudios.mp4",
+  "metricool": {
+   "instagram": 438470141,
+   "tiktok": 438470195,
+   "youtube": 438470232,
+   "threads": 438470270,
+   "facebook": 438470329
+  },
+  "modelo_voz": "gemini-3.8-flash-tts/Achird",
+  "acento": "ES",
+  "ref": "banco de ideas: «cuáles estudios» (@saxelm11, Inbox 14 nov)",
+  "categoria": "método / ciencia",
+  "formato": "respuesta a comentario",
+  "gancho_tipo": "pregunta del público",
+  "duracion_s": 16.03,
+  "visuales": [
+   "toni idle (bg gym2)",
+   "chips",
+   "toni point",
+   "num (crowd 26.000, sep nuevo)",
+   "toni flexDouble",
+   "cta"
+  ],
+  "estrenos": [],
+  "pregunta": "¿Qué dato del gym quieres que busquemos en los estudios? Déjalo aquí 👇",
+  "pregunta_tipo": "pedir_tema"
  }
 ]
