@@ -1479,5 +1479,76 @@
   "pregunta": "Sé sincero: ¿limpias la máquina después de usarla? 👇",
   "pregunta_tipo": "confesion",
   "prueba_hora": "20:30"
+ },
+ {
+  "modelo_voz": "gemini-3.8-flash-tts/Achird",
+  "acento": "ES (accentcheck_alt)",
+  "fecha": "2026-11-25",
+  "hora": "14:00",
+  "tipo": "video (tendencia viral)",
+  "tema": "Hip thrust y sentadilla dan el mismo glúteo en 9 semanas; la sentadilla da más muslo (Plotkin y cols. 2023, Front Physiol)",
+  "titulo": "El hip thrust no te hace más glúteo que la sentadilla",
+  "url": "https://raw.githubusercontent.com/javicatena123-stack/repe_videos/main/videos/2026-11-25-hipthrust.mp4",
+  "metricool": {
+   "instagram": 439945313,
+   "tiktok": 439945351,
+   "youtube": 439945403,
+   "threads": 439945438,
+   "facebook": 439945474
+  },
+  "ref": "debate «hip thrust vs sentadilla» del nicho",
+  "categoria": "técnica / pierna",
+  "formato": "mito vs realidad",
+  "gancho_tipo": "contradicción",
+  "duracion_s": 17.23,
+  "visuales": [
+   "toni shock (bg gym2)",
+   "num (calendar 9)",
+   "stamp EMPATE (speedlines)",
+   "toni squat (bg gym3)",
+   "toni thumbsUp (bg gym)",
+   "cta"
+  ],
+  "estrenos": [],
+  "pregunta": "¿Equipo hip thrust o equipo sentadilla? 👇",
+  "pregunta_tipo": "eleccion"
+ },
+ {
+  "modelo_voz": "gemini-3.8-flash-tts/Achird",
+  "acento": "ES (accentcheck_alt)",
+  "fecha": "2026-11-25",
+  "hora": "20:30",
+  "tipo": "video (ida de olla)",
+  "tema": "Por qué no deberías hacer peso muerto en la Estación Espacial (aRED: cilindros de vacío hasta 270 kg, ESA)",
+  "titulo": "Por qué no deberías hacer peso muerto en la Estación Espacial",
+  "url": "https://raw.githubusercontent.com/javicatena123-stack/repe_videos/main/videos/2026-11-25-iss.mp4",
+  "metricool": {
+   "instagram": 439945553,
+   "tiktok": 439945590,
+   "youtube": 439945638,
+   "threads": 439945677,
+   "facebook": 439945705
+  },
+  "ref": "banco 4.6 de ganchos y formatos",
+  "categoria": "humor",
+  "formato": "ida de olla",
+  "variante": "epica",
+  "gancho_tipo": "absurdo",
+  "duracion_s": 18.23,
+  "visuales": [
+   "ollaISS float+items (bg iss)",
+   "ollaISS kg",
+   "ollaISS drift",
+   "ollaISS ared",
+   "ollaISS mirror",
+   "ollaCta"
+  ],
+  "estrenos": [
+   "bg iss",
+   "ollaISS"
+  ],
+  "pregunta": "¿Dónde no harías peso muerto tú? Las mejores ideas salen en el próximo 👇",
+  "pregunta_tipo": "pedir_tema",
+  "prueba_hora": "20:30"
  }
 ]
